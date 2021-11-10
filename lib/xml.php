@@ -82,7 +82,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$xml = $feed->build();
 
-error_log( __METHOD__.' saving '.$cache_salt );
 			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $exp_secs, $pre_ext );
 
 			return $xml;
@@ -109,8 +108,6 @@ error_log( __METHOD__.' saving '.$cache_salt );
 		}
 
 		static private function add_product_data( &$product, $mt_data, &$dupe_check = array() ) {
-
-			//error_log( print_r( $mt_data, true ) );
 
 			self::sanitize_mt_array( $mt_data );
 
