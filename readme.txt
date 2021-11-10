@@ -20,7 +20,7 @@ Create a Google Merchant Feed for your WooCommerce, Easy Digital Downloads, and 
 
 <!-- about -->
 
-The WPSSO Google Merchant Feed add-on gets product information from WPSSO Core and provides XML feeds for each WordPress language (aka locale). 
+The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Core and provides XML feeds for each WordPress language (aka locale).
 
 **Google Merchant Feed supported attributes:**
 
