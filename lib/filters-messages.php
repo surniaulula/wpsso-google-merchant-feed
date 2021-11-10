@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text .= '<blockquote class="top-info">';
 
-					$text .= __( 'There are no add-on settings to configure &mdash; an XML feed is automatically available for each installed WordPress language.', 'wpsso-google-merchant-feed' );
+					$text .= __( 'There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language.', 'wpsso-google-merchant-feed' );
 
 					$text .= '</blockquote>';
 

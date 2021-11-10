@@ -44,8 +44,8 @@ msgstr ""
 
 #: lib/filters-messages.php:46
 msgid ""
-"There are no add-on settings to configure &mdash; an XML feed is "
-"automatically available for each installed WordPress language."
+"There are no add-on settings to configure &mdash; an XML feed for your "
+"products is automatically available for each installed WordPress language."
 msgstr ""
 
 #: lib/filters.php:66
