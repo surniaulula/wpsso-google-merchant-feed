@@ -14,13 +14,23 @@ Tested Up To: 5.8.2
 WC Tested Up To: 5.9.0
 Stable Tag: 1.0.0
 
-Create a Google Merchant Feed for your WooCommerce, Easy Digital Downloads, and Custom Products.
+Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
 
 == Description ==
 
 <!-- about -->
 
-The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Core and provides XML feeds for each WordPress language (aka locale).
+The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Premium Core and provides maintenance free XML feeds for each WordPress language (aka locale).
+
+There are no add-on settings to configure -- the WPSSO Google Merchant Feed add-on automatically retrieves all product information in the language (aka locale) requested.
+
+A suppported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required -- the WPSSO Google Merchant Feed add-on also retrieves custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and product attributes are fully supported.
+
+**Google Merchant Feed per Language:**
+
+There are no add-on settings to configure -- an XML feed is automatically available for each installed WordPress language. For example: `/merchant-feed/en_US.xml`.
+
+<!-- /about -->
 
 **Google Merchant Feed supported attributes:**
 
@@ -49,11 +59,15 @@ The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO C
 * Size type <code>&#91;size_type&#93;</code>
 * Item group ID <code>&#91;item_group_id&#93;</code>
 
-<!-- /about -->
+<h3>WPSSO Core Premium Required</h3>
 
-<h3>WPSSO Core Required</h3>
+WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the [WPSSO Core Premium plugin](https://wpsso.com/extend/plugins/wpsso/).
 
-WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+**The WPSSO Core Premium plugin provides:**
+
+* An integration module for the WooCommerce plugin.
+* An integration module for the Easy Digital Downloads plugin.
+* Custom Open Graph and Schema markup options in the Document SSO metabox.
 
 == Installation ==
 

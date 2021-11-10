@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feed</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Create a Google Merchant Feed for your WooCommerce, Easy Digital Downloads, and Custom Products.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.0 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.0 or newer</td></tr>
@@ -17,7 +17,17 @@
 
 <!-- about -->
 
-<p>The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Core and provides XML feeds for each WordPress language (aka locale).</p>
+<p>The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Premium Core and provides maintenance free XML feeds for each WordPress language (aka locale).</p>
+
+<p>There are no add-on settings to configure -- the WPSSO Google Merchant Feed add-on automatically retrieves all product information in the language (aka locale) requested.</p>
+
+<p>A suppported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required -- the WPSSO Google Merchant Feed add-on also retrieves custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and product attributes are fully supported.</p>
+
+<p><strong>Google Merchant Feed per Language:</strong></p>
+
+<p>There are no add-on settings to configure -- an XML feed is automatically available for each installed WordPress language. For example: <code>/merchant-feed/en_US.xml</code>.</p>
+
+<!-- /about -->
 
 <p><strong>Google Merchant Feed supported attributes:</strong></p>
 
@@ -48,11 +58,17 @@
 <li>Item group ID <code>&#91;item_group_id&#93;</code></li>
 </ul>
 
-<!-- /about -->
+<h3>WPSSO Core Premium Required</h3>
 
-<h3>WPSSO Core Required</h3>
+<p>WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/">WPSSO Core Premium plugin</a>.</p>
 
-<p>WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the <a href="https://wordpress.org/plugins/wpsso/">WPSSO Core plugin</a>.</p>
+<p><strong>The WPSSO Core Premium plugin provides:</strong></p>
+
+<ul>
+<li>An integration module for the WooCommerce plugin.</li>
+<li>An integration module for the Easy Digital Downloads plugin.</li>
+<li>Custom Open Graph and Schema markup options in the Document SSO metabox.</li>
+</ul>
 
 
 <h2>Installation</h2>
