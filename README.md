@@ -25,7 +25,7 @@
 
 <p><strong>Google Merchant Feed per Language:</strong></p>
 
-<p>There are no add-on settings to configure &mdash; an XML feed is automatically available for each installed WordPress language. For example: <code>/merchant-feed/en_US.xml</code>.</p>
+<p>There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language. For example: <code>/merchant-feed/en_US.xml</code>.</p>
 
 <!-- /about -->
 
