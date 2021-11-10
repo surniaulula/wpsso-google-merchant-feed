@@ -33,8 +33,8 @@ msgstr ""
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
 msgid ""
-"Create a Google Merchant Feed for your WooCommerce, Easy Digital Downloads, "
-"and Custom Products."
+"Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and "
+"Custom Products (WPSSO Core Premium Required)."
 msgstr ""
 
 #: lib/filters.php:58
@@ -51,8 +51,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Create a Google Merchant Feed for your WooCommerce, Easy Digital Downloads, "
-"and Custom Products."
+"Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and "
+"Custom Products (WPSSO Core Premium Required)."
 msgstr ""
 
 #. Author of the plugin/theme
