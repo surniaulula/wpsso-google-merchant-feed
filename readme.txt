@@ -99,7 +99,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev &lt; a (alpha) &lt; b (beta) &lt; rc (release candidate).
 
-<h3>Standard Version Repositories</h3>
+<h3>Standard Edition Repositories</h3>
 
 * [GitHub](https://surniaulula.github.io/wpsso-google-merchant-feed/)
 
