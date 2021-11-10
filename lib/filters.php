@@ -14,8 +14,9 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 	class WpssoGmfFilters {
 
-		private $p;		// Wpsso class object.
-		private $a;		// WpssoGmf class object.
+		private $p;	// Wpsso class object.
+		private $a;	// WpssoGmf class object.
+		private $msgs;	// WpssoGmfFiltersMessages class object.
 
 		/**
 		 * Instantiated by WpssoGmf->init_objects().
@@ -37,6 +38,13 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			$this->p->util->add_plugin_filters( $this, array(
 				'cache_refreshed_notice' => 3,
 			) );
+
+			if ( is_admin() ) {
+
+				require_once WPSSOGMF_PLUGINDIR . 'lib/filters-messages.php';
+
+				$this->msgs = new WpssoGmfFiltersMessages( $plugin, $addon );
+			}
 		}
 
 		public function filter_cache_refreshed_notice( $notice_msg, $user_id, $read_cache ) {

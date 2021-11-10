@@ -91,7 +91,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				} else {
 
 					$default_locale = SucomUtil::get_locale( 'default' );
-					$redirect_url   = get_home_url( $blog_id = null, WPSSOGMF_PAGENAME . '/' . $default_locale . '.xml' );
+					$redirect_url   = self::get_url( $default_locale );
 
 					wp_redirect( $redirect_url );
 
@@ -112,6 +112,11 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			echo $xml;
 
 			exit;
+		}
+
+		static public function get_url( $locale, $blog_id = null ) {
+
+			return get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $locale . '.xml' );
 		}
 	}
 }

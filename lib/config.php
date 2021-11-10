@@ -54,6 +54,15 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'2x' => 'images/icon-256x256.png',
 						),
 					),
+
+					/**
+					 * Library files loaded and instantiated by WPSSO.
+					 */
+					'lib' => array(
+						'submenu' => array(
+							'gmf-general' => 'Google Merchant Feed',
+						),
+					),
 				),
 			),
 			'head' => array(
