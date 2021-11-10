@@ -10,12 +10,12 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: Create a Google Merchant Feed for your Products.
+ * Description: Create a Google Merchant Feed for your WooCommerce, Easy Digital Downloads, and Custom Products.
  * Requires PHP: 7.0
  * Requires At Least: 5.0
  * Tested Up To: 5.8.2
  * WC Tested Up To: 5.9.0
- * Version: 1.0.0-dev.1
+ * Version: 1.0.0-dev.2
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
