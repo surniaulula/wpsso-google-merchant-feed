@@ -27,7 +27,7 @@
 
 <p>There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language.</p>
 
-<p>After activating the add-on, see the SSO &gt; Google Merchant Feed page for the list of available XML feed URLs.</p>
+<p>After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google Merchant Feed page for the complete list of available XML feed URLs.</p>
 
 <!-- /about -->
 
