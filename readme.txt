@@ -26,9 +26,11 @@ There are no add-on settings to configure &mdash; the WPSSO Google Merchant Feed
 
 A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.
 
-**A Google Merchant Feed per Language:**
+**A Google Merchant Feed for each language:**
 
-There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language. After activating the add-on, see the SSO &gt; Google Merchant Feed page for the list of available XML feed URLs.
+There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language.
+
+After activating the add-on, see the SSO &gt; Google Merchant Feed page for the list of available XML feed URLs.
 
 <!-- /about -->
 
