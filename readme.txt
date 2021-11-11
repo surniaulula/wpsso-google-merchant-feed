@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 **A Google Merchant Feed per Language:**
 
-There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language. After activating the add-on, see the SSO &gt; Google Merchant Feed page for the list of XML feed URLs.
+There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language. After activating the add-on, see the SSO &gt; Google Merchant Feed page for the list of available XML feed URLs.
 
 <!-- /about -->
 
