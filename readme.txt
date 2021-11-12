@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 **A Google Merchant Feed for each language:**
 
-There are no add-on settings to configure &mdash; an XML feed for your products is automatically available for each installed WordPress language.
+An XML feed for your WooCommerce, Easy Digital Downloads, and custom products is automatically available for each installed WordPress language.
 
 After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google Merchant Feed page for the complete list of available XML feed URLs.
 
@@ -113,6 +113,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.1.0-dev.2 (2021/11/12)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.0.
+	* WordPress v5.0.
+	* WPSSO Core v9.8.0-dev.2.
+
 **Version 1.0.0 (2021/11/10)**
 
 * **New Features**
@@ -129,6 +144,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 1.1.0-dev.2 =
+
+(2021/11/12) None.
 
 = 1.0.0 =
 
