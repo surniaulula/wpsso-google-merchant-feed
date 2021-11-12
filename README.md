@@ -19,7 +19,7 @@
 
 <p>The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each WordPress language (aka locale).</p>
 
-<p>There are no add-on settings to configure &mdash; the WPSSO Google Merchant Feed add-on automatically retrieves all product information in the language (aka locale) requested.</p>
+<p>There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed add-on automatically retrieves all available product information in the language (aka locale) requested.</p>
 
 <p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.</p>
 
@@ -27,7 +27,7 @@
 
 <p>An XML feed for your WooCommerce, Easy Digital Downloads, and custom products is automatically available for each installed WordPress language.</p>
 
-<p>After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google Merchant Feed page for the complete list of available XML feed URLs.</p>
+<p>After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google Merchant Feed settings page for a complete list of available XML feed URLs.</p>
 
 <!-- /about -->
 
