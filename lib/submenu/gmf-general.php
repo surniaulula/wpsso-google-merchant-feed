@@ -92,11 +92,11 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 							$native_name = $locale;
 						}
 
-						$url = WpssoGmfRewrite::get_url( $locale );
+						$xml_url = WpssoGmfRewrite::get_url( $locale );
 
 						$table_rows[ 'gmf-url-' . $locale ] = '' . 
 							$this->form->get_th_html( $native_name ) .
-							'<td>' . $this->form->get_no_input_clipboard( $url ) . '</td>';
+							'<td>' . $this->form->get_no_input_clipboard( $xml_url ) . '</td>';
 					}
 
 					break;

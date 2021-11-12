@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoGmfRegister' ) ) {
 				 */
 				if ( class_exists( 'WpssoUtilReg' ) ) { // Since WPSSO Core v6.13.1.
 
-					$version = WpssoGmfConfig::$cf[ 'plugin' ][ 'wpssogmf' ][ 'version' ];
+					$version = WpssoGmfConfig::get_version();
 
 					WpssoUtilReg::update_ext_version( 'wpssogmf', $version );
 				}

@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '1.0.0',	// Plugin version.
+					'version'     => '1.1.0-dev.2',	// Plugin version.
 					'opt_version' => '1',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed',
@@ -33,11 +33,11 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					 */
 					'req' => array(
 						'wpsso' => array(
-							'name'          => 'WPSSO Core',
-							'home'          => 'https://wordpress.org/plugins/wpsso/',
+							'name'          => 'WPSSO Core (Premium)',
+							'home'          => 'https://wpsso.com/extend/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '9.7.0',
+							'min_version'   => '9.8.0-dev.2',
 						),
 					),
 
