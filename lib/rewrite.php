@@ -35,11 +35,9 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$this->a =& $addon;
 
 			add_action( 'init', array( __CLASS__, 'add_rules' ) );
-
 			add_action( 'activated_plugin', array( __CLASS__, 'add_flush_rules' ) );
 			add_action( 'after_switch_theme', array( __CLASS__, 'add_flush_rules' ) );
 			add_action( 'upgrader_process_complete', array( __CLASS__, 'add_flush_rules' ) );
-
 			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ) );
 
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ) );
@@ -91,7 +89,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				} else {
 
 					$default_locale = SucomUtil::get_locale( 'default' );
-					$redirect_url   = self::get_url( $default_locale );
+
+					$redirect_url = self::get_url( $default_locale );
 
 					wp_redirect( $redirect_url );
 
@@ -99,24 +98,28 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				}
 			}
 
-			$xml         = WpssoGmfXml::get();
+			$content     = WpssoGmfXml::get();
 			$disposition = 'attachment';
 			$filename    = $request_pagename . '-' . $request_locale . '.xml';
-			$length      = strlen( $xml );
+			$length      = strlen( $content );
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $length );
 
-			echo $xml;
+			echo $content;
 
 			exit;
 		}
 
 		static public function get_url( $locale, $blog_id = null ) {
 
-			return get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $locale . '.xml' );
+			$pagename = WPSSOGMF_PAGENAME;
+
+			$url = get_home_url( $blog_id, $pagename . '/' . $locale . '.xml' );
+
+			return apply_filters( 'wpsso_google_merchant_feed_url', $url, $locale, $pagename, $blog_id );
 		}
 	}
 }
