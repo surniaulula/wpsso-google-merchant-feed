@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a new 'wpsso_google_merchant_feed_url' filter.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
@@ -149,7 +149,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.1.0-dev.2 =
 
-(2021/11/12) None.
+(2021/11/12) Added a new 'wpsso_google_merchant_feed_url' filter.
 
 = 1.0.0 =
 
