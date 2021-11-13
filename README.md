@@ -1,7 +1,7 @@
-<h1>WPSSO Google Merchant Feed</h1>
+<h1>WPSSO Google Merchant Feeds</h1>
 
 <table>
-<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feed</td></tr>
+<tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feeds</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.0 or newer</td></tr>
@@ -17,21 +17,21 @@
 
 <!-- about -->
 
-<p>The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each WordPress language (aka locale).</p>
+<p>The WPSSO Google Merchant Feeds add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each WordPress language (aka locale).</p>
 
-<p>There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed add-on automatically retrieves all available product information in the language (aka locale) requested.</p>
+<p>There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds add-on automatically retrieves all available product information in the language (aka locale) requested.</p>
 
-<p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.</p>
+<p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.</p>
 
-<p><strong>A Google Merchant Feed for each language:</strong></p>
+<p><strong>An XML feed for each language:</strong></p>
 
-<p>An XML feed for your WooCommerce, Easy Digital Downloads, and custom products is automatically available for each installed WordPress language.</p>
+<p>Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically available for each installed WordPress language.</p>
 
-<p>After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google Merchant Feed settings page for a complete list of available XML feed URLs.</p>
+<p>After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.</p>
 
 <!-- /about -->
 
-<p><strong>Google Merchant Feed supported attributes:</strong></p>
+<p><strong>Google Merchant Feeds supported attributes:</strong></p>
 
 <ul>
 <li>ID <code>&#91;id&#93;</code></li>
@@ -62,7 +62,7 @@
 
 <h3>WPSSO Core Premium Required</h3>
 
-<p>WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/">WPSSO Core Premium plugin</a>.</p>
+<p>WPSSO Google Merchant Feeds (WPSSO GMF) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/">WPSSO Core Premium plugin</a>.</p>
 
 <p><strong>The WPSSO Core Premium plugin provides:</strong></p>
 
@@ -78,8 +78,8 @@
 <h3 class="top">Install and Uninstall</h3>
 
 <ul>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/install-the-plugin/">Install the WPSSO Google Merchant Feed add-on</a>.</li>
-<li><a href="https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/">Uninstall the WPSSO Google Merchant Feed add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/install-the-plugin/">Install the WPSSO Google Merchant Feeds add-on</a>.</li>
+<li><a href="https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/">Uninstall the WPSSO Google Merchant Feeds add-on</a>.</li>
 </ul>
 
 

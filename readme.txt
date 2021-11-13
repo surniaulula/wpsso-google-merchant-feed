@@ -1,5 +1,5 @@
-=== WPSSO Google Merchant Feed ===
-Plugin Name: WPSSO Google Merchant Feed
+=== WPSSO Google Merchant Feeds ===
+Plugin Name: WPSSO Google Merchant Feeds
 Plugin Slug: wpsso-google-merchant-feed
 Text Domain: wpsso-google-merchant-feed
 Domain Path: /languages
@@ -20,21 +20,21 @@ Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom P
 
 <!-- about -->
 
-The WPSSO Google Merchant Feed add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each WordPress language (aka locale).
+The WPSSO Google Merchant Feeds add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each WordPress language (aka locale).
 
-There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed add-on automatically retrieves all available product information in the language (aka locale) requested.
+There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds add-on automatically retrieves all available product information in the language (aka locale) requested.
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.
+A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.
 
-**A Google Merchant Feed for each language:**
+**An XML feed for each language:**
 
-An XML feed for your WooCommerce, Easy Digital Downloads, and custom products is automatically available for each installed WordPress language.
+Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically available for each installed WordPress language.
 
-After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google Merchant Feed settings page for a complete list of available XML feed URLs.
+After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.
 
 <!-- /about -->
 
-**Google Merchant Feed supported attributes:**
+**Google Merchant Feeds supported attributes:**
 
 * ID <code>&#91;id&#93;</code>
 * Title <code>&#91;title&#93;</code>
@@ -63,7 +63,7 @@ After activating the WPSSO Google Merchant Feed add-on, see the SSO &gt; Google 
 
 <h3>WPSSO Core Premium Required</h3>
 
-WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the [WPSSO Core Premium plugin](https://wpsso.com/extend/plugins/wpsso/).
+WPSSO Google Merchant Feeds (WPSSO GMF) is an add-on for the [WPSSO Core Premium plugin](https://wpsso.com/extend/plugins/wpsso/).
 
 **The WPSSO Core Premium plugin provides:**
 
@@ -75,8 +75,8 @@ WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the [WPSSO Core Premium 
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Google Merchant Feed add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/install-the-plugin/).
-* [Uninstall the WPSSO Google Merchant Feed add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/).
+* [Install the WPSSO Google Merchant Feeds add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/install-the-plugin/).
+* [Uninstall the WPSSO Google Merchant Feeds add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 
@@ -90,7 +90,7 @@ WPSSO Google Merchant Feed (WPSSO GMF) is an add-on for the [WPSSO Core Premium 
 
 == Screenshots ==
 
-01. The Google Merchant Feed settings page shows a complete list of available XML feed URLs.
+01. The Google Merchant Feeds settings page shows a complete list of available XML feed URLs.
 
 == Changelog ==
 
