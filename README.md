@@ -71,7 +71,7 @@
 <ul>
 <li>An integration module for the WooCommerce plugin.</li>
 <li>An integration module for the Easy Digital Downloads plugin.</li>
-<li>Custom Open Graph and Schema markup options in the Document SSO metabox.</li>
+<li>Custom product options in the Document SSO metabox.</li>
 </ul>
 
 

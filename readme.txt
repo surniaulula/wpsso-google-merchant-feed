@@ -71,7 +71,7 @@ WPSSO Google Merchant Feeds (WPSSO GMF) is an add-on for the [WPSSO Core Premium
 
 * An integration module for the WooCommerce plugin.
 * An integration module for the Easy Digital Downloads plugin.
-* Custom Open Graph and Schema markup options in the Document SSO metabox.
+* Custom product options in the Document SSO metabox.
 
 == Installation ==
 
