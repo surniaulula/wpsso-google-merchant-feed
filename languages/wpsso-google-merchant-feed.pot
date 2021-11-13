@@ -1,8 +1,8 @@
-# Copyright (C) 2021 WPSSO Google Merchant Feed
-# This file is distributed under the same license as the WPSSO Google Merchant Feed package.
+# Copyright (C) 2021 WPSSO Google Merchant Feeds
+# This file is distributed under the same license as the WPSSO Google Merchant Feeds package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed 1.1.0-dev.2\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds 1.1.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
@@ -26,12 +26,12 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "lib file description"
-msgid "Google Merchant Feed"
+msgid "Google Merchant Feeds"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin name"
-msgid "WPSSO Google Merchant Feed"
+msgid "WPSSO Google Merchant Feeds"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
@@ -43,21 +43,23 @@ msgstr ""
 
 #: lib/filters-messages.php:46
 msgid ""
-"An XML feed for your WooCommerce, Easy Digital Downloads, and custom "
-"products is automatically available for each installed WordPress language."
+"Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and "
+"custom products are automatically available for each installed WordPress "
+"language."
 msgstr ""
 
 #: lib/filters.php:66
-msgid "The Google Merchant Feed XML cache for %1$d locales has been refreshed."
+msgid ""
+"The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr ""
 
 #: lib/submenu/gmf-general.php:38
 msgctxt "metabox title"
-msgid "Google Merchant Feed URLs"
+msgid "Google Merchant Feeds"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Google Merchant Feed"
+msgid "WPSSO Google Merchant Feeds"
 msgstr ""
 
 #. Plugin URI of the plugin/theme

@@ -20,7 +20,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'version'     => '1.1.0-dev.2',	// Plugin version.
 					'opt_version' => '1',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
-					'name'        => 'WPSSO Google Merchant Feed',
+					'name'        => 'WPSSO Google Merchant Feeds',
 					'desc'        => 'Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).',
 					'slug'        => 'wpsso-google-merchant-feed',
 					'base'        => 'wpsso-google-merchant-feed/wpsso-google-merchant-feed.php',
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					 */
 					'lib' => array(
 						'submenu' => array(
-							'gmf-general' => 'Google Merchant Feed',
+							'gmf-general' => 'Google Merchant Feeds',
 						),
 					),
 				),

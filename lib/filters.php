@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			restore_current_locale();	// Calls an action to clear the SucomUtil::get_locale() cache.
 
-			$notice_msg .= sprintf( __( 'The Google Merchant Feed XML cache for %1$d locales has been refreshed.', 'wpsso' ), $xml_count ) . ' ';
+			$notice_msg .= sprintf( __( 'The Google Merchant Feeds XML cache for %1$d locales has been refreshed.', 'wpsso' ), $xml_count ) . ' ';
 
 			return $notice_msg;
 		}

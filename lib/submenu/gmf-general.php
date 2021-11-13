@@ -35,7 +35,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 		protected function add_meta_boxes() {
 
 			$metabox_id      = 'gmf';
-			$metabox_title   = _x( 'Google Merchant Feed URLs', 'metabox title', 'wpsso-google-merchant-feed' );
+			$metabox_title   = _x( 'Google Merchant Feeds', 'metabox title', 'wpsso-google-merchant-feed' );
 			$metabox_screen  = $this->pagehook;
 			$metabox_context = 'normal';
 			$metabox_prio    = 'default';
