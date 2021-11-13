@@ -34,7 +34,7 @@ After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google
 
 <!-- /about -->
 
-<h3>Google Merchant Feeds Attributes</h3>
+<h3>Google Merchant Feed Attributes</h3>
 
 The following XML feed attributes are automatically generated from your WooCommerce, Easy Digital Downloads, and custom products, including WooCommerce product variations:
 
