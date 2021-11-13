@@ -23,7 +23,7 @@
 
 <p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce variations and additional WooCommerce product attributes are fully supported.</p>
 
-<p><strong>An XML feed for each language:</strong></p>
+<h3>An XML Feed for Each Language</h3>
 
 <p>Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically available for each installed WordPress language.</p>
 
@@ -31,7 +31,9 @@
 
 <!-- /about -->
 
-<p><strong>Google Merchant Feeds supported attributes:</strong></p>
+<h3>Google Merchant Feeds Attributes</h3>
+
+<p>The following XML feed attributes are automatically generated from your WooCommerce, Easy Digital Downloads, and custom products:</p>
 
 <ul>
 <li>ID <code>&#91;id&#93;</code></li>
