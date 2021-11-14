@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed 1.1.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-11-13 16:19-0800\n"
+"PO-Revision-Date: 2021-11-13 19:58-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,14 +13,13 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:182
-#: wpsso-google-merchant-feed.php:93
+#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:213
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:198
+#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:227
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
-msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est actuellement installée)."
+msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "lib file description"
@@ -36,6 +35,11 @@ msgstr "WPSSO flux de marchands Google"
 msgctxt "plugin description"
 msgid "Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
 msgstr "Flux de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés (WPSSO Core Premium requis)."
+
+#: gettext/gettext-lib-config.php:9
+msgctxt "plugin name"
+msgid "WPSSO Core (Premium)"
+msgstr "WPSSO Core (Premium)"
 
 #: lib/filters-messages.php:46
 msgid "Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically available for each installed WordPress language."

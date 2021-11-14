@@ -13,12 +13,11 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:180
-#: wpsso-google-merchant-feed.php:84
+#: gettext/gettext-lib-abstracts-com.php:6 lib/abstracts/com/add-on.php:213
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr ""
 
-#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:196
+#: gettext/gettext-lib-abstracts-com.php:7 lib/abstracts/com/add-on.php:227
 msgid ""
 "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is "
 "currently installed)."
@@ -39,6 +38,11 @@ msgctxt "plugin description"
 msgid ""
 "Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and "
 "Custom Products (WPSSO Core Premium Required)."
+msgstr ""
+
+#: gettext/gettext-lib-config.php:9
+msgctxt "plugin name"
+msgid "WPSSO Core (Premium)"
 msgstr ""
 
 #: lib/filters-messages.php:46

@@ -77,19 +77,23 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 				$this->p->debug->mark();
 			}
 
+			$doing_ajax = defined( 'DOING_AJAX' ) ? DOING_AJAX : false;
+
+			if ( $doing_ajax ) {
+
+				return;
+			}
+
 			$is_admin   = is_admin();
 			$info       = $this->cf[ 'plugin' ][ $this->ext ];
-			$addon_name = $info[ 'name' ];
-			$req_name   = $info[ 'req' ][ 'wpsso' ][ 'name' ];
-			$notice_msg = sprintf( __( 'The %1$s add-on requires the %2$s plugin.', 'wpsso-google-merchant-feed' ), $addon_name, $req_name );
+			$req_info   = $info[ 'req' ][ 'wpsso' ];
+			$notice_msg = $this->get_requires_plugin_notice( $info, $req_info );
 
 			if ( $is_admin ) {
 			
-				$error_pre = sprintf( '%s error:', __METHOD__ );
-
 				$this->p->notice->err( $notice_msg );
 
-				SucomUtil::safe_error_log( $error_pre . ' ' . $notice_msg, $strip_html = true );
+				SucomUtil::safe_error_log( __METHOD__ . ' error: ' . $notice_msg, $strip_html = true );
 			}
 
 			if ( $this->p->debug->enabled ) {
