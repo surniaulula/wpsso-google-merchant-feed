@@ -68,10 +68,37 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 			load_plugin_textdomain( 'wpsso-google-merchant-feed', false, 'wpsso-google-merchant-feed/languages/' );
 		}
 
-		/**
-		 * $is_admin, $doing_ajax, and $doing_cron available since WPSSO Core v8.8.0.
-		 */
-		public function init_objects( $is_admin = false, $doing_ajax = false, $doing_cron = false ) {
+		public function init_objects_std() {
+
+			$this->p =& Wpsso::get_instance();
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
+
+			$is_admin   = is_admin();
+			$info       = $this->cf[ 'plugin' ][ $this->ext ];
+			$addon_name = $info[ 'name' ];
+			$req_name   = $info[ 'req' ][ 'wpsso' ][ 'name' ];
+			$notice_msg = sprintf( __( 'The %1$s add-on requires the %2$s plugin.', 'wpsso-google-merchant-feed' ), $addon_name, $req_name );
+
+			if ( $is_admin ) {
+			
+				$error_pre = sprintf( '%s error:', __METHOD__ );
+
+				$this->p->notice->err( $notice_msg );
+
+				SucomUtil::safe_error_log( $error_pre . ' ' . $notice_msg, $strip_html = true );
+			}
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->log( strtolower( $notice_msg ) );
+			}
+		}
+
+		public function init_objects_pro() {
 
 			$this->p =& Wpsso::get_instance();
 
@@ -81,30 +108,6 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 			}
 
 			if ( $this->get_missing_requirements() ) {	// Returns false or an array of missing requirements.
-
-				return;	// Stop here.
-			}
-
-			if ( ! $this->p->check->pp() ) {
-
-				$info        = $this->cf[ 'plugin' ][ $this->ext ];
-				$addon_name  = $info[ 'name' ];
-				$req_name    = $info[ 'req' ][ 'wpsso' ][ 'name' ];
-				$notice_msg  = sprintf( __( 'The %1$s add-on requires the %2$s plugin.', 'wpsso-google-merchant-feed' ), $addon_name, $req_name );
-
-				if ( $is_admin ) {
-				
-					$error_pre = sprintf( '%s error:', __METHOD__ );
-
-					$this->p->notice->err( $notice_msg );
-
-					SucomUtil::safe_error_log( $error_pre . ' ' . $notice_msg, $strip_html = true );
-				}
-
-				if ( $this->p->debug->enabled ) {
-
-					$this->p->debug->log( strtolower( $notice_msg ) );
-				}
 
 				return;	// Stop here.
 			}
