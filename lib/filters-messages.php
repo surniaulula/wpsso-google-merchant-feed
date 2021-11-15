@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text .= '<blockquote class="top-info">';
 
-					$text .= __( 'Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or installed WordPress languages).', 'wpsso-google-merchant-feed' );
+					$text .= __( 'Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).', 'wpsso-google-merchant-feed' );
 
 					$text .= '</blockquote>';
 
