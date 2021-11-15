@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
-Tags: google, merchant feed, xml, woocommerce, edd, easy digital downloads
+Tags: merchant feed, xml, wpml, polylang, woocommerce, edd, easy digital downloads
 Contributors: jsmoriss
 Requires PHP: 7.0
 Requires At Least: 5.0
@@ -20,7 +20,7 @@ Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom P
 
 <!-- about -->
 
-The WPSSO Google Merchant Feeds add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each WordPress language (aka locale).
+The WPSSO Google Merchant Feeds add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each available language (as provided by Polylang, WPLM, or installed WordPress languages).
 
 There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds add-on automatically retrieves all available product information in the language (aka locale) requested.
 
@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 <h3>An XML Feed for Each Language</h3>
 
-Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically available for each installed WordPress language.
+Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or installed WordPress languages).
 
 After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.
 
@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.1.0-dev.4 (2021/11/14)**
+**Version 1.1.0-b.1 (2021/11/15)**
 
 * **New Features**
 	* None.
@@ -127,11 +127,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* Added a new 'wpsso_google_merchant_feed_url' filter.
+	* Used the new `WpssoUtil->get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
 	* Refactored the `SucomAddOn->get_missing_requirements()` method.
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
-	* WPSSO Core v9.8.0-dev.4.
+	* WPSSO Core v9.8.0-b.1.
 
 **Version 1.0.0 (2021/11/10)**
 
@@ -150,9 +151,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.1.0-dev.4 =
+= 1.1.0-b.1 =
 
-(2021/11/14) Added a new 'wpsso_google_merchant_feed_url' filter.
+(2021/11/15) Used the new `WpssoUtil->get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
 
 = 1.0.0 =
 
