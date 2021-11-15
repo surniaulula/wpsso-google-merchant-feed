@@ -80,9 +80,9 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( $request_locale !== $current_locale ) {
 
-				$avail_locales = SucomUtil::get_available_locales();	// Uses a local static cache.
+				$locale_names = SucomUtil::get_available_feed_locale_names();
 
-				if ( $request_locale && in_array( $request_locale, $avail_locales ) ) {	// Just in case.
+				if ( isset( $locale_names[ $request_locale ] ) ) {	// Just in case.
 
 					switch_to_locale( $request_locale );	// Calls an action to clear the SucomUtil::get_locale() cache.
 

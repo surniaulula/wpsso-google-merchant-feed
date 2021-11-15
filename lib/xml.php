@@ -55,9 +55,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			if ( ! empty( $columns[ 'meta_key' ] ) ) {	// Just in case.
 
 				$public_post_ids = WpssoPost::get_public_ids( array(
-					'meta_key'         => $columns[ 'meta_key' ],
-					'meta_value'       => 'product',
-					'suppress_filters' => false,	// Allow WPML (and others) to filter posts for the current language.
+					'meta_key'   => $columns[ 'meta_key' ],
+					'meta_value' => 'product',
 				) );
 
 				foreach ( $public_post_ids as $post_id ) {

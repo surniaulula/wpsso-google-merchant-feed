@@ -72,25 +72,9 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 					$table_rows[] = '<td colspan="5">' . $this->p->msgs->get( 'info-gmf-urls' ) . '</td>';
 
-					require_once trailingslashit( ABSPATH ) . 'wp-admin/includes/translation-install.php';
+					$locale_names = SucomUtil::get_available_feed_locale_names();
 
-					$translations  = wp_get_available_translations();	// Since WP v4.0.
-					$avail_locales = SucomUtil::get_available_locales();	// Uses a local static cache.
-
-					foreach ( $avail_locales as $locale ) {
-
-						if ( isset( $translations[ $locale ][ 'native_name' ] ) ) {
-
-							$native_name = $translations[ $locale ][ 'native_name' ];
-
-						} elseif ( 'en_US' === $locale ) {
-
-							$native_name = 'English (United States)';
-
-						} else {
-
-							$native_name = $locale;
-						}
+					foreach ( $locale_names as $locale => $native_name ) {
 
 						$url = WpssoGmfRewrite::get_url( $locale );
 

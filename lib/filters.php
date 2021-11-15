@@ -49,10 +49,11 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 		public function filter_cache_refreshed_notice( $notice_msg, $user_id, $read_cache ) {
 
-			$avail_locales = SucomUtil::get_available_locales();	// Uses a local static cache.
-			$xml_count     = 0;
+			$xml_count = 0;
 
-			foreach ( $avail_locales as $locale ) {
+			$locale_names = SucomUtil::get_available_feed_locale_names();	// Uses a local static cache.
+
+			foreach ( $locale_names as $locale => $native_name ) {
 
 				switch_to_locale( $locale );	// Calls an action to clear the SucomUtil::get_locale() cache. 
 
