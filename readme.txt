@@ -20,7 +20,7 @@ Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom P
 
 <!-- about -->
 
-The WPSSO Google Merchant Feeds add-on retrieves product information from WPSSO Core Premium and provides maintenance free XML feeds for each available language (as provided by Polylang, WPLM, or installed WordPress languages).
+The WPSSO Google Merchant Feeds add-on can retrieve product information from WPSSO Core Premium and provide maintenance free XML feeds for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).
 
 There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds add-on automatically retrieves all available product information in the language (aka locale) requested.
 
@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 <h3>An XML Feed for Each Language</h3>
 
-Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or installed WordPress languages).
+Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).
 
 After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.
 
@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.1.0-b.1 (2021/11/15)**
+**Version 1.1.0-rc.1 (2021/11/15)**
 
 * **New Features**
 	* None.
@@ -132,7 +132,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.0.
 	* WordPress v5.0.
-	* WPSSO Core v9.8.0-b.1.
+	* WPSSO Core v9.8.0-rc.1.
 
 **Version 1.0.0 (2021/11/10)**
 
@@ -151,7 +151,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.1.0-b.1 =
+= 1.1.0-rc.1 =
 
 (2021/11/15) Used the new `WpssoUtil->get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
 
