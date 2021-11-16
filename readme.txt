@@ -8,8 +8,8 @@ License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
 Tags: merchant feed, xml, wpml, polylang, woocommerce, edd, easy digital downloads
 Contributors: jsmoriss
-Requires PHP: 7.0
-Requires At Least: 5.0
+Requires PHP: 7.2
+Requires At Least: 5.2
 Tested Up To: 5.8.2
 WC Tested Up To: 5.9.0
 Stable Tag: 1.0.0
@@ -130,8 +130,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Used the new `WpssoUtil->get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
 	* Refactored the `SucomAddOn->get_missing_requirements()` method.
 * **Requires At Least**
-	* PHP v7.0.
-	* WordPress v5.0.
+	* PHP v7.2.
+	* WordPress v5.2.
 	* WPSSO Core v9.8.0.
 
 **Version 1.0.0 (2021/11/10)**
