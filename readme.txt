@@ -14,7 +14,7 @@ Tested Up To: 5.8.2
 WC Tested Up To: 5.9.0
 Stable Tag: 1.0.0
 
-Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
+Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
 
 == Description ==
 
@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 <h3>An XML Feed for Each Language</h3>
 
-Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).
+Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).
 
 After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.
 

@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feeds</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>1.0.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.2 or newer</td></tr>
@@ -25,7 +25,7 @@
 
 <h3>An XML Feed for Each Language</h3>
 
-<p>Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).</p>
+<p>Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).</p>
 
 <p>After activating the WPSSO Google Merchant Feeds add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.</p>
 
