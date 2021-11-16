@@ -1,8 +1,8 @@
-# Copyright (C) 2021 WPSSO Google Merchant Feeds
-# This file is distributed under the same license as the WPSSO Google Merchant Feeds package.
+# Copyright (C) 2021 WPSSO Google Merchant Feeds XML
+# This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds 1.1.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
@@ -30,7 +30,7 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin name"
-msgid "WPSSO Google Merchant Feeds"
+msgid "WPSSO Google Merchant Feeds XML"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
@@ -63,7 +63,7 @@ msgid "Google Merchant Feeds"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Google Merchant Feeds"
+msgid "WPSSO Google Merchant Feeds XML"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
