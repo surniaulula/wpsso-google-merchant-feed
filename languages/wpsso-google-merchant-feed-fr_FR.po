@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feeds 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2021-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2021-11-15 09:06-0800\n"
+"PO-Revision-Date: 2021-11-16 08:39-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -33,7 +33,7 @@ msgstr "WPSSO flux de marchands Google"
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin description"
-msgid "Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
+msgid "Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
 msgstr "Flux de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés (WPSSO Core Premium requis)."
 
 #: gettext/gettext-lib-config.php:9
@@ -42,8 +42,8 @@ msgid "WPSSO Core (Premium)"
 msgstr "WPSSO Core (Premium)"
 
 #: lib/filters-messages.php:46
-msgid "Google merchant XML feeds for your WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or installed WordPress languages)."
-msgstr "Les flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et vos produits personnalisés sont automatiquement créés pour chaque langue disponible (fourni par Polylang, WPLM, ou les langues WordPress installées)."
+msgid "Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages)."
+msgstr "Les flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et les produits personnalisés sont automatiquement créés pour chaque langue disponible (selon Polylang, WPLM ou les langues WordPress installées)."
 
 #: lib/filters.php:67
 msgid "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
@@ -63,7 +63,7 @@ msgid "https://wpsso.com/extend/plugins/wpsso-google-merchant-feed/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-google-merchant-feed/"
 
 #. Description of the plugin/theme
-msgid "Google Merchant Feeds for your WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
+msgid "Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
 msgstr "Flux de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés (WPSSO Core Premium requis)."
 
 #. Author of the plugin/theme
