@@ -115,7 +115,9 @@ if ( ! class_exists( 'WpssoGmfRegister' ) ) {
 				}
 			}
 
-			WpssoGmfRewrite::add_flush_rules();
+			WpssoGmfRewrite::add_rules();
+
+			WpssoGmfRewrite::flush_rules();
 		}
 
 		private function deactivate_plugin() {

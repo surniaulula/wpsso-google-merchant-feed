@@ -34,10 +34,10 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			add_action( 'init', array( __CLASS__, 'add_rules' ) );
-			add_action( 'activated_plugin', array( __CLASS__, 'add_flush_rules' ) );
-			add_action( 'after_switch_theme', array( __CLASS__, 'add_flush_rules' ) );
-			add_action( 'upgrader_process_complete', array( __CLASS__, 'add_flush_rules' ) );
+			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ) );
+			add_action( 'activated_plugin', array( __CLASS__, 'flush_rules' ) );
+			add_action( 'after_switch_theme', array( __CLASS__, 'flush_rules' ) );
+			add_action( 'upgrader_process_complete', array( __CLASS__, 'flush_rules' ) );
 			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ) );
 
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ) );
@@ -48,9 +48,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			add_rewrite_rule( '(' . WPSSOGMF_PAGENAME . ')\/.*?([^\/]*)\.xml', 'index.php?pagename=$matches[1]&gmflang=$matches[2]', 'top' );
 		}
 
-		static public function add_flush_rules() {
-
-			self::add_rules();
+		static public function flush_rules() {
 
 			flush_rewrite_rules();
 		}
