@@ -47,7 +47,7 @@ msgstr ""
 
 #: lib/filters-messages.php:46
 msgid ""
-"Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and "
+"Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and "
 "custom products are automatically created for each available language (as "
 "dictated by Polylang, WPLM, or the installed WordPress languages)."
 msgstr ""
@@ -59,7 +59,7 @@ msgstr ""
 
 #: lib/submenu/gmf-general.php:38
 msgctxt "metabox title"
-msgid "Google Merchant Feeds"
+msgid "Google Merchant Feeds XML"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
