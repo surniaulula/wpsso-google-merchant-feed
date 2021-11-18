@@ -92,7 +92,7 @@ WPSSO Google Merchant Feeds XML (WPSSO GMF) is an add-on for the [WPSSO Core Pre
 
 == Screenshots ==
 
-01. The Google Merchant Feeds settings page shows a complete list of available XML feed URLs.
+01. The WPSSO GMF settings page shows a complete list of available XML feed URLs.
 
 == Changelog ==
 
