@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.2.1-b.1 (2021/11/20)**
+**Version 1.2.1-rc.1 (2021/11/20)**
 
 * **New Features**
 	* None.
@@ -130,7 +130,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v9.8.1-b.1.
+	* WPSSO Core v9.8.1-rc.1.
 
 **Version 1.2.0 (2021/11/17)**
 
@@ -181,7 +181,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.2.1-b.1 =
+= 1.2.1-rc.1 =
 
 (2021/11/20) Fixed the `WP_Query->is_404` value before returning the XML file.
 
