@@ -100,8 +100,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			$wp_query->is_404 = false;
 
-			ini_set( 'implicit_flush', 1 );
-
+			ob_implicit_flush( true );
 			ob_end_flush();
 
 			$content     = WpssoGmfXml::get();
@@ -117,6 +116,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			echo $content;
 
 			flush();
+
+			sleep( 1 );
 
 			exit;
 		}
