@@ -117,6 +117,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.2.1-dev.1 (2021/11/20)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed the `WP_Query->is_404` value before returning the XML file.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v9.8.0.
+
 **Version 1.2.0 (2021/11/17)**
 
 * **New Features**
@@ -165,6 +180,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 1.2.1-dev.1 =
+
+(2021/11/20) Fixed the `WP_Query->is_404` value before returning the XML file.
 
 = 1.2.0 =
 
