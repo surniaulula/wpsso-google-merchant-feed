@@ -96,6 +96,14 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				}
 			}
 
+			global $wp_query;
+
+			$wp_query->is_404 = false;
+
+			ini_set( 'implicit_flush', 1 );
+
+			ob_end_flush();
+
 			$content     = WpssoGmfXml::get();
 			$disposition = 'attachment';
 			$filename    = $request_pagename . '-' . $request_locale . '.xml';
@@ -107,6 +115,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			header( 'Content-Length: ' . $length );
 
 			echo $content;
+
+			flush();
 
 			exit;
 		}
