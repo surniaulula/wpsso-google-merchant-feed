@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.8.2
  * WC Tested Up To: 5.9.0
- * Version: 1.2.1
+ * Version: 1.2.2-dev.1
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -90,7 +90,7 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 			$notice_msg = $this->get_requires_plugin_notice( $info, $req_info );
 
 			if ( $is_admin ) {
-			
+
 				$this->p->notice->err( $notice_msg );
 
 				SucomUtil::safe_error_log( __METHOD__ . ' error: ' . $notice_msg, $strip_html = true );

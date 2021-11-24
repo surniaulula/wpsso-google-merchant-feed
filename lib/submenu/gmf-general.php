@@ -76,9 +76,9 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
-						$url = WpssoGmfRewrite::get_url( $locale );
+						$url  = WpssoGmfRewrite::get_url( $locale );
 
-						$table_rows[ 'gmf-url-' . $locale ] = '' . 
+						$table_rows[ 'gmf_url_' . $locale ] = '' . 
 							$this->form->get_th_html( $native_name ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) . '</td>';
 					}
