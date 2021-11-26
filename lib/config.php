@@ -168,12 +168,25 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			require_once WPSSOGMF_PLUGINDIR . 'lib/xml.php';
 			require_once WPSSOGMF_PLUGINDIR . 'vendor/autoload.php';
 
-			add_filter( 'wpssogmf_load_lib', array( 'WpssoGmfConfig', 'load_lib' ), 10, 3 );
+			add_filter( 'wpssogmf_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
 		}
 
 		public static function load_lib( $success = false, $filespec = '', $classname = '' ) {
 
-			if ( false === $success && ! empty( $filespec ) ) {
+			if ( false !== $success ) {
+
+				return $success;
+			}
+
+			if ( ! empty( $classname ) ) {
+
+				if ( class_exists( $classname ) ) {
+
+					return $classname;
+				}
+			}
+
+			if ( ! empty( $filespec ) ) {
 
 				$file_path = WPSSOGMF_PLUGINDIR . 'lib/' . $filespec . '.php';
 
