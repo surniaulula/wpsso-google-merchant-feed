@@ -121,7 +121,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:description'       => 'setDescription',
 				'product:url'               => 'setLink',
 				'product:mfr_part_no'       => 'setMpn',
-				'product:category'          => 'setGoogleCategory',	// The product category ID according to the Google product taxonomy.
+				'product:category'          => 'setGoogleCategory',	// Product category ID from Google product taxonomy.
 				'product:retailer_category' => 'setProductType',	// String to organize bidding and reporting in Google Ads Shopping campaigns.
 				'product:brand'             => 'setBrand',
 				'product:availability'      => 'setAvailaility',
