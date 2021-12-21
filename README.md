@@ -17,17 +17,15 @@
 
 <!-- about -->
 
-<p>The WPSSO Google Merchant Feeds XML add-on can retrieve product information from WPSSO Core Premium and provide maintenance free XML feeds for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).</p>
+<p><strong>WPSSO Google Merchant Feeds XML add-on retrieves product information from <a href="https://wpsso.com/">WPSSO Core Premium</a> and provides maintenance free XML feeds for each available language.</strong></p>
 
 <p>There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds XML add-on automatically retrieves all available product information in the language (aka locale) requested.</p>
 
-<p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds XML add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce product variations and additional WooCommerce product attributes are fully supported.</p>
+<p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds XML add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce product variations and additional WooCommerce product attributes are also fully supported.</p>
 
 <h3>An XML Feed for Each Language</h3>
 
-<p>Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).</p>
-
-<p>After activating the WPSSO Google Merchant Feeds XML add-on, see the SSO &gt; Google Merchant Feeds settings page for a complete list of available feed URLs.</p>
+<p>Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or the installed WordPress languages). After activating the WPSSO Google Merchant Feeds XML add-on, see the SSO &gt; Google Merchant Feeds settings page for the list of available feed URLs.</p>
 
 <!-- /about -->
 
@@ -64,9 +62,9 @@
 
 <h3>WPSSO Core Premium Required</h3>
 
-<p>WPSSO Google Merchant Feeds XML (WPSSO GMF) is an add-on for the <a href="https://wpsso.com/extend/plugins/wpsso/">WPSSO Core Premium plugin</a>.</p>
+<p>WPSSO Google Merchant Feeds XML (WPSSO GMF) is an add-on for the <a href="https://wpsso.com/">WPSSO Core Premium plugin</a>.</p>
 
-<p><strong>The WPSSO Core Premium plugin provides:</strong></p>
+<p>The <a href="https://wpsso.com/">WPSSO Core Premium plugin</a> provides:</p>
 
 <ul>
 <li>An integration module for the WooCommerce plugin.</li>
