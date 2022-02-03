@@ -19,6 +19,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
+		/**
+		 * $read_cache = false when called by WpssoGmfFilters->filter_cache_refreshed_notice().
+		 */
 		static public function get( $read_cache = true ) {
 
 			$wpsso =& Wpsso::get_instance();

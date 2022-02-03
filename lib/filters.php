@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			}
 		}
 
-		public function filter_cache_refreshed_notice( $notice_msg, $user_id, $read_cache ) {
+		public function filter_cache_refreshed_notice( $notice_msg, $user_id, $read_cache = false ) {
 
 			$xml_count = 0;
 
