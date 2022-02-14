@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function add_rules() {
 
-			add_rewrite_rule( '(' . WPSSOGMF_PAGENAME . ')\/.*?([^\/]*)\.xml', 'index.php?pagename=$matches[1]&gmflang=$matches[2]', 'top' );
+			add_rewrite_rule( '^(' . WPSSOGMF_PAGENAME . ')\/.*?([^\/]*)\.xml', 'index.php?pagename=$matches[1]&gmflang=$matches[2]', 'top' );
 		}
 
 		static public function flush_rules() {
