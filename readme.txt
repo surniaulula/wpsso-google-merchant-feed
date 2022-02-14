@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.0-rc.1 (2022/02/14)**
+**Version 1.4.0 (2022/02/14)**
 
 * **New Features**
 	* None.
@@ -227,7 +227,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.0-rc.1 =
+= 1.4.0 =
 
 (2022/02/14) Added support for plain feed URLs when WordPress permalinks are disabled.
 
