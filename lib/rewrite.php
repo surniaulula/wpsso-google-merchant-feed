@@ -87,8 +87,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				} else {
 
 					$default_locale = SucomUtil::get_locale( 'default' );
-
-					$redirect_url = self::get_url( $default_locale );
+					$redirect_url   = self::get_url( $default_locale );
 
 					wp_redirect( $redirect_url );
 
@@ -124,11 +123,18 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function get_url( $locale, $blog_id = null ) {
 
-			$pagename = WPSSOGMF_PAGENAME;
+			global $wp_rewrite;
 
-			$url = get_home_url( $blog_id, $pagename . '/' . $locale . '.xml' );
+			if ( ! $wp_rewrite->using_permalinks() ) {
 
-			return apply_filters( 'wpsso_google_merchant_feed_url', $url, $locale, $pagename, $blog_id );
+				$url = add_query_arg( array( 'pagename' => WPSSOGMF_PAGENAME, 'gmflang'  => $locale ), get_home_url( $blog_id ) );
+
+			} else {
+
+				$url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $locale . '.xml' );
+			}
+
+			return apply_filters( 'wpsso_google_merchant_feed_url', $url, $locale, WPSSOGMF_PAGENAME, $blog_id );
 		}
 	}
 }
