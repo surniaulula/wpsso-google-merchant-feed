@@ -115,6 +115,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.4.0-rc.1 (2022/02/14)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added support for plain feed URLs when WordPress permalinks are disabled.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v10.3.0.
+
 **Version 1.3.0 (2022/01/19)**
 
 * **New Features**
@@ -211,6 +226,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 1.4.0-rc.1 =
+
+(2022/02/14) Added support for plain feed URLs when WordPress permalinks are disabled.
 
 = 1.3.0 =
 
