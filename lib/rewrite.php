@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function add_rules() {
 
-			add_rewrite_rule( '^(' . WPSSOGMF_PAGENAME . ')\/.*?([^\/]*)\.xml', 'index.php?pagename=$matches[1]&gmflang=$matches[2]', 'top' );
+			add_rewrite_rule( '^' . WPSSOGMF_PAGENAME . '\/([^\/]+)\.xml$', 'index.php?pagename=' . WPSSOGMF_PAGENAME . '&gmflang=$matches[1]', 'top' );
 		}
 
 		static public function flush_rules() {
@@ -102,9 +102,9 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			ob_implicit_flush( true );
 			ob_end_flush();
 
-			$content     = WpssoGmfXml::get();
 			$disposition = 'attachment';
-			$filename    = $request_pagename . '-' . $request_locale . '.xml';
+			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
+			$content     = WpssoGmfXml::get();
 			$length      = strlen( $content );
 
 			header( 'HTTP/1.1 200 OK' );
