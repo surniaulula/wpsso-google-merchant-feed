@@ -115,6 +115,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.4.1 (2022/02/15)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed the XML rewrite rule to work with WordPress '/%category%/' permalinks.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v10.3.1.
+
 **Version 1.4.0 (2022/02/14)**
 
 * **New Features**
@@ -226,6 +241,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 1.4.1 =
+
+(2022/02/15) Fixed the XML rewrite rule to work with WordPress '/%category%/' permalinks.
 
 = 1.4.0 =
 
