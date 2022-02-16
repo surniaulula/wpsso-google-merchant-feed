@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Updated the `Feed` and `Product` class names with their full paths.
+	* Updated use of `Feed` and `Product` class names with full class paths.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -259,7 +259,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.4.2-dev.4 =
 
-(2022/02/15) Updated the `Feed` and `Product` class names with their full paths.
+(2022/02/15) Updated use of `Feed` and `Product` class names with full class paths.
 
 = 1.4.1 =
 
