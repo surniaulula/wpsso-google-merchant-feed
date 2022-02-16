@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.2-b.2 (2022/02/15)**
+**Version 1.4.2-rc.2 (2022/02/16)**
 
 * **New Features**
 	* None.
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v10.3.1.
+	* WPSSO Core v11.0.0-rc.2.
 
 **Version 1.4.1 (2022/02/15)**
 
@@ -257,9 +257,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.2-b.2 =
+= 1.4.2-rc.2 =
 
-(2022/02/15) Updated instantiation of `Feed` and `Product` classes with full class paths.
+(2022/02/16) Updated instantiation of `Feed` and `Product` classes with full class paths.
 
 = 1.4.1 =
 
