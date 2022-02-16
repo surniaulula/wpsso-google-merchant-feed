@@ -10,8 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-use Vitalybaev\GoogleMerchant\Feed;
-use Vitalybaev\GoogleMerchant\Product;
+use Vitalybaev\GoogleMerchant\Feed as GoogleMerchantFeed;
+use Vitalybaev\GoogleMerchant\Product as GoogleMerchantProduct;
 use Vitalybaev\GoogleMerchant\Product\Shipping;
 use Vitalybaev\GoogleMerchant\Product\Availability\Availability;
 
@@ -51,7 +51,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$link  = SucomUtil::get_home_url();
 			$desc  = SucomUtil::get_site_description();
 
-			$feed = new Feed( $title, $link, $desc );
+			$feed = new GoogleMerchantFeed( $title, $link, $desc );
 
 			$columns = WpssoPost::get_sortable_columns( $col_key = 'og_type' );
 
@@ -91,7 +91,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 		static private function add_feed_product( &$feed, $mt_og, $mt_offer = null ) {
 
-			$product = new Product();
+			$product = new GoogleMerchantProduct();
 
 			self::add_product_data( $product, $mt_og, $dupe_check );
 
