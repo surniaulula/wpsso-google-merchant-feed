@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.4.2-b.1 (2022/02/15)**
+**Version 1.4.2-b.2 (2022/02/15)**
 
 * **New Features**
 	* None.
@@ -257,7 +257,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.4.2-b.1 =
+= 1.4.2-b.2 =
 
 (2022/02/15) Updated instantiation of `Feed` and `Product` classes with full class paths.
 
