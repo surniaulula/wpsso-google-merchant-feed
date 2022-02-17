@@ -38,7 +38,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			add_action( 'activated_plugin', array( __CLASS__, 'flush_rules' ) );
 			add_action( 'after_switch_theme', array( __CLASS__, 'flush_rules' ) );
 			add_action( 'upgrader_process_complete', array( __CLASS__, 'flush_rules' ) );
-			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ) );
+			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -2000 );
 
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ) );
 		}

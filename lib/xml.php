@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 use Vitalybaev\GoogleMerchant\Feed;
 use Vitalybaev\GoogleMerchant\Product;
 use Vitalybaev\GoogleMerchant\Product\Shipping;
-use Vitalybaev\GoogleMerchant\Product\Availability\Availability;
 
 if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
