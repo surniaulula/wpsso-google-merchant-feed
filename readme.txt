@@ -12,7 +12,7 @@ Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.1
 WC Tested Up To: 6.2.0
-Stable Tag: 1.5.0
+Stable Tag: 1.5.1
 
 Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
 
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.0 (2022/02/22)**
+**Version 1.5.1 (2022/02/22)**
 
 * **New Features**
 	* None.
@@ -272,7 +272,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.0 =
+= 1.5.1 =
 
 (2022/02/22) Updated the composer autoloader suffix from "abc0b15c5128b916f65b9175a1fc5559" to "WpssoGmf".
 
