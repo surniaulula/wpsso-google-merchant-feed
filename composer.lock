@@ -92,13 +92,13 @@
             },
             "type": "library",
             "autoload": {
-                "psr-4": {
-                    "Sabre\\Xml\\": "lib/"
-                },
                 "files": [
                     "lib/Deserializer/functions.php",
                     "lib/Serializer/functions.php"
-                ]
+                ],
+                "psr-4": {
+                    "Sabre\\Xml\\": "lib/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -134,16 +134,16 @@
         },
         {
             "name": "vitalybaev/google-merchant-feed",
-            "version": "v2.3.0",
+            "version": "v2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vitalybaev/php-google-merchant-feed.git",
-                "reference": "b1e199d356ed260ffb18f5f081c050380b457a29"
+                "reference": "1fe34c269ed2a37079b9ef931c2cb9c00cbba678"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vitalybaev/php-google-merchant-feed/zipball/b1e199d356ed260ffb18f5f081c050380b457a29",
-                "reference": "b1e199d356ed260ffb18f5f081c050380b457a29",
+                "url": "https://api.github.com/repos/vitalybaev/php-google-merchant-feed/zipball/1fe34c269ed2a37079b9ef931c2cb9c00cbba678",
+                "reference": "1fe34c269ed2a37079b9ef931c2cb9c00cbba678",
                 "shasum": ""
             },
             "require": {
@@ -174,9 +174,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vitalybaev/php-google-merchant-feed/issues",
-                "source": "https://github.com/vitalybaev/php-google-merchant-feed/tree/v2.3.0"
+                "source": "https://github.com/vitalybaev/php-google-merchant-feed/tree/v2.5.0"
             },
-            "time": "2021-09-12T10:50:47+00:00"
+            "time": "2022-02-14T21:15:53+00:00"
         }
     ],
     "packages-dev": [],

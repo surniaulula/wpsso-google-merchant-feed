@@ -1,5 +1,8 @@
 {
     "require": {
         "vitalybaev/google-merchant-feed": "^2.3"
+    },
+    "config": {
+        "autoloader-suffix": "WpssoGmf"
     }
 }
