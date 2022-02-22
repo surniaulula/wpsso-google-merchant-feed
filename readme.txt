@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.0-rc.1 (2022/02/22)**
+**Version 1.5.0 (2022/02/22)**
 
 * **New Features**
 	* None.
@@ -272,7 +272,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.0-rc.1 =
+= 1.5.0 =
 
 (2022/02/22) Updated the composer autoloader suffix from "abc0b15c5128b916f65b9175a1fc5559" to "WpssoGmf".
 
