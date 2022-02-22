@@ -162,11 +162,11 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 
 		public static function require_libs( $plugin_file ) {
 
+			require_once WPSSOGMF_PLUGINDIR . 'vendor/autoload.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/filters.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/register.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/rewrite.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/xml.php';
-			require_once WPSSOGMF_PLUGINDIR . 'vendor/autoload.php';
 
 			add_filter( 'wpssogmf_load_lib', array( __CLASS__, 'load_lib' ), 10, 3 );
 		}
