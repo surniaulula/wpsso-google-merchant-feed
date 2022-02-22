@@ -13,7 +13,7 @@
  * Description: Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
  * Requires PHP: 7.2
  * Requires At Least: 5.2
- * Tested Up To: 5.9.0
+ * Tested Up To: 5.9.1
  * WC Tested Up To: 6.2.0
  * Version: 1.5.0
  * 
