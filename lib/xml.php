@@ -197,7 +197,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$mod       = $wpsso->post->get_mod( $post_id );
 				$max_nums  = $wpsso->util->get_max_nums( $mod, 'og' );
 				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'schema', $mod,
-					$check_dupes = true, $md_pre = array( 'schema', 'og' ), $use_default = true );
+					$check_dupes = true, $md_pre = array( 'schema', 'og' ) );
 			}
 
 			if ( is_array( $mt_images ) ) {	// Just in case.
