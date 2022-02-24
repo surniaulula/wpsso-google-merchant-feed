@@ -12,7 +12,7 @@ Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.1
 WC Tested Up To: 6.2.1
-Stable Tag: 1.5.1
+Stable Tag: 1.5.2
 
 Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
 
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.2 (2022/02/24)**
+**Version 1.5.2 (2022/02/25)**
 
 * **New Features**
 	* None.
@@ -290,7 +290,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.5.2 =
 
-(2022/02/24) Fixed a typo in the `setAvailability()` method name. Renamed `WpssoOpenGraph->get_all_images()` to `WpssoMedia->get_all_images()`.
+(2022/02/25) Fixed a typo in the `setAvailability()` method name. Renamed `WpssoOpenGraph->get_all_images()` to `WpssoMedia->get_all_images()`.
 
 = 1.5.1 =
 
