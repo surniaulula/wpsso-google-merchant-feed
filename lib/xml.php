@@ -126,7 +126,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:category'          => 'setGoogleCategory',	// Product category ID from Google product taxonomy.
 				'product:retailer_category' => 'setProductType',	// String to organize bidding and reporting in Google Ads Shopping campaigns.
 				'product:brand'             => 'setBrand',
-				'product:availability'      => 'setAvailaility',
+				'product:availability'      => 'setAvailability',
 				'product:condition'         => 'setCondition',
 				'product:color'             => 'setColor',
 				'product:material'          => 'setMaterial',
@@ -234,7 +234,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				if ( isset( $mt_data[ $mt_name ] ) ) {
 
 					$val = $mt_data[ $mt_name ];
-
 					if ( isset( $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ] ) ) {
 
 						$mt_data[ $mt_name ] = $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ];

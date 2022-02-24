@@ -68,16 +68,16 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			'head' => array(
 				'gmf_content_map' => array(
 					'product:availability' => array(
-				 		'https://schema.org/BackOrder'           => 'backorder',	// BACKORDER.
-				 		'https://schema.org/Discontinued'        => 'out of stock',	// OUT_OF_STOCK.
-				 		'https://schema.org/InStock'             => 'in stock',		// IN_STOCK.
-				 		'https://schema.org/InStoreOnly'         => 'in stock',		// IN_STOCK.
-				 		'https://schema.org/LimitedAvailability' => 'in stock',		// IN_STOCK.
-				 		'https://schema.org/OnlineOnly'          => 'in stock',		// IN_STOCK.
-				 		'https://schema.org/OutOfStock'          => 'out of stock',	// OUT_OF_STOCK.
-				 		'https://schema.org/PreOrder'            => 'preorder',		// PREORDER.
-			 			'https://schema.org/PreSale'             => 'preorder',		// PREORDER.
-				 		'https://schema.org/SoldOut'             => 'out of stock',	// OUT_OF_STOCK.
+						'https://schema.org/BackOrder'           => 'backorder',	// BACKORDER.
+						'https://schema.org/Discontinued'        => 'out_of_stock',	// OUT_OF_STOCK.
+						'https://schema.org/InStock'             => 'in_stock',		// IN_STOCK.
+						'https://schema.org/InStoreOnly'         => 'in_stock',		// IN_STOCK.
+						'https://schema.org/LimitedAvailability' => 'in_stock',		// IN_STOCK.
+						'https://schema.org/OnlineOnly'          => 'in_stock',		// IN_STOCK.
+						'https://schema.org/OutOfStock'          => 'out_of_stock',	// OUT_OF_STOCK.
+						'https://schema.org/PreOrder'            => 'preorder',		// PREORDER.
+						'https://schema.org/PreSale'             => 'preorder',		// PREORDER.
+						'https://schema.org/SoldOut'             => 'out_of_stock',	// OUT_OF_STOCK.
 					),
 					'product:condition' => array(
 						'https://schema.org/DamagedCondition'     => 'used',		// USED.
