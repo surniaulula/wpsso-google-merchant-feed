@@ -122,7 +122,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* None.
+	* Fixed a typo in the `setAvailability()` method name.
 * **Developer Notes**
 	* Renamed `WpssoOpenGraph->get_all_images()` to `WpssoMedia->get_all_images()`.
 * **Requires At Least**
@@ -290,7 +290,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.5.2-rc.2 =
 
-(2022/02/24) Renamed `WpssoOpenGraph->get_all_images()` to `WpssoMedia->get_all_images()`.
+(2022/02/24) Fixed a typo in the `setAvailability()` method name. Renamed `WpssoOpenGraph->get_all_images()` to `WpssoMedia->get_all_images()`.
 
 = 1.5.1 =
 
