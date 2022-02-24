@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 1.5.2-rc.2 (2022/02/24)**
+**Version 1.5.2 (2022/02/24)**
 
 * **New Features**
 	* None.
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.2.0-rc.2.
+	* WPSSO Core v11.2.0.
 
 **Version 1.5.1 (2022/02/22)**
 
@@ -288,7 +288,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 1.5.2-rc.2 =
+= 1.5.2 =
 
 (2022/02/24) Fixed a typo in the `setAvailability()` method name. Renamed `WpssoOpenGraph->get_all_images()` to `WpssoMedia->get_all_images()`.
 
