@@ -115,6 +115,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 1.5.3 (2022/02/25)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed inclusion of archive pages, like the WooCommerce shop page, in the Google Merchant Feeds XML.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.2.0.
+
 **Version 1.5.2 (2022/02/25)**
 
 * **New Features**
@@ -287,6 +302,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 1.5.3 =
+
+(2022/02/25) Fixed inclusion of archive pages, like the WooCommerce shop page, in the Google Merchant Feeds XML.
 
 = 1.5.2 =
 
