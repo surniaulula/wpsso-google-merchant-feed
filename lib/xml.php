@@ -30,15 +30,16 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$locale     = SucomUtil::get_locale();
-			$cache_salt = __METHOD__ . '(locale:' . $locale . ')';
-			$cache_type = 'file';
-			$exp_secs   = DAY_IN_SECONDS;
-			$pre_ext    = '.xml';
+			$locale         = SucomUtil::get_locale();
+			$cache_salt     = __METHOD__ . '(locale:' . $locale . ')';
+			$cache_md5_pre  = 'wpsso_g_';
+			$cache_type     = 'file';
+			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
+			$pre_ext        = '.xml';
 
-			if ( $read_cache ) {
+			if ( $read_cache && $cache_exp_secs ) {
 
-				$xml = $wpsso->cache->get_cache_data( $cache_salt, $cache_type, $exp_secs, $pre_ext );
+				$xml = $wpsso->cache->get_cache_data( $cache_salt, $cache_type, $cache_exp_secs, $pre_ext );
 
 				if ( false !== $xml ) {
 
@@ -65,6 +66,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					$mod = $wpsso->post->get_mod( $post_id );
 
+					if ( $mod[ 'is_archive' ] ) {	// Exclude the shop page.
+
+						continue;
+					}
+
 					$mt_og = $wpsso->og->get_array( $mod, $size_names = 'schema' );
 
 					if ( empty( $mt_og[ 'product:offers' ] ) ) {
@@ -83,7 +89,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$xml = $feed->build();
 
-			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $exp_secs, $pre_ext );
+			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $pre_ext );
 
 			return $xml;
 		}

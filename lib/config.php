@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '1.5.2',	// Plugin version.
+					'version'     => '1.5.3',	// Plugin version.
 					'opt_version' => '1',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feeds XML',
@@ -84,6 +84,15 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/NewCondition'         => 'new',		// NEW_PRODUCT.
 						'https://schema.org/RefurbishedCondition' => 'refurbished',	// REFURBISHED.
 						'https://schema.org/UsedCondition'        => 'used',		// USED.
+					),
+				),
+			),
+			'wp' => array(
+				'file' => array(
+					'wpsso_g_' => array(
+						'label'  => 'Google Merchant Feeds XML',
+						'value'  => DAY_IN_SECONDS,
+						'filter' => 'wpsso_cache_expire_gmf_xml',
 					),
 				),
 			),
