@@ -98,7 +98,7 @@ The [WPSSO Core Premium plugin](https://wpsso.com/) provides:
 
 Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
-* {major} = Major structural code changes / re-writes or incompatible API changes.
+* {major} = Major structural code changes and/or incompatible API changes (ie. breaking changes).
 * {minor} = New functionality was added or improved in a backwards-compatible manner.
 * {bugfix} = Backwards-compatible bug fixes or small improvements.
 * {stage}.{level} = Pre-production release: dev &lt; a (alpha) &lt; b (beta) &lt; rc (release candidate).
