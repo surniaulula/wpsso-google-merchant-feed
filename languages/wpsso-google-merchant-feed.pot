@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 1.5.3\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.0.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -45,14 +45,63 @@ msgctxt "plugin name"
 msgid "WPSSO Core (Premium)"
 msgstr ""
 
-#: lib/filters-messages.php:46
+#: lib/filters-messages.php:48
 msgid ""
 "Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and "
 "custom products are automatically created for each available language (as "
 "dictated by Polylang, WPLM, or the installed WordPress languages)."
 msgstr ""
 
-#: lib/filters.php:67
+#: lib/filters-messages.php:71
+msgid ""
+"The dimensions used for the Google Merchant Feeds image (default dimensions "
+"are %s)."
+msgstr ""
+
+#: lib/filters-messages.php:94
+msgid "A customized image ID for the Google Merchant Feeds."
+msgstr ""
+
+#: lib/filters-messages.php:96 lib/filters-messages.php:106
+msgid ""
+"The default value is inherited from the Schema markup or priority image."
+msgstr ""
+
+#: lib/filters-messages.php:98
+msgid "This option is disabled if a custom image URL is entered."
+msgstr ""
+
+#: lib/filters-messages.php:104
+msgid ""
+"A customized image URL (instead of an image ID) for the Google Merchant "
+"Feeds."
+msgstr ""
+
+#: lib/filters-messages.php:108
+msgid "This option is disabled if a custom image ID is selected."
+msgstr ""
+
+#: lib/filters.php:60 lib/filters.php:72
+msgctxt "option label"
+msgid "Google Merchant Feeds"
+msgstr ""
+
+#: lib/filters.php:95
+msgctxt "metabox title"
+msgid "Google Merchant Feeds"
+msgstr ""
+
+#: lib/filters.php:100
+msgctxt "option label"
+msgid "Image ID"
+msgstr ""
+
+#: lib/filters.php:107
+msgctxt "option label"
+msgid "or an Image URL"
+msgstr ""
+
+#: lib/filters.php:133
 msgid ""
 "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr ""

@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						continue;
 					}
 
-					$mt_og = $wpsso->og->get_array( $mod, $size_names = 'schema' );
+					$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf' );
 
 					if ( empty( $mt_og[ 'product:offers' ] ) ) {
 
@@ -202,8 +202,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$post_id   = $mt_data[ 'product:retailer_item_id' ];
 				$mod       = $wpsso->post->get_mod( $post_id );
 				$max_nums  = $wpsso->util->get_max_nums( $mod, 'og' );
-				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'schema', $mod,
-					$check_dupes = true, $md_pre = array( 'schema', 'og' ) );
+				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'wpsso-gmf', $mod,
+					$check_dupes = true, $md_pre = array( 'gmf', 'schema', 'og' ) );
 			}
 
 			if ( is_array( $mt_images ) ) {	// Just in case.
