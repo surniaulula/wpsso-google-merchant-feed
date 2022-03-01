@@ -115,6 +115,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.0.0-dev.1 (2022/03/01)**
+
+* **New Features**
+	* Added a new "Google Merchant Feeds" image size under the SSO &gt; Advanced Settings &gt; Plugin Settings &gt; Image Sizes tab.
+* **Improvements**
+	* Added new "Google Merchant Feeds" section under the Document SSO &gt; Edit Media tab.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.4.0-dev.1.
+
 **Version 1.5.3 (2022/02/25)**
 
 * **New Features**
@@ -302,6 +317,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 2.0.0-dev.1 =
+
+(2022/03/01) Added a new "Google Merchant Feeds" image size.
 
 = 1.5.3 =
 
