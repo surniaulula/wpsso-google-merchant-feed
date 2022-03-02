@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 				require_once WPSSOGMF_PLUGINDIR . 'lib/filters-messages.php';
 
 				$this->msgs = new WpssoGmfFiltersMessages( $plugin, $addon );
-			
+
 				$this->p->util->add_plugin_filters( $this, array(
 					'plugin_image_sizes_rows'            => 2,	// SSO > Advanced Settings > Plugin Settings > Image Sizes tab.
 					'metabox_sso_edit_media_schema_rows' => 4,
