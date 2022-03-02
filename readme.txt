@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.0.0 (2022/03/01)**
+**Version 2.0.0 (2022/03/02)**
 
 * **New Features**
 	* Added a new "Google Merchant Feeds" image size under the SSO &gt; Advanced Settings &gt; Plugin Settings &gt; Image Sizes tab.
@@ -320,7 +320,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 2.0.0 =
 
-(2022/03/01) Added a new "Google Merchant Feeds" image size.
+(2022/03/02) Added a new "Google Merchant Feeds" image size.
 
 = 1.5.3 =
 
