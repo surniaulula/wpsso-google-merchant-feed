@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feeds XML 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-01 07:16-0800\n"
+"PO-Revision-Date: 2022-03-01 07:21-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -41,11 +41,55 @@ msgctxt "plugin name"
 msgid "WPSSO Core (Premium)"
 msgstr "WPSSO Core (Premium)"
 
-#: lib/filters-messages.php:46
+#: lib/filters-messages.php:48
 msgid "Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages)."
 msgstr "Les flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et les produits personnalisés sont automatiquement créés pour chaque langue disponible (selon Polylang, WPLM ou les langues WordPress installées)."
 
-#: lib/filters.php:67
+#: lib/filters-messages.php:71
+msgid "The dimensions used for the Google Merchant Feeds image (default dimensions are %s)."
+msgstr "Les dimensions utilisées pour l'image des flux marchands Google (les dimensions par défaut sont %s)."
+
+#: lib/filters-messages.php:94
+msgid "A customized image ID for the Google Merchant Feeds."
+msgstr "ID d'image personnalisé pour les flux marchands Google."
+
+#: lib/filters-messages.php:96 lib/filters-messages.php:106
+msgid "The default value is inherited from the Schema markup or priority image."
+msgstr "La valeur par défaut est héritée du balisage de Schéma ou de l'image prioritaire."
+
+#: lib/filters-messages.php:98
+msgid "This option is disabled if a custom image URL is entered."
+msgstr "Cette option est désactivée si une URL d'image personnalisée est fournie."
+
+#: lib/filters-messages.php:104
+msgid "A customized image URL (instead of an image ID) for the Google Merchant Feeds."
+msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour les flux marchands Google."
+
+#: lib/filters-messages.php:108
+msgid "This option is disabled if a custom image ID is selected."
+msgstr "Cette option est désactivée si un ID d'image personnalisé est sélectionné."
+
+#: lib/filters.php:60 lib/filters.php:72
+msgctxt "option label"
+msgid "Google Merchant Feeds"
+msgstr "Flux de marchands Google"
+
+#: lib/filters.php:95
+msgctxt "metabox title"
+msgid "Google Merchant Feeds"
+msgstr "Flux de marchands Google"
+
+#: lib/filters.php:100
+msgctxt "option label"
+msgid "Image ID"
+msgstr "ID d'une image"
+
+#: lib/filters.php:107
+msgctxt "option label"
+msgid "or an Image URL"
+msgstr "ou URL d'une image"
+
+#: lib/filters.php:133
 msgid "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr "Le cache XML des flux de marchands Google pour %1$d langues a été actualisé."
 
