@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '2.0.0',	// Plugin version.
+					'version'     => '2.1.0-dev.5',	// Plugin version.
 					'opt_version' => '1',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feeds XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wpsso.com/extend/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '11.4.0',
+							'min_version'   => '11.5.0-dev.5',
 						),
 					),
 
@@ -193,6 +193,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static function require_libs( $plugin_file ) {
 
 			require_once WPSSOGMF_PLUGINDIR . 'vendor/autoload.php';
+			require_once WPSSOGMF_PLUGINDIR . 'lib/actions.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/filters.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/register.php';
 			require_once WPSSOGMF_PLUGINDIR . 'lib/rewrite.php';

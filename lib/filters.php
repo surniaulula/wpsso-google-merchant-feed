@@ -48,7 +48,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array(
 					'plugin_image_sizes_rows'            => 2,	// SSO > Advanced Settings > Plugin Settings > Image Sizes tab.
-					'metabox_sso_edit_media_schema_rows' => 4,
+					'metabox_sso_edit_media_schema_rows' => 5,
 				) );
 			}
 		}
@@ -76,16 +76,41 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			return $table_rows;
 		}
 
-		public function filter_metabox_sso_edit_media_schema_rows( $table_rows, $form, $head_info, $mod ) {
+		public function filter_metabox_sso_edit_media_schema_rows( $table_rows, $form, $head_info, $mod, $canonical_url ) {
 
 			if ( ! $mod[ 'is_public' ] ) {
 
 				return $table_rows;
 			}
 
-			$size_name       = 'wpsso-gmf';
-			$media_request   = array( 'pid' );
-			$media_info      = $this->p->media->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
+			$is_product      = isset( $head_info[ 'og:type' ] ) && 'product' === $head_info[ 'og:type' ] ? true : false;
+			$schema_disabled = $this->p->util->is_schema_disabled();
+			$schema_msg      = $this->p->msgs->maybe_schema_disabled();
+			$media_info      = array( 'pid' => '' );
+
+			if ( $is_product ) {
+
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchange feeds image', 'wpsso' ) );
+
+				$size_name = 'wpsso-gmf';
+
+			} elseif ( ! $schema_disabled ) {
+
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting schema 1:1 image', 'wpsso' ) );
+
+				$size_name = 'wpsso-schema-1x1';
+
+			} else {
+
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting open graph image', 'wpsso' ) );
+
+				$size_name = 'wpsso-opengraph';
+			}
+
+			$media_request = array( 'pid' );
+			$media_info    = $this->p->media->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
+
+			$this->p->util->maybe_unset_ref( $canonical_url );
 
 			$form_rows = array(
 				'subsection_gmf' => array(

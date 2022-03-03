@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.1.0-dev.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -43,6 +43,14 @@ msgstr ""
 #: gettext/gettext-lib-config.php:9
 msgctxt "plugin name"
 msgid "WPSSO Core (Premium)"
+msgstr ""
+
+#: lib/actions.php:48
+msgid "checking google merchant feeds"
+msgstr ""
+
+#: lib/actions.php:82
+msgid "getting google merchant feeds image"
 msgstr ""
 
 #: lib/filters-messages.php:48
@@ -86,22 +94,34 @@ msgctxt "option label"
 msgid "Google Merchant Feeds"
 msgstr ""
 
-#: lib/filters.php:95
+#: lib/filters.php:93
+msgid "getting google merchange feeds image"
+msgstr ""
+
+#: lib/filters.php:99
+msgid "getting schema 1:1 image"
+msgstr ""
+
+#: lib/filters.php:105
+msgid "getting open graph image"
+msgstr ""
+
+#: lib/filters.php:120
 msgctxt "metabox title"
 msgid "Google Merchant Feeds"
 msgstr ""
 
-#: lib/filters.php:100
+#: lib/filters.php:125
 msgctxt "option label"
 msgid "Image ID"
 msgstr ""
 
-#: lib/filters.php:107
+#: lib/filters.php:132
 msgctxt "option label"
 msgid "or an Image URL"
 msgstr ""
 
-#: lib/filters.php:133
+#: lib/filters.php:158
 msgid ""
 "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr ""

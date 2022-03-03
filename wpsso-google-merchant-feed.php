@@ -15,7 +15,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 5.9.1
  * WC Tested Up To: 6.2.1
- * Version: 2.0.0
+ * Version: 2.1.0-dev.5
  * 
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -41,6 +41,7 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 
 	class WpssoGmf extends WpssoAbstractAddOn {
 
+		public $actions;	// WpssoGmfActions class object.
 		public $filters;	// WpssoGmfFilters class object.
 		public $rewrite;	// WpssoGmfRewrite class object.
 
@@ -116,6 +117,7 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 				return;	// Stop here.
 			}
 
+			$this->actions = new WpssoGmfActions( $this->p, $this );
 			$this->filters = new WpssoGmfFilters( $this->p, $this );
 			$this->rewrite = new WpssoGmfRewrite( $this->p, $this );
 		}

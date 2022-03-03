@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
 
-						foreach ( $mt_og[ 'product:offers' ] as $mt_offer ) {
+						foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
 
 							self::add_feed_product( $feed, $mt_og, $mt_offer );
 						}
@@ -208,19 +208,17 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			if ( is_array( $mt_images ) ) {	// Just in case.
 
-				$have_first_image = false;
+				$have_image = false;
 
 				foreach ( $mt_images as $mt_image ) {
 
-					$image_url = SucomUtil::get_first_og_image_url( $mt_image );
+					if ( $image_url = SucomUtil::get_first_og_image_url( $mt_image ) ) {
 
-					if ( $image_url ) {	// Just in case.
-
-						if ( ! $have_first_image ) {
+						if ( ! $have_image ) {
 
 							$product->setImage( $image_url );
 
-							$have_first_image = true;
+							$have_image = true;
 
 						} else {
 
