@@ -43,9 +43,29 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 				case 'info-gmf-urls':
 
-					$text .= '<blockquote class="top-info">';
+					$text = '<blockquote class="top-info">';
 
 					$text .= __( 'Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages).', 'wpsso-google-merchant-feed' );
+
+					$text .= '</blockquote>';
+
+					break;
+
+				case 'info-gmf-img':
+
+					/**
+					 * See https://support.google.com/merchants/answer/7052112?hl=en.
+					 * See https://support.google.com/merchants/answer/6324350?hl=en.
+					 */
+					$text = '<blockquote class="top-info">';
+
+					$text .= __( 'The product image must accurately display the entire product (or the product variation), and include minimal or no product staging.', 'wpsso' ) . ' ';
+
+					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product (or product variation).', 'wpsso' ) . ' ';
+
+					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso' ) . ' ';
+
+					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso' ) . ' ';
 
 					$text .= '</blockquote>';
 

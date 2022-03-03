@@ -96,6 +96,28 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						return $image_url;
 					}
 				}
+
+				/**
+				 * An is_admin() test is required to make sure the WpssoMessages class is available.
+				 */
+				if ( $this->p->notice->is_admin_pre_notices() ) {
+
+					if ( ! empty( $mod[ 'post_type_label_single' ] ) ) {
+
+						/**
+						 * See https://support.google.com/merchants/answer/7052112?hl=en.
+						 * See https://support.google.com/merchants/answer/6324350?hl=en.
+						 */
+						$notice_msg = sprintf( __( 'A Google Merchant Feeds "image_link" attribute could not be generated for %1$s ID %2$s.', 'wpsso' ),
+							$mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
+
+						$notice_msg .= __( 'Google <em>requires at least one "image_link" attribute</em> for each product (or product variation) in the Google Merchant Feeds XML.', 'wpsso' );
+
+						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
+
+						$this->p->notice->err( $notice_msg, null, $notice_key );
+					}
+				}
 			}
 		}
 	}

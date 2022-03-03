@@ -119,6 +119,10 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 					'header'   => 'h4',
 					'label'    => _x( 'Google Merchant Feeds', 'metabox title', 'wpsso-google-merchant-feed' )
 				),
+				'gmf_img_info' => array(
+					'tr_class'  => 'hide_og_type hide_og_type_product',
+					'table_row' => '<td colspan="2">' . $this->p->msgs->get( 'info-gmf-img' ) . '</td>',
+				),
 				'gmf_img_id' => array(
 					'tr_class' => 'hide_og_type hide_og_type_product',
 					'th_class' => 'medium',
