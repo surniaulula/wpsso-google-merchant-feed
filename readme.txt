@@ -115,12 +115,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.1.0-dev.5 (2022/03/03)**
+**Version 2.1.0-dev.6 (2022/03/03)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added a check for a missing "image_link" in the Google Merchant Feeds when editing a product.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.5.0-dev.5.
+	* WPSSO Core v11.5.0-dev.6.
 
 **Version 2.0.0 (2022/03/02)**
 
@@ -333,9 +333,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.1.0-dev.5 =
+= 2.1.0-dev.6 =
 
-(2022/03/03) None.
+(2022/03/03) Added a check for a missing "image_link" in the Google Merchant Feeds when editing a product.
 
 = 2.0.0 =
 
