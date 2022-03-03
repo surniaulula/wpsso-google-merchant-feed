@@ -79,7 +79,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 				$mod       = $this->p->post->get_mod( $post_id );	// Redefine the $mod array for the variation post ID.
 				$max_nums  = $this->p->util->get_max_nums( $mod, 'og' );
 				
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds image', 'wpsso' ) );
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds images', 'wpsso' ) );
 
 				$mt_images = $this->p->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'wpsso-gmf', $mod,
 					$check_dupes = true, $md_pre = array( 'gmf', 'schema', 'og' ) );
@@ -104,6 +104,8 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 					if ( ! empty( $mod[ 'post_type_label_single' ] ) ) {
 
+						$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'checking google merchant feeds images', 'wpsso' ) );
+
 						/**
 						 * See https://support.google.com/merchants/answer/7052112?hl=en.
 						 * See https://support.google.com/merchants/answer/6324350?hl=en.
@@ -116,6 +118,8 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
 
 						$this->p->notice->err( $notice_msg, null, $notice_key );
+				
+						$this->p->util->maybe_unset_ref( $canonical_url );
 					}
 				}
 			}

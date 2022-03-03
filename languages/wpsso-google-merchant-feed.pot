@@ -50,16 +50,20 @@ msgid "checking google merchant feeds"
 msgstr ""
 
 #: lib/actions.php:82
-msgid "getting google merchant feeds image"
+msgid "getting google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:111
+#: lib/actions.php:107
+msgid "checking google merchant feeds images"
+msgstr ""
+
+#: lib/actions.php:113
 msgid ""
 "A Google Merchant Feeds \"image_link\" attribute could not be generated for "
 "%1$s ID %2$s."
 msgstr ""
 
-#: lib/actions.php:114
+#: lib/actions.php:116
 msgid ""
 "Google <em>requires at least one \"image_link\" attribute</em> for each "
 "product (or product variation) in the Google Merchant Feeds XML."
