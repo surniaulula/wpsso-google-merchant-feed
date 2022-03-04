@@ -78,19 +78,19 @@ msgstr ""
 
 #: lib/filters-messages.php:62
 msgid ""
-"The product image must accurately display the entire product (or the product "
+"Product images must accurately display the entire product (or the product "
 "variation), and include minimal or no product staging."
 msgstr ""
 
 #: lib/filters-messages.php:64
 msgid ""
-"Do not use a generic image, logo, icon, or illustration that is not of the "
+"Do not use generic images, logos, icons, or illustrations that is not of the "
 "actual product (or product variation)."
 msgstr ""
 
 #: lib/filters-messages.php:66
 msgid ""
-"Do not use an image that contains promotional elements or content that "
+"Do not use an images that contain promotional elements or content that "
 "covers the product."
 msgstr ""
 
@@ -100,32 +100,38 @@ msgid ""
 "distinguishing details of that variation."
 msgstr ""
 
-#: lib/filters-messages.php:91
+#: lib/filters-messages.php:70
+msgid ""
+"Note that images from each product variation will supersede the main product "
+"image selected here."
+msgstr ""
+
+#: lib/filters-messages.php:93
 msgid ""
 "The dimensions used for the Google Merchant Feeds image (default dimensions "
 "are %s)."
 msgstr ""
 
-#: lib/filters-messages.php:114
+#: lib/filters-messages.php:116
 msgid "A customized image ID for the Google Merchant Feeds."
 msgstr ""
 
-#: lib/filters-messages.php:116 lib/filters-messages.php:126
+#: lib/filters-messages.php:118 lib/filters-messages.php:128
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:118
+#: lib/filters-messages.php:120
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:124
+#: lib/filters-messages.php:126
 msgid ""
 "A customized image URL (instead of an image ID) for the Google Merchant "
 "Feeds."
 msgstr ""
 
-#: lib/filters-messages.php:128
+#: lib/filters-messages.php:130
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
@@ -148,7 +154,7 @@ msgstr ""
 
 #: lib/filters.php:120
 msgctxt "metabox title"
-msgid "Google Merchant Feeds"
+msgid "Google Merchant Feeds (Main Product)"
 msgstr ""
 
 #: lib/filters.php:129

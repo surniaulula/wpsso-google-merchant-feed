@@ -117,7 +117,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 					'tr_class' => 'hide_og_type hide_og_type_product',
 					'td_class' => 'subsection top',
 					'header'   => 'h4',
-					'label'    => _x( 'Google Merchant Feeds', 'metabox title', 'wpsso-google-merchant-feed' )
+					'label'    => _x( 'Google Merchant Feeds (Main Product)', 'metabox title', 'wpsso-google-merchant-feed' )
 				),
 				'gmf_img_info' => array(
 					'tr_class'  => 'hide_og_type hide_og_type_product',

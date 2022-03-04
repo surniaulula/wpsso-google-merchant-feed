@@ -57,17 +57,19 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 					 * See https://support.google.com/merchants/answer/7052112?hl=en.
 					 * See https://support.google.com/merchants/answer/6324350?hl=en.
 					 */
-					$text = '<blockquote class="top-info">';
+					$text = '<p class="pro-feature-msg">';
 
-					$text .= __( 'The product image must accurately display the entire product (or the product variation), and include minimal or no product staging.', 'wpsso' ) . ' ';
+					$text .= __( 'Product images must accurately display the entire product (or the product variation), and include minimal or no product staging.', 'wpsso' ) . ' ';
 
-					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product (or product variation).', 'wpsso' ) . ' ';
+					$text .= __( 'Do not use generic images, logos, icons, or illustrations that is not of the actual product (or product variation).', 'wpsso' ) . ' ';
 
-					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso' ) . ' ';
+					$text .= __( 'Do not use an images that contain promotional elements or content that covers the product.', 'wpsso' ) . ' ';
 
 					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso' ) . ' ';
 
-					$text .= '</blockquote>';
+					$text .= __( 'Note that images from each product variation will supersede the main product image selected here.', 'wpsso' ) . ' ';
+
+					$text .= '</p>';
 
 					break;
 			}
