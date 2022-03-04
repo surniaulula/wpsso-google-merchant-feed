@@ -113,7 +113,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						$notice_msg = sprintf( __( 'A Google Merchant Feeds "image_link" attribute could not be generated for %1$s ID %2$s.', 'wpsso' ),
 							$mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
 
-						$notice_msg .= __( 'Google <em>requires at least one "image_link" attribute</em> for each product (or product variation) in the Google Merchant Feeds XML.', 'wpsso' );
+						$notice_msg .= __( 'Google <em>requires at least one "image_link" attribute</em> for each product variation in the Google Merchant Feeds XML.', 'wpsso' );
 
 						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
 

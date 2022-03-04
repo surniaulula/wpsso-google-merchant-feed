@@ -91,7 +91,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			if ( $is_product ) {
 
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchange feeds image', 'wpsso' ) );
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds image', 'wpsso' ) );
 
 				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-gmf', $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
 

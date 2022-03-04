@@ -66,7 +66,7 @@ msgstr ""
 #: lib/actions.php:116
 msgid ""
 "Google <em>requires at least one \"image_link\" attribute</em> for each "
-"product (or product variation) in the Google Merchant Feeds XML."
+"product variation in the Google Merchant Feeds XML."
 msgstr ""
 
 #: lib/filters-messages.php:48
@@ -141,7 +141,7 @@ msgid "Google Merchant Feeds"
 msgstr ""
 
 #: lib/filters.php:94
-msgid "getting google merchange feeds image"
+msgid "getting google merchant feeds image"
 msgstr ""
 
 #: lib/filters.php:100
