@@ -87,28 +87,26 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			$schema_disabled = $this->p->util->is_schema_disabled();
 			$schema_msg      = $this->p->msgs->maybe_schema_disabled();
 			$media_info      = array( 'pid' => '' );
+			$media_request   = array( 'pid' );
 
 			if ( $is_product ) {
 
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchange feeds image', 'wpsso' ) );
 
-				$size_name = 'wpsso-gmf';
+				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-gmf', $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
 
 			} elseif ( ! $schema_disabled ) {
 
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting schema 1:1 image', 'wpsso' ) );
 
-				$size_name = 'wpsso-schema-1x1';
+				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-schema-1x1', $media_request, $mod, $md_pre = array( 'og' ) );
 
 			} else {
 
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting open graph image', 'wpsso' ) );
 
-				$size_name = 'wpsso-opengraph';
+				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-opengraph', $media_request, $mod, $md_pre = array( 'none' ) );
 			}
-
-			$media_request = array( 'pid' );
-			$media_info    = $this->p->media->get_media_info( $size_name, $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
 
 			$this->p->util->maybe_unset_ref( $canonical_url );
 
@@ -121,7 +119,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 				),
 				'gmf_img_info' => array(
 					'tr_class'  => 'hide_og_type hide_og_type_product',
-					'table_row' => '<td colspan="2">' . $this->p->msgs->get( 'info-gmf-img' ) . '</td>',
+					'table_row' => '<td colspan="2">' . $this->p->msgs->get( 'info-gmf-img', array( 'mod' => $mod ) ) . '</td>',
 				),
 				'gmf_img_id' => array(
 					'tr_class' => 'hide_og_type hide_og_type_product',

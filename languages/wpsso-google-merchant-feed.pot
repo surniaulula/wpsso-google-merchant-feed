@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.1.0-dev.6\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.1.0-dev.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -78,60 +78,60 @@ msgstr ""
 
 #: lib/filters-messages.php:62
 msgid ""
-"Product images must accurately display the entire product (or the product "
-"variation), and include minimal or no product staging."
+"Product images must accurately display the entire product and include "
+"minimal or no product staging."
 msgstr ""
 
 #: lib/filters-messages.php:64
-msgid ""
-"Do not use generic images, logos, icons, or illustrations that is not of the "
-"actual product (or product variation)."
-msgstr ""
-
-#: lib/filters-messages.php:66
-msgid ""
-"Do not use an images that contain promotional elements or content that "
-"covers the product."
-msgstr ""
-
-#: lib/filters-messages.php:68
 msgid ""
 "Each product variation must use a unique image that represents the "
 "distinguishing details of that variation."
 msgstr ""
 
-#: lib/filters-messages.php:70
+#: lib/filters-messages.php:65
 msgid ""
-"Note that images from each product variation will supersede the main product "
-"image selected here."
+"Do not use a generic image, logo, icon, or illustration that is not of the "
+"actual product."
 msgstr ""
 
-#: lib/filters-messages.php:93
+#: lib/filters-messages.php:67
+msgid ""
+"Do not use an image that contains promotional elements or content that "
+"covers the product."
+msgstr ""
+
+#: lib/filters-messages.php:75
+msgid ""
+"This is a variable product - images from product variations will supersede "
+"the main product image selected here."
+msgstr ""
+
+#: lib/filters-messages.php:101
 msgid ""
 "The dimensions used for the Google Merchant Feeds image (default dimensions "
 "are %s)."
 msgstr ""
 
-#: lib/filters-messages.php:116
+#: lib/filters-messages.php:124
 msgid "A customized image ID for the Google Merchant Feeds."
 msgstr ""
 
-#: lib/filters-messages.php:118 lib/filters-messages.php:128
+#: lib/filters-messages.php:126 lib/filters-messages.php:136
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:120
+#: lib/filters-messages.php:128
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:126
+#: lib/filters-messages.php:134
 msgid ""
 "A customized image URL (instead of an image ID) for the Google Merchant "
 "Feeds."
 msgstr ""
 
-#: lib/filters-messages.php:130
+#: lib/filters-messages.php:138
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
@@ -140,34 +140,34 @@ msgctxt "option label"
 msgid "Google Merchant Feeds"
 msgstr ""
 
-#: lib/filters.php:93
+#: lib/filters.php:94
 msgid "getting google merchange feeds image"
 msgstr ""
 
-#: lib/filters.php:99
+#: lib/filters.php:100
 msgid "getting schema 1:1 image"
 msgstr ""
 
-#: lib/filters.php:105
+#: lib/filters.php:106
 msgid "getting open graph image"
 msgstr ""
 
-#: lib/filters.php:120
+#: lib/filters.php:118
 msgctxt "metabox title"
 msgid "Google Merchant Feeds (Main Product)"
 msgstr ""
 
-#: lib/filters.php:129
+#: lib/filters.php:127
 msgctxt "option label"
 msgid "Image ID"
 msgstr ""
 
-#: lib/filters.php:136
+#: lib/filters.php:134
 msgctxt "option label"
 msgid "or an Image URL"
 msgstr ""
 
-#: lib/filters.php:162
+#: lib/filters.php:160
 msgid ""
 "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr ""

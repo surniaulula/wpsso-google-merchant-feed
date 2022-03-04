@@ -26,13 +26,13 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array( 
-				'messages_info'         => 2,
+				'messages_info'         => 3,
 				'messages_tooltip'      => 2,
 				'messages_tooltip_meta' => 2,
 			) );
 		}
 
-		public function filter_messages_info( $text, $msg_key ) {
+		public function filter_messages_info( $text, $msg_key, $info ) {
 
 			if ( 0 !== strpos( $msg_key, 'info-gmf-' ) ) {
 
@@ -59,15 +59,23 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 					 */
 					$text = '<p class="pro-feature-msg">';
 
-					$text .= __( 'Product images must accurately display the entire product (or the product variation), and include minimal or no product staging.', 'wpsso' ) . ' ';
-
-					$text .= __( 'Do not use generic images, logos, icons, or illustrations that is not of the actual product (or product variation).', 'wpsso' ) . ' ';
-
-					$text .= __( 'Do not use an images that contain promotional elements or content that covers the product.', 'wpsso' ) . ' ';
+					$text .= __( 'Product images must accurately display the entire product and include minimal or no product staging.', 'wpsso' ) . ' ';
 
 					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso' ) . ' ';
+					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product.', 'wpsso' ) . ' ';
 
-					$text .= __( 'Note that images from each product variation will supersede the main product image selected here.', 'wpsso' ) . ' ';
+					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso' ) . ' ';
+
+					if ( ! empty( $this->p->avail[ 'ecom' ][ 'woocommerce' ] ) ) {	// Premium plugin with WooCommerce.
+
+						if ( 'product' === $info[ 'mod' ][ 'post_type' ] ) {	// WooCommerce product editing page.
+
+							if ( $this->p->util->wc->is_mod_variable( $info[ 'mod' ] ) ) {
+
+								$text .= __( 'This is a variable product - images from product variations will supersede the main product image selected here.', 'wpsso' ) . ' ';
+							}
+						}
+					}
 
 					$text .= '</p>';
 
