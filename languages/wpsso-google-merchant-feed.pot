@@ -25,7 +25,7 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "lib file description"
-msgid "Google Merchant Feeds"
+msgid "Google Merchant"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:7
