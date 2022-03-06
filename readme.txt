@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.1.0-b.1 (2022/03/04)**
+**Version 2.1.0-b.1 (2022/03/06)**
 
 * **New Features**
 	* None.
@@ -335,7 +335,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 2.1.0-b.1 =
 
-(2022/03/04) Added a check for a missing "image_link" in the Google Merchant Feeds when editing a product.
+(2022/03/06) Added a check for a missing "image_link" in the Google Merchant Feeds when editing a product.
 
 = 2.0.0 =
 
