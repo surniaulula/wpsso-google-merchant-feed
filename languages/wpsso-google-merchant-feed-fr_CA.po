@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feeds XML 2.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-04 12:24-0800\n"
+"PO-Revision-Date: 2022-03-07 06:37-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -23,8 +23,8 @@ msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %
 
 #: gettext/gettext-lib-config.php:6
 msgctxt "lib file description"
-msgid "Google Merchant Feeds"
-msgstr "Flux de marchands Google"
+msgid "Merchant Feeds"
+msgstr "Flux de marchands"
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin name"
@@ -129,7 +129,7 @@ msgstr "obtenir l'image open graph"
 #: lib/filters.php:118
 msgctxt "metabox title"
 msgid "Google Merchant Feeds (Main Product)"
-msgstr "Google Merchant Feeds (produit principal)"
+msgstr "Flux de marchands Google (produit principal)"
 
 #: lib/filters.php:127
 msgctxt "option label"
