@@ -47,9 +47,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			$title = SucomUtil::get_site_name();
-			$link  = SucomUtil::get_home_url();
-			$desc  = SucomUtil::get_site_description();
+			$title = SucomUtil::get_site_name( $wpsso->options, $mixed = 'current' );
+			$link  = SucomUtil::get_home_url( $wpsso->options, $mixed = 'current' );
+			$desc  = SucomUtil::get_site_description( $wpsso->options, $mixed = 'current' );
 
 			$feed = new Vitalybaev\GoogleMerchant\Feed( $title, $link, $desc );
 
