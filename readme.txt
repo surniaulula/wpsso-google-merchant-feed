@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0-dev.1 (2022/03/16)**
+**Version 2.2.0-dev.2 (2022/03/16)**
 
 * **New Features**
 	* None.
@@ -348,7 +348,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.0-dev.1 =
+= 2.2.0-dev.2 =
 
 (2022/03/16) Added support for customized site name, site description, and site home URL values from WPSSO Core.
 
