@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.0-dev.3 (2022/03/17)**
+**Version 2.2.0-b.1 (2022/03/17)**
 
 * **New Features**
 	* None.
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.7.1-dev.3.
+	* WPSSO Core v11.7.1-b.1.
 
 **Version 2.1.0 (2022/03/07)**
 
@@ -348,7 +348,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.0-dev.3 =
+= 2.2.0-b.1 =
 
 (2022/03/17) Added support for customized site name, site description, and site home URL values from WPSSO Core.
 
