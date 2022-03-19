@@ -44,7 +44,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			$is_product = isset( $head_info[ 'og:type' ] ) && 'product' === $head_info[ 'og:type' ] ? true : false;
 
 			if ( $is_product && ! $mod[ 'is_archive' ] ) {	// Exclude the shop page.
-				
+
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'checking google merchant feeds', 'wpsso' ) );
 
 				$mt_og = $this->p->og->get_array( $mod, $size_names = 'wpsso-gmf' );
@@ -56,9 +56,9 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 					$image_url = $this->get_product_image_url( $mt_og, $mod, $canonical_url );
 
 				} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
-						
+
 					foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
-					
+
 						$image_url = $this->get_product_image_url( $mt_offer, $mod, $canonical_url );
 					}
 				}
@@ -78,7 +78,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 				$post_id   = $mt_data[ 'product:retailer_item_id' ];
 				$mod       = $this->p->post->get_mod( $post_id );	// Redefine the $mod array for the variation post ID.
 				$max_nums  = $this->p->util->get_max_nums( $mod, 'og' );
-				
+
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds images', 'wpsso' ) );
 
 				$mt_images = $this->p->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'wpsso-gmf', $mod,
@@ -118,7 +118,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
 
 						$this->p->notice->err( $notice_msg, null, $notice_key );
-				
+
 						$this->p->util->maybe_unset_ref( $canonical_url );
 					}
 				}
