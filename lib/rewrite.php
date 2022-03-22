@@ -81,8 +81,20 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			 */
 			$request_locale = get_query_var( 'gmflang' );
 			$request_locale = SucomUtil::sanitize_locale( $request_locale );
-			$current_locale = SucomUtil::get_locale();
-			$default_locale = SucomUtil::get_locale( 'default' );
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'getting current locale' );
+			}
+
+			$current_locale = SucomUtil::get_locale( $mixed = 'current' );
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'getting default locale' );
+			}
+
+			$default_locale = SucomUtil::get_locale( $mixed = 'default' );
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -98,7 +110,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				if ( isset( $locale_names[ $request_locale ] ) ) {	// Just in case.
 
 					if ( $wpsso->debug->enabled ) {
-				
+
 						$wpsso->debug->log( 'switching to request locale ' . $request_locale );
 					}
 
@@ -109,15 +121,25 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 					 */
 					switch_to_locale( $request_locale );
 
-				} else {
-
 					if ( $wpsso->debug->enabled ) {
-				
-						$wpsso->debug->log( 'unknown request locale ' . $request_locale );
-						$wpsso->debug->log( 'switching to default locale ' . $default_locale );
+
+						$wpsso->debug->log( 'getting current locale' );
+
+						$current_locale = SucomUtil::get_locale( $mixed = 'current' );
+
+						$wpsso->debug->log( 'locale switched = ' . $current_locale );
 					}
 
+				} else {
+
 					$redirect_url = self::get_url( $default_locale );
+
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'unknown request locale ' . $request_locale );
+
+						$wpsso->debug->log( 'redirect to default locale URL = ' . $redirect_url );
+					}
 
 					wp_redirect( $redirect_url );
 
@@ -135,11 +157,11 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$disposition = 'attachment';
 			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
 			$content     = WpssoGmfXml::get();
-			
+
 			if ( $wpsso->debug->enabled ) {
 
 				if ( $wpsso->debug->is_enabled( 'html' ) ) {
-					
+
 					$content .= $wpsso->debug->get_html( null, 'debug log' );
 				}
 			}
