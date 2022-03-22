@@ -123,14 +123,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 					if ( $wpsso->debug->enabled ) {
 
-						if ( $switched ) {
-						
-							$wpsso->debug->log( 'switch to locale successful' );
-
-						} else {
-
-							$wpsso->debug->log( 'switch to locale failed' );
-						}
+						$wpsso->debug->log( 'switch to locale ' . ( $switched ? 'successful' : 'failed' ) );
 
 						$wpsso->debug->log( 'getting current locale' );
 
