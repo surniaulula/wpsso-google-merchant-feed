@@ -119,9 +119,18 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 					 * 'change_locale' actions to clear the SucomUtil::get_locale() cache for the 'current'
 					 * locale.
 					 */
-					switch_to_locale( $request_locale );
+					$switched = switch_to_locale( $request_locale );
 
 					if ( $wpsso->debug->enabled ) {
+
+						if ( $switched ) {
+						
+							$wpsso->debug->log( 'switch to locale successful' );
+
+						} else {
+
+							$wpsso->debug->log( 'switch to locale failed' );
+						}
 
 						$wpsso->debug->log( 'getting current locale' );
 
