@@ -125,9 +125,9 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 						$wpsso->debug->log( 'getting current locale' );
 
-						$current_locale = SucomUtil::get_locale( $mixed = 'current' );
+						$switched_locale = SucomUtil::get_locale( $mixed = 'current' );
 
-						$wpsso->debug->log( 'locale switched = ' . $current_locale );
+						$wpsso->debug->log( 'locale switched = ' . $switched_locale );
 					}
 
 				} else {
