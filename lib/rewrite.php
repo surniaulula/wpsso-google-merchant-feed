@@ -114,21 +114,18 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 						$wpsso->debug->log( 'switching to request locale ' . $request_locale );
 					}
 
-					/**
-					 * The WpssoUtil constructor hooks the 'switch_locale', 'restore_previous_locale', and
-					 * 'change_locale' actions to clear the SucomUtil::get_locale() cache.
-					 */
 					$switched = switch_to_locale( $request_locale );
 
 					if ( $wpsso->debug->enabled ) {
 
 						$wpsso->debug->log( 'switch to locale ' . ( $switched ? 'successful' : 'failed' ) );
 
-						$wpsso->debug->log( 'getting current locale' );
+						$wp_locale      = get_locale();
+						$current_locale = SucomUtil::get_locale( $mixed = 'current' );
 
-						$switched_locale = SucomUtil::get_locale( $mixed = 'current' );
-
-						$wpsso->debug->log( 'locale switched = ' . $switched_locale );
+						$wpsso->debug->log( 'is admin = ' . is_admin() );
+						$wpsso->debug->log( 'wp locale = ' . $wp_locale );
+						$wpsso->debug->log( 'locale current = ' . $current_locale );
 					}
 
 				} else {

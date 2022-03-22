@@ -148,10 +148,6 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			foreach ( $locale_names as $locale => $native_name ) {
 
-				/**
-				 * The WpssoUtil constructor hooks the 'switch_locale', 'restore_previous_locale', and
-				 * 'change_locale' actions to clear the SucomUtil::get_locale() cache.
-				 */
 				switch_to_locale( $locale );
 
 				$xml = WpssoGmfXml::get( $read_cache );
