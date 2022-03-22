@@ -123,7 +123,6 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 						$wp_locale      = get_locale();
 						$current_locale = SucomUtil::get_locale( $mixed = 'current' );
 
-						$wpsso->debug->log( 'is admin = ' . is_admin() );
 						$wpsso->debug->log( 'wp locale = ' . $wp_locale );
 						$wpsso->debug->log( 'locale current = ' . $current_locale );
 					}
