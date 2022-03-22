@@ -31,15 +31,22 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 
 			$locale         = SucomUtil::get_locale();
-			$cache_salt     = __METHOD__ . '(locale:' . $locale . ')';
 			$cache_md5_pre  = 'wpsso_g_';
 			$cache_type     = 'file';
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
-			$pre_ext        = '.xml';
+			$cache_salt     = __METHOD__ . '(locale:' . $locale . ')';
+			$file_name_ext  = '.xml';
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'locale current = ' . $locale );
+				$wpsso->debug->log( 'cache expire = ' . $cache_exp_secs );
+				$wpsso->debug->log( 'cache salt = ' . $cache_salt );
+			}
 
 			if ( $read_cache && $cache_exp_secs ) {
 
-				$xml = $wpsso->cache->get_cache_data( $cache_salt, $cache_type, $cache_exp_secs, $pre_ext );
+				$xml = $wpsso->cache->get_cache_data( $cache_salt, $cache_type, $cache_exp_secs, $file_name_ext );
 
 				if ( false !== $xml ) {
 
@@ -47,26 +54,36 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			$title = SucomUtil::get_site_name( $wpsso->options, $mixed = 'current' );
-			$link  = SucomUtil::get_home_url( $wpsso->options, $mixed = 'current' );
-			$desc  = SucomUtil::get_site_description( $wpsso->options, $mixed = 'current' );
+			$title = SucomUtil::get_site_name( $wpsso->options, $locale );
+			$link  = SucomUtil::get_home_url( $wpsso->options, $locale );
+			$desc  = SucomUtil::get_site_description( $wpsso->options, $locale );
 
 			$feed = new Vitalybaev\GoogleMerchant\Feed( $title, $link, $desc );
 
-			$columns = WpssoPost::get_sortable_columns( $col_key = 'og_type' );
+			$col_og_type = WpssoPost::get_sortable_columns( $col_key = 'og_type' );
 
-			if ( ! empty( $columns[ 'meta_key' ] ) ) {	// Just in case.
+			if ( ! empty( $col_og_type[ 'meta_key' ] ) ) {	// Just in case.
 
 				$public_post_ids = WpssoPost::get_public_ids( array(
-					'meta_key'   => $columns[ 'meta_key' ],
+					'meta_key'   => $col_og_type[ 'meta_key' ],
 					'meta_value' => 'product',
 				) );
+
+				if ( $wpsso->debug->enabled ) {
+
+					$wpsso->debug->log_arr( 'public_post_ids', $public_post_ids );
+				}
 
 				foreach ( $public_post_ids as $post_id ) {
 
 					$mod = $wpsso->post->get_mod( $post_id );
 
 					if ( $mod[ 'is_archive' ] ) {	// Exclude the shop page.
+
+						if ( $wpsso->debug->enabled ) {
+
+							$wpsso->debug->log( 'skipping post ID ' . $post_id . ': post is an archive page' );
+						}
 
 						continue;
 					}
@@ -75,9 +92,19 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					if ( empty( $mt_og[ 'product:offers' ] ) ) {
 
+						if ( $wpsso->debug->enabled ) {
+
+							$wpsso->debug->log( 'adding single offer for post ID ' . $post_id );
+						}
+
 						self::add_feed_product( $feed, $mt_og );
 
 					} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
+
+						if ( $wpsso->debug->enabled ) {
+
+							$wpsso->debug->log( 'adding multiple offers for post ID ' . $post_id );
+						}
 
 						foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
 
@@ -89,7 +116,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$xml = $feed->build();
 
-			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $pre_ext );
+			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $file_name_ext );
 
 			return $xml;
 		}

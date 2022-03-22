@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.2.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.2.1-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -167,7 +167,7 @@ msgctxt "option label"
 msgid "or an Image URL"
 msgstr ""
 
-#: lib/filters.php:160
+#: lib/filters.php:164
 msgid ""
 "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr ""

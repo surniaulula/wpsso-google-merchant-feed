@@ -62,6 +62,13 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function template_redirect() {
 
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
 			$request_pagename = get_query_var( 'pagename' );
 
 			if ( WPSSOGMF_PAGENAME !== $request_pagename ) {
@@ -70,11 +77,19 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			}
 
 			/**
-			 * Make sure to requested locale is valid, otherwise redirect using the default locale.
+			 * Make sure the requested locale is valid, otherwise redirect using the default locale.
 			 */
 			$request_locale = get_query_var( 'gmflang' );
 			$request_locale = SucomUtil::sanitize_locale( $request_locale );
 			$current_locale = SucomUtil::get_locale();
+			$default_locale = SucomUtil::get_locale( 'default' );
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'locale request = ' . $request_locale );
+				$wpsso->debug->log( 'locale current = ' . $current_locale );
+				$wpsso->debug->log( 'locale default = ' . $default_locale );
+			}
 
 			if ( $request_locale !== $current_locale ) {
 
@@ -82,12 +97,27 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				if ( isset( $locale_names[ $request_locale ] ) ) {	// Just in case.
 
-					switch_to_locale( $request_locale );	// Calls an action to clear the SucomUtil::get_locale() cache.
+					if ( $wpsso->debug->enabled ) {
+				
+						$wpsso->debug->log( 'switching to request locale ' . $request_locale );
+					}
+
+					/**
+					 * The WpssoUtil constructor hooks the 'switch_locale', 'restore_previous_locale', and
+					 * 'change_locale' actions to clear the SucomUtil::get_locale() cache for the 'current'
+					 * locale.
+					 */
+					switch_to_locale( $request_locale );
 
 				} else {
 
-					$default_locale = SucomUtil::get_locale( 'default' );
-					$redirect_url   = self::get_url( $default_locale );
+					if ( $wpsso->debug->enabled ) {
+				
+						$wpsso->debug->log( 'unknown request locale ' . $request_locale );
+						$wpsso->debug->log( 'switching to default locale ' . $default_locale );
+					}
+
+					$redirect_url = self::get_url( $default_locale );
 
 					wp_redirect( $redirect_url );
 
@@ -105,7 +135,16 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$disposition = 'attachment';
 			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
 			$content     = WpssoGmfXml::get();
-			$length      = strlen( $content );
+			
+			if ( $wpsso->debug->enabled ) {
+
+				if ( $wpsso->debug->is_enabled( 'html' ) ) {
+					
+					$content .= $wpsso->debug->get_html( null, 'debug log' );
+				}
+			}
+
+			$length = strlen( $content );
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
