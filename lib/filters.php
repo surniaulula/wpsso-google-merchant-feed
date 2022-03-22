@@ -150,7 +150,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 				/**
 				 * The WpssoUtil constructor hooks the 'switch_locale', 'restore_previous_locale', and
-				 * 'change_locale' actions to clear the SucomUtil::get_locale() cache for the 'current' locale.
+				 * 'change_locale' actions to clear the SucomUtil::get_locale() cache.
 				 */
 				switch_to_locale( $locale );
 
