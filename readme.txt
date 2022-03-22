@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.1-rc.1 (2022/03/22)**
+**Version 2.2.1-rc.2 (2022/03/22)**
 
 * **New Features**
 	* None.
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v11.7.2-rc.1.
+	* WPSSO Core v11.7.2-rc.2.
 
 **Version 2.2.0 (2022/03/18)**
 
@@ -363,7 +363,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.1-rc.1 =
+= 2.2.1-rc.2 =
 
 (2022/03/22) Added debug comments to XML output when the "Add HTML Debug Messages" option is enabled.
 
