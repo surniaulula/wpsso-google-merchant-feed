@@ -12,7 +12,7 @@ Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.2
 WC Tested Up To: 6.3.1
-Stable Tag: 2.2.0
+Stable Tag: 2.2.1
 
 Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
 
@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.1 (2022/03/22)**
+**Version 2.2.1 (2022/03/23)**
 
 * **New Features**
 	* None.
@@ -365,7 +365,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 2.2.1 =
 
-(2022/03/22) Added debug comments to XML output when the "Add HTML Debug Messages" option is enabled.
+(2022/03/23) Added debug comments to XML output when the "Add HTML Debug Messages" option is enabled.
 
 = 2.2.0 =
 
