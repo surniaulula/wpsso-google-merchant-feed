@@ -87,7 +87,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds images', 'wpsso' ) );
 
 				$mt_images = $this->p->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'wpsso-gmf', $mod,
-					$check_dupes = true, $md_pre = array( 'gmf', 'schema', 'og' ) );
+					$md_pre = array( 'gmf', 'schema', 'og' ) );
 
 				$this->p->util->maybe_unset_ref( $canonical_url );
 			}
