@@ -115,6 +115,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 2.2.2-dev.1 (2022/03/23)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed missing support for the custom Google Merchant Feed image ID or URL.
+* **Developer Notes**
+	* Added `$md_pre` to the `WpssoOpengraph->get_array()` method arguments.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v11.7.2.
+
 **Version 2.2.1 (2022/03/23)**
 
 * **New Features**
@@ -362,6 +377,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 2.2.2-dev.1 =
+
+(2022/03/23) Fixed missing support for the custom Google Merchant Feed image ID or URL.
 
 = 2.2.1 =
 
