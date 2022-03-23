@@ -82,19 +82,25 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log( 'skipping post ID ' . $post_id . ': post is an archive page' );
+							$wpsso->debug->log( 'skipping ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] . ': ' .
+								$mod[ 'name' ] . ' is an archive page' );
 						}
 
 						continue;
 					}
 
-					$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf' );
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'getting open graph array for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] );
+					}
+
+					$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
 					if ( empty( $mt_og[ 'product:offers' ] ) ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log( 'adding single offer for post ID ' . $post_id );
+							$wpsso->debug->log( 'adding single offer for post id ' . $post_id );
 						}
 
 						self::add_feed_product( $feed, $mt_og );
@@ -103,7 +109,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log( 'adding multiple offers for post ID ' . $post_id );
+							$wpsso->debug->log( 'adding multiple offers for post id ' . $post_id );
 						}
 
 						foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {

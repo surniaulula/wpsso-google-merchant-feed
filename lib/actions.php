@@ -47,7 +47,12 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'checking google merchant feeds', 'wpsso' ) );
 
-				$mt_og = $this->p->og->get_array( $mod, $size_names = 'wpsso-gmf' );
+				if ( $this->p->debug->enabled ) {
+
+					$this->p->debug->log( 'getting open graph array for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] );
+				}
+
+				$mt_og = $this->p->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
 				$this->p->util->maybe_unset_ref( $canonical_url );
 
