@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.2.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-03-22 11:19-0700\n"
+"PO-Revision-Date: 2022-03-24 07:48-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -45,19 +45,19 @@ msgstr "WPSSO Core (Premium)"
 msgid "checking google merchant feeds"
 msgstr "vérification flux de marchands google"
 
-#: lib/actions.php:82
+#: lib/actions.php:87
 msgid "getting google merchant feeds images"
 msgstr "obtenir des images flux de marchands google"
 
-#: lib/actions.php:107
+#: lib/actions.php:112
 msgid "checking google merchant feeds images"
 msgstr "vérification des images flux de marchands google"
 
-#: lib/actions.php:113
+#: lib/actions.php:118
 msgid "A Google Merchant Feeds \"image_link\" attribute could not be generated for %1$s ID %2$s."
 msgstr "Impossible de générer l'attribut \"image_link\" des flux marchands Google pour l'identifiant %1$s %2$s."
 
-#: lib/actions.php:116
+#: lib/actions.php:121
 msgid "Google <em>requires at least one \"image_link\" attribute</em> for each product variation in the Google Merchant Feeds XML."
 msgstr "Google <em>exige au moins un attribut \"image_link\"</em> pour chaque variante de produit dans le XML des flux de marchands Google."
 
@@ -141,7 +141,7 @@ msgctxt "option label"
 msgid "or an Image URL"
 msgstr "ou URL d'une image"
 
-#: lib/filters.php:164
+#: lib/filters.php:160
 msgid "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
 msgstr "Le cache XML des flux de marchands Google pour %1$d langues a été actualisé."
 
