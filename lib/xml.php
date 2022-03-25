@@ -62,6 +62,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$col_og_type = WpssoPost::get_sortable_columns( $col_key = 'og_type' );
 
+			$redir_disabled = $wpsso->util->is_redirect_disabled();
+
 			if ( ! empty( $col_og_type[ 'meta_key' ] ) ) {	// Just in case.
 
 				$public_post_ids = WpssoPost::get_public_ids( array(
@@ -75,6 +77,18 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 
 				foreach ( $public_post_ids as $post_id ) {
+
+					if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
+
+						continue;
+				
+					/**
+					 * If WPSSO is handling redirects, then exclude this post if it is being redirected.
+					 */
+					} elseif ( ! $redir_disabled && $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
+
+						continue;
+					}
 
 					$mod = $wpsso->post->get_mod( $post_id );
 
