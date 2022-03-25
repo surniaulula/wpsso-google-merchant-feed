@@ -62,7 +62,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$col_og_type = WpssoPost::get_sortable_columns( $col_key = 'og_type' );
 
-			$redir_disabled = $wpsso->util->is_redirect_disabled();
+			$redir_enabled = $wpsso->util->is_redirect_disabled() ? false : true;
 
 			if ( ! empty( $col_og_type[ 'meta_key' ] ) ) {	// Just in case.
 
@@ -85,7 +85,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					/**
 					 * If WPSSO is handling redirects, then exclude this post if it is being redirected.
 					 */
-					} elseif ( ! $redir_disabled && $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
+					} elseif ( $redir_enabled && $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
 
 						continue;
 					}
