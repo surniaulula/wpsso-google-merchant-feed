@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.2-rc.1 (2022/03/25)**
+**Version 2.2.2 (2022/03/26)**
 
 * **New Features**
 	* None.
@@ -378,9 +378,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.2-rc.1 =
+= 2.2.2 =
 
-(2022/03/25) Fixed missing support for the custom Google Merchant Feed image ID or URL.
+(2022/03/26) Fixed missing support for the custom Google Merchant Feed image ID or URL.
 
 = 2.2.1 =
 
