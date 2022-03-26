@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
 
 						continue;
-				
+
 					/**
 					 * If WPSSO is handling redirects, then exclude this post if it is being redirected.
 					 */
