@@ -354,7 +354,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* Added a new 'wpsso_google_merchant_feed_url' filter.
-	* Used the new `WpssoUtil->get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
+	* Used the new `SucomUtil::get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
 	* Refactored the `SucomAddOn->get_missing_requirements()` method.
 * **Requires At Least**
 	* PHP v7.2.
@@ -440,7 +440,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 1.1.0 =
 
-(2021/11/16) Used the new `WpssoUtil->get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
+(2021/11/16) Used the new `SucomUtil::get_available_feed_locale_names()` method (filtered by the Polylang and WPML integration modules).
 
 = 1.0.0 =
 
