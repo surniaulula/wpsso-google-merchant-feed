@@ -100,12 +100,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					$mod = $wpsso->post->get_mod( $post_id );
 
-					if ( $mod[ 'is_archive' ] ) {	// Exclude the shop page.
+					if ( $mod[ 'is_archive' ] ) {	// Exclude the shop archive page.
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log( 'skipping ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] . ': ' .
-								$mod[ 'name' ] . ' is an archive page' );
+							$wpsso->debug->log( 'skipping post id ' . $post_id . ': post is an archive page' );
 						}
 
 						continue;
