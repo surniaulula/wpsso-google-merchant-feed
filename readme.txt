@@ -124,7 +124,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Added more debugging messages for skipped post IDs (ie. noindex or redirected URL).
+	* Added more debugging messages for skipped post IDs (ie. noindex or redirected).
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -395,7 +395,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 2.2.3-dev.11 =
 
-(2022/03/29) Added more debugging messages for skipped post IDs (ie. noindex or redirected URL).
+(2022/03/29) Added more debugging messages for skipped post IDs (ie. noindex or redirected).
 
 = 2.2.2 =
 
