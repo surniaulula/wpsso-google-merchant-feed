@@ -157,10 +157,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( $wpsso->debug->enabled ) {
 
-				if ( $wpsso->debug->is_enabled( 'html' ) ) {
-
-					$content .= $wpsso->debug->get_html( null, 'debug log' );
-				}
+				$content .= $wpsso->debug->get_html( null, 'debug log' );
 			}
 
 			$length = strlen( $content );
