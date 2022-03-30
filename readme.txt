@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.3-dev.12 (2022/03/29)**
+**Version 2.2.3-b.1 (2022/03/29)**
 
 * **New Features**
 	* None.
@@ -128,7 +128,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v12.1.0-dev.12.
+	* WPSSO Core v12.1.0-b.1.
 
 **Version 2.2.2 (2022/03/26)**
 
@@ -393,7 +393,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.3-dev.12 =
+= 2.2.3-b.1 =
 
 (2022/03/29) Added more debugging messages for skipped post IDs (ie. noindex or redirected).
 
