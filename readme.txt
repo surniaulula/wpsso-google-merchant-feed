@@ -115,7 +115,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 2.2.3 (2022/04/04)**
+**Version 2.2.4 (2022/04/04)**
 
 * **New Features**
 	* None.
@@ -393,7 +393,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 2.2.3 =
+= 2.2.4 =
 
 (2022/04/04) Added more debugging messages for skipped post IDs (ie. noindex or redirected).
 
