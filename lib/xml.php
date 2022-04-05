@@ -80,7 +80,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log_arr( 'skipping post id ' . $post_id . ': noindex is true' );
+							$wpsso->debug->log( 'skipping post id ' . $post_id . ': noindex is true' );
 						}
 
 						continue;
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log_arr( 'skipping post id ' . $post_id . ': has redirect URL' );
+							$wpsso->debug->log( 'skipping post id ' . $post_id . ': has redirect URL' );
 						}
 
 						continue;
