@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 5.9.3
-WC Tested Up To: 6.3.1
+WC Tested Up To: 6.4.1
 Stable Tag: 2.2.4
 
 Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
