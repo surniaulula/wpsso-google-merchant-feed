@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_title    = SucomUtil::get_site_name( $wpsso->options, $locale );
 			$site_url      = SucomUtil::get_home_url( $wpsso->options, $locale );
 			$site_desc     = SucomUtil::get_site_description( $wpsso->options, $locale );
-			$col_og_type   = WpssoPost::get_sortable_columns( $col_key = 'og_type' );
+			$col_og_type   = WpssoAbstractWpMeta::get_sortable_columns( $col_key = 'og_type' );
 			$redir_enabled = $wpsso->util->is_redirect_disabled() ? false : true;
 
 			$feed = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc );
