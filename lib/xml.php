@@ -60,6 +60,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$col_og_type   = WpssoAbstractWpMeta::get_sortable_columns( $col_key = 'og_type' );
 			$redir_enabled = $wpsso->util->is_redirect_disabled() ? false : true;
 
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->log( 'creating new feed' );
+			}
+
 			$feed = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc );
 
 			if ( ! empty( $col_og_type[ 'meta_key' ] ) ) {	// Just in case.
