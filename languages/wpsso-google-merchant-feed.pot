@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.2.4\n"
+"Project-Id-Version: WPSSO Google Merchant Feeds XML 3.0.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -37,12 +37,12 @@ msgstr ""
 msgctxt "plugin description"
 msgid ""
 "Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom "
-"Products (WPSSO Core Premium Required)."
+"Products."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:9
 msgctxt "plugin name"
-msgid "WPSSO Core (Premium)"
+msgid "WPSSO Core"
 msgstr ""
 
 #: lib/actions.php:48
@@ -188,7 +188,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom "
-"Products (WPSSO Core Premium Required)."
+"Products."
 msgstr ""
 
 #. Author of the plugin/theme
