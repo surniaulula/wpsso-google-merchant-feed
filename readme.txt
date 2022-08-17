@@ -14,17 +14,17 @@ Tested Up To: 6.0.1
 WC Tested Up To: 6.8.0
 Stable Tag: 2.2.4
 
-Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required).
+Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products.
 
 == Description ==
 
 <!-- about -->
 
-**WPSSO Google Merchant Feeds XML add-on retrieves product information from [WPSSO Core Premium](https://wpsso.com/) and provides maintenance free XML feeds for each available language.**
+**WPSSO Google Merchant Feeds XML add-on provides XML product feeds for each available language.**
 
 There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds XML add-on can also retrieve custom product information entered in the WordPress editor Document SSO metabox. WooCommerce product variations and additional WooCommerce product attributes are also fully supported.
+A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are both fully supported.
 
 <h3>An XML Feed for Each Language</h3>
 
@@ -61,15 +61,9 @@ The following XML feed attributes are automatically generated from your WooComme
 * Size type <code>&#91;size_type&#93;</code>
 * Item group ID <code>&#91;item_group_id&#93;</code>
 
-<h3>WPSSO Core Premium Required</h3>
+<h3>WPSSO Core Required</h3>
 
-WPSSO Google Merchant Feeds XML (WPSSO GMF) is an add-on for the [WPSSO Core Premium plugin](https://wpsso.com/).
-
-The [WPSSO Core Premium plugin](https://wpsso.com/) provides:
-
-* An integration module for the WooCommerce plugin.
-* An integration module for the Easy Digital Downloads plugin.
-* Custom product options in the Document SSO metabox.
+WPSSO Google Merchant Feeds XML (WPSSO GMF) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
 == Installation ==
 
@@ -79,14 +73,6 @@ The [WPSSO Core Premium plugin](https://wpsso.com/) provides:
 * [Uninstall the WPSSO Google Merchant Feeds XML add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
-
-<h3 class="top">Frequently Asked Questions</h3>
-
-* None.
-
-<h3>Notes and Documentation</h3>
-
-* None.
 
 == Screenshots ==
 
@@ -114,6 +100,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 <p>Under the SSO &gt; Update Manager settings page, select the "Development and Up" (for example) version filter for the WPSSO Core plugin and/or its add-ons. Save the plugin settings and click the "Check for Plugin Updates" button to fetch the latest version information. When new development versions are available, they will automatically appear under your WordPress Dashboard &gt; Updates page. You can always reselect the "Stable / Production" version filter at any time to reinstall the latest stable version.</p>
 
 <h3>Changelog / Release Notes</h3>
+
+**Version 3.0.0-dev.4 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.0.0-dev.4.
 
 **Version 2.2.4 (2022/04/04)**
 
@@ -392,6 +393,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 3.0.0-dev.4 =
+
+(TBD) None.
 
 = 2.2.4 =
 
