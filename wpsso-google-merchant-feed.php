@@ -10,7 +10,7 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products.
+ * Description: Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.
  * Requires PHP: 7.2
  * Requires At Least: 5.2
  * Tested Up To: 6.0.1
