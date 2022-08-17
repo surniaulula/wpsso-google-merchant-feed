@@ -14,7 +14,7 @@ Tested Up To: 6.0.1
 WC Tested Up To: 6.8.0
 Stable Tag: 2.2.4
 
-Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products.
+Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.
 
 == Description ==
 
