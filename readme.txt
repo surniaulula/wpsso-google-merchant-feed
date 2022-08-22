@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.0.1
-WC Tested Up To: 6.8.0
+WC Tested Up To: 6.8.1
 Stable Tag: 2.2.4
 
 Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.
@@ -20,13 +20,13 @@ Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Pr
 
 <!-- about -->
 
-**WPSSO Google Merchant Feeds XML add-on provides XML product feeds for each available language.**
+**WPSSO Google Merchant Feeds XML add-on provides XML product feeds for Google Merchant Center in each available language.**
 
 There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
 A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are both fully supported.
 
-<h3>An XML Feed for Each Language</h3>
+<h3>XML Feed for Each Language</h3>
 
 Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or the installed WordPress languages). After activating the WPSSO Google Merchant Feeds XML add-on, see the SSO &gt; Google Merchant Feeds settings page for the list of available feed URLs.
 
@@ -101,10 +101,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-dev.4 (TBD)**
+**Version 3.0.0-dev.4 (2022/08/22)**
 
 * **New Features**
-	* None.
+	* Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -396,7 +396,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.0-dev.4 =
 
-(TBD) None.
+(2022/08/22) Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
 
 = 2.2.4 =
 
