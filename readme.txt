@@ -11,7 +11,7 @@ Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.0.1
-WC Tested Up To: 6.8.1
+WC Tested Up To: 6.8.2
 Stable Tag: 2.2.4
 
 Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.
@@ -101,7 +101,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-b.1 (2022/08/22)**
+**Version 3.0.0-b.2 (2022/08/22)**
 
 * **New Features**
 	* Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
@@ -114,7 +114,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.0.0-b.1.
+	* WPSSO Core v13.0.0-b.2.
 
 **Version 2.2.4 (2022/04/04)**
 
@@ -394,7 +394,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-b.1 =
+= 3.0.0-b.2 =
 
 (2022/08/22) Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
 
