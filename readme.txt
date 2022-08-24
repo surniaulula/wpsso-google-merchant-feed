@@ -102,6 +102,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.0.1 (2022/08/24)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added `esc_xml()` and `esc_html()` to the feed XML content.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.0.0.
+
 **Version 3.0.0 (2022/08/24)**
 
 * **New Features**
@@ -394,6 +409,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v9.7.0.
 
 == Upgrade Notice ==
+
+= 3.0.1 =
+
+(2022/08/24) Added `esc_xml()` and `esc_html()` to the feed XML content.
 
 = 3.0.0 =
 
