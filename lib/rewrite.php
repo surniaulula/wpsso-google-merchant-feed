@@ -149,25 +149,27 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$wp_query->is_404 = false;
 
 			ob_implicit_flush( true );
+
 			ob_end_flush();
 
+			$xml         = WpssoGmfXml::get();
 			$disposition = 'attachment';
 			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
-			$xml         = WpssoGmfXml::get();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$xml .= $wpsso->debug->get_html( null, 'debug log' );
-			}
-
-			$length = strlen( $xml );
+			$length      = strlen( $xml );
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $length );
 
-			echo $xml;
+			if ( $wpsso->debug->enabled ) {
+
+				$html = $wpsso->debug->get_html( null, 'debug log' );
+			
+				echo esc_html( $html );
+			}
+
+			echo esc_xml( $xml );
 
 			flush();
 
