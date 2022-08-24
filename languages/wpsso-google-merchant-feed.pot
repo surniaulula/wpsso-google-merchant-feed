@@ -72,8 +72,8 @@ msgstr ""
 #: lib/filters-messages.php:48
 msgid ""
 "Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and "
-"custom products are automatically created for each available language (as "
-"dictated by Polylang, WPLM, or the installed WordPress languages)."
+"custom products are automatically created in your site's language(s) from "
+"Polylang, WPLM, or the installed WordPress languages."
 msgstr ""
 
 #: lib/filters-messages.php:62
