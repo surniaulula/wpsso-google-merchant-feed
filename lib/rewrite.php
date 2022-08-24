@@ -153,21 +153,21 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			$disposition = 'attachment';
 			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
-			$content     = WpssoGmfXml::get();
+			$xml         = WpssoGmfXml::get();
 
 			if ( $wpsso->debug->enabled ) {
 
-				$content .= $wpsso->debug->get_html( null, 'debug log' );
+				$xml .= $wpsso->debug->get_html( null, 'debug log' );
 			}
 
-			$length = strlen( $content );
+			$length = strlen( $xml );
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $length );
 
-			echo $content;
+			echo $xml;
 
 			flush();
 
