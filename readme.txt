@@ -1,5 +1,5 @@
-=== WPSSO Google Merchant Feeds XML ===
-Plugin Name: WPSSO Google Merchant Feeds XML
+=== WPSSO Google Merchant Feed ===
+Plugin Name: WPSSO Google Merchant Feed
 Plugin Slug: wpsso-google-merchant-feed
 Text Domain: wpsso-google-merchant-feed
 Domain Path: /languages
