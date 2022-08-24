@@ -92,6 +92,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 <h3>Standard Edition Repositories</h3>
 
 * [GitHub](https://surniaulula.github.io/wpsso-google-merchant-feed/)
+* [WordPress.org](https://plugins.trac.wordpress.org/browser/wpsso-google-merchant-feed/)
 
 <h3>Development Version Updates</h3>
 
@@ -104,7 +105,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 3.0.0 (2022/08/24)**
 
 * **New Features**
-	* Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
+	* Removed dependency on the WPSSO Core Premium edition plugin.
 * **Improvements**
 	* None.
 * **Bugfixes**
@@ -396,7 +397,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.0.0 =
 
-(2022/08/24) Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
+(2022/08/24) Removed dependency on the WPSSO Core Premium edition plugin.
 
 = 2.2.4 =
 
