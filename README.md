@@ -3,7 +3,7 @@
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feeds XML</td></tr>
 <tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>3.0.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>3.0.1</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.0.2</td></tr>

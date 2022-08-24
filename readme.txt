@@ -12,7 +12,7 @@ Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.0.2
 WC Tested Up To: 6.8.2
-Stable Tag: 3.0.0
+Stable Tag: 3.0.1
 
 Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.
 
