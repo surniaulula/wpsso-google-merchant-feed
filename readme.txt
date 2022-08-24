@@ -20,7 +20,7 @@ Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Pr
 
 <!-- about -->
 
-**WPSSO Google Merchant Feeds XML add-on provides XML product feeds for Google Merchant Center in each available language.**
+**WPSSO Google Merchant Feeds XML add-on provides XML product feeds for Google Merchant Center in your site's language(s).**
 
 There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 <h3>XML Feed for Each Language</h3>
 
-Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as provided by Polylang, WPLM, or the installed WordPress languages). After activating the WPSSO Google Merchant Feeds XML add-on, see the SSO &gt; Google Merchant Feeds settings page for the list of available feed URLs.
+Google merchant XML feeds for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) (as provided by Polylang, WPLM, or the installed WordPress languages). After activating the WPSSO Google Merchant Feeds XML add-on, see the SSO &gt; Google Merchant Feeds settings page for the list of available feed URLs.
 
 <!-- /about -->
 
@@ -101,7 +101,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.0.0-rc.1 (2022/08/23)**
+**Version 3.0.0 (2022/08/24)**
 
 * **New Features**
 	* Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
@@ -114,7 +114,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.0.0-rc.1.
+	* WPSSO Core v13.0.0.
 
 **Version 2.2.4 (2022/04/04)**
 
@@ -394,9 +394,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.0.0-rc.1 =
+= 3.0.0 =
 
-(2022/08/23) Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
+(2022/08/24) Removed dependency on the WPSSO Core Premium edition plugin - the WPSSO Google Merchant Feeds XML add-on can now work with the WPSSO Core Standard edition as well.
 
 = 2.2.4 =
 
