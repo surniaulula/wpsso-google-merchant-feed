@@ -152,24 +152,23 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			ob_end_flush();
 
-			$xml         = WpssoGmfXml::get();
-			$disposition = 'attachment';
-			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
-			$length      = strlen( $xml );
-
-			header( 'HTTP/1.1 200 OK' );
-			header( 'Content-Type: application/rss+xml' );
-			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
-			header( 'Content-Length: ' . $length );
+			$content_esc   = esc_xml( WpssoGmfXml::get() );
+			$content_dispo = 'attachment';
+			$filename      = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
 
 			if ( $wpsso->debug->enabled ) {
 
-				$html = $wpsso->debug->get_html( null, 'debug log' );
-			
-				echo esc_html( $html );
+				$content_esc .= esc_html( $wpsso->debug->get_html( null, 'debug log' ) );
 			}
 
-			echo esc_xml( $xml );
+			$content_len = strlen( $content_esc );
+
+			header( 'HTTP/1.1 200 OK' );
+			header( 'Content-Type: application/rss+xml' );
+			header( 'Content-Disposition: ' . $content_dispo . '; filename="' . $filename . '"' );
+			header( 'Content-Length: ' . $content_len );
+
+			echo $content_esc;	// Escaped XML and HTML.
 
 			flush();
 
