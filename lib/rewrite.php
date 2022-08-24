@@ -152,23 +152,23 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			ob_end_flush();
 
-			$content_esc   = esc_xml( WpssoGmfXml::get() );
-			$content_dispo = 'attachment';
-			$filename      = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
+			$attachment  = esc_xml( WpssoGmfXml::get() );
+			$disposition = 'attachment';
+			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
 
 			if ( $wpsso->debug->enabled ) {
 
-				$content_esc .= esc_html( $wpsso->debug->get_html( null, 'debug log' ) );
+				$attachment .= esc_html( $wpsso->debug->get_html( null, 'debug log' ) );
 			}
 
-			$content_len = strlen( $content_esc );
+			$content_len = strlen( $attachment );	// Escaped attachment length.
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
-			header( 'Content-Disposition: ' . $content_dispo . '; filename="' . $filename . '"' );
+			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $content_len );
 
-			echo $content_esc;	// Escaped XML and HTML.
+			echo $attachment;	// Escaped XML and HTML.
 
 			flush();
 
