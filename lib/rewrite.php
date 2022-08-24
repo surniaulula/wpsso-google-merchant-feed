@@ -148,8 +148,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			$wp_query->is_404 = false;
 
-			ob_implicit_flush( true );
-
+			ob_implicit_flush( $enable = true );
 			ob_end_flush();
 
 			$attachment  = esc_xml( WpssoGmfXml::get() );
@@ -171,8 +170,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			echo $attachment;	// Escaped XML and HTML attachment content.
 
 			flush();
-
-			sleep( 1 );
+			sleep( $seconds = 1 );
 
 			exit;
 		}
