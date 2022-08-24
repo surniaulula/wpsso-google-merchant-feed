@@ -161,14 +161,14 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				$attachment .= esc_html( $wpsso->debug->get_html( null, 'debug log' ) );
 			}
 
-			$content_len = strlen( $attachment );	// Escaped attachment length.
+			$content_len = strlen( $attachment );	// Escaped XML and HTML attachment content length.
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $content_len );
 
-			echo $attachment;	// Escaped XML and HTML.
+			echo $attachment;	// Escaped XML and HTML attachment content.
 
 			flush();
 
