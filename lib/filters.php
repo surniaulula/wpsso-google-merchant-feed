@@ -57,7 +57,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			$sizes[ 'gmf' ] = array(	// Option prefix.
 				'name'         => 'gmf',
-				'label_transl' => _x( 'Google Merchant Feeds', 'option label', 'wpsso-google-merchant-feed' ),
+				'label_transl' => _x( 'Google Merchant Feed XML', 'option label', 'wpsso-google-merchant-feed' ),
 			);
 
 			return $sizes;
@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 		public function filter_plugin_image_sizes_rows( $table_rows, $form ) {
 
 			$table_rows[ 'gmf_img_size' ] = '' .
-				$form->get_th_html( _x( 'Google Merchant Feeds', 'option label', 'wpsso-google-merchant-feed' ),
+				$form->get_th_html( _x( 'Google Merchant Feed XML', 'option label', 'wpsso-google-merchant-feed' ),
 					$css_class = '', $css_id = 'gmf_img_size' ) . 
 				'<td>' . $form->get_input_image_dimensions( 'gmf_img' ) . '</td>';
 
@@ -115,7 +115,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 					'tr_class' => 'hide_og_type hide_og_type_product',
 					'td_class' => 'subsection top',
 					'header'   => 'h4',
-					'label'    => _x( 'Google Merchant Feeds (Main Product)', 'metabox title', 'wpsso-google-merchant-feed' )
+					'label'    => _x( 'Google Merchant Feed XML (Main Product)', 'metabox title', 'wpsso-google-merchant-feed' )
 				),
 				'gmf_img_info' => array(
 					'tr_class'  => 'hide_og_type hide_og_type_product',
@@ -157,7 +157,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			restore_current_locale();	// Calls an action to clear the SucomUtil::get_locale() cache.
 
-			$notice_msg .= sprintf( __( 'The Google Merchant Feeds XML cache for %1$d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count ) . ' ';
+			$notice_msg .= sprintf( __( 'The Google Merchant Feed XML cache for %1$d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count ) . ' ';
 
 			return $notice_msg;
 		}

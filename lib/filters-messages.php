@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text = '<blockquote class="top-info">';
 
-					$text .= __( 'Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) from Polylang, WPLM, or the installed WordPress languages.', 'wpsso-google-merchant-feed' );
+					$text .= __( 'Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) from Polylang, WPML, or the installed WordPress languages.', 'wpsso-google-merchant-feed' );
 
 					$text .= '</blockquote>';
 
@@ -98,7 +98,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$def_img_dims = $this->p->msgs->get_def_img_dims( 'gmf' );
 
-					$text = sprintf( __( 'The dimensions used for the Google Merchant Feeds image (default dimensions are %s).', 'wpsso-google-merchant-feed' ), $def_img_dims ) . ' ';
+					$text = sprintf( __( 'The dimensions used for the Google merchant feed XML image (default dimensions are %s).', 'wpsso-google-merchant-feed' ), $def_img_dims ) . ' ';
 
 					break;
 
@@ -121,7 +121,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 				 */
 				case 'tooltip-meta-gmf_img_id':		// Image ID.
 
-					$text = __( 'A customized image ID for the Google Merchant Feeds.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text = __( 'A customized image ID for the Google merchant feed XML.', 'wpsso-google-merchant-feed' ) . ' ';
 
 					$text .= __( 'The default value is inherited from the Schema markup or priority image.', 'wpsso-google-merchant-feed' ) . ' ';
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 				case 'tooltip-meta-gmf_img_url':	// or an Image URL.
 
-					$text = __( 'A customized image URL (instead of an image ID) for the Google Merchant Feeds.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text = __( 'A customized image URL (instead of an image ID) for the Google merchant feed XML.', 'wpsso-google-merchant-feed' ) . ' ';
 
 					$text .= __( 'The default value is inherited from the Schema markup or priority image.', 'wpsso-google-merchant-feed' ) . ' ';
 

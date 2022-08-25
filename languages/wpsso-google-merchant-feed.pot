@@ -1,8 +1,8 @@
-# Copyright (C) 2022 WPSSO Google Merchant Feeds XML
-# This file is distributed under the same license as the WPSSO Google Merchant Feeds XML package.
+# Copyright (C) 2022 WPSSO Google Merchant Feed XML
+# This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 3.0.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 3.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -30,13 +30,13 @@ msgstr ""
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin name"
-msgid "WPSSO Google Merchant Feeds XML"
+msgid "WPSSO Google Merchant Feed XML"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin description"
 msgid ""
-"Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and "
+"Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
 "Custom Products."
 msgstr ""
 
@@ -59,21 +59,21 @@ msgstr ""
 
 #: lib/actions.php:118
 msgid ""
-"A Google Merchant Feeds \"image_link\" attribute could not be generated for "
+"A Google merchant feed \"image_link\" attribute could not be generated for "
 "%1$s ID %2$s."
 msgstr ""
 
 #: lib/actions.php:121
 msgid ""
 "Google <em>requires at least one \"image_link\" attribute</em> for each "
-"product variation in the Google Merchant Feeds XML."
+"product variation in the Google merchant feed XML."
 msgstr ""
 
 #: lib/filters-messages.php:48
 msgid ""
-"Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and "
+"Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and "
 "custom products are automatically created in your site's language(s) from "
-"Polylang, WPLM, or the installed WordPress languages."
+"Polylang, WPML, or the installed WordPress languages."
 msgstr ""
 
 #: lib/filters-messages.php:62
@@ -108,12 +108,12 @@ msgstr ""
 
 #: lib/filters-messages.php:101
 msgid ""
-"The dimensions used for the Google Merchant Feeds image (default dimensions "
-"are %s)."
+"The dimensions used for the Google merchant feed XML image (default "
+"dimensions are %s)."
 msgstr ""
 
 #: lib/filters-messages.php:124
-msgid "A customized image ID for the Google Merchant Feeds."
+msgid "A customized image ID for the Google merchant feed XML."
 msgstr ""
 
 #: lib/filters-messages.php:126 lib/filters-messages.php:136
@@ -127,8 +127,8 @@ msgstr ""
 
 #: lib/filters-messages.php:134
 msgid ""
-"A customized image URL (instead of an image ID) for the Google Merchant "
-"Feeds."
+"A customized image URL (instead of an image ID) for the Google merchant feed "
+"XML."
 msgstr ""
 
 #: lib/filters-messages.php:138
@@ -137,7 +137,7 @@ msgstr ""
 
 #: lib/filters.php:60 lib/filters.php:72
 msgctxt "option label"
-msgid "Google Merchant Feeds"
+msgid "Google Merchant Feed XML"
 msgstr ""
 
 #: lib/filters.php:94
@@ -154,7 +154,7 @@ msgstr ""
 
 #: lib/filters.php:118
 msgctxt "metabox title"
-msgid "Google Merchant Feeds (Main Product)"
+msgid "Google Merchant Feed XML (Main Product)"
 msgstr ""
 
 #: lib/filters.php:127
@@ -168,17 +168,16 @@ msgid "or an Image URL"
 msgstr ""
 
 #: lib/filters.php:160
-msgid ""
-"The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
+msgid "The Google Merchant Feed XML cache for %1$d locales has been refreshed."
 msgstr ""
 
 #: lib/submenu/gmf-general.php:38
 msgctxt "metabox title"
-msgid "Google Merchant Feeds XML"
+msgid "Google Merchant Feed XML"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Google Merchant Feeds XML"
+msgid "WPSSO Google Merchant Feed XML"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
@@ -187,7 +186,7 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and "
+"Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
 "Custom Products."
 msgstr ""
 
