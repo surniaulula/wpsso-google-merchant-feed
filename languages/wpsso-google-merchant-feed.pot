@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 3.0.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 3.1.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -59,8 +59,8 @@ msgstr ""
 
 #: lib/actions.php:118
 msgid ""
-"A Google merchant feed \"image_link\" attribute could not be generated for "
-"%1$s ID %2$s."
+"A Google merchant feed XML \"image_link\" attribute could not be generated "
+"for %1$s ID %2$s."
 msgstr ""
 
 #: lib/actions.php:121
@@ -168,7 +168,7 @@ msgid "or an Image URL"
 msgstr ""
 
 #: lib/filters.php:160
-msgid "The Google Merchant Feed XML cache for %1$d locales has been refreshed."
+msgid "The Google Merchant Feed XML cache for %d locales has been refreshed."
 msgstr ""
 
 #: lib/submenu/gmf-general.php:38

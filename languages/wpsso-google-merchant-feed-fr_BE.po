@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feeds XML 2.2.3\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 3.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-04-01 07:44-0700\n"
+"PO-Revision-Date: 2022-08-25 09:55-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.1.1\n"
 
 #: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -28,42 +28,42 @@ msgstr "Flux de marchands"
 
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin name"
-msgid "WPSSO Google Merchant Feeds XML"
-msgstr "WPSSO XML flux de marchands Google"
+msgid "WPSSO Google Merchant Feed XML"
+msgstr "WPSSO Flux XML de marchand Google"
 
 #: gettext/gettext-lib-config.php:8
 msgctxt "plugin description"
-msgid "Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
-msgstr "Flux de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés (WPSSO Core Premium requis)."
+msgid "Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products."
+msgstr "Flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés."
 
 #: gettext/gettext-lib-config.php:9
 msgctxt "plugin name"
-msgid "WPSSO Core (Premium)"
-msgstr "WPSSO Core (Premium)"
+msgid "WPSSO Core"
+msgstr "WPSSO Core"
 
 #: lib/actions.php:48
 msgid "checking google merchant feeds"
-msgstr "vérification flux de marchands google"
+msgstr "vérification flux de marchand google"
 
 #: lib/actions.php:87
 msgid "getting google merchant feeds images"
-msgstr "obtenir des images flux de marchands google"
+msgstr "obtenir des images flux de marchand google"
 
 #: lib/actions.php:112
 msgid "checking google merchant feeds images"
-msgstr "vérification des images flux de marchands google"
+msgstr "vérification des images flux de marchand google"
 
 #: lib/actions.php:118
-msgid "A Google Merchant Feeds \"image_link\" attribute could not be generated for %1$s ID %2$s."
-msgstr "Impossible de générer l'attribut \"image_link\" des flux marchands Google pour l'identifiant %1$s %2$s."
+msgid "A Google merchant feed XML \"image_link\" attribute could not be generated for %1$s ID %2$s."
+msgstr "Impossible de générer l'attribut \"image_link\" de flux XML de marchand Google pour l'identifiant %1$s %2$s."
 
 #: lib/actions.php:121
-msgid "Google <em>requires at least one \"image_link\" attribute</em> for each product variation in the Google Merchant Feeds XML."
-msgstr "Google <em>exige au moins un attribut \"image_link\"</em> pour chaque variante de produit dans le XML des flux de marchands Google."
+msgid "Google <em>requires at least one \"image_link\" attribute</em> for each product variation in the Google merchant feed XML."
+msgstr "Google <em>exige au moins un attribut \"image_link\"</em> pour chaque variante de produit dans le flux XML de marchand Google."
 
 #: lib/filters-messages.php:48
-msgid "Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and custom products are automatically created for each available language (as dictated by Polylang, WPLM, or the installed WordPress languages)."
-msgstr "Les flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et les produits personnalisés sont automatiquement créés pour chaque langue disponible (selon Polylang, WPLM ou les langues WordPress installées)."
+msgid "Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages."
+msgstr "Les flux XML de marchand Google pour WooCommerce, Easy Digital Downloads et les produits personnalisés sont automatiquement créés dans les langues de votre site à partir de Polylang, WPML ou des langues WordPress installées."
 
 #: lib/filters-messages.php:62
 msgid "Product images must accurately display the entire product and include minimal or no product staging."
@@ -86,12 +86,12 @@ msgid "This is a variable product - images from product variations will supersed
 msgstr "Ceci est un produit variable - les images des variantes du produit remplaceront l'image du produit principale sélectionnée ici."
 
 #: lib/filters-messages.php:101
-msgid "The dimensions used for the Google Merchant Feeds image (default dimensions are %s)."
-msgstr "Les dimensions utilisées pour l'image flux marchands Google (les dimensions par défaut sont %s)."
+msgid "The dimensions used for the Google merchant feed XML image (default dimensions are %s)."
+msgstr "Les dimensions utilisées pour l'image flux XML de marchand Google (les dimensions par défaut sont %s)."
 
 #: lib/filters-messages.php:124
-msgid "A customized image ID for the Google Merchant Feeds."
-msgstr "ID d'image personnalisé pour les flux marchands Google."
+msgid "A customized image ID for the Google merchant feed XML."
+msgstr "ID d'image personnalisé pour le flux XML de marchand Google."
 
 #: lib/filters-messages.php:126 lib/filters-messages.php:136
 msgid "The default value is inherited from the Schema markup or priority image."
@@ -102,8 +102,8 @@ msgid "This option is disabled if a custom image URL is entered."
 msgstr "Cette option est désactivée si une URL d'image personnalisée est fournie."
 
 #: lib/filters-messages.php:134
-msgid "A customized image URL (instead of an image ID) for the Google Merchant Feeds."
-msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour les flux marchands Google."
+msgid "A customized image URL (instead of an image ID) for the Google merchant feed XML."
+msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour le flux XML de marchand Google."
 
 #: lib/filters-messages.php:138
 msgid "This option is disabled if a custom image ID is selected."
@@ -111,12 +111,12 @@ msgstr "Cette option est désactivée si un ID d'image personnalisé est sélect
 
 #: lib/filters.php:60 lib/filters.php:72
 msgctxt "option label"
-msgid "Google Merchant Feeds"
-msgstr "Flux de marchands Google"
+msgid "Google Merchant Feed XML"
+msgstr "Flux XML de marchand Google"
 
 #: lib/filters.php:94
 msgid "getting google merchant feeds image"
-msgstr "obtenir l'image flux de marchands google"
+msgstr "obtenir l'image flux de marchand google"
 
 #: lib/filters.php:100
 msgid "getting schema 1:1 image"
@@ -128,8 +128,8 @@ msgstr "obtenir l'image open graph"
 
 #: lib/filters.php:118
 msgctxt "metabox title"
-msgid "Google Merchant Feeds (Main Product)"
-msgstr "Flux de marchands Google (produit principal)"
+msgid "Google Merchant Feed XML (Main Product)"
+msgstr "Flux de marchand Google (produit principal)"
 
 #: lib/filters.php:127
 msgctxt "option label"
@@ -142,25 +142,25 @@ msgid "or an Image URL"
 msgstr "ou URL d'une image"
 
 #: lib/filters.php:160
-msgid "The Google Merchant Feeds XML cache for %1$d locales has been refreshed."
-msgstr "Le cache XML des flux de marchands Google pour %1$d langues a été actualisé."
+msgid "The Google Merchant Feed XML cache for %d locales has been refreshed."
+msgstr "Le cache de flux XML de marchand Google pour %d langues a été actualisé."
 
 #: lib/submenu/gmf-general.php:38
 msgctxt "metabox title"
-msgid "Google Merchant Feeds XML"
-msgstr "XML flux de marchands Google"
+msgid "Google Merchant Feed XML"
+msgstr "Flux XML de marchand Google"
 
 #. Plugin Name of the plugin/theme
-msgid "WPSSO Google Merchant Feeds XML"
-msgstr "WPSSO XML flux de marchands Google"
+msgid "WPSSO Google Merchant Feed XML"
+msgstr "WPSSO Flux XML de marchand Google"
 
 #. Plugin URI of the plugin/theme
 msgid "https://wpsso.com/extend/plugins/wpsso-google-merchant-feed/"
 msgstr "https://wpsso.com/extend/plugins/wpsso-google-merchant-feed/"
 
 #. Description of the plugin/theme
-msgid "Google Merchant Feeds for WooCommerce, Easy Digital Downloads, and Custom Products (WPSSO Core Premium Required)."
-msgstr "Flux de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés (WPSSO Core Premium requis)."
+msgid "Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products."
+msgstr "Flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et les produits personnalisés."
 
 #. Author of the plugin/theme
 msgid "JS Morisset"
