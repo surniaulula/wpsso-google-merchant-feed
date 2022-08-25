@@ -1,5 +1,5 @@
-=== WPSSO Google Merchant Feeds XML ===
-Plugin Name: WPSSO Google Merchant Feeds XML
+=== WPSSO Google Merchant Feed XML ===
+Plugin Name: WPSSO Google Merchant Feed XML
 Plugin Slug: wpsso-google-merchant-feed
 Text Domain: wpsso-google-merchant-feed
 Domain Path: /languages
@@ -14,27 +14,27 @@ Tested Up To: 6.0.2
 WC Tested Up To: 6.8.2
 Stable Tag: 3.0.1
 
-Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and Custom Products.
+Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products.
 
 == Description ==
 
 <!-- about -->
 
-**WPSSO Google Merchant Feeds XML add-on provides XML product feeds for Google Merchant Center in your site's language(s).**
+**WPSSO Google Merchant Feed XML add-on provides XML product feeds for Google Merchant Center in your site's language(s).**
 
-There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feeds XML add-on automatically retrieves all available product information in the language (aka locale) requested.
+There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feeds XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are fully supported.
+A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are fully supported.
 
-<h3>XML Feed for Each Language</h3>
+<h3>Multilingual</h3>
 
-Google Merchant Feeds XML for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) from Polylang, WPLM, or the installed WordPress languages. After activating the WPSSO Google Merchant Feeds XML add-on, see the SSO &gt; Google Merchant Feeds settings page for the your feed URLs.
+Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) from Polylang, WPML, or the installed WordPress languages. After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Merchant Feeds settings page for the your feed URLs.
 
 <!-- /about -->
 
-<h3>Google Merchant Feed Attributes</h3>
+<h3>Google Merchant Feed XML Attributes</h3>
 
-The following XML feed attributes are automatically generated from your WooCommerce, Easy Digital Downloads, and custom products, including WooCommerce product variations:
+The following XML product attributes are automatically created based on your WooCommerce, Easy Digital Downloads, and custom products (including WooCommerce product variations):
 
 * ID <code>&#91;id&#93;</code>
 * Title <code>&#91;title&#93;</code>
@@ -63,14 +63,14 @@ The following XML feed attributes are automatically generated from your WooComme
 
 <h3>WPSSO Core Required</h3>
 
-WPSSO Google Merchant Feeds XML (WPSSO GMF) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
+WPSSO Google Merchant Feed XML (WPSSO GMF) is an add-on for the [WPSSO Core plugin](https://wordpress.org/plugins/wpsso/).
 
 == Installation ==
 
 <h3 class="top">Install and Uninstall</h3>
 
-* [Install the WPSSO Google Merchant Feeds XML add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/install-the-plugin/).
-* [Uninstall the WPSSO Google Merchant Feeds XML add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/).
+* [Install the WPSSO Google Merchant Feed XML add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/install-the-plugin/).
+* [Uninstall the WPSSO Google Merchant Feed XML add-on](https://wpsso.com/docs/plugins/wpsso-google-merchant-feed/installation/uninstall-the-plugin/).
 
 == Frequently Asked Questions ==
 
@@ -154,7 +154,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* Fixed missing support for the custom Google Merchant Feed image ID or URL.
+	* Fixed missing support for the custom Google Merchant Feed XML image ID or URL.
 * **Developer Notes**
 	* Added `$md_pre` to the `WpssoOpengraph->get_array()` method arguments.
 * **Requires At Least**
@@ -197,7 +197,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Added a check for a missing "image_link" in the Google Merchant Feeds when editing a product.
+	* Added a check for a missing "image_link" in the Google merchant feeds when editing a product.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -210,9 +210,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 **Version 2.0.0 (2022/03/02)**
 
 * **New Features**
-	* Added a new "Google Merchant Feeds" image size under the SSO &gt; Advanced Settings &gt; Plugin Settings &gt; Image Sizes tab.
+	* Added a new "Google Merchant Feed XML" image size under the SSO &gt; Advanced Settings &gt; Plugin Settings &gt; Image Sizes tab.
 * **Improvements**
-	* Added new "Google Merchant Feeds" section under the Document SSO &gt; Edit Media tab.
+	* Added new "Google Merchant Feed XML" section under the Document SSO &gt; Edit Media tab.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -229,7 +229,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* Fixed inclusion of archive pages, like the WooCommerce shop page, in the Google Merchant Feeds XML.
+	* Fixed inclusion of archive pages, like the WooCommerce shop page, in the Google merchant feed XML.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
@@ -424,7 +424,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 2.2.2 =
 
-(2022/03/26) Fixed missing support for the custom Google Merchant Feed image ID or URL.
+(2022/03/26) Fixed missing support for the custom Google Merchant Feed XML image ID or URL.
 
 = 2.2.1 =
 
@@ -436,15 +436,15 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 2.1.0 =
 
-(2022/03/07) Added a check for a missing "image_link" in the Google Merchant Feeds when editing a product.
+(2022/03/07) Added a check for a missing "image_link" in the Google merchant feeds when editing a product.
 
 = 2.0.0 =
 
-(2022/03/02) Added a new "Google Merchant Feeds" image size.
+(2022/03/02) Added a new "Google Merchant Feed XML" image size.
 
 = 1.5.3 =
 
-(2022/02/25) Fixed inclusion of archive pages, like the WooCommerce shop page, in the Google Merchant Feeds XML.
+(2022/02/25) Fixed inclusion of archive pages, like the WooCommerce shop page, in the Google merchant feed XML.
 
 = 1.5.2 =
 
