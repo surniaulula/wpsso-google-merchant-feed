@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
-Tags: merchant feed, xml, wpml, polylang, woocommerce, edd, easy digital downloads
+Tags: multilingual, merchant feed, xml, wpml, polylang, woocommerce, edd, easy digital downloads
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
@@ -28,7 +28,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 <h3>Multilingual</h3>
 
-Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) from Polylang, WPML, or the installed WordPress languages. After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Merchant Feeds settings page for the your feed URLs.
+Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages. After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Merchant Feeds settings page for the your feed URLs.
 
 <!-- /about -->
 
