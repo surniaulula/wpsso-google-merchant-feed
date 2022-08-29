@@ -22,7 +22,9 @@ Google Merchant Feed XMLs for WooCommerce (Including Product Variations), Easy D
 
 **WPSSO Google Merchant Feed XML add-on provides XML product feeds for Google Merchant Center in your site's language(s).**
 
-There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested. A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are fully supported.
+There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested. A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required).
+
+**WooCommerce product variations, product attributes, and custom fields are supported.**
 
 <h3>Multilingual</h3>
 
