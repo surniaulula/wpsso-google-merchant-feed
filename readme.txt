@@ -14,7 +14,7 @@ Tested Up To: 6.0.2
 WC Tested Up To: 6.8.2
 Stable Tag: 3.1.0
 
-Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products.
+Google Merchant Feed XMLs for WooCommerce (Including Product Variations), Easy Digital Downloads, and Custom Products.
 
 == Description ==
 
@@ -22,13 +22,11 @@ Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Pr
 
 **WPSSO Google Merchant Feed XML add-on provides XML product feeds for Google Merchant Center in your site's language(s).**
 
-There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
-
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are fully supported.
+There are no plugin or add-on settings to configure &mdash; the WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested. A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required &mdash; the WPSSO Google Merchant Feed XML add-on can retrieve custom product information entered in the Document SSO metabox (WPSSO Core Premium required). WooCommerce product variations and additional product attributes are fully supported.
 
 <h3>Multilingual</h3>
 
-Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages. After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Merchant Feeds settings page for the your feed URLs.
+Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages. After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Merchant Feeds settings page for your feed URLs.
 
 <!-- /about -->
 
