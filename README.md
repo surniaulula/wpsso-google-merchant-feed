@@ -10,7 +10,7 @@
 <tr><th align="right" valign="top" nowrap>Tested Up To WooCommerce</th><td>6.8.2</td></tr>
 <tr><th align="right" valign="top" nowrap>Contributors</th><td>jsmoriss</td></tr>
 <tr><th align="right" valign="top" nowrap>License</th><td><a href="https://www.gnu.org/licenses/gpl.txt">GPLv3</a></td></tr>
-<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>multilingual, merchant feed, xml, wpml, polylang, woocommerce, edd, easy digital downloads</td></tr>
+<tr><th align="right" valign="top" nowrap>Tags / Keywords</th><td>multilingual, google merchant center, woocommerce, xml, wpml, polylang, edd, easy digital downloads</td></tr>
 </table>
 
 <h2>Description</h2>
