@@ -102,7 +102,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.2.0-dev.2 (TBD)**
+**Version 3.2.0-dev.2 (2022/09/14)**
 
 * **New Features**
 	* None.
@@ -111,7 +111,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added support for the new 'product:size:type' enumeration values from WPSSO Core v13.3.0.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -442,7 +442,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.2.0-dev.2 =
 
-(TBD) None.
+(2022/09/14) Added support for the new 'product:size:type' enumeration values from WPSSO Core v13.3.0.
 
 = 3.1.0 =
 
