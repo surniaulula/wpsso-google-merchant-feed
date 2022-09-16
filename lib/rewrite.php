@@ -151,13 +151,19 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			ob_implicit_flush( $enable = true );
 			ob_end_flush();
 
-			$attachment  = esc_xml( WpssoGmfXml::get() );
+			/**
+			 * Do not use esc_xml() as this replaces XML markup by HTML entities (ie. '<' by '&lt;' for example).
+			 */
+			$attachment  = WpssoGmfXml::get();
 			$disposition = 'attachment';
 			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
 
 			if ( $wpsso->debug->enabled ) {
 
-				$attachment .= esc_html( $wpsso->debug->get_html( null, 'debug log' ) );
+				/**
+				 * Do not use esc_html() as this replaces HTML markup by HTML entities (ie. '<' by '&lt;' for example).
+				 */
+				$attachment .= $wpsso->debug->get_html( null, 'debug log' );
 			}
 
 			$content_len = strlen( $attachment );	// Escaped XML and HTML attachment content length.
@@ -167,7 +173,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $content_len );
 
-			echo $attachment;	// Escaped XML and HTML attachment content.
+			echo $attachment;
 
 			flush();
 			sleep( $seconds = 1 );
