@@ -192,6 +192,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:retailer_category' => 'setProductType',	// String to organize bidding and reporting in Google Ads Shopping campaigns.
 				'product:brand'             => 'setBrand',
 				'product:availability'      => 'setAvailability',
+				'product:price'             => 'setPrice',
+				'product:sale_price'        => 'setSalePrice',
+				'product:sale_price_dates'  => array( 'setAttribute', 'sale_price_effective_date', false ),
 				'product:condition'         => 'setCondition',
 				'product:color'             => 'setColor',
 				'product:material'          => 'setMaterial',
@@ -199,9 +202,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:target_gender'     => array( 'addAttribute', 'gender', false ),
 				'product:size'              => 'setSize',
 				'product:size:type'         => array( 'addAttribute', 'size_type', false ),
-				'product:price'             => 'setPrice',
-				'product:sale_price'        => 'setSalePrice',
-				'product:sale_price_dates'  => array( 'setAttribute', 'sale_price_effective_date', false ),
+				'product:age_group'         => array( 'setAttribute', 'age_group', false ),
+				'product:adult_oriented'    => 'setAdult',
 				'product:ean'               => array( 'addAttribute', 'gtin', false ),
 				'product:gtin14'            => array( 'addAttribute', 'gtin', false ),
 				'product:gtin13'            => array( 'addAttribute', 'gtin', false ),
@@ -292,13 +294,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			foreach ( array( 'product:availability', 'product:condition' ) as $mt_name ) {
+			foreach ( array( 'product:adult_oriented', 'product:age_group', 'product:availability', 'product:condition' ) as $mt_name ) {
 
 				if ( isset( $mt_data[ $mt_name ] ) ) {
 
 					$val = $mt_data[ $mt_name ];
 
-					if ( isset( $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ] ) ) {
+					if ( isset( $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ] ) ) {	// Allow for false.
 
 						$mt_data[ $mt_name ] = $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ];
 					}

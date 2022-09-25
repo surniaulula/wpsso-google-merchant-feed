@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '3.2.1',	// Plugin version.
+					'version'     => '3.3.0-dev.5',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '13.3.0',
+							'min_version'   => '13.4.0-dev.5',
 						),
 					),
 
@@ -88,6 +88,34 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'gmf_img_height' => 800,
 				),
 				'gmf_content_map' => array(
+					'product:adult_oriented' => array(
+						'https://schema.org/AlcoholConsideration'                     => true,
+						'https://schema.org/DangerousGoodConsideration'               => true,
+						'https://schema.org/HealthcareConsideration'                  => true,
+						'https://schema.org/NarcoticConsideration'                    => true,
+						'https://schema.org/ReducedRelevanceForChildrenConsideration' => true,
+						'https://schema.org/SexualContentConsideration'               => true,
+						'https://schema.org/TobaccoNicotineConsideration'             => true,
+						'https://schema.org/UnclassifiedAdultConsideration'           => true,
+						'https://schema.org/ViolenceConsideration'                    => true,
+						'https://schema.org/WeaponConsideration'                      => true,
+					),
+					/**
+					 * Validated on 2022/09/24.
+					 *
+					 * See https://developers.facebook.com/docs/marketing-api/catalog/reference/.
+					 *
+					 * See https://support.google.com/merchants/answer/6324463.
+					 */
+					'product:age_group' => array(
+						'adult'    => 'adult',
+						'all ages' => 'adult',
+						'teen'     => 'adult',
+						'kids'     => 'kids',
+						'toddler'  => 'toddler',
+						'infant'   => 'infant',
+						'newborn'  => 'newborn',
+					),
 					'product:availability' => array(
 						'https://schema.org/BackOrder'           => 'backorder',	// BACKORDER.
 						'https://schema.org/Discontinued'        => 'out_of_stock',	// OUT_OF_STOCK.
@@ -106,7 +134,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/RefurbishedCondition' => 'refurbished',	// REFURBISHED.
 						'https://schema.org/UsedCondition'        => 'used',		// USED.
 					),
-					'product:size:type' => array(
+					'product:size_type' => array(
 						'https://schema.org/WearableSizeGroupRegular'   => 'regular',
 						'https://schema.org/WearableSizeGroupPetite'    => 'petite',
 						'https://schema.org/WearableSizeGroupPlus'      => 'plus',
