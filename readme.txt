@@ -104,7 +104,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.0-rc.1 (2022/09/25)**
+**Version 3.3.0 (2022/09/25)**
 
 * **New Features**
 	* None.
@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.4.0-rc.1.
+	* WPSSO Core v13.4.0.
 
 **Version 3.2.1 (2022/09/16)**
 
@@ -196,7 +196,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.0-rc.1 =
+= 3.3.0 =
 
 (2022/09/25) Added support for Age group <code>&#91;age_group&#93;</code> and Adult oriented <code>&#91;adult&#93;</code>.
 
