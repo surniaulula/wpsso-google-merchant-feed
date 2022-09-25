@@ -35,6 +35,7 @@
 
 <ul>
 <li>ID <code>&#91;id&#93;</code></li>
+<li>Item group ID <code>&#91;item_group_id&#93;</code></li>
 <li>Title <code>&#91;title&#93;</code></li>
 <li>Description <code>&#91;description&#93;</code></li>
 <li>Link <code>&#91;link&#93;</code></li>
@@ -57,7 +58,8 @@
 <li>Gender <code>&#91;gender&#93;</code></li>
 <li>Size <code>&#91;size&#93;</code></li>
 <li>Size type <code>&#91;size_type&#93;</code></li>
-<li>Item group ID <code>&#91;item_group_id&#93;</code></li>
+<li>Age group <code>&#91;age_group&#93;</code></li>
+<li>Adult oriented <code>&#91;adult&#93;</code></li>
 </ul>
 
 <h3>WPSSO Core Required</h3>

@@ -37,6 +37,7 @@ Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom pr
 The following XML product attributes are automatically created based on your WooCommerce, Easy Digital Downloads, and custom products (including WooCommerce product variations):
 
 * ID <code>&#91;id&#93;</code>
+* Item group ID <code>&#91;item_group_id&#93;</code>
 * Title <code>&#91;title&#93;</code>
 * Description <code>&#91;description&#93;</code>
 * Link <code>&#91;link&#93;</code>
@@ -59,7 +60,8 @@ The following XML product attributes are automatically created based on your Woo
 * Gender <code>&#91;gender&#93;</code>
 * Size <code>&#91;size&#93;</code>
 * Size type <code>&#91;size_type&#93;</code>
-* Item group ID <code>&#91;item_group_id&#93;</code>
+* Age group <code>&#91;age_group&#93;</code>
+* Adult oriented <code>&#91;adult&#93;</code>
 
 <h3>WPSSO Core Required</h3>
 
@@ -101,6 +103,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 <p>Under the SSO &gt; Update Manager settings page, select the "Development and Up" (for example) version filter for the WPSSO Core plugin and/or its add-ons. Save the plugin settings and click the "Check for Plugin Updates" button to fetch the latest version information. When new development versions are available, they will automatically appear under your WordPress Dashboard &gt; Updates page. You can always reselect the "Stable / Production" version filter at any time to reinstall the latest stable version.</p>
 
 <h3>Changelog / Release Notes</h3>
+
+**Version 3.3.0-dev.5 (2022/09/24)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.3.0.
 
 **Version 3.2.1 (2022/09/16)**
 
@@ -178,6 +195,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v13.0.0.
 
 == Upgrade Notice ==
+
+= 3.3.0-dev.5 =
+
+(2022/09/24) None.
 
 = 3.2.1 =
 
