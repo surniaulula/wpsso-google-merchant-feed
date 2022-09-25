@@ -109,7 +109,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added support for Age group <code>&#91;age_group&#93;</code> and Adult oriented <code>&#91;adult&#93;</code>.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -198,7 +198,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.3.0-dev.5 =
 
-(2022/09/25) None.
+(2022/09/25) Added support for Age group <code>&#91;age_group&#93;</code> and Adult oriented <code>&#91;adult&#93;</code>.
 
 = 3.2.1 =
 
