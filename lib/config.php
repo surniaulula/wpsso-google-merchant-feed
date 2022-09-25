@@ -134,7 +134,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/RefurbishedCondition' => 'refurbished',	// REFURBISHED.
 						'https://schema.org/UsedCondition'        => 'used',		// USED.
 					),
-					'product:size_type' => array(
+					'product:size:type' => array(
 						'https://schema.org/WearableSizeGroupRegular'   => 'regular',
 						'https://schema.org/WearableSizeGroupPetite'    => 'petite',
 						'https://schema.org/WearableSizeGroupPlus'      => 'plus',
