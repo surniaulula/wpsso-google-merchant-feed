@@ -104,12 +104,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.1-dev.4 (TBD)**
+**Version 3.3.1-dev.4 (2022/10/03)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Minor message string updates.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -213,7 +213,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.3.1-dev.4 =
 
-(TBD) None.
+(2022/10/03) Minor message string updates.
 
 = 3.3.0 =
 
