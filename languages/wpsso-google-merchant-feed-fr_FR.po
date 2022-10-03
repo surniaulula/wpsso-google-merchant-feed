@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 3.3.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 3.3.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-09-25 15:29-0700\n"
+"PO-Revision-Date: 2022-10-03 07:01-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -58,8 +58,8 @@ msgid "A Google merchant feed XML \"image_link\" attribute could not be generate
 msgstr "Impossible de générer l'attribut \"image_link\" de flux XML de marchand Google pour l'identifiant %1$s %2$s."
 
 #: lib/actions.php:121
-msgid "Google <em>requires at least one \"image_link\" attribute</em> for each product variation in the Google merchant feed XML."
-msgstr "Google <em>exige au moins un attribut \"image_link\"</em> pour chaque variante de produit dans le flux XML de marchand Google."
+msgid "Google requires at least one \"image_link\" attribute for each product variation in the Google merchant feed XML."
+msgstr "Google exige au moins un attribut \"image_link\"< pour chaque variante de produit dans le flux XML de marchand Google."
 
 #: lib/filters-messages.php:48
 msgid "Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages."
