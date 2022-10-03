@@ -65,8 +65,8 @@ msgstr ""
 
 #: lib/actions.php:121
 msgid ""
-"Google <em>requires at least one \"image_link\" attribute</em> for each "
-"product variation in the Google merchant feed XML."
+"Google requires at least one \"image_link\" attribute for each product "
+"variation in the Google merchant feed XML."
 msgstr ""
 
 #: lib/filters-messages.php:48
