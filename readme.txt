@@ -104,7 +104,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.1-b.1 (2022/10/03)**
+**Version 3.3.1-rc.1 (2022/10/03)**
 
 * **New Features**
 	* None.
@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.5.0-b.1.
+	* WPSSO Core v13.5.0-rc.1.
 
 **Version 3.3.0 (2022/09/25)**
 
@@ -211,7 +211,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.1-b.1 =
+= 3.3.1-rc.1 =
 
 (2022/10/03) Minor message string updates.
 
