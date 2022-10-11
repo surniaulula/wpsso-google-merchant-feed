@@ -10,7 +10,7 @@ Tags: multilingual, google merchant center, woocommerce, xml, wpml, polylang, ed
 Contributors: jsmoriss
 Requires PHP: 7.2
 Requires At Least: 5.2
-Tested Up To: 6.0.2
+Tested Up To: 6.1.0
 WC Tested Up To: 6.9.4
 Stable Tag: 3.3.1
 
