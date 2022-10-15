@@ -70,7 +70,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			$table_rows[ 'gmf_img_size' ] = '' .
 				$form->get_th_html( _x( 'Google Merchant Feed XML', 'option label', 'wpsso-google-merchant-feed' ),
-					$css_class = '', $css_id = 'gmf_img_size' ) . 
+					$css_class = '', $css_id = 'gmf_img_size' ) .
 				'<td>' . $form->get_input_image_dimensions( 'gmf_img' ) . '</td>';
 
 			return $table_rows;

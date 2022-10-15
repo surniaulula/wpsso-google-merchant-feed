@@ -13,11 +13,11 @@ class ComposerStaticInitWpssoGmf
     );
 
     public static $prefixLengthsPsr4 = array (
-        'V' => 
+        'V' =>
         array (
             'Vitalybaev\\GoogleMerchant\\' => 26,
         ),
-        'S' => 
+        'S' =>
         array (
             'Sabre\\Xml\\' => 10,
             'Sabre\\Uri\\' => 10,
@@ -25,15 +25,15 @@ class ComposerStaticInitWpssoGmf
     );
 
     public static $prefixDirsPsr4 = array (
-        'Vitalybaev\\GoogleMerchant\\' => 
+        'Vitalybaev\\GoogleMerchant\\' =>
         array (
             0 => __DIR__ . '/..' . '/vitalybaev/google-merchant-feed/src',
         ),
-        'Sabre\\Xml\\' => 
+        'Sabre\\Xml\\' =>
         array (
             0 => __DIR__ . '/..' . '/sabre/xml/lib',
         ),
-        'Sabre\\Uri\\' => 
+        'Sabre\\Uri\\' =>
         array (
             0 => __DIR__ . '/..' . '/sabre/uri/lib',
         ),

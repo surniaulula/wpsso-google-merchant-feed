@@ -329,7 +329,7 @@ class Product
 
     /**
      * Adds shipping of the product.
-     * 
+     *
      * @param Shipping $shipping
      *
      * @return $this
@@ -343,7 +343,7 @@ class Product
 
     /**
      * Add shipping label
-     * 
+     *
      * @param string $str
      *
      * @return $this
@@ -356,7 +356,7 @@ class Product
 
     /**
      * Add shipping weight
-     * 
+     *
      * @param string $str
      *
      * @return $this
@@ -369,7 +369,7 @@ class Product
 
     /**
      * Set a custom label
-     * 
+     *
      * @param string $str
      * @param integer $pos
      *

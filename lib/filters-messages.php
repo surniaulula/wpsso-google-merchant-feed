@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			$this->p->util->add_plugin_filters( $this, array( 
+			$this->p->util->add_plugin_filters( $this, array(
 				'messages_info'         => 3,
 				'messages_tooltip'      => 2,
 				'messages_tooltip_meta' => 2,
