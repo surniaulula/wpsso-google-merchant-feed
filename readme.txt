@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
-Tags: multilingual, google merchant center, woocommerce, xml, wpml, polylang, edd, easy digital downloads
+Tags: google merchant center, woocommerce, wpml, polylang, multilingual, xml, edd, easy digital downloads
 Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2
