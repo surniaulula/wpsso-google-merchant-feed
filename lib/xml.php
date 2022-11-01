@@ -81,6 +81,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				foreach ( $public_post_ids as $post_id ) {
 
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'checking for robots noindex' );
+					}
+
 					if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
 
 						if ( $wpsso->debug->enabled ) {
@@ -89,18 +94,27 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						}
 
 						continue;
+					}
 
 					/**
 					 * If WPSSO is handling redirects, then exclude this post if it is being redirected.
 					 */
-					} elseif ( $redir_enabled && $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
+					if ( $redir_enabled ) {
 
 						if ( $wpsso->debug->enabled ) {
-
-							$wpsso->debug->log( 'skipping post id ' . $post_id . ': has redirect URL' );
+	
+							$wpsso->debug->log( 'checking for redirect URL' );
 						}
-
-						continue;
+	
+						if ( $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
+	
+							if ( $wpsso->debug->enabled ) {
+	
+								$wpsso->debug->log( 'skipping post id ' . $post_id . ': has redirect URL' );
+							}
+	
+							continue;
+						}
 					}
 
 					$mod = $wpsso->post->get_mod( $post_id );
