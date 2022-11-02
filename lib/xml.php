@@ -58,7 +58,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_url      = SucomUtil::get_home_url( $wpsso->options, $locale );
 			$site_desc     = SucomUtil::get_site_description( $wpsso->options, $locale );
 			$col_og_type   = WpssoAbstractWpMeta::get_sortable_columns( $col_key = 'og_type' );
-			$redir_enabled = $wpsso->util->is_redirect_disabled() ? false : true;
+			$redir_enabled = $wpsso->util->is_redirect_enabled();
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -83,7 +83,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'checking for robots noindex' );
+						$wpsso->debug->log( 'checking post id ' . $post_id . ' for robots noindex' );
 					}
 
 					if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 						if ( $wpsso->debug->enabled ) {
 	
-							$wpsso->debug->log( 'checking for redirect URL' );
+							$wpsso->debug->log( 'checking post id ' . $post_id . ' for redirect URL' );
 						}
 	
 						if ( $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
