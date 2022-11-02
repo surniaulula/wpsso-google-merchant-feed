@@ -54,11 +54,12 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			$site_title    = SucomUtil::get_site_name( $wpsso->options, $locale );
-			$site_url      = SucomUtil::get_home_url( $wpsso->options, $locale );
-			$site_desc     = SucomUtil::get_site_description( $wpsso->options, $locale );
-			$col_og_type   = WpssoAbstractWpMeta::get_sortable_columns( $col_key = 'og_type' );
-			$redir_enabled = $wpsso->util->is_redirect_enabled();
+			$site_title     = SucomUtil::get_site_name( $wpsso->options, $locale );
+			$site_url       = SucomUtil::get_home_url( $wpsso->options, $locale );
+			$site_desc      = SucomUtil::get_site_description( $wpsso->options, $locale );
+			$col_og_type    = WpssoAbstractWpMeta::get_sortable_columns( $col_key = 'og_type' );
+			$robots_enabled = $wpsso->util->robots->is_enabled();
+			$redir_enabled  = $wpsso->util->is_redirect_enabled();
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -81,24 +82,24 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				foreach ( $public_post_ids as $post_id ) {
 
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'checking post id ' . $post_id . ' for robots noindex' );
-					}
-
-					if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
+					if ( $robots_enabled ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log( 'skipping post id ' . $post_id . ': noindex is true' );
+							$wpsso->debug->log( 'checking post id ' . $post_id . ' for robots noindex' );
 						}
-
-						continue;
+	
+						if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
+	
+							if ( $wpsso->debug->enabled ) {
+	
+								$wpsso->debug->log( 'skipping post id ' . $post_id . ': noindex is true' );
+							}
+	
+							continue;
+						}
 					}
 
-					/**
-					 * If the redirect feature is enabled, then exclude this post if it is being redirected.
-					 */
 					if ( $redir_enabled ) {
 
 						if ( $wpsso->debug->enabled ) {
