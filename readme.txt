@@ -105,6 +105,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.3.2-dev.10 (2022/11/02)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.7.1-dev.10.
+
 **Version 3.3.1 (2022/10/04)**
 
 * **New Features**
@@ -211,6 +226,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v13.0.0.
 
 == Upgrade Notice ==
+
+= 3.3.2-dev.10 =
+
+(2022/11/02) None.
 
 = 3.3.1 =
 
