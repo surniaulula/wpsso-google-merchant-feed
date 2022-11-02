@@ -97,7 +97,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					}
 
 					/**
-					 * If WPSSO is handling redirects, then exclude this post if it is being redirected.
+					 * If the redirect feature is enabled, then exclude this post if it is being redirected.
 					 */
 					if ( $redir_enabled ) {
 
