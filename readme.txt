@@ -105,7 +105,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.2-b.2 (2022/11/03)**
+**Version 3.3.2-b.3 (2022/11/03)**
 
 * **New Features**
 	* None.
@@ -118,7 +118,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.8.0-b.2.
+	* WPSSO Core v13.8.0-b.3.
 
 **Version 3.3.1 (2022/10/04)**
 
@@ -227,7 +227,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.3.2-b.2 =
+= 3.3.2-b.3 =
 
 (2022/11/03) Added a check for `WpssoUtilRobots->is_enabled()` before checking for noindex.
 
