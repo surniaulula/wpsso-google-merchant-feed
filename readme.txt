@@ -105,7 +105,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.3.2-b.6 (2022/11/03)**
+**Version 3.3.2-b.6 (2022/11/04)**
 
 * **New Features**
 	* None.
@@ -229,7 +229,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 3.3.2-b.6 =
 
-(2022/11/03) Added a check for `WpssoUtilRobots->is_enabled()` before checking for noindex.
+(2022/11/04) Added a check for `WpssoUtilRobots->is_enabled()` before checking for noindex.
 
 = 3.3.1 =
 
