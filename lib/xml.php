@@ -88,14 +88,14 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 							$wpsso->debug->log( 'checking post id ' . $post_id . ' for robots noindex' );
 						}
-	
+
 						if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
-	
+
 							if ( $wpsso->debug->enabled ) {
-	
+
 								$wpsso->debug->log( 'skipping post id ' . $post_id . ': noindex is true' );
 							}
-	
+
 							continue;
 						}
 					}
@@ -103,17 +103,17 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					if ( $redir_enabled ) {
 
 						if ( $wpsso->debug->enabled ) {
-	
+
 							$wpsso->debug->log( 'checking post id ' . $post_id . ' for redirect URL' );
 						}
-	
+
 						if ( $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
-	
+
 							if ( $wpsso->debug->enabled ) {
-	
+
 								$wpsso->debug->log( 'skipping post id ' . $post_id . ': has redirect URL' );
 							}
-	
+
 							continue;
 						}
 					}
