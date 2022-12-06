@@ -105,7 +105,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 3.4.0-dev.2 (2022/12/06)**
+**Version 3.4.0-b.1 (2022/12/06)**
 
 * **New Features**
 	* None.
@@ -118,7 +118,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v13.13.0-dev.2.
+	* WPSSO Core v13.13.0-b.1.
 
 **Version 3.3.2 (2022/11/04)**
 
@@ -242,7 +242,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 3.4.0-dev.2 =
+= 3.4.0-b.1 =
 
 (2022/12/06) Added an action hook to clear the locale feed XML when a product is updated.
 
