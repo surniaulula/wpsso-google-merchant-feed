@@ -105,6 +105,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 3.4.0-dev.1 (2022/12/06)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added an action hook to clear the locale feed XML when a product is updated.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a new `WpssoGmfActions->action_refresh_post_cache()` method.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v13.13.0-dev.1.
+
 **Version 3.3.2 (2022/11/04)**
 
 * **New Features**
@@ -226,6 +241,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v13.0.0.
 
 == Upgrade Notice ==
+
+= 3.4.0-dev.1 =
+
+(2022/12/06) Added an action hook to clear the locale feed XML when a product is updated.
 
 = 3.3.2 =
 
