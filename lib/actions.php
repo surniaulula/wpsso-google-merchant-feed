@@ -35,7 +35,8 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_actions( $this, array(
-				'check_head_info' => 3,
+				'check_head_info'    => 3,
+				'refresh_post_cache' => 2,
 			) );
 		}
 
@@ -67,6 +68,21 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						$image_url = $this->get_product_image_url( $mt_offer, $mod, $canonical_url );
 					}
 				}
+			}
+		}
+
+		/**
+		 * Once the post cache is cleared and refreshed, clear the feed XML.
+		 */
+		public function action_refresh_post_cache( $post_id, $mod ) {
+
+			$og_type = $this->p->og->get_mod_og_type_id( $mod );
+
+			if ( 'product' === $og_type ) {
+
+				$locale = SucomUtil::get_locale( $mod );
+
+				$xml = WpssoGmfXml::clear_cache( $locale );
 			}
 		}
 
@@ -115,10 +131,10 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						 * See https://support.google.com/merchants/answer/7052112?hl=en.
 						 * See https://support.google.com/merchants/answer/6324350?hl=en.
 						 */
-						$notice_msg = sprintf( __( 'A Google merchant feed XML "image_link" attribute could not be generated for %1$s ID %2$s.', 'wpsso' ),
+						$notice_msg = sprintf( __( 'A Google merchant feed XML image_link attribute could not be generated for %1$s ID %2$s.', 'wpsso' ),
 							$mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
 
-						$notice_msg .= __( 'Google requires at least one "image_link" attribute for each product variation in the Google merchant feed XML.', 'wpsso' );
+						$notice_msg .= __( 'Google requires at least one image_link attribute for each product variation in the Google merchant feed XML.', 'wpsso' );
 
 						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
 

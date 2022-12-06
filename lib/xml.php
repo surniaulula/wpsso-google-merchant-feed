@@ -18,6 +18,21 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
+		static public function clear_cache( $locale = null ) {
+		
+			$wpsso =& Wpsso::get_instance();
+
+			if ( null === $locale ) {
+
+				$locale = SucomUtil::get_locale();
+			}
+
+			$cache_salt    = __CLASS__ . '(locale:' . $locale . ')';
+			$file_name_ext = '.xml';
+
+			$wpsso->cache->clear_cache_data( $cache_salt, $file_name_ext );
+		}
+
 		/**
 		 * $read_cache = false when called by WpssoGmfFilters->filter_cache_refreshed_notice().
 		 */
@@ -34,7 +49,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$cache_md5_pre  = 'wpsso_g_';
 			$cache_type     = 'file';
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
-			$cache_salt     = __METHOD__ . '(locale:' . $locale . ')';
+			$cache_salt     = __CLASS__ . '(locale:' . $locale . ')';
 			$file_name_ext  = '.xml';
 
 			if ( $wpsso->debug->enabled ) {

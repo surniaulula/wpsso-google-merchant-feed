@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 3.3.2\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 3.4.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -45,28 +45,28 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/actions.php:48
+#: lib/actions.php:49
 msgid "checking google merchant feeds"
 msgstr ""
 
-#: lib/actions.php:87
+#: lib/actions.php:103
 msgid "getting google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:112
+#: lib/actions.php:128
 msgid "checking google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:118
+#: lib/actions.php:134
 msgid ""
-"A Google merchant feed XML \"image_link\" attribute could not be generated "
-"for %1$s ID %2$s."
+"A Google merchant feed XML image_link attribute could not be generated for "
+"%1$s ID %2$s."
 msgstr ""
 
-#: lib/actions.php:121
+#: lib/actions.php:137
 msgid ""
-"Google requires at least one \"image_link\" attribute for each product "
-"variation in the Google merchant feed XML."
+"Google requires at least one image_link attribute for each product variation "
+"in the Google merchant feed XML."
 msgstr ""
 
 #: lib/filters-messages.php:48
