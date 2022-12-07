@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 3.3.2\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 3.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-11-03 06:24-0700\n"
+"PO-Revision-Date: 2022-12-07 06:40-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -41,25 +41,25 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
-#: lib/actions.php:48
+#: lib/actions.php:49
 msgid "checking google merchant feeds"
 msgstr "vérification flux de marchand google"
 
-#: lib/actions.php:87
+#: lib/actions.php:103
 msgid "getting google merchant feeds images"
 msgstr "obtenir des images flux de marchand google"
 
-#: lib/actions.php:112
+#: lib/actions.php:128
 msgid "checking google merchant feeds images"
 msgstr "vérification des images flux de marchand google"
 
-#: lib/actions.php:118
-msgid "A Google merchant feed XML \"image_link\" attribute could not be generated for %1$s ID %2$s."
-msgstr "Impossible de générer l'attribut \"image_link\" de flux XML de marchand Google pour l'identifiant %1$s %2$s."
+#: lib/actions.php:134
+msgid "A Google merchant feed XML image_link attribute could not be generated for %1$s ID %2$s."
+msgstr "Impossible de générer l'attribut image_link de flux XML de marchand Google pour l'identifiant %1$s %2$s."
 
-#: lib/actions.php:121
-msgid "Google requires at least one \"image_link\" attribute for each product variation in the Google merchant feed XML."
-msgstr "Google exige au moins un attribut \"image_link\"< pour chaque variante de produit dans le flux XML de marchand Google."
+#: lib/actions.php:137
+msgid "Google requires at least one image_link attribute for each product variation in the Google merchant feed XML."
+msgstr "Google exige au moins un attribut image_link pour chaque variante de produit dans le flux XML de marchand Google."
 
 #: lib/filters-messages.php:48
 msgid "Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages."
