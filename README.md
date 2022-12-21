@@ -34,32 +34,40 @@
 <p>The following XML product attributes are automatically created based on your WooCommerce, Easy Digital Downloads, and custom products (including WooCommerce product variations):</p>
 
 <ul>
-<li>ID <code>&#91;id&#93;</code></li>
-<li>Item group ID <code>&#91;item_group_id&#93;</code></li>
-<li>Title <code>&#91;title&#93;</code></li>
-<li>Description <code>&#91;description&#93;</code></li>
-<li>Link <code>&#91;link&#93;</code></li>
-<li>Image link <code>&#91;image_link&#93;</code></li>
 <li>Additional image link <code>&#91;additional_image_link&#93;</code></li>
+<li>Adult oriented <code>&#91;adult&#93;</code></li>
+<li>Age group <code>&#91;age_group&#93;</code></li>
 <li>Availability <code>&#91;availability&#93;</code></li>
-<li>Price <code>&#91;price&#93;</code></li>
-<li>Sale price <code>&#91;sale_price&#93;</code></li>
-<li>Sale price effective date <code>&#91;sale_price_effective_date&#93;</code></li>
-<li>Google product category <code>&#91;google_product_category&#93;</code></li>
-<li>Product type <code>&#91;product_type&#93;</code></li>
-<li>Google search index <code>&#91;canonical_link&#93;</code></li>
 <li>Brand <code>&#91;brand&#93;</code></li>
-<li>GTIN <code>&#91;gtin&#93;</code> (inluding UPC, EAN, and ISBN)</li>
-<li>MPN <code>&#91;mpn&#93;</code></li>
 <li>Condition <code>&#91;condition&#93;</code></li>
 <li>Color <code>&#91;color&#93;</code></li>
-<li>Material <code>&#91;material&#93;</code></li>
-<li>Pattern <code>&#91;pattern&#93;</code></li>
+<li>Description <code>&#91;description&#93;</code></li>
 <li>Gender <code>&#91;gender&#93;</code></li>
+<li>Google product category <code>&#91;google_product_category&#93;</code></li>
+<li>Google search index <code>&#91;canonical_link&#93;</code></li>
+<li>GTIN <code>&#91;gtin&#93;</code> (inluding UPC, EAN, and ISBN)</li>
+<li>ID <code>&#91;id&#93;</code></li>
+<li>Image link <code>&#91;image_link&#93;</code></li>
+<li>Item group ID <code>&#91;item_group_id&#93;</code></li>
+<li>Link <code>&#91;link&#93;</code></li>
+<li>Material <code>&#91;material&#93;</code></li>
+<li>MPN <code>&#91;mpn&#93;</code></li>
+<li>Pattern <code>&#91;pattern&#93;</code></li>
+<li>Price <code>&#91;price&#93;</code></li>
+<li>Product length <code>&#91;product_length&#93;</code></li>
+<li>Product height <code>&#91;product_height&#93;</code></li>
+<li>Product type <code>&#91;product_type&#93;</code></li>
+<li>Product weight <code>&#91;product_weight&#93;</code></li>
+<li>Product width <code>&#91;product_width&#93;</code></li>
+<li>Sale price <code>&#91;sale_price&#93;</code></li>
+<li>Sale price effective date <code>&#91;sale_price_effective_date&#93;</code></li>
+<li>Shipping length <code>&#91;shipping_length&#93;</code></li>
+<li>Shipping height <code>&#91;shipping_height&#93;</code></li>
+<li>Shipping weight <code>&#91;shipping_weight&#93;</code></li>
+<li>Shipping width <code>&#91;shipping_width&#93;</code></li>
 <li>Size <code>&#91;size&#93;</code></li>
 <li>Size type <code>&#91;size_type&#93;</code></li>
-<li>Age group <code>&#91;age_group&#93;</code></li>
-<li>Adult oriented <code>&#91;adult&#93;</code></li>
+<li>Title <code>&#91;title&#93;</code></li>
 </ul>
 
 <h3>WPSSO Core Required</h3>
