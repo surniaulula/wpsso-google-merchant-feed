@@ -208,55 +208,78 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			self::sanitize_mt_array( $mt_data );
 
 			$names = array(
-				'og:title'                  => 'setTitle',
-				'og:description'            => 'setDescription',
-				'og:url'                    => 'setLink',
-				'og:url'                    => array( 'setAttribute', 'canonical_link', true ),	// Main product canonical URL.
-				'product:item_group_id'     => array( 'setAttribute', 'item_group_id', false ),
-				'product:retailer_item_id'  => 'setId',
-				'product:title'             => 'setTitle',
-				'product:description'       => 'setDescription',
-				'product:url'               => 'setLink',
-				'product:mfr_part_no'       => 'setMpn',
-				'product:category'          => 'setGoogleCategory',	// Product category ID from Google product taxonomy.
-				'product:retailer_category' => 'setProductType',	// String to organize bidding and reporting in Google Ads Shopping campaigns.
-				'product:brand'             => 'setBrand',
-				'product:availability'      => 'setAvailability',
-				'product:price'             => 'setPrice',
-				'product:sale_price'        => 'setSalePrice',
-				'product:sale_price_dates'  => array( 'setAttribute', 'sale_price_effective_date', false ),
-				'product:condition'         => 'setCondition',
-				'product:color'             => 'setColor',
-				'product:material'          => 'setMaterial',
-				'product:pattern'           => array( 'addAttribute', 'pattern', false ),
-				'product:target_gender'     => array( 'addAttribute', 'gender', false ),
-				'product:size'              => 'setSize',
-				'product:size:type'         => array( 'addAttribute', 'size_type', false ),
-				'product:age_group'         => array( 'setAttribute', 'age_group', false ),
-				'product:adult_oriented'    => 'setAdult',
-				'product:ean'               => array( 'addAttribute', 'gtin', false ),
-				'product:gtin14'            => array( 'addAttribute', 'gtin', false ),
-				'product:gtin13'            => array( 'addAttribute', 'gtin', false ),
-				'product:gtin12'            => array( 'addAttribute', 'gtin', false ),
-				'product:gtin8'             => array( 'addAttribute', 'gtin', false ),
-				'product:gtin'              => array( 'addAttribute', 'gtin', false ),
-				'product:isbn'              => array( 'addAttribute', 'gtin', false ),
-				'product:upc'               => array( 'addAttribute', 'gtin', false ),
+				'og:title'                      => 'setTitle',
+				'og:description'                => 'setDescription',
+				'og:url'                        => 'setLink',
+				'og:url'                        => array( 'setAttribute', 'canonical_link', true ),	// Main product canonical URL.
+				'product:item_group_id'         => array( 'setAttribute', 'item_group_id', false ),
+				'product:retailer_item_id'      => 'setId',
+				'product:title'                 => 'setTitle',
+				'product:description'           => 'setDescription',
+				'product:url'                   => 'setLink',
+				'product:mfr_part_no'           => 'setMpn',
+				'product:category'              => 'setGoogleCategory',	// Product category ID from Google product taxonomy.
+				'product:retailer_category'     => 'setProductType',	// String to organize bidding and reporting in Google Ads Shopping campaigns.
+				'product:brand'                 => 'setBrand',
+				'product:availability'          => 'setAvailability',
+				'product:price'                 => 'setPrice',
+				'product:sale_price'            => 'setSalePrice',
+				'product:sale_price_dates'      => array( 'setAttribute', 'sale_price_effective_date', false ),
+				'product:condition'             => 'setCondition',
+				'product:color'                 => 'setColor',
+				'product:material'              => 'setMaterial',
+				'product:pattern'               => array( 'setAttribute', 'pattern', false ),
+				'product:target_gender'         => array( 'setAttribute', 'gender', false ),
+				'product:size'                  => 'setSize',
+				'product:size:type'             => array( 'setAttribute', 'size_type', false ),
+				'product:age_group'             => array( 'setAttribute', 'age_group', false ),
+				'product:adult_oriented'        => 'setAdult',
+				'product:length:value'          => array( 'setAttribute', 'product_length', false ),
+				'product:height:value'          => array( 'setAttribute', 'product_height', false ),
+				'product:weight:value'          => array( 'setAttribute', 'product_weight', false ),
+				'product:width:value'           => array( 'setAttribute', 'product_width', false ),
+				'product:shipping_length:value' => array( 'setAttribute', 'shipping_length', false ),
+				'product:shipping_height:value' => array( 'setAttribute', 'shipping_height', false ),
+				'product:shipping_weight:value' => array( 'setAttribute', 'shipping_weight', false ),
+				'product:shipping_width:value'  => array( 'setAttribute', 'shipping_width', false ),
+				'product:ean'                   => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin14'                => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin13'                => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin12'                => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin8'                 => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin'                  => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:isbn'                  => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:upc'                   => array( 'addAttribute', 'gtin', false ),	// One or more.
 			);
 
 			foreach ( $names as $mt_name => $method_name ) {
 
 				if ( isset( $mt_data[ $mt_name ] ) && '' !== $mt_data[ $mt_name ] ) {
 
+					$mt_value  = $mt_data[ $mt_name ];
 					$prop_name = '';
 					$is_cdata  = false;
+
+					if ( false !== strpos( $mt_name, ':value' ) ) {
+
+						$mt_name_units = preg_replace( '/:value$/', ':units', $mt_name );
+
+						if ( ! empty( $mt_data[ $mt_name_units ] ) ) {
+
+							$mt_value .= ' ' . $mt_data[ $mt_name_units ];
+
+						} else {
+
+							continue;
+						}
+					}
 
 					if ( is_array( $method_name ) ) {
 
 						list( $method_name, $prop_name, $is_cdata ) = $method_name;
 					}
 
-					if ( ! empty( $dupe_check[ $method_name ][ $prop_name ][ $mt_data[ $mt_name ] ] ) ) {
+					if ( ! empty( $dupe_check[ $method_name ][ $prop_name ][ $mt_value ] ) ) {
 
 						continue;
 					}
@@ -265,13 +288,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 						if ( $prop_name ) {
 
-							$product->$method_name( $prop_name, $mt_data[ $mt_name ], $is_cdata );
+							$product->$method_name( $prop_name, $mt_value, $is_cdata );
 
-							$dupe_check[ $method_name ][ $prop_name ][ $mt_data[ $mt_name ] ] = true;
+							$dupe_check[ $method_name ][ $prop_name ][ $mt_value ] = true;
 
 						} else {
 
-							$product->$method_name( $mt_data[ $mt_name ] );
+							$product->$method_name( $mt_value );
 						}
 					}
 				}
