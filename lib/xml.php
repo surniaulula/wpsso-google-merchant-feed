@@ -19,7 +19,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 	class WpssoGmfXml {
 
 		static public function clear_cache( $locale = null ) {
-		
+
 			$wpsso =& Wpsso::get_instance();
 
 			if ( null === $locale ) {
