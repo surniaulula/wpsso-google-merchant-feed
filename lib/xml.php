@@ -235,13 +235,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:age_group'             => array( 'setAttribute', 'age_group', false ),
 				'product:adult_oriented'        => 'setAdult',
 				'product:length:value'          => array( 'setAttribute', 'product_length', false ),
+				'product:width:value'           => array( 'setAttribute', 'product_width', false ),
 				'product:height:value'          => array( 'setAttribute', 'product_height', false ),
 				'product:weight:value'          => array( 'setAttribute', 'product_weight', false ),
-				'product:width:value'           => array( 'setAttribute', 'product_width', false ),
 				'product:shipping_length:value' => array( 'setAttribute', 'shipping_length', false ),
+				'product:shipping_width:value'  => array( 'setAttribute', 'shipping_width', false ),
 				'product:shipping_height:value' => array( 'setAttribute', 'shipping_height', false ),
 				'product:shipping_weight:value' => array( 'setAttribute', 'shipping_weight', false ),
-				'product:shipping_width:value'  => array( 'setAttribute', 'shipping_width', false ),
 				'product:ean'                   => array( 'addAttribute', 'gtin', false ),	// One or more.
 				'product:gtin14'                => array( 'addAttribute', 'gtin', false ),	// One or more.
 				'product:gtin13'                => array( 'addAttribute', 'gtin', false ),	// One or more.
