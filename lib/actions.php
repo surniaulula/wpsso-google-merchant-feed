@@ -128,8 +128,8 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'checking google merchant feeds images', 'wpsso' ) );
 
 						/**
-						 * See https://support.google.com/merchants/answer/7052112?hl=en.
-						 * See https://support.google.com/merchants/answer/6324350?hl=en.
+						 * See https://support.google.com/merchants/answer/7052112.
+						 * See https://support.google.com/merchants/answer/6324350.
 						 */
 						$notice_msg = sprintf( __( 'A Google merchant feed XML image_link attribute could not be generated for %1$s ID %2$s.', 'wpsso' ),
 							$mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';

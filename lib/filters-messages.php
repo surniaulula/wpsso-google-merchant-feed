@@ -54,8 +54,8 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 				case 'info-gmf-img':
 
 					/**
-					 * See https://support.google.com/merchants/answer/7052112?hl=en.
-					 * See https://support.google.com/merchants/answer/6324350?hl=en.
+					 * See https://support.google.com/merchants/answer/7052112.
+					 * See https://support.google.com/merchants/answer/6324350.
 					 */
 					$text = '<p class="pro-feature-msg">';
 

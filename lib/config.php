@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 				 * resolution, full-size image you have for the product, up to 64 megapixels and 16MB file size. We
 				 * recommend images of at least 800 x 800 pixels.
 				 *
-				 * See https://support.google.com/merchants/answer/6324350?hl=en.
+				 * See https://support.google.com/merchants/answer/6324350.
 				 */
 				'limit_min' => array(
 					'gmf_img_width'  => 800,
