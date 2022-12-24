@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '4.0.0-b.2',	// Plugin version.
+					'version'     => '4.0.0-b.3',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.0.0-b.2',
+							'min_version'   => '14.0.0-b.3',
 						),
 					),
 
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					/**
 					 * See https://support.google.com/merchants/answer/6324508.
 					 */
-					'product:adult_oriented' => array(
+					'product:adult_type' => array(
 						'https://schema.org/AlcoholConsideration'                     => true,
 						'https://schema.org/DangerousGoodConsideration'               => true,
 						'https://schema.org/HealthcareConsideration'                  => true,
@@ -195,7 +195,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					/**
 					 * See https://support.google.com/merchants/answer/6324497.
 					 */
-					'product:size:type' => array(
+					'product:size_type' => array(
 						'https://schema.org/WearableSizeGroupRegular'   => 'regular',
 						'https://schema.org/WearableSizeGroupPetite'    => 'petite',
 						'https://schema.org/WearableSizeGroupPlus'      => 'plus',
