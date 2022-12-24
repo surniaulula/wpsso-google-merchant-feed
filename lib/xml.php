@@ -347,7 +347,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			foreach ( array( 'product:adult_oriented', 'product:age_group', 'product:availability', 'product:condition' ) as $mt_name ) {
+			$content_maps = $wpsso->cf[ 'head' ][ 'gmf_content_map' ];
+
+			foreach ( array_keys( $content_maps ) as $mt_name ) {
 
 				if ( isset( $mt_data[ $mt_name ] ) ) {
 
@@ -360,7 +362,10 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			foreach ( array( 'product:price', 'product:sale_price' ) as $mt_name ) {
+			foreach ( array(
+				'product:price',
+				'product:sale_price',
+			) as $mt_name ) {
 
 				if ( isset( $mt_data[ $mt_name . ':amount' ] ) && isset( $mt_data[ $mt_name . ':currency' ] ) ) {
 
@@ -368,7 +373,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			foreach ( array( 'product:sale_price_dates' ) as $mt_name ) {
+			foreach ( array(
+				'product:sale_price_dates',
+			) as $mt_name ) {
 
 				if ( ! empty( $mt_data[ $mt_name . ':start_iso' ] ) && ! empty( $mt_data[ $mt_name . ':end_iso' ] ) ) {
 

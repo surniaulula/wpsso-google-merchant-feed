@@ -88,6 +88,10 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'gmf_img_height' => 800,
 				),
 				'gmf_content_map' => array(
+
+					/**
+					 * See https://support.google.com/merchants/answer/6324508.
+					 */
 					'product:adult_oriented' => array(
 						'https://schema.org/AlcoholConsideration'                     => true,
 						'https://schema.org/DangerousGoodConsideration'               => true,
@@ -100,6 +104,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/ViolenceConsideration'                    => true,
 						'https://schema.org/WeaponConsideration'                      => true,
 					),
+
 					/**
 					 * Validated on 2022/09/24.
 					 *
@@ -116,6 +121,10 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'infant'   => 'infant',
 						'newborn'  => 'newborn',
 					),
+
+					/**
+					 * See https://support.google.com/merchants/answer/6324448.
+					 */
 					'product:availability' => array(
 						'https://schema.org/BackOrder'           => 'backorder',	// BACKORDER.
 						'https://schema.org/Discontinued'        => 'out_of_stock',	// OUT_OF_STOCK.
@@ -128,12 +137,64 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/PreSale'             => 'preorder',		// PREORDER.
 						'https://schema.org/SoldOut'             => 'out_of_stock',	// OUT_OF_STOCK.
 					),
+
+					/**
+					 * Validated 2022/12/24.
+					 *
+					 * See https://support.google.com/merchants/answer/6324469.
+					 */
 					'product:condition' => array(
 						'https://schema.org/DamagedCondition'     => 'used',		// USED.
 						'https://schema.org/NewCondition'         => 'new',		// NEW_PRODUCT.
 						'https://schema.org/RefurbishedCondition' => 'refurbished',	// REFURBISHED.
 						'https://schema.org/UsedCondition'        => 'used',		// USED.
 					),
+
+					/**
+					 * Validated 2022/12/24.
+					 *
+					 * See https://support.google.com/merchants/answer/7562785.
+					 */
+					'product:efficiency:value' => array(
+						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
+						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
+						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
+						'https://schema.org/EUEnergyEfficiencyCategoryA'      => 'A',
+						'https://schema.org/EUEnergyEfficiencyCategoryB'      => 'B',
+						'https://schema.org/EUEnergyEfficiencyCategoryC'      => 'C',
+						'https://schema.org/EUEnergyEfficiencyCategoryD'      => 'D',
+						'https://schema.org/EUEnergyEfficiencyCategoryE'      => 'E',
+						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
+						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
+					),
+					'product:efficiency:minvalue' => array(
+						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
+						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
+						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
+						'https://schema.org/EUEnergyEfficiencyCategoryA'      => 'A',
+						'https://schema.org/EUEnergyEfficiencyCategoryB'      => 'B',
+						'https://schema.org/EUEnergyEfficiencyCategoryC'      => 'C',
+						'https://schema.org/EUEnergyEfficiencyCategoryD'      => 'D',
+						'https://schema.org/EUEnergyEfficiencyCategoryE'      => 'E',
+						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
+						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
+					),
+					'product:efficiency:maxvalue' => array(
+						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
+						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
+						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
+						'https://schema.org/EUEnergyEfficiencyCategoryA'      => 'A',
+						'https://schema.org/EUEnergyEfficiencyCategoryB'      => 'B',
+						'https://schema.org/EUEnergyEfficiencyCategoryC'      => 'C',
+						'https://schema.org/EUEnergyEfficiencyCategoryD'      => 'D',
+						'https://schema.org/EUEnergyEfficiencyCategoryE'      => 'E',
+						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
+						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
+					),
+
+					/**
+					 * See https://support.google.com/merchants/answer/6324497.
+					 */
 					'product:size:type' => array(
 						'https://schema.org/WearableSizeGroupRegular'   => 'regular',
 						'https://schema.org/WearableSizeGroupPetite'    => 'petite',
