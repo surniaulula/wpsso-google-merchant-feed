@@ -116,7 +116,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-b.4 (2022/12/24)**
+**Version 4.0.0-b.4 (2022/12/25)**
 
 * **New Features**
 	* None.
@@ -281,7 +281,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 4.0.0-b.4 =
 
-(2022/12/24) Added new XML product attributes.
+(2022/12/25) Added new XML product attributes.
 
 = 3.4.0 =
 
