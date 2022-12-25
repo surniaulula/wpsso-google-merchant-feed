@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '4.0.0-b.3',	// Plugin version.
+					'version'     => '4.0.0-b.4',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.0.0-b.3',
+							'min_version'   => '14.0.0-b.4',
 						),
 					),
 
@@ -153,9 +153,10 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					/**
 					 * Validated 2022/12/24.
 					 *
+					 * See https://schema.org/EUEnergyEfficiencyEnumeration.
 					 * See https://support.google.com/merchants/answer/7562785.
 					 */
-					'product:efficiency:value' => array(
+					'product:energy_efficiency:value' => array(
 						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
 						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
 						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
@@ -167,7 +168,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
 						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
 					),
-					'product:efficiency:minvalue' => array(
+					'product:energy_efficiency:min_value' => array(
 						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
 						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
 						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
@@ -179,7 +180,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
 						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
 					),
-					'product:efficiency:maxvalue' => array(
+					'product:energy_efficiency:max_value' => array(
 						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
 						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
 						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
