@@ -45,6 +45,7 @@ The following XML product attributes are automatically created based on your Woo
 * Condition <code>&#91;condition&#93;</code>
 * Color <code>&#91;color&#93;</code>
 * Description <code>&#91;description&#93;</code>
+* Energy efficiency class <code>&#91;energy_efficiency_class&#93;</code>
 * Gender <code>&#91;gender&#93;</code>
 * Google product category <code>&#91;google_product_category&#93;</code>
 * Google search index <code>&#91;canonical_link&#93;</code>
@@ -54,6 +55,8 @@ The following XML product attributes are automatically created based on your Woo
 * Item group ID <code>&#91;item_group_id&#93;</code>
 * Link <code>&#91;link&#93;</code>
 * Material <code>&#91;material&#93;</code>
+* Maximum energy efficiency class <code>&#91;max_energy_efficiency_class&#93;</code>
+* Minimum energy efficiency class <code>&#91;min_energy_efficiency_class&#93;</code>
 * MPN <code>&#91;mpn&#93;</code>
 * Pattern <code>&#91;pattern&#93;</code>
 * Price <code>&#91;price&#93;</code>
@@ -113,12 +116,15 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-b.3 (2022/12/24)**
+**Version 4.0.0-b.4 (2022/12/24)**
 
 * **New Features**
 	* None.
 * **Improvements**
 	* Added new XML product attributes:
+		* "energy_efficiency_class"
+		* "min_energy_efficiency_class"
+		* "max_energy_efficiency_class"
 		* "product_length"
 		* "product_height"
 		* "product_weight"
@@ -134,7 +140,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0-b.3.
+	* WPSSO Core v14.0.0-b.4.
 
 **Version 3.4.0 (2022/12/07)**
 
@@ -273,7 +279,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-b.3 =
+= 4.0.0-b.4 =
 
 (2022/12/24) Added new XML product attributes.
 
