@@ -116,7 +116,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-b.4 (2022/12/25)**
+**Version 4.0.0-b.5 (2022/12/26)**
 
 * **New Features**
 	* None.
@@ -140,7 +140,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0-b.4.
+	* WPSSO Core v14.0.0-b.5.
 
 **Version 3.4.0 (2022/12/07)**
 
@@ -279,9 +279,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-b.4 =
+= 4.0.0-b.5 =
 
-(2022/12/25) Added new XML product attributes.
+(2022/12/26) Added new XML product attributes.
 
 = 3.4.0 =
 
