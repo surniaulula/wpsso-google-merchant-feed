@@ -69,6 +69,7 @@
 <li>Shipping weight <code>&#91;shipping_weight&#93;</code></li>
 <li>Shipping width <code>&#91;shipping_width&#93;</code></li>
 <li>Size <code>&#91;size&#93;</code></li>
+<li>Size system <code>&#91;size_system&#93;</code></li>
 <li>Size type <code>&#91;size_type&#93;</code></li>
 <li>Title <code>&#91;title&#93;</code></li>
 </ul>

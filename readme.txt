@@ -72,6 +72,7 @@ The following XML product attributes are automatically created based on your Woo
 * Shipping weight <code>&#91;shipping_weight&#93;</code>
 * Shipping width <code>&#91;shipping_width&#93;</code>
 * Size <code>&#91;size&#93;</code>
+* Size system <code>&#91;size_system&#93;</code>
 * Size type <code>&#91;size_type&#93;</code>
 * Title <code>&#91;title&#93;</code>
 
@@ -116,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.0.0-rc.1 (2022/12/26)**
+**Version 4.0.0-rc.2 (2022/12/26)**
 
 * **New Features**
 	* None.
@@ -133,6 +134,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* "shipping_height"
 		* "shipping_weight"
 		* "shipping_width"
+		* "size_system"
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -140,7 +142,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0-rc.1.
+	* WPSSO Core v14.0.0-rc.2.
 
 **Version 3.4.0 (2022/12/07)**
 
@@ -279,7 +281,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.0.0-rc.1 =
+= 4.0.0-rc.2 =
 
 (2022/12/26) Added new XML product attributes.
 
