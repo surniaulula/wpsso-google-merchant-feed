@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '4.0.0-rc.1',	// Plugin version.
+					'version'     => '4.0.0-rc.2',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.0.0-rc.1',
+							'min_version'   => '14.0.0-rc.2',
 						),
 					),
 
@@ -196,13 +196,32 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					/**
 					 * See https://support.google.com/merchants/answer/6324497.
 					 */
-					'product:size_type' => array(
+					'product:size_group' => array(
 						'https://schema.org/WearableSizeGroupRegular'   => 'regular',
 						'https://schema.org/WearableSizeGroupPetite'    => 'petite',
 						'https://schema.org/WearableSizeGroupPlus'      => 'plus',
 						'https://schema.org/WearableSizeGroupTall'      => 'tall',
 						'https://schema.org/WearableSizeGroupBig'       => 'big',
 						'https://schema.org/WearableSizeGroupMaternity' => 'maternity',
+					),
+
+					/**
+					 * Validated on 2022/12/26.
+					 *
+					 * See https://support.google.com/merchants/answer/6324502.
+					 */
+					'product:size_system' => array(
+						'https://schema.org/WearableSizeSystemAU'          => 'AU',
+						'https://schema.org/WearableSizeSystemBR'          => 'BR',
+						'https://schema.org/WearableSizeSystemCN'          => 'CN',
+						'https://schema.org/WearableSizeSystemDE'          => 'DE',
+						'https://schema.org/WearableSizeSystemEurope'      => 'EU',
+						'https://schema.org/WearableSizeSystemFR'          => 'FR',
+						'https://schema.org/WearableSizeSystemIT'          => 'IT',
+						'https://schema.org/WearableSizeSystemJP'          => 'JP',
+						'https://schema.org/WearableSizeSystemMX'          => 'MEX',
+						'https://schema.org/WearableSizeSystemUK'          => 'UK',
+						'https://schema.org/WearableSizeSystemUS'          => 'US',
 					),
 				),
 			),
