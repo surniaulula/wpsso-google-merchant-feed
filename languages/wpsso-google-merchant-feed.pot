@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 4.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 4.1.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
@@ -13,34 +13,34 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr ""
 
-#: gettext/gettext-lib-abstract-com.php:7 lib/abstract/com/add-on.php:221
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:221
 msgid ""
 "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is "
 "currently installed)."
 msgstr ""
 
-#: gettext/gettext-lib-config.php:6
+#: gettext/gettext-lib-config.php:5
 msgctxt "lib file description"
 msgid "Merchant Feeds"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:7
+#: gettext/gettext-lib-config.php:6
 msgctxt "plugin name"
 msgid "WPSSO Google Merchant Feed XML"
 msgstr ""
 
-#: gettext/gettext-lib-config.php:8
+#: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
 msgid ""
 "Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
 "Custom Products."
 msgstr ""
 
-#: gettext/gettext-lib-config.php:9
+#: gettext/gettext-lib-config.php:8
 msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""

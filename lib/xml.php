@@ -69,121 +69,111 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			$site_title     = SucomUtil::get_site_name( $wpsso->options, $locale );
-			$site_url       = SucomUtil::get_home_url( $wpsso->options, $locale );
-			$site_desc      = SucomUtil::get_site_description( $wpsso->options, $locale );
-			$col_og_type    = WpssoAbstractWpMeta::get_sortable_columns( $col_key = 'og_type' );
-			$robots_enabled = $wpsso->util->robots->is_enabled();
-			$redir_enabled  = $wpsso->util->is_redirect_enabled();
-
 			if ( $wpsso->debug->enabled ) {
 
 				$wpsso->debug->log( 'creating new feed' );
 			}
 
-			$feed = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc );
+			$site_title      = SucomUtil::get_site_name( $wpsso->options, $locale );
+			$site_url        = SucomUtil::get_home_url( $wpsso->options, $locale );
+			$site_desc       = SucomUtil::get_site_description( $wpsso->options, $locale );
+			$merchant_feed   = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc );
+			$public_post_ids = WpssoPost::get_public_ids( array( 'meta_query' => self::get_meta_query() ) );
 
-			if ( ! empty( $col_og_type[ 'meta_key' ] ) ) {	// Just in case.
+			if ( $wpsso->debug->enabled ) {
 
-				$public_post_ids = WpssoPost::get_public_ids( array(
-					'meta_key'   => $col_og_type[ 'meta_key' ],
-					'meta_value' => 'product',
-				) );
+				$wpsso->debug->log_arr( 'public_post_ids', $public_post_ids );
+			}
 
-				if ( $wpsso->debug->enabled ) {
+			foreach ( $public_post_ids as $post_id ) {
 
-					$wpsso->debug->log_arr( 'public_post_ids', $public_post_ids );
-				}
+				$mod = $wpsso->post->get_mod( $post_id );
 
-				foreach ( $public_post_ids as $post_id ) {
-
-					if ( $robots_enabled ) {
-
-						if ( $wpsso->debug->enabled ) {
-
-							$wpsso->debug->log( 'checking post id ' . $post_id . ' for robots noindex' );
-						}
-
-						if ( $wpsso->util->robots->is_noindex( 'post', $post_id ) ) {
-
-							if ( $wpsso->debug->enabled ) {
-
-								$wpsso->debug->log( 'skipping post id ' . $post_id . ': noindex is true' );
-							}
-
-							continue;
-						}
-					}
-
-					if ( $redir_enabled ) {
-
-						if ( $wpsso->debug->enabled ) {
-
-							$wpsso->debug->log( 'checking post id ' . $post_id . ' for redirect URL' );
-						}
-
-						if ( $wpsso->util->get_redirect_url( 'post', $post_id ) ) {
-
-							if ( $wpsso->debug->enabled ) {
-
-								$wpsso->debug->log( 'skipping post id ' . $post_id . ': has redirect URL' );
-							}
-
-							continue;
-						}
-					}
-
-					$mod = $wpsso->post->get_mod( $post_id );
-
-					if ( $mod[ 'is_archive' ] ) {	// Exclude the shop archive page.
-
-						if ( $wpsso->debug->enabled ) {
-
-							$wpsso->debug->log( 'skipping post id ' . $post_id . ': post is an archive page' );
-						}
-
-						continue;
-					}
+				if ( $mod[ 'is_archive' ] ) {	// Exclude the shop archive page.
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'getting open graph array for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] );
+						$wpsso->debug->log( 'skipping post id ' . $post_id . ': post is an archive page' );
 					}
 
-					$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
+					continue;
+				}
 
-					if ( empty( $mt_og[ 'product:offers' ] ) ) {
+				if ( $wpsso->debug->enabled ) {
 
-						if ( $wpsso->debug->enabled ) {
+					$wpsso->debug->log( 'getting open graph array for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] );
+				}
 
-							$wpsso->debug->log( 'adding single offer for post id ' . $post_id );
-						}
+				$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-						self::add_feed_product( $feed, $mt_og );
+				if ( empty( $mt_og[ 'product:offers' ] ) ) {
 
-					} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
+					if ( $wpsso->debug->enabled ) {
 
-						if ( $wpsso->debug->enabled ) {
+						$wpsso->debug->log( 'adding single offer for post id ' . $post_id );
+					}
 
-							$wpsso->debug->log( 'adding multiple offers for post id ' . $post_id );
-						}
+					self::add_feed_product( $merchant_feed, $mt_og );
 
-						foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
+				} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
 
-							self::add_feed_product( $feed, $mt_og, $mt_offer );
-						}
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'adding multiple offers for post id ' . $post_id );
+					}
+
+					foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
+
+						self::add_feed_product( $merchant_feed, $mt_og, $mt_offer );
 					}
 				}
 			}
 
-			$xml = $feed->build();
+			$xml = $merchant_feed->build();
 
 			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $file_name_ext );
 
 			return $xml;
 		}
 
-		static private function add_feed_product( &$feed, $mt_og, $mt_offer = null ) {
+		/**
+		 * See https://developer.wordpress.org/reference/classes/wp_meta_query/.
+		 */
+		static private function get_meta_query() {
+
+			static $local_cache = null;
+
+			if ( null === $local_cache ) {
+
+				$local_cache  = '';	// Default WP_Query value is an empty string.
+				$og_type_key  = WpssoAbstractWpMeta::get_column_meta_keys( 'og_type' );
+				$noindex_key  = WpssoAbstractWpMeta::get_column_meta_keys( 'is_noindex' );
+				$redirect_key = WpssoAbstractWpMeta::get_column_meta_keys( 'is_redirect' );
+
+				$local_cache = array(
+					'relation'       => 'AND',
+					'og_type_clause' => array(
+						'key'     => $og_type_key,
+						'compare' => '=',
+						'value'   => 'product',
+					),
+					'noindex_clause' => array(
+						'key'     => $noindex_key,
+						'compare' => '!=',
+						'value'   => '1',
+					),
+					'redirect_clause' => array(
+						'key'     => $redirect_key,
+						'compare' => '!=',
+						'value'   => '1',
+					),
+				);
+			}
+
+			return $local_cache;	// Return an empty string or array.
+		}
+
+		static private function add_feed_product( &$merchant_feed, $mt_og, $mt_offer = null ) {
 
 			$product = new Vitalybaev\GoogleMerchant\Product();
 
@@ -200,7 +190,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				self::add_product_images( $product, $mt_og );
 			}
 
-			$feed->addProduct( $product );
+			$merchant_feed->addProduct( $product );
 		}
 
 		static private function add_product_data( &$product, $mt_data, &$dupe_check = array() ) {
