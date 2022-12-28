@@ -117,12 +117,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.1.0-dev.1 (2022/12/28)**
+**Version 4.1.0-dev.2 (2022/12/28)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Updated the WP meta query to exclude noindex and redirected posts as part of the query (instead of checking post metadata afterwards).
+	* Updated the WP posts query to exclude noindex and redirected post meta as part of the query (instead of checking post metadata afterwards).
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -130,7 +130,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.0.0.
+	* WPSSO Core v14.1.0-dev.2.
 
 **Version 4.0.0 (2022/12/28)**
 
@@ -296,9 +296,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.1.0-dev.1 =
+= 4.1.0-dev.2 =
 
-(2022/12/28) Updated the WP meta query to exclude noindex and redirected posts as part of the query (instead of checking post metadata afterwards).
+(2022/12/28) Updated the WP posts query to exclude noindex and redirected post meta as part of the query.
 
 = 4.0.0 =
 
