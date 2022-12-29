@@ -16,7 +16,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.2.2
- * Version: 4.1.0-dev.2
+ * Version: 4.1.0-dev.3
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -70,6 +70,11 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 			load_plugin_textdomain( 'wpsso-google-merchant-feed', false, 'wpsso-google-merchant-feed/languages/' );
 		}
 
+		/**
+		 * Require library files with functions or static methods in require_libs().
+		 *
+		 * Require and instantiate library files with dynamic methods in init_objects().
+		 */
 		public function init_objects() {
 
 			$this->p =& Wpsso::get_instance();
@@ -84,8 +89,16 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 				return;	// Stop here.
 			}
 
+			require_once WPSSOGMF_PLUGINDIR . 'lib/actions.php';
+
 			$this->actions = new WpssoGmfActions( $this->p, $this );
+
+			require_once WPSSOGMF_PLUGINDIR . 'lib/filters.php';
+
 			$this->filters = new WpssoGmfFilters( $this->p, $this );
+			
+			require_once WPSSOGMF_PLUGINDIR . 'lib/rewrite.php';
+		
 			$this->rewrite = new WpssoGmfRewrite( $this->p, $this );
 		}
 	}
