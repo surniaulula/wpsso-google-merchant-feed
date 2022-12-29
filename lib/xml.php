@@ -151,21 +151,24 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$redirect_key = WpssoAbstractWpMeta::get_column_meta_keys( 'is_redirect' );
 
 				$local_cache = array(
-					'relation'       => 'AND',
-					'og_type_clause' => array(
+					'relation' => 'AND',
+					array(
 						'key'     => $og_type_key,
-						'compare' => '=',
 						'value'   => 'product',
+						'compare' => '=',
+						'type'    => 'CHAR',
 					),
-					'noindex_clause' => array(
+					array(
 						'key'     => $noindex_key,
-						'compare' => '!=',
 						'value'   => '1',
+						'compare' => '!=',
+						'type'    => 'CHAR',
 					),
-					'redirect_clause' => array(
+					array(
 						'key'     => $redirect_key,
-						'compare' => '!=',
 						'value'   => '1',
+						'compare' => '!=',
+						'type'    => 'CHAR',
 					),
 				);
 			}

@@ -16,7 +16,7 @@
  * Requires At Least: 5.2
  * Tested Up To: 6.1.1
  * WC Tested Up To: 7.2.2
- * Version: 4.1.0-dev.3
+ * Version: 4.1.0-b.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -96,9 +96,10 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 			require_once WPSSOGMF_PLUGINDIR . 'lib/filters.php';
 
 			$this->filters = new WpssoGmfFilters( $this->p, $this );
-			
-			require_once WPSSOGMF_PLUGINDIR . 'lib/rewrite.php';
-		
+
+			/**
+			 * lib/rewrite.php already loaded in require_libs() for WpssoGmfRegister->activate_plugin().
+			 */
 			$this->rewrite = new WpssoGmfRewrite( $this->p, $this );
 		}
 	}
