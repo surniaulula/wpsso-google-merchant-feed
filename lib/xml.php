@@ -227,7 +227,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:color'                       => 'setColor',
 				'product:target_gender'               => array( 'setAttribute', 'gender', false ),
 				'product:size'                        => 'setSize',
-				'product:size_group'                  => array( 'setAttribute', 'size_type', false ),
+				'product:size_group'                  => array( 'addAttribute', 'size_type', false ),	// One or more.
 				'product:size_system'                 => array( 'setAttribute', 'size_system', false ),
 				'product:age_group'                   => array( 'setAttribute', 'age_group', false ),
 				'product:adult_type'                  => 'setAdult',
