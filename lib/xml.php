@@ -249,49 +249,53 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:upc'                         => array( 'addAttribute', 'gtin', false ),	// One or more.
 			);
 
-			foreach ( $names as $mt_name => $method_name ) {
+			foreach ( $names as $mt_name => $mixed ) {
 
 				if ( isset( $mt_data[ $mt_name ] ) && '' !== $mt_data[ $mt_name ] ) {
 
-					$mt_value  = $mt_data[ $mt_name ];
-					$prop_name = '';
-					$is_cdata  = false;
+					if ( is_array( $mixed ) ) {
 
-					if ( false !== strpos( $mt_name, ':value' ) ) {
+						list( $method_name, $prop_name, $is_cdata ) = $mixed;
 
-						$mt_name_units = preg_replace( '/:value$/', ':units', $mt_name );
+					} else {
 
-						if ( ! empty( $mt_data[ $mt_name_units ] ) ) {
+						list( $method_name, $prop_name, $is_cdata ) = array( $mixed, '', false );
+					}
 
-							$mt_value .= ' ' . $mt_data[ $mt_name_units ];
+					$values = is_array( $mt_data[ $mt_name ] ) ? $mt_data[ $mt_name ] : array( $mt_data[ $mt_name ] );
 
-						} else {
+					foreach ( $values as $value ) {
+
+						if ( false !== strpos( $mt_name, ':value' ) ) {
+
+							$mt_name_units = preg_replace( '/:value$/', ':units', $mt_name );
+
+							if ( ! empty( $mt_data[ $mt_name_units ] ) ) {
+
+								$value .= ' ' . $mt_data[ $mt_name_units ];
+							}
+						}
+
+						if ( ! empty( $dupe_check[ $method_name ][ $prop_name ][ $value ] ) ) {
 
 							continue;
 						}
-					}
 
-					if ( is_array( $method_name ) ) {
+						/**
+						 * Call method from Vitalybaev\GoogleMerchant\Product().
+						 */
+						if ( method_exists( $product, $method_name ) ) {	// Just in case.
 
-						list( $method_name, $prop_name, $is_cdata ) = $method_name;
-					}
+							if ( $prop_name ) {
 
-					if ( ! empty( $dupe_check[ $method_name ][ $prop_name ][ $mt_value ] ) ) {
+								$product->$method_name( $prop_name, $value, $is_cdata );
 
-						continue;
-					}
+							} else {
 
-					if ( method_exists( $product, $method_name ) ) {	// Just in case.
+								$product->$method_name( $value );
+							}
 
-						if ( $prop_name ) {
-
-							$product->$method_name( $prop_name, $mt_value, $is_cdata );
-
-							$dupe_check[ $method_name ][ $prop_name ][ $mt_value ] = true;
-
-						} else {
-
-							$product->$method_name( $mt_value );
+							$dupe_check[ $method_name ][ $prop_name ][ $value ] = true;
 						}
 					}
 				}
@@ -346,23 +350,15 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$content_maps = $wpsso->cf[ 'head' ][ 'gmf_content_map' ];
 
-			foreach ( array_keys( $content_maps ) as $mt_name ) {
+			foreach ( $content_maps as $mt_name => $map ) {
 
 				if ( isset( $mt_data[ $mt_name ] ) ) {
 
-					$val = $mt_data[ $mt_name ];
-
-					if ( isset( $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ] ) ) {	// Allow for false.
-
-						$mt_data[ $mt_name ] = $wpsso->cf[ 'head' ][ 'gmf_content_map' ][ $mt_name ][ $val ];
-					}
+					self::sanitize_mt_value( $mt_data[ $mt_name ], $map );
 				}
 			}
 
-			foreach ( array(
-				'product:price',
-				'product:sale_price',
-			) as $mt_name ) {
+			foreach ( array( 'product:price', 'product:sale_price' ) as $mt_name ) {
 
 				if ( isset( $mt_data[ $mt_name . ':amount' ] ) && isset( $mt_data[ $mt_name . ':currency' ] ) ) {
 
@@ -370,13 +366,29 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			foreach ( array(
-				'product:sale_price_dates',
-			) as $mt_name ) {
+			foreach ( array( 'product:sale_price_dates' ) as $mt_name ) {
 
 				if ( ! empty( $mt_data[ $mt_name . ':start_iso' ] ) && ! empty( $mt_data[ $mt_name . ':end_iso' ] ) ) {
 
 					$mt_data[ $mt_name ] = $mt_data[ $mt_name . ':start_iso' ] . '/' . $mt_data[ $mt_name . ':end_iso' ];
+				}
+			}
+		}
+
+		static private function sanitize_mt_value( &$value, array $map ) {
+
+			if ( is_array( $value ) ) {
+
+				foreach ( $value as $num => &$arr_val ) {
+
+					self::sanitize_mt_value( $arr_val, $map );
+				}
+
+			} else {
+
+				if ( isset( $map[ $value ] ) ) {	// Allow for false.
+
+					$value = $map[ $value ];
 				}
 			}
 		}
