@@ -117,20 +117,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-dev.7 (TBD)**
+**Version 4.2.0-dev.8 (2023/01/02)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added support for a second 'size_type' value.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a new `WpssoGmfXml::sanitize_mt_value()` method.
+	* Refactored the `WpssoGmfXml::add_product_data()` method.
+	* Refactored the `WpssoGmfXml::sanitize_mt_array()` method.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.2.0-dev.7.
+	* WPSSO Core v14.2.0-dev.8.
 
 **Version 4.1.0 (2022/12/29)**
 
@@ -311,9 +313,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.2.0-dev.7 =
+= 4.2.0-dev.8 =
 
-(TBD) None.
+(2023/01/02) Added support for a second 'size_type' value.
 
 = 4.1.0 =
 
