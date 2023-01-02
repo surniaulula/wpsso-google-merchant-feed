@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-dev.5 (TBD)**
+**Version 4.2.0-dev.6 (TBD)**
 
 * **New Features**
 	* None.
@@ -130,7 +130,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.2.0-dev.5.
+	* WPSSO Core v14.2.0-dev.6.
 
 **Version 4.1.0 (2022/12/29)**
 
@@ -311,7 +311,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.2.0-dev.5 =
+= 4.2.0-dev.6 =
 
 (TBD) None.
 
