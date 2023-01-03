@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 4.1.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 4.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
-"POT-Creation-Date: 2022-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2022-12-29 09:21-0800\n"
+"POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2023-01-02 19:44-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,30 +13,30 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:207
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:207
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:7 lib/abstract/com/add-on.php:221
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:221
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
-#: gettext/gettext-lib-config.php:6
+#: gettext/gettext-lib-config.php:5
 msgctxt "lib file description"
 msgid "Merchant Feeds"
 msgstr "Flux de marchands"
 
-#: gettext/gettext-lib-config.php:7
+#: gettext/gettext-lib-config.php:6
 msgctxt "plugin name"
 msgid "WPSSO Google Merchant Feed XML"
 msgstr "WPSSO Flux XML de marchand Google"
 
-#: gettext/gettext-lib-config.php:8
+#: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
 msgid "Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products."
 msgstr "Flux XML de marchands Google pour WooCommerce, Easy Digital Downloads et produits personnalisés."
 
-#: gettext/gettext-lib-config.php:9
+#: gettext/gettext-lib-config.php:8
 msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
