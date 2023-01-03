@@ -117,7 +117,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 4.2.0-b.3 (2023/01/03)**
+**Version 4.2.0-rc.1 (2023/01/03)**
 
 * **New Features**
 	* None.
@@ -132,7 +132,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.2.0-b.3.
+	* WPSSO Core v14.2.0-rc.1.
 
 **Version 4.1.0 (2022/12/29)**
 
@@ -313,7 +313,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 4.2.0-b.3 =
+= 4.2.0-rc.1 =
 
 (2023/01/03) Added support for a second 'size_type' value.
 
