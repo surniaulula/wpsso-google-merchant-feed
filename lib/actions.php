@@ -40,13 +40,16 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			) );
 		}
 
-		public function action_check_head_info( array $head_info, array $mod, $canonical_url ) {
+		/**
+		 * The post, term, or user has an ID, is public, and (in the case of a post) the post status is published.
+		 */
+		public function action_check_head_info( array $head_info, array $mod, $ref_url ) {
 
 			$is_product = isset( $head_info[ 'og:type' ] ) && 'product' === $head_info[ 'og:type' ] ? true : false;
 
 			if ( $is_product && ! $mod[ 'is_archive' ] ) {	// Exclude the shop page.
 
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'checking google merchant feeds', 'wpsso' ) );
+				$this->p->util->maybe_set_ref( $ref_url, $mod, __( 'checking google merchant feeds', 'wpsso' ) );
 
 				if ( $this->p->debug->enabled ) {
 
@@ -55,17 +58,17 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 				$mt_og = $this->p->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-				$this->p->util->maybe_unset_ref( $canonical_url );
+				$this->p->util->maybe_unset_ref( $ref_url );
 
 				if ( empty( $mt_og[ 'product:offers' ] ) ) {
 
-					$image_url = $this->get_product_image_url( $mt_og, $mod, $canonical_url );
+					$image_url = $this->get_product_image_url( $mt_og, $mod, $ref_url );
 
 				} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
 
 					foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
 
-						$image_url = $this->get_product_image_url( $mt_offer, $mod, $canonical_url );
+						$image_url = $this->get_product_image_url( $mt_offer, $mod, $ref_url );
 					}
 				}
 			}

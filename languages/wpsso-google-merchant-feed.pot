@@ -45,25 +45,25 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/actions.php:49
+#: lib/actions.php:52
 msgid "checking google merchant feeds"
 msgstr ""
 
-#: lib/actions.php:103
+#: lib/actions.php:106
 msgid "getting google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:128
+#: lib/actions.php:131
 msgid "checking google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:134
+#: lib/actions.php:137
 msgid ""
 "A Google merchant feed XML image_link attribute could not be generated for "
 "%1$s ID %2$s."
 msgstr ""
 
-#: lib/actions.php:137
+#: lib/actions.php:140
 msgid ""
 "Google requires at least one image_link attribute for each product variation "
 "in the Google merchant feed XML."
