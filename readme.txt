@@ -21,15 +21,11 @@ Google Merchant Feed XMLs for WooCommerce (Including Variations and Attributes),
 
 <!-- about -->
 
-<h3>No Plugin Settings to Configure</h3>
-
-The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
-
 <h3>E-Commerce Plugin Not Required</h3>
 
 A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>is suggested but not required</em> &mdash; the WPSSO Google Merchant Feed XML add-on also retrieves custom product information entered in the Document SSO metabox.
 
-If using WooCommerce, note that WooCommerce product variations, attributes, meta data, and custom fields are all supported.
+If using WooCommerce, note that WooCommerce product variations, attributes, meta data, and custom fields are fully supported.
 
 <h3>Multilingual</h3>
 
@@ -38,6 +34,10 @@ Google merchant feed XMLs are automatically created in your site's language(s) f
 After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.
 
 <!-- /about -->
+
+<h3>No Plugin Settings to Configure</h3>
+
+The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
 <h3>Google Merchant Feed XML Attributes</h3>
 
