@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.1 (2023/01/10)**
+**Version 5.0.0-dev.2 (2023/01/11)**
 
 * **New Features**
 	* None.
@@ -141,7 +141,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.4.0-rc.3.
+	* WPSSO Core v14.4.0.
 
 **Version 4.2.0 (2023/01/03)**
 
@@ -339,9 +339,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-dev.1 =
+= 5.0.0-dev.2 =
 
-(2023/01/10) Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/'. Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
+(2023/01/11) Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/'. Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
 
 = 4.2.0 =
 
