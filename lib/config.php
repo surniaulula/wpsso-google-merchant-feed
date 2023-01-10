@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '4.2.0',	// Plugin version.
+					'version'     => '5.0.0-dev.1',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '14.2.0',
+							'min_version'   => '14.4.0-rc.2',
 						),
 					),
 
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					 */
 					'lib' => array(
 						'submenu' => array(
-							'gmf-general' => 'Merchant Feeds',
+							'gmf-general' => 'Google Merchant',
 						),
 					),
 				),
@@ -291,7 +291,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 
 			$var_const = array();
 
-			$var_const[ 'WPSSOGMF_PAGENAME' ] = 'merchant-feed';
+			$var_const[ 'WPSSOGMF_PAGENAME' ] = 'google-merchant';
 
 			/**
 			 * Maybe override the default constant value with a pre-defined constant value.

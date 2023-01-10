@@ -41,16 +41,6 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 			switch ( $msg_key ) {
 
-				case 'info-gmf-urls':
-
-					$text = '<blockquote class="top-info">';
-
-					$text .= __( 'Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site\'s language(s) from Polylang, WPML, or the installed WordPress languages.', 'wpsso-google-merchant-feed' );
-
-					$text .= '</blockquote>';
-
-					break;
-
 				case 'info-gmf-img':
 
 					/**
@@ -62,11 +52,12 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 					$text .= __( 'Product images must accurately display the entire product and include minimal or no product staging.', 'wpsso' ) . ' ';
 
 					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso' ) . ' ';
+
 					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product.', 'wpsso' ) . ' ';
 
 					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso' ) . ' ';
 
-					if ( ! empty( $this->p->avail[ 'ecom' ][ 'woocommerce' ] ) ) {	// Premium plugin with WooCommerce.
+					if ( ! empty( $this->p->avail[ 'ecom' ][ 'woocommerce' ] ) ) {
 
 						if ( 'product' === $info[ 'mod' ][ 'post_type' ] ) {	// WooCommerce product editing page.
 

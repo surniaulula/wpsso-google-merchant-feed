@@ -16,6 +16,8 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoGmf class object.
+		private $adv;	// WpssoGmfFiltersAdvanced class object.
+		private $edit;	// WpssoGmfFiltersEdit class object.
 		private $msgs;	// WpssoGmfFiltersMessages class object.
 
 		/**
@@ -42,14 +44,17 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			if ( is_admin() ) {
 
+				require_once WPSSOGMF_PLUGINDIR . 'lib/filters-advanced.php';
+
+				$this->adv = new WpssoGmfFiltersAdvanced( $plugin, $addon );
+
+				require_once WPSSOGMF_PLUGINDIR . 'lib/filters-edit.php';
+
+				$this->edit = new WpssoGmfFiltersEdit( $plugin, $addon );
+
 				require_once WPSSOGMF_PLUGINDIR . 'lib/filters-messages.php';
 
 				$this->msgs = new WpssoGmfFiltersMessages( $plugin, $addon );
-
-				$this->p->util->add_plugin_filters( $this, array(
-					'plugin_image_sizes_rows'            => 2,	// SSO > Advanced Settings > Plugin Settings > Image Sizes tab.
-					'metabox_sso_edit_media_schema_rows' => 5,
-				) );
 			}
 		}
 
@@ -61,83 +66,6 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			);
 
 			return $sizes;
-		}
-
-		/**
-		 * SSO > Advanced Settings > Plugin Settings > Image Sizes tab.
-		 */
-		public function filter_plugin_image_sizes_rows( $table_rows, $form ) {
-
-			$table_rows[ 'gmf_img_size' ] = '' .
-				$form->get_th_html( _x( 'Google Merchant Feed XML', 'option label', 'wpsso-google-merchant-feed' ),
-					$css_class = '', $css_id = 'gmf_img_size' ) .
-				'<td>' . $form->get_input_image_dimensions( 'gmf_img' ) . '</td>';
-
-			return $table_rows;
-		}
-
-		public function filter_metabox_sso_edit_media_schema_rows( $table_rows, $form, $head_info, $mod, $canonical_url ) {
-
-			if ( ! $mod[ 'is_public' ] ) {
-
-				return $table_rows;
-			}
-
-			$is_product      = isset( $head_info[ 'og:type' ] ) && 'product' === $head_info[ 'og:type' ] ? true : false;
-			$schema_disabled = $this->p->util->is_schema_disabled();
-			$schema_msg      = $this->p->msgs->maybe_schema_disabled();
-			$media_info      = array( 'pid' => '' );
-			$media_request   = array( 'pid' );
-
-			if ( $is_product ) {
-
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds image', 'wpsso' ) );
-
-				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-gmf', $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
-
-			} elseif ( ! $schema_disabled ) {
-
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting schema 1:1 image', 'wpsso' ) );
-
-				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-schema-1x1', $media_request, $mod, $md_pre = array( 'og' ) );
-
-			} else {
-
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting open graph image', 'wpsso' ) );
-
-				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-opengraph', $media_request, $mod, $md_pre = array( 'none' ) );
-			}
-
-			$this->p->util->maybe_unset_ref( $canonical_url );
-
-			$form_rows = array(
-				'subsection_gmf' => array(
-					'tr_class' => 'hide_og_type hide_og_type_product',
-					'td_class' => 'subsection top',
-					'header'   => 'h4',
-					'label'    => _x( 'Google Merchant Feed XML (Main Product)', 'metabox title', 'wpsso-google-merchant-feed' )
-				),
-				'gmf_img_info' => array(
-					'tr_class'  => 'hide_og_type hide_og_type_product',
-					'table_row' => '<td colspan="2">' . $this->p->msgs->get( 'info-gmf-img', array( 'mod' => $mod ) ) . '</td>',
-				),
-				'gmf_img_id' => array(
-					'tr_class' => 'hide_og_type hide_og_type_product',
-					'th_class' => 'medium',
-					'label'    => _x( 'Image ID', 'option label', 'wpsso-google-merchant-feed' ),
-					'tooltip'  => 'meta-gmf_img_id',
-					'content'  => $form->get_input_image_upload( 'gmf_img', $media_info[ 'pid' ] ),
-				),
-				'gmf_img_url' => array(
-					'tr_class' => 'hide_og_type hide_og_type_product',
-					'th_class' => 'medium',
-					'label'    => _x( 'or an Image URL', 'option label', 'wpsso-google-merchant-feed' ),
-					'tooltip'  => 'meta-gmf_img_url',
-					'content'  => $form->get_input_image_url( 'gmf_img' ),
-				),
-			);
-
-			return $form->get_md_form_rows( $table_rows, $form_rows, $head_info, $mod );
 		}
 
 		public function filter_cache_refreshed_notice( $notice_msg, $user_id, $read_cache = false ) {
@@ -157,7 +85,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			restore_current_locale();	// Calls an action to clear the SucomUtil::get_locale() cache.
 
-			$notice_msg .= sprintf( __( 'The Google Merchant Feed XML cache for %d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count ) . ' ';
+			$notice_msg .= sprintf( __( 'The Google Merchant Feed XML for %d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count ) . ' ';
 
 			return $notice_msg;
 		}

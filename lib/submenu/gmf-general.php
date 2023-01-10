@@ -70,8 +70,6 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 				case 'gmf-general':
 
-					$table_rows[] = '<td colspan="5">' . $this->p->msgs->get( 'info-gmf-urls' ) . '</td>';
-
 					$locale_names = SucomUtil::get_available_feed_locale_names();
 
 					foreach ( $locale_names as $locale => $native_name ) {

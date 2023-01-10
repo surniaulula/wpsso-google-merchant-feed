@@ -35,40 +35,62 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$this->a =& $addon;
 
 			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ) );
-			add_action( 'activated_plugin', array( __CLASS__, 'flush_rules' ) );
-			add_action( 'after_switch_theme', array( __CLASS__, 'flush_rules' ) );
-			add_action( 'upgrader_process_complete', array( __CLASS__, 'flush_rules' ) );
 			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -2000 );
 
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ) );
 		}
 
+		/**
+		 * Adds and flushes rewrite rules only if necessary.
+		 */
 		static public function add_rules() {
 
-			add_rewrite_rule( '^' . WPSSOGMF_PAGENAME . '\/([^\/]+)\.xml$', 'index.php?pagename=' . WPSSOGMF_PAGENAME . '&gmflang=$matches[1]', 'top' );
+			global $wp_rewrite;
+
+			$rewrite_rules = $wp_rewrite->wp_rewrite_rules();
+			$rewrite_key   = '^(' . WPSSOGMF_PAGENAME . ')\/feed/(rss2)/([^\/]+)\.xml$';
+			$rewrite_value = 'index.php?pagename=$matches[1]&feed=$matches[2]&locale=$matches[3]';
+
+			if ( empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_value !== $rewrite_rules[ $rewrite_key ] ) {
+
+				/**
+				 * If WPSSOGMF_PAGENAME is the new default, then add the old default rewrite as well.
+				 */
+				if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
+
+					add_rewrite_rule( '^merchant-feed\/([^\/]+)\.xml$',
+						'index.php?pagename=' . WPSSOGMF_PAGENAME . '&feed=rss2&locale=$matches[1]', 'top' );
+				}
+
+				add_rewrite_rule( $rewrite_key, $rewrite_value, 'top' );
+
+				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
+			}
 		}
 
-		static public function flush_rules() {
-
-			flush_rewrite_rules();
-		}
-
+		/**
+		 * Add the 'locale' query variable.
+		 * 
+		 * The 'pagename' and 'feed' variables are already defined by WordPress.
+		 */
 		static public function query_vars( $vars ) {
 
-			$vars[] = 'gmflang';
+			foreach ( array( 'locale' ) as $qv ) {
+
+				if ( ! in_array( $qv, $vars, $strict = true ) ) {
+
+					$vars[] = $qv;
+				}
+			}
 
 			return $vars;
 		}
 
 		static public function template_redirect() {
 
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
+			/**
+			 * Make sure the requested pagename is valid.
+			 */
 			$request_pagename = get_query_var( 'pagename' );
 
 			if ( WPSSOGMF_PAGENAME !== $request_pagename ) {
@@ -77,24 +99,30 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			}
 
 			/**
+			 * Make sure the requested feed is valid.
+			 */
+			$request_feed = get_query_var( 'feed' );
+
+			if ( 'rss2' !== $request_feed ) {
+
+				return;
+			}
+
+			/**
 			 * Make sure the requested locale is valid, otherwise redirect using the default locale.
 			 */
-			$request_locale = get_query_var( 'gmflang' );
+			$request_locale = get_query_var( 'locale' );
+
+			if ( empty( $request_locale ) ) {
+
+				return;
+			}
+
 			$request_locale = SucomUtil::sanitize_locale( $request_locale );
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->log( 'getting current locale' );
-			}
-
 			$current_locale = SucomUtil::get_locale( $mixed = 'current' );
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->log( 'getting default locale' );
-			}
-
 			$default_locale = SucomUtil::get_locale( $mixed = 'default' );
+
+			$wpsso =& Wpsso::get_instance();
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -123,7 +151,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 						$wp_locale      = get_locale();
 						$current_locale = SucomUtil::get_locale( $mixed = 'current' );
 
-						$wpsso->debug->log( 'wp locale = ' . $wp_locale );
+						$wpsso->debug->log( 'locale wp = ' . $wp_locale );
 						$wpsso->debug->log( 'locale current = ' . $current_locale );
 					}
 
@@ -187,11 +215,11 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( ! $wp_rewrite->using_permalinks() ) {
 
-				$url = add_query_arg( array( 'pagename' => WPSSOGMF_PAGENAME, 'gmflang'  => $locale ), get_home_url( $blog_id ) );
+				$url = add_query_arg( array( 'pagename' => WPSSOGMF_PAGENAME, 'feed' => 'rss2', 'locale'  => $locale ), get_home_url( $blog_id ) );
 
 			} else {
 
-				$url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $locale . '.xml' );
+				$url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/feed/rss2/' . $locale . '.xml' );
 			}
 
 			return apply_filters( 'wpsso_google_merchant_feed_url', $url, $locale, WPSSOGMF_PAGENAME, $blog_id );

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "65792d67212e1b9b55fc1a4ed911e618",
+    "content-hash": "50ff0d010484b5a13364d4aeb4a44749",
     "packages": [
         {
             "name": "sabre/uri",
@@ -134,16 +134,16 @@
         },
         {
             "name": "vitalybaev/google-merchant-feed",
-            "version": "v2.5.0",
+            "version": "v2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vitalybaev/php-google-merchant-feed.git",
-                "reference": "1fe34c269ed2a37079b9ef931c2cb9c00cbba678"
+                "reference": "b0bcb7290e495c12a2038c6aa8db2a3782dc9f43"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vitalybaev/php-google-merchant-feed/zipball/1fe34c269ed2a37079b9ef931c2cb9c00cbba678",
-                "reference": "1fe34c269ed2a37079b9ef931c2cb9c00cbba678",
+                "url": "https://api.github.com/repos/vitalybaev/php-google-merchant-feed/zipball/b0bcb7290e495c12a2038c6aa8db2a3782dc9f43",
+                "reference": "b0bcb7290e495c12a2038c6aa8db2a3782dc9f43",
                 "shasum": ""
             },
             "require": {
@@ -174,9 +174,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vitalybaev/php-google-merchant-feed/issues",
-                "source": "https://github.com/vitalybaev/php-google-merchant-feed/tree/v2.5.0"
+                "source": "https://github.com/vitalybaev/php-google-merchant-feed/tree/v2.6.0"
             },
-            "time": "2022-02-14T21:15:53+00:00"
+            "time": "2022-12-23T16:17:16+00:00"
         }
     ],
     "packages-dev": [],

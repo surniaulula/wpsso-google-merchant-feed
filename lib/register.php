@@ -115,14 +115,12 @@ if ( ! class_exists( 'WpssoGmfRegister' ) ) {
 				}
 			}
 
-			WpssoGmfRewrite::add_rules();
-
-			WpssoGmfRewrite::flush_rules();
+			WpssoGmfRewrite::add_rules();	// Adds and flushes rewrite rules only if necessary.
 		}
 
 		private function deactivate_plugin() {
 
-			flush_rewrite_rules();
+			flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
 		}
 
 		private static function uninstall_plugin() {}

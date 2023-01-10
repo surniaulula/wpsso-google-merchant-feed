@@ -329,7 +329,7 @@ class Product
 
     /**
      * Adds shipping of the product.
-     *
+     * 
      * @param Shipping $shipping
      *
      * @return $this
@@ -343,7 +343,7 @@ class Product
 
     /**
      * Add shipping label
-     *
+     * 
      * @param string $str
      *
      * @return $this
@@ -356,7 +356,7 @@ class Product
 
     /**
      * Add shipping weight
-     *
+     * 
      * @param string $str
      *
      * @return $this
@@ -368,8 +368,53 @@ class Product
     }
 
     /**
-     * Set a custom label
+     * Add shipping length
+     * 
+     * @see https://support.google.com/merchants/answer/6324498?hl=en
+     * 
+     * @param string $str
      *
+     * @return $this
+     */
+    public function setShippingLength($str)
+    {
+        $this->setAttribute('shipping_length', $str, false);
+        return $this;
+    }
+
+    /**
+     * Add shipping width
+     * 
+     * @see https://support.google.com/merchants/answer/6324498?hl=en
+     * 
+     * @param string $str
+     *
+     * @return $this
+     */
+    public function setShippingWidth($str)
+    {
+        $this->setAttribute('shipping_width', $str, false);
+        return $this;
+    }
+
+    /**
+     * Add shipping height
+     * 
+     * @see https://support.google.com/merchants/answer/6324498?hl=en
+     * 
+     * @param string $str
+     *
+     * @return $this
+     */
+    public function setShippingHeight($str)
+    {
+        $this->setAttribute('shipping_height', $str, false);
+        return $this;
+    }
+
+    /**
+     * Set a custom label
+     * 
      * @param string $str
      * @param integer $pos
      *

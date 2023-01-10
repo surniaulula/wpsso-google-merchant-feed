@@ -77,7 +77,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_title      = SucomUtil::get_site_name( $wpsso->options, $locale );
 			$site_url        = SucomUtil::get_home_url( $wpsso->options, $locale );
 			$site_desc       = SucomUtil::get_site_description( $wpsso->options, $locale );
-			$merchant_feed   = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc );
+			$rss2_feed       = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
 			$public_post_ids = WpssoPost::get_public_ids( array( 'meta_query' => self::get_meta_query() ) );
 
 			if ( $wpsso->debug->enabled ) {
@@ -113,7 +113,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						$wpsso->debug->log( 'adding single offer for post id ' . $post_id );
 					}
 
-					self::add_feed_product( $merchant_feed, $mt_og );
+					self::add_feed_product( $rss2_feed, $mt_og );
 
 				} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
 
@@ -124,12 +124,12 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
 
-						self::add_feed_product( $merchant_feed, $mt_og, $mt_offer );
+						self::add_feed_product( $rss2_feed, $mt_og, $mt_offer );
 					}
 				}
 			}
 
-			$xml = $merchant_feed->build();
+			$xml = $rss2_feed->build();
 
 			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $file_name_ext );
 
@@ -176,7 +176,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $local_cache;	// Return an empty string or array.
 		}
 
-		static private function add_feed_product( &$merchant_feed, $mt_og, $mt_offer = null ) {
+		static private function add_feed_product( &$rss2_feed, $mt_og, $mt_offer = null ) {
 
 			$product = new Vitalybaev\GoogleMerchant\Product();
 
@@ -193,7 +193,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				self::add_product_images( $product, $mt_og );
 			}
 
-			$merchant_feed->addProduct( $product );
+			$rss2_feed->addProduct( $product );
 		}
 
 		static private function add_product_data( &$product, $mt_data, &$dupe_check = array() ) {
@@ -235,10 +235,10 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:width:value'                 => array( 'setAttribute', 'product_width', false ),
 				'product:height:value'                => array( 'setAttribute', 'product_height', false ),
 				'product:weight:value'                => array( 'setAttribute', 'product_weight', false ),
-				'product:shipping_length:value'       => array( 'setAttribute', 'shipping_length', false ),
-				'product:shipping_width:value'        => array( 'setAttribute', 'shipping_width', false ),
-				'product:shipping_height:value'       => array( 'setAttribute', 'shipping_height', false ),
-				'product:shipping_weight:value'       => array( 'setAttribute', 'shipping_weight', false ),
+				'product:shipping_length:value'       => 'setShippingLength',
+				'product:shipping_width:value'        => 'setShippingWidth',
+				'product:shipping_height:value'       => 'setShippingHeight',
+				'product:shipping_weight:value'       => 'setShippingWeight',
 				'product:ean'                         => array( 'addAttribute', 'gtin', false ),	// One or more.
 				'product:gtin14'                      => array( 'addAttribute', 'gtin', false ),	// One or more.
 				'product:gtin13'                      => array( 'addAttribute', 'gtin', false ),	// One or more.
