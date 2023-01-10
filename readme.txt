@@ -119,17 +119,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.1 (TBD)**
+**Version 5.0.0-dev.1 (2023/01/10)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/' (note that old feed URLs will continue to be supported).
+	* Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/' (note that old default feed URLs continue to be supported).
 	* Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a new filters-advanced.php library file.
+	* Added a new filters-edit.php library file.
+	* Updated the 'vitalybaev/google-merchant-feed' library to v2.6.0.
+	* Renamed the 'gmflang' query variable to 'locale'.
+	* Refactored the `WpssoGmfRewrite::add_rules()` static method.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -333,7 +337,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.0.0-dev.1 =
 
-(TBD) Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/' (note that old feed URLs will continue to be supported).
+(2023/01/10) Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/'. Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
 
 = 4.2.0 =
 
