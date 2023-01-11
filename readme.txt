@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.1.1
-WC Tested Up To: 7.2.2
+WC Tested Up To: 7.2.3
 Stable Tag: 4.2.0
 
 Google Merchant Feed XMLs for WooCommerce (Including Variations and Attributes), Easy Digital Downloads, and Custom Products.
@@ -123,12 +123,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-dev.3 (2023/01/11)**
+**Version 5.0.0-b.1 (2023/01/11)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/' (note that old default feed URLs continue to be supported).
+	* Changed the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/' (the old default feed URLs continue to be supported).
 	* Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
 * **Bugfixes**
 	* None.
@@ -141,7 +141,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.4.1-dev.3.
+	* WPSSO Core v14.4.0.
 
 **Version 4.2.0 (2023/01/03)**
 
@@ -339,9 +339,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-dev.3 =
+= 5.0.0-b.1 =
 
-(2023/01/11) Updated the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/'. Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
+(2023/01/11) Changed the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/'. Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
 
 = 4.2.0 =
 
