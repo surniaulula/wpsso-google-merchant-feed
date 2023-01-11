@@ -123,7 +123,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.0-b.1 (2023/01/11)**
+**Version 5.0.0-rc.1 (2023/01/11)**
 
 * **New Features**
 	* None.
@@ -339,7 +339,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.0-b.1 =
+= 5.0.0-rc.1 =
 
 (2023/01/11) Changed the default feed URL from '/merchant-feed/' to '/google-merchant/feed/rss2/'. Renamed the SSO settings page from "Merchant Feed" to "Google Merchant".
 
