@@ -30,6 +30,26 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 		}
 
 		/**
+		 * Called by WpssoAdmin->load_setting_page() after the 'wpsso-action' query is handled.
+		 *
+		 * Add settings page filter and action hooks.
+		 */
+		protected function add_plugin_hooks() {
+
+			$this->p->util->add_plugin_filters( $this, array(
+				'form_button_rows' => 1,	// Form buttons for this settings page.
+			), PHP_INT_MAX );			// Run filter last to remove all form buttons.
+		}
+
+		/**
+		 * Remove all submit / action buttons from this settings page.
+		 */
+		public function filter_form_button_rows( $form_button_rows ) {
+
+			return array();
+		}
+
+		/**
 		 * Called by the extended WpssoAdmin class.
 		 */
 		protected function add_meta_boxes() {
