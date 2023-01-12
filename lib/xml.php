@@ -211,10 +211,10 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'og:title'                 => 'setTitle',
 				'og:description'           => 'setDescription',
 				'og:url'                   => array( 'setAttribute', 'canonical_link', true ),
+				'product:retailer_item_id' => 'setId',
 				'product:title'            => 'setTitle',
 				'product:description'      => 'setDescription',
 				'product:url'              => 'setLink',
-				'product:retailer_item_id' => 'setId',
 
 				/**
 				 * Price & availability.
