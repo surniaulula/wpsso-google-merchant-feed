@@ -87,6 +87,10 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'gmf_img_width'  => 800,
 					'gmf_img_height' => 800,
 				),
+
+				/**
+				 * See https://support.google.com/merchants/answer/7052112.
+				 */
 				'gmf_content_map' => array(
 
 					/**

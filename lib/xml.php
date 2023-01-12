@@ -196,6 +196,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$rss2_feed->addProduct( $product );
 		}
 
+		/**
+		 * See https://support.google.com/merchants/answer/7052112.
+		 */
 		static private function add_product_data( &$product, $mt_data, &$dupe_check = array() ) {
 
 			self::sanitize_mt_array( $mt_data );
@@ -203,7 +206,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$names = array(
 				'og:title'                            => 'setTitle',
 				'og:description'                      => 'setDescription',
-				'og:url'                              => 'setLink',
 				'og:url'                              => array( 'setAttribute', 'canonical_link', true ),	// Main product canonical URL.
 				'product:item_group_id'               => array( 'setAttribute', 'item_group_id', false ),
 				'product:retailer_item_id'            => 'setId',
