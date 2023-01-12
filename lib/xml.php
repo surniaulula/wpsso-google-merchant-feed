@@ -204,51 +204,75 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			self::sanitize_mt_array( $mt_data );
 
 			$names = array(
-				'og:title'                            => 'setTitle',
-				'og:description'                      => 'setDescription',
-				'og:url'                              => array( 'setAttribute', 'canonical_link', true ),	// Main product canonical URL.
-				'product:item_group_id'               => array( 'setAttribute', 'item_group_id', false ),
-				'product:retailer_item_id'            => 'setId',
-				'product:title'                       => 'setTitle',
-				'product:description'                 => 'setDescription',
-				'product:url'                         => 'setLink',
-				'product:mfr_part_no'                 => 'setMpn',
-				'product:category'                    => 'setGoogleCategory',	// Product category ID from Google product taxonomy.
-				'product:retailer_category'           => 'setProductType',	// String to organize bidding and reporting in Google Ads Shopping campaigns.
-				'product:brand'                       => 'setBrand',
-				'product:availability'                => 'setAvailability',
-				'product:price'                       => 'setPrice',
-				'product:sale_price'                  => 'setSalePrice',
-				'product:sale_price_dates'            => array( 'setAttribute', 'sale_price_effective_date', false ),
+
+				/**
+				 * Basic product data.
+				 */
+				'og:title'                 => 'setTitle',
+				'og:description'           => 'setDescription',
+				'og:url'                   => array( 'setAttribute', 'canonical_link', true ),
+				'product:title'            => 'setTitle',
+				'product:description'      => 'setDescription',
+				'product:url'              => 'setLink',
+				'product:retailer_item_id' => 'setId',
+
+				/**
+				 * Price & availability.
+				 */
+				'product:availability'     => 'setAvailability',
+				'product:price'            => 'setPrice',
+				'product:sale_price'       => 'setSalePrice',
+				'product:sale_price_dates' => array( 'setAttribute', 'sale_price_effective_date', false ),
+
+				/**
+				 * Product category.
+				 */
+				'product:category'          => 'setGoogleCategory',
+				'product:retailer_category' => 'setProductType',
+
+				/**
+				 * Product identifiers.
+				 */
+				'product:brand'       => 'setBrand',
+				'product:ean'         => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin14'      => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin13'      => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin12'      => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin8'       => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:gtin'        => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:isbn'        => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:upc'         => array( 'addAttribute', 'gtin', false ),	// One or more.
+				'product:mfr_part_no' => 'setMpn',
+
+				/**
+				 * Detailed product description.
+				 */
 				'product:condition'                   => 'setCondition',
+				'product:adult_type'                  => 'setAdult',
 				'product:energy_efficiency:value'     => array( 'setAttribute', 'energy_efficiency_class', false ),
 				'product:energy_efficiency:min_value' => array( 'setAttribute', 'min_energy_efficiency_class', false ),
 				'product:energy_efficiency:max_value' => array( 'setAttribute', 'max_energy_efficiency_class', false ),
-				'product:material'                    => 'setMaterial',
-				'product:pattern'                     => array( 'setAttribute', 'pattern', false ),
+				'product:age_group'                   => array( 'setAttribute', 'age_group', false ),
 				'product:color'                       => 'setColor',
 				'product:target_gender'               => array( 'setAttribute', 'gender', false ),
+				'product:material'                    => 'setMaterial',
+				'product:pattern'                     => array( 'setAttribute', 'pattern', false ),
 				'product:size'                        => 'setSize',
 				'product:size_group'                  => array( 'addAttribute', 'size_type', false ),	// One or more.
 				'product:size_system'                 => array( 'setAttribute', 'size_system', false ),
-				'product:age_group'                   => array( 'setAttribute', 'age_group', false ),
-				'product:adult_type'                  => 'setAdult',
+				'product:item_group_id'               => array( 'setAttribute', 'item_group_id', false ),
 				'product:length:value'                => array( 'setAttribute', 'product_length', false ),
 				'product:width:value'                 => array( 'setAttribute', 'product_width', false ),
 				'product:height:value'                => array( 'setAttribute', 'product_height', false ),
 				'product:weight:value'                => array( 'setAttribute', 'product_weight', false ),
-				'product:shipping_length:value'       => 'setShippingLength',
-				'product:shipping_width:value'        => 'setShippingWidth',
-				'product:shipping_height:value'       => 'setShippingHeight',
-				'product:shipping_weight:value'       => 'setShippingWeight',
-				'product:ean'                         => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin14'                      => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin13'                      => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin12'                      => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin8'                       => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin'                        => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:isbn'                        => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:upc'                         => array( 'addAttribute', 'gtin', false ),	// One or more.
+
+				/**
+				 * Shipping.
+				 */
+				'product:shipping_weight:value' => 'setShippingWeight',
+				'product:shipping_length:value' => 'setShippingLength',
+				'product:shipping_width:value'  => 'setShippingWidth',
+				'product:shipping_height:value' => 'setShippingHeight',
 			);
 
 			foreach ( $names as $mt_name => $mixed ) {
