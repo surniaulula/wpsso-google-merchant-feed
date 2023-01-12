@@ -23,9 +23,11 @@ Google Merchant Feed XMLs for WooCommerce (Including Variations and Attributes),
 
 <h3>E-Commerce Plugin Not Required</h3>
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>is suggested but not required</em> &mdash; the WPSSO Google Merchant Feed XML add-on also retrieves custom product information entered in the Document SSO metabox.
+A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>is suggested but not required</em> &mdash; the WPSSO Google Merchant Feed XML add-on also retrieves custom product information entered in the Document SSO metabox when editing a product page.
 
-If using WooCommerce, note that WooCommerce product variations, attributes, meta data, and custom fields are fully supported.
+<h3>Complete WooCommerce Support</h3>
+
+WooCommerce product variations, attributes, meta data, and custom fields are all fully supported.
 
 <h3>Multilingual</h3>
 
