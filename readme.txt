@@ -29,6 +29,10 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>i
 
 WooCommerce product variations, attributes, meta data, and custom fields are all fully supported.
 
+<h3>No Add-on Settings to Configure</h3>
+
+The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
+
 <h3>Multilingual</h3>
 
 The Google merchant feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.
@@ -36,10 +40,6 @@ The Google merchant feed XMLs are automatically created in your site's language(
 After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.
 
 <!-- /about -->
-
-<h3>No Plugin Settings to Configure</h3>
-
-The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
 <h3>Google Merchant Feed XML Attributes</h3>
 
