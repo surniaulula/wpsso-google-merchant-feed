@@ -54,7 +54,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			if ( empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_value !== $rewrite_rules[ $rewrite_key ] ) {
 
 				/**
-				 * If WPSSOGMF_PAGENAME is the new default, then add the old default rewrite as well.
+				 * If WPSSOGMF_PAGENAME is the 'google-merchant' default, then add the old default rewrite as well.
 				 */
 				if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
 
