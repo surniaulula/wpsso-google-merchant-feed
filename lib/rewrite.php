@@ -48,18 +48,17 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			global $wp_rewrite;
 
 			$rewrite_rules = $wp_rewrite->wp_rewrite_rules();
-			$rewrite_key   = '^(' . WPSSOGMF_PAGENAME . ')\/feed/(rss2)/([^\/]+)\.xml$';
+			$rewrite_key   = '^(' . WPSSOGMF_PAGENAME . ')/feed/(rss2)/([^/]+)\.xml$';
 			$rewrite_value = 'index.php?pagename=$matches[1]&feed=$matches[2]&locale=$matches[3]';
 
 			if ( empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_value !== $rewrite_rules[ $rewrite_key ] ) {
 
 				/**
-				 * If WPSSOGMF_PAGENAME is the 'google-merchant' default, then add the old default rewrite as well.
+				 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
 				 */
 				if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
 
-					add_rewrite_rule( '^merchant-feed\/([^\/]+)\.xml$',
-						'index.php?pagename=' . WPSSOGMF_PAGENAME . '&feed=rss2&locale=$matches[1]', 'top' );
+					add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?pagename=' . WPSSOGMF_PAGENAME . '&feed=rss2&locale=$matches[1]', 'top' );
 				}
 
 				add_rewrite_rule( $rewrite_key, $rewrite_value, 'top' );
