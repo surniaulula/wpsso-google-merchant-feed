@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-dev.5 (2023/01/12)**
+**Version 5.1.0-dev.6 (2023/01/13)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.5.0-dev.5.
+	* WPSSO Core v14.5.0-dev.6.
 
 **Version 5.0.0 (2023/01/11)**
 
@@ -356,9 +356,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-dev.5 =
+= 5.1.0-dev.6 =
 
-(2023/01/12) Removed the "Save Plugin Settings" and "Change to View" buttons from the Google Merchant settings page.
+(2023/01/13) Removed the "Save Plugin Settings" and "Change to View" buttons from the Google Merchant settings page.
 
 = 5.0.0 =
 
