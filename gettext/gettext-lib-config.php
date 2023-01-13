@@ -4,5 +4,5 @@
 // 
 _x( 'Google Merchant', 'lib file description', 'wpsso-google-merchant-feed' );
 _x( 'WPSSO Google Merchant Feed XML', 'plugin name', 'wpsso-google-merchant-feed' );
-_x( 'Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products.', 'plugin description', 'wpsso-google-merchant-feed' );
+_x( 'Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Product Pages.', 'plugin description', 'wpsso-google-merchant-feed' );
 _x( 'WPSSO Core', 'plugin name', 'wpsso-google-merchant-feed' );

@@ -37,7 +37,7 @@ msgstr ""
 msgctxt "plugin description"
 msgid ""
 "Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
-"Custom Products."
+"Custom Product Pages."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
@@ -180,7 +180,7 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
-"Custom Products."
+"Custom Product Pages."
 msgstr ""
 
 #. Author of the plugin/theme
