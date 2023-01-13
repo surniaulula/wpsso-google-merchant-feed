@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 5.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 5.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-01-11 10:48-0800\n"
+"PO-Revision-Date: 2023-01-12 17:33-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -141,7 +141,7 @@ msgstr "Cette option est désactivée si un ID d'image personnalisé est sélect
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr "Le flux XML de marchand Google pour %d langues a été actualisé."
 
-#: lib/submenu/gmf-general.php:38
+#: lib/submenu/gmf-general.php:58
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
@@ -165,10 +165,3 @@ msgstr "JS Morisset"
 #. Author URI of the plugin/theme
 msgid "https://wpsso.com/"
 msgstr "https://wpsso.com/"
-
-#~ msgctxt "lib file description"
-#~ msgid "Merchant Feeds"
-#~ msgstr "Flux de marchands"
-
-#~ msgid "Google merchant feed XMLs for WooCommerce, Easy Digital Downloads, and custom products are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages."
-#~ msgstr "Les flux XML de marchand Google pour WooCommerce, Easy Digital Downloads et les produits personnalisés sont automatiquement créés dans les langues de votre site à partir de Polylang, WPML ou des langues WordPress installées."
