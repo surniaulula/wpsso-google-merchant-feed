@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.2
 Tested Up To: 6.1.1
-WC Tested Up To: 7.2.3
+WC Tested Up To: 7.3.0
 Stable Tag: 5.0.0
 
 Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Product Pages.
@@ -31,7 +31,7 @@ WooCommerce product variations, attributes, meta data, and custom fields are all
 
 <h3>Multilingual</h3>
 
-Google merchant feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.
+The Google merchant feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.
 
 After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.
 
@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.0.1-dev.4 (2023/01/12)**
+**Version 5.1.0-dev.5 (2023/01/12)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.4.1-dev.4.
+	* WPSSO Core v14.5.0-dev.5.
 
 **Version 5.0.0 (2023/01/11)**
 
@@ -356,7 +356,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.0.1-dev.4 =
+= 5.1.0-dev.5 =
 
 (2023/01/12) Removed the "Save Plugin Settings" and "Change to View" buttons from the Google Merchant settings page.
 
