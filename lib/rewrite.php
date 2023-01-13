@@ -64,7 +64,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				add_rewrite_rule( $rewrite_key, $rewrite_value, 'top' );
 
-				flush_rewrite_rules( $hard = false );
+				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
 			}
 		}
 
