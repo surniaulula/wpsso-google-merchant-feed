@@ -93,16 +93,18 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 						$url = WpssoGmfRewrite::get_url( $locale );
 						$xml = WpssoGmfXml::get( $read_cache = true, $locale );
 
-						$items  = substr_count( $xml, '<item>' );
-						$images = substr_count( $xml, '<g:image_link>' );
-						$size   = number_format( strlen( $xml ) );
+						$item_count = substr_count( $xml, '<item>' );
+						$img_count  = substr_count( $xml, '<g:image_link>' );
+						$addl_count = substr_count( $xml, '<g:additional_image_link>' );
+						$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );
 
 						$table_rows[ 'gmf_url_' . $locale ] = '' .
 							$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
 							'<p class="status-msg left">' .
-							sprintf( _x( '%1$s items, %2$s image links, %3$s bytes feed XML size.', 'option comment', 'wpsso'),
-								$items, $images, $size ) .
+							sprintf( _x( '%1$s items, %2$s image links, %3$s addl image links, %4$s KB feed XML size.',
+								'option comment', 'wpsso-google-merchant-feed' ),
+									$item_count, $img_count, $addl_count, $xml_size ) .
 							'</p>' .
 							'</td>';
 					}

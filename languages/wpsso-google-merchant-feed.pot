@@ -169,9 +169,10 @@ msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:104
+#: lib/submenu/gmf-general.php:105
 msgctxt "option comment"
-msgid "%1$s items, %2$s image links, %3$s bytes feed XML size."
+msgid ""
+"%1$s items, %2$s image links, %3$s addl image links, %4$s KB feed XML size."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
