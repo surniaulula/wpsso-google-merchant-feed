@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 							$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
 							'<p class="status-msg left">' .
-							sprintf( _x( '%1$s items, %2$s image links, %2$s bytes XML size.', 'option comment', 'wpsso'),
+							sprintf( _x( '%1$s items, %2$s image links, %3$s bytes XML size.', 'option comment', 'wpsso'),
 								$items, $images, $size ) .
 							'</p>' .
 							'</td>';

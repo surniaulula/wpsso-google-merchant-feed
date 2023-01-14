@@ -171,7 +171,7 @@ msgstr ""
 
 #: lib/submenu/gmf-general.php:104
 msgctxt "option comment"
-msgid "%1$s items, %2$s image links, %2$s bytes XML size."
+msgid "%1$s items, %2$s image links, %3$s bytes XML size."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
