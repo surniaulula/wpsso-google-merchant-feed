@@ -93,14 +93,16 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 						$url = WpssoGmfRewrite::get_url( $locale );
 						$xml = WpssoGmfXml::get( $read_cache = true, $locale );
 
-						$items = substr_count( $xml, '<item>' );
-						$size  = number_format( strlen( $xml ) );
+						$items  = substr_count( $xml, '<item>' );
+						$images = substr_count( $xml, '<g:image_link>' );
+						$size   = number_format( strlen( $xml ) );
 
 						$table_rows[ 'gmf_url_' . $locale ] = '' .
 							$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
 							'<p class="status-msg left">' .
-							sprintf( _x( '%1$s items, %2$s bytes.', 'option comment', 'wpsso'), $items, $size ) .
+							sprintf( _x( '%1$s items, %2$s image links, %2$s bytes XML size.', 'option comment', 'wpsso'),
+								$items, $images, $size ) .
 							'</p>' .
 							'</td>';
 					}
