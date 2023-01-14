@@ -69,15 +69,11 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 		public function show_metabox_gmf() {
 
-			$metabox_id = 'gmf';
-
-			$tab_key = 'general';
-
+			$metabox_id  = 'gmf';
+			$tab_key     = 'general';
 			$filter_name = SucomUtil::sanitize_hookname( 'wpsso_' . $metabox_id . '_' . $tab_key . '_rows' );
-
-			$table_rows = $this->get_table_rows( $metabox_id, $tab_key );
-
-			$table_rows = apply_filters( $filter_name, $table_rows, $this->form, $network = false );
+			$table_rows  = $this->get_table_rows( $metabox_id, $tab_key );
+			$table_rows  = apply_filters( $filter_name, $table_rows, $this->form, $network = false );
 
 			$this->p->util->metabox->do_table( $table_rows, 'metabox-' . $metabox_id . '-' . $tab_key );
 		}
@@ -94,11 +90,19 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
-						$url  = WpssoGmfRewrite::get_url( $locale );
+						$url = WpssoGmfRewrite::get_url( $locale );
+						$xml = WpssoGmfXml::get( $read_cache = true, $locale );
+
+						$items = substr_count( $xml, '<item>' );
+						$size  = number_format( strlen( $xml ) );
 
 						$table_rows[ 'gmf_url_' . $locale ] = '' .
-							$this->form->get_th_html( $native_name ) .
-							'<td>' . $this->form->get_no_input_clipboard( $url ) . '</td>';
+							$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
+							'<td>' . $this->form->get_no_input_clipboard( $url ) .
+							'<p class="status-msg left">' .
+							sprintf( _x( '%1$s items, %2$s bytes.', 'option comment', 'wpsso'), $items, $size ) .
+							'</p>' .
+							'</td>';
 					}
 
 					break;

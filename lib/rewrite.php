@@ -141,11 +141,11 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 						$wpsso->debug->log( 'switching to request locale ' . $request_locale );
 					}
 
-					$switched = switch_to_locale( $request_locale );
+					$is_switched = switch_to_locale( $request_locale );
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'switch to locale ' . ( $switched ? 'successful' : 'failed' ) );
+						$wpsso->debug->log( 'switch to locale ' . ( $is_switched ? 'successful' : 'failed' ) );
 
 						$wp_locale      = get_locale();
 						$current_locale = SucomUtil::get_locale( $mixed = 'current' );

@@ -18,16 +18,16 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
-		static public function clear_cache( $locale = null ) {
+		static public function clear_cache( $request_locale = null ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			if ( null === $locale ) {
+			if ( null === $request_locale ) {
 
-				$locale = SucomUtil::get_locale();
+				$request_locale = SucomUtil::get_locale();
 			}
 
-			$cache_salt    = __CLASS__ . '(locale:' . $locale . ')';
+			$cache_salt    = __CLASS__ . '(locale:' . $request_locale . ')';
 			$file_name_ext = '.xml';
 
 			$wpsso->cache->clear_cache_data( $cache_salt, $file_name_ext );
@@ -36,7 +36,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		/**
 		 * $read_cache = false when called by WpssoGmfFilters->filter_cache_refreshed_notice().
 		 */
-		static public function get( $read_cache = true ) {
+		static public function get( $read_cache = true, $request_locale = null ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -45,20 +45,29 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$locale        = SucomUtil::get_locale();
+			$current_locale  = SucomUtil::get_locale();
+			$original_locale = $current_locale;
+			$is_switched     = false;
+
+			if ( $request_locale && $request_locale !== $current_locale ) {
+
+				$is_switched    = switch_to_locale( $request_locale );
+				$current_locale = SucomUtil::get_locale();
+			}
+
 			$cache_md5_pre = 'wpsso_g_';
 			$cache_type    = 'file';
-			$cache_salt    = __CLASS__ . '(locale:' . $locale . ')';
+			$cache_salt    = __CLASS__ . '(locale:' . $current_locale . ')';
 			$file_name_ext = '.xml';
 
 			/**
-			 * Applies the 'wpsso_cache_expire_gmf_xml' ( DAY_IN_SECONDS, $cache_type, $mod = false ) filter.
+			 * Applies the 'wpsso_cache_expire_gmf_xml' ( WEEK_IN_SECONDS, $cache_type, $mod = false ) filter.
 			 */
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->log( 'locale current = ' . $locale );
+				$wpsso->debug->log( 'locale current = ' . $current_locale );
 				$wpsso->debug->log( 'cache expire = ' . $cache_exp_secs );
 				$wpsso->debug->log( 'cache salt = ' . $cache_salt );
 			}
@@ -78,9 +87,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->log( 'creating new feed' );
 			}
 
-			$site_title      = SucomUtil::get_site_name( $wpsso->options, $locale );
-			$site_url        = SucomUtil::get_home_url( $wpsso->options, $locale );
-			$site_desc       = SucomUtil::get_site_description( $wpsso->options, $locale );
+			$site_title      = SucomUtil::get_site_name( $wpsso->options, $current_locale );
+			$site_url        = SucomUtil::get_home_url( $wpsso->options, $current_locale );
+			$site_desc       = SucomUtil::get_site_description( $wpsso->options, $current_locale );
 			$rss2_feed       = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
 			$public_post_ids = WpssoPost::get_public_ids( array( 'meta_query' => self::get_meta_query() ) );
 
@@ -136,6 +145,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$xml = $rss2_feed->build();
 
 			$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $file_name_ext );
+
+			if ( $is_switched ) {
+
+				restore_previous_locale();
+			}
 
 			return $xml;
 		}
@@ -347,8 +361,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$post_id   = $mt_data[ 'product:retailer_item_id' ];
 				$mod       = $wpsso->post->get_mod( $post_id );
 				$max_nums  = $wpsso->util->get_max_nums( $mod, 'og' );
-				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ], $size_names = 'wpsso-gmf', $mod,
-					$md_pre = array( 'gmf', 'schema', 'og' ) );
+				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ],
+					$size_names = 'wpsso-gmf', $mod, $md_pre = array( 'gmf', 'schema', 'og' ) );
 			}
 
 			if ( is_array( $mt_images ) ) {	// Just in case.
