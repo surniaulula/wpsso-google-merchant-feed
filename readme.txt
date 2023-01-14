@@ -130,7 +130,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* None.
 * **Improvements**
-	* Added the number of items and size for each feed XML in the Google Merchant settings page.
+	* Added the number of items, image links, and size for each feed XML in the Google Merchant settings page.
 	* Removed the "Save Plugin Settings" and "Change to View" buttons from the Google Merchant settings page.
 	* Increased feed XML cache expiration time from 1 day to 1 week.
 * **Bugfixes**
@@ -360,7 +360,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.1.0-b.4 =
 
-(2023/01/13) Added the number of items and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
+(2023/01/13) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
 
 = 5.0.0 =
 
