@@ -45,12 +45,16 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$locale         = SucomUtil::get_locale();
-			$cache_md5_pre  = 'wpsso_g_';
-			$cache_type     = 'file';
+			$locale        = SucomUtil::get_locale();
+			$cache_md5_pre = 'wpsso_g_';
+			$cache_type    = 'file';
+			$cache_salt    = __CLASS__ . '(locale:' . $locale . ')';
+			$file_name_ext = '.xml';
+
+			/**
+			 * Applies the 'wpsso_cache_expire_gmf_xml' ( DAY_IN_SECONDS, $cache_type, $mod = false ) filter.
+			 */
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
-			$cache_salt     = __CLASS__ . '(locale:' . $locale . ')';
-			$file_name_ext  = '.xml';
 
 			if ( $wpsso->debug->enabled ) {
 
