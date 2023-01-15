@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ), 2000 );
 			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -2000 );
 
-			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ) );
+			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ), 2000 );
 		}
 
 		/**
@@ -61,7 +61,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 					add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?pagename=' . WPSSOGMF_PAGENAME . '&feed=rss2&locale=$matches[1]', 'top' );
 				}
 
-				add_rewrite_rule( $rewrite_key, $rewrite_value, 'top' );
+				add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
 
 				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
 			}
@@ -70,11 +70,11 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 		/**
 		 * Add the 'locale' query variable.
 		 * 
-		 * The 'pagename' and 'feed' variables are already defined by WordPress.
+		 * The 'pagename' and 'feed' variables should already be defined by WordPress - include them just in case.
 		 */
 		static public function query_vars( $vars ) {
 
-			foreach ( array( 'locale' ) as $qv ) {
+			foreach ( array( 'pagename', 'feed', 'locale' ) as $qv ) {
 
 				if ( ! in_array( $qv, $vars, $strict = true ) ) {
 
