@@ -111,13 +111,13 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			 * Make sure the requested locale is valid, otherwise redirect using the default locale.
 			 */
 			$request_locale = get_query_var( 'locale' );
+			$request_locale = SucomUtil::sanitize_locale( $request_locale );
 
 			if ( empty( $request_locale ) ) {
 
 				return;
 			}
 
-			$request_locale = SucomUtil::sanitize_locale( $request_locale );
 			$current_locale = SucomUtil::get_locale( $mixed = 'current' );
 			$default_locale = SucomUtil::get_locale( $mixed = 'default' );
 
