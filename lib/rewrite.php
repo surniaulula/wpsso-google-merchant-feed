@@ -92,7 +92,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			 */
 			$request_pagename = get_query_var( 'pagename' );
 
-			if ( WPSSOGMF_PAGENAME !== $request_pagename ) {
+			if ( WPSSOGMF_PAGENAME !== $request_pagename ) {	// Nothing to do.
 
 				return;
 			}
@@ -104,6 +104,9 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( 'rss2' !== $request_feed ) {
 
+				SucomUtil::safe_error_log( sprintf( __( '%s error: %s', 'wpsso-google-merchant-feed' ),
+					__METHOD__, __( 'Requested feed type is invalid.', 'wpsso-google-merchant-feed' ) ) );
+
 				return;
 			}
 
@@ -114,6 +117,9 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$request_locale = SucomUtil::sanitize_locale( $request_locale );
 
 			if ( empty( $request_locale ) ) {
+
+				SucomUtil::safe_error_log( sprintf( __( '%s error: %s', 'wpsso-google-merchant-feed' ),
+					__METHOD__, __( 'Requested locale value is empty.', 'wpsso-google-merchant-feed' ) ) );
 
 				return;
 			}

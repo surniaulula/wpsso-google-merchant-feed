@@ -46,19 +46,19 @@ if ( ! class_exists( 'WpssoGmfFiltersEdit' ) ) {
 
 			if ( $is_product ) {
 
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds image', 'wpsso' ) );
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting google merchant feeds image', 'wpsso-google-merchant-feed' ) );
 
 				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-gmf', $media_request, $mod, $md_pre = array( 'schema', 'og' ) );
 
 			} elseif ( ! $this->p->util->is_schema_disabled() ) {
 
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting schema 1:1 image', 'wpsso' ) );
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting schema 1:1 image', 'wpsso-google-merchant-feed' ) );
 
 				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-schema-1x1', $media_request, $mod, $md_pre = array( 'og' ) );
 
 			} else {
 
-				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting open graph image', 'wpsso' ) );
+				$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'getting open graph image', 'wpsso-google-merchant-feed' ) );
 
 				$media_info = $this->p->media->get_media_info( $size_name = 'wpsso-opengraph', $media_request, $mod, $md_pre = array( 'none' ) );
 			}

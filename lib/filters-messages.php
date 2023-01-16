@@ -49,13 +49,13 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 					 */
 					$text = '<p class="pro-feature-msg">';
 
-					$text .= __( 'Product images must accurately display the entire product and include minimal or no product staging.', 'wpsso' ) . ' ';
+					$text .= __( 'Product images must accurately display the entire product and include minimal or no product staging.', 'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso' ) . ' ';
+					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product.', 'wpsso' ) . ' ';
+					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product.', 'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso' ) . ' ';
+					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso-google-merchant-feed' ) . ' ';
 
 					if ( ! empty( $this->p->avail[ 'ecom' ][ 'woocommerce' ] ) ) {
 
@@ -63,7 +63,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 							if ( $this->p->util->wc->is_mod_variable( $info[ 'mod' ] ) ) {
 
-								$text .= __( 'This is a variable product - images from product variations will supersede the main product image selected here.', 'wpsso' ) . ' ';
+								$text .= __( 'This is a variable product - images from product variations will supersede the main product image selected here.', 'wpsso-google-merchant-feed' ) . ' ';
 							}
 						}
 					}
