@@ -184,29 +184,24 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			ob_implicit_flush( $enable = true );
 			ob_end_flush();
 
-			/**
-			 * Do not use esc_xml() as this replaces XML markup by HTML entities (ie. '<' by '&lt;' for example).
-			 */
-			$attachment  = WpssoGmfXml::get();
-			$disposition = 'attachment';
-			$filename    = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
+			$document_xml = WpssoGmfXml::get();
+			$disposition  = 'attachment';
+			$filename     = SucomUtil::sanitize_file_name( $request_pagename . '-' . $request_locale . '.xml' );
 
 			if ( $wpsso->debug->enabled ) {
 
-				/**
-				 * Do not use esc_html() as this replaces HTML markup by HTML entities (ie. '<' by '&lt;' for example).
-				 */
-				$attachment .= $wpsso->debug->get_html( null, 'debug log' );
+				$document_xml .= $wpsso->debug->get_html( null, 'debug log' );
 			}
 
-			$content_len = strlen( $attachment );	// Escaped XML and HTML attachment content length.
+			$content_len = strlen( $document_xml );
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $content_len );
 
-			echo $attachment;
+			// phpcs:ignore $document_xml is a complete rss2 feed XML document that should not be encoded.
+			echo $document_xml;
 
 			flush();
 			sleep( $seconds = 1 );
