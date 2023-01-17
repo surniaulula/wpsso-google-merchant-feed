@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-b.7 (2023/01/16)**
+**Version 5.1.0-b.8 (2023/01/17)**
 
 * **New Features**
 	* None.
@@ -140,7 +140,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.5.0-b.7.
+	* WPSSO Core v14.5.0-b.8.
 
 **Version 5.0.0 (2023/01/11)**
 
@@ -358,9 +358,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-b.7 =
+= 5.1.0-b.8 =
 
-(2023/01/16) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
+(2023/01/17) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
 
 = 5.0.0 =
 
