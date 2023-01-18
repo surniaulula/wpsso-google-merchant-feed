@@ -200,7 +200,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
 			header( 'Content-Length: ' . $content_len );
 
-			// phpcs:ignore $document_xml is a complete rss2 feed XML document that should not be encoded.
+			// phpcs:ignore $document_xml is a complete rss2 XML document that should not be encoded - tag values have already been sanitized and encoded.
 			echo $document_xml;
 
 			flush();
