@@ -21,6 +21,8 @@ Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Pr
 
 <!-- about -->
 
+Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Product Pages.
+
 **E-Commerce Plugin Not Required:**
 
 A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>is suggested but not required</em> &mdash; the WPSSO Google Merchant Feed XML add-on also retrieves custom product information entered in the Document SSO metabox when editing a product page.
@@ -28,6 +30,8 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>i
 **Complete WooCommerce Support:**
 
 WooCommerce product variations, attributes, meta data, and custom fields are all fully supported.
+
+<!-- /about -->
 
 **No Add-on Settings to Configure:**
 
@@ -38,8 +42,6 @@ The WPSSO Google Merchant Feed XML add-on automatically retrieves all available 
 The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.
 
 After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.
-
-<!-- /about -->
 
 <h3>Google Merchant Feed XML Attributes</h3>
 
@@ -125,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-rc.2 (2023/01/19)**
+**Version 5.1.0 (2023/01/20)**
 
 * **New Features**
 	* None.
@@ -141,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.5.0-rc.2.
+	* WPSSO Core v14.5.0.
 
 **Version 5.0.0 (2023/01/11)**
 
@@ -359,9 +361,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-rc.2 =
+= 5.1.0 =
 
-(2023/01/19) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
+(2023/01/20) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
 
 = 5.0.0 =
 
