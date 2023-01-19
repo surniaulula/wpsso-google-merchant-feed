@@ -125,11 +125,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.1.0-rc.1 (2023/01/18)**
+**Version 5.1.0-rc.2 (2023/01/19)**
 
 * **New Features**
 	* None.
 * **Improvements**
+	* Added a "Refresh Feed XML Cache" button in the Google Merchant settings page.
 	* Added the number of items, image links, and size for each feed XML in the Google Merchant settings page.
 	* Removed the "Save Plugin Settings" and "Change to View" buttons from the Google Merchant settings page.
 	* Increased feed XML cache expiration time from 1 day to 1 week.
@@ -140,7 +141,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
-	* WPSSO Core v14.5.0-rc.1.
+	* WPSSO Core v14.5.0-rc.2.
 
 **Version 5.0.0 (2023/01/11)**
 
@@ -358,9 +359,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.1.0-rc.1 =
+= 5.1.0-rc.2 =
 
-(2023/01/18) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
+(2023/01/19) Added the number of items, image links, and size for each feed XML in the Google Merchant settings page. Increased feed XML cache expiration time from 1 day to 1 week.
 
 = 5.0.0 =
 
