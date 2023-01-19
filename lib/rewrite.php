@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 		private $p;		// Wpsso class object.
 		private $a;		// WpssoGmf class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoGmf->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ), 2000 );
 		}
 
-		/**
+		/*
 		 * Adds and flushes rewrite rules only if necessary.
 		 */
 		static public function add_rules() {
@@ -53,7 +53,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_value !== $rewrite_rules[ $rewrite_key ] ) {
 
-				/**
+				/*
 				 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
 				 */
 				if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
@@ -67,7 +67,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Add the 'locale' query variable.
 		 * 
 		 * The 'pagename' and 'feed' variables should already be defined by WordPress - include them just in case.
@@ -87,7 +87,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function template_redirect() {
 
-			/**
+			/*
 			 * Make sure the requested pagename is valid.
 			 */
 			$request_pagename = get_query_var( 'pagename' );
@@ -97,7 +97,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				return;
 			}
 
-			/**
+			/*
 			 * Make sure the requested feed is valid.
 			 */
 			$request_feed = get_query_var( 'feed' );
@@ -110,7 +110,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				return;
 			}
 
-			/**
+			/*
 			 * Make sure the requested locale is valid, otherwise redirect using the default locale.
 			 */
 			$request_locale = get_query_var( 'locale' );

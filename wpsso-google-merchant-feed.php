@@ -70,7 +70,7 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 			load_plugin_textdomain( 'wpsso-google-merchant-feed', false, 'wpsso-google-merchant-feed/languages/' );
 		}
 
-		/**
+		/*
 		 * Require library files with functions or static methods in require_libs().
 		 *
 		 * Require and instantiate library files with dynamic methods in init_objects().
@@ -97,7 +97,7 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 
 			$this->filters = new WpssoGmfFilters( $this->p, $this );
 
-			/**
+			/*
 			 * lib/rewrite.php already loaded in require_libs() for WpssoGmfRegister->activate_plugin().
 			 */
 			$this->rewrite = new WpssoGmfRewrite( $this->p, $this );

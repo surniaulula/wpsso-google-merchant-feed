@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfFiltersEdit' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoGmf class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoGmfFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {

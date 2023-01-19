@@ -1,5 +1,5 @@
 
-/**
+/*
  * Hard-coded / fixed constants. These values cannot be modified.
  */
 WPSSOGMF_FILEPATH

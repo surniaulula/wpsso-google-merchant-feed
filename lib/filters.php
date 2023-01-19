@@ -20,7 +20,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 		private $edit;	// WpssoGmfFiltersEdit class object.
 		private $msgs;	// WpssoGmfFiltersMessages class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoGmf->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {

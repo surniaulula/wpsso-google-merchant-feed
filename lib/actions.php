@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoGmf class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoGmf->init_objects().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -40,7 +40,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			) );
 		}
 
-		/**
+		/*
 		 * The post, term, or user has an ID, is public, and (in the case of a post) the post status is published.
 		 */
 		public function action_check_head_info( array $head_info, array $mod, $ref_url ) {
@@ -74,7 +74,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * Once the post cache is cleared and refreshed, clear the feed XML.
 		 */
 		public function action_refresh_post_cache( $post_id, $mod ) {
@@ -121,7 +121,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 					}
 				}
 
-				/**
+				/*
 				 * An is_admin() test is required to make sure the WpssoMessages class is available.
 				 */
 				if ( $this->p->notice->is_admin_pre_notices() ) {
@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 						$this->p->util->maybe_set_ref( $canonical_url, $mod, __( 'checking google merchant feeds images', 'wpsso-google-merchant-feed' ) );
 
-						/**
+						/*
 						 * See https://support.google.com/merchants/answer/7052112.
 						 * See https://support.google.com/merchants/answer/6324350.
 						 */

@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfFiltersAdvanced' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;	// WpssoGmf class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoGmfFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -33,7 +33,7 @@ if ( ! class_exists( 'WpssoGmfFiltersAdvanced' ) ) {
 			}
 		}
 
-		/**
+		/*
 		 * SSO > Advanced Settings > Plugin Settings > Image Sizes tab.
 		 */
 		public function filter_plugin_image_sizes_rows( $table_rows, $form, $network, $pp ) {

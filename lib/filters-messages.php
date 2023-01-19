@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 		private $p;	// Wpsso class object.
 		private $a;     // WpssoGmf class object.
 
-		/**
+		/*
 		 * Instantiated by WpssoGmfFilters->__construct().
 		 */
 		public function __construct( &$plugin, &$addon ) {
@@ -43,7 +43,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 				case 'info-gmf-img':
 
-					/**
+					/*
 					 * See https://support.google.com/merchants/answer/7052112.
 					 * See https://support.google.com/merchants/answer/6324350.
 					 */
@@ -107,7 +107,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 			switch ( $msg_key ) {
 
-				/**
+				/*
 				 * Document SSO > Edit Media tab.
 				 */
 				case 'tooltip-meta-gmf_img_id':		// Image ID.

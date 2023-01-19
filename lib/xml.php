@@ -33,7 +33,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$wpsso->cache->clear_cache_data( $cache_salt, $file_name_ext );
 		}
 
-		/**
+		/*
 		 * $read_cache = false when called by WpssoGmfFilters->filter_cache_refreshed_notice().
 		 */
 		static public function get( $read_cache = true, $request_locale = null ) {
@@ -60,7 +60,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$cache_salt    = __CLASS__ . '(locale:' . $current_locale . ')';
 			$file_name_ext = '.xml';
 
-			/**
+			/*
 			 * Applies the 'wpsso_cache_expire_gmf_xml' ( WEEK_IN_SECONDS, $cache_type, $mod = false ) filter.
 			 */
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
@@ -154,7 +154,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $xml;
 		}
 
-		/**
+		/*
 		 * See https://developer.wordpress.org/reference/classes/wp_meta_query/.
 		 */
 		static private function get_meta_query() {
@@ -214,7 +214,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$rss2_feed->addProduct( $product );
 		}
 
-		/**
+		/*
 		 * See https://support.google.com/merchants/answer/7052112.
 		 */
 		static private function add_product_data( &$product, $mt_data, &$dupe_check = array() ) {
@@ -223,7 +223,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$names = array(
 
-				/**
+				/*
 				 * Basic product data.
 				 */
 				'og:title'                 => 'setTitle',
@@ -234,7 +234,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:description'      => 'setDescription',
 				'product:url'              => 'setLink',
 
-				/**
+				/*
 				 * Price & availability.
 				 */
 				'product:availability'     => 'setAvailability',
@@ -242,13 +242,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:sale_price'       => 'setSalePrice',
 				'product:sale_price_dates' => array( 'setAttribute', 'sale_price_effective_date', false ),
 
-				/**
+				/*
 				 * Product category.
 				 */
 				'product:category'          => 'setGoogleCategory',
 				'product:retailer_category' => 'setProductType',
 
-				/**
+				/*
 				 * Product identifiers.
 				 */
 				'product:brand'       => 'setBrand',
@@ -262,7 +262,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:upc'         => array( 'addAttribute', 'gtin', false ),	// One or more.
 				'product:mfr_part_no' => 'setMpn',
 
-				/**
+				/*
 				 * Detailed product description.
 				 */
 				'product:condition'                   => 'setCondition',
@@ -284,7 +284,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:height:value'                => array( 'setAttribute', 'product_height', false ),
 				'product:weight:value'                => array( 'setAttribute', 'product_weight', false ),
 
-				/**
+				/*
 				 * Shipping.
 				 */
 				'product:shipping_weight:value' => 'setShippingWeight',
@@ -325,7 +325,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							continue;
 						}
 
-						/**
+						/*
 						 * Call method from Vitalybaev\GoogleMerchant\Product().
 						 */
 						if ( method_exists( $product, $method_name ) ) {	// Just in case.

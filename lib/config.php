@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'text_domain' => 'wpsso-google-merchant-feed',
 					'domain_path' => '/languages',
 
-					/**
+					/*
 					 * Required plugin and its version.
 					 */
 					'req' => array(
@@ -41,12 +41,12 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						),
 					),
 
-					/**
+					/*
 					 * URLs or relative paths to plugin banners and icons.
 					 */
 					'assets' => array(
 
-						/**
+						/*
 						 * Icon image array keys are '1x' and '2x'.
 						 */
 						'icons' => array(
@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						),
 					),
 
-					/**
+					/*
 					 * Library files loaded and instantiated by WPSSO.
 					 */
 					'lib' => array(
@@ -76,7 +76,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			),
 			'head' => array(
 
-				/**
+				/*
 				 * Ensure the best performance by using the highest quality images. Submit the largest, highest
 				 * resolution, full-size image you have for the product, up to 64 megapixels and 16MB file size. We
 				 * recommend images of at least 800 x 800 pixels.
@@ -88,12 +88,12 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'gmf_img_height' => 800,
 				),
 
-				/**
+				/*
 				 * See https://support.google.com/merchants/answer/7052112.
 				 */
 				'gmf_content_map' => array(
 
-					/**
+					/*
 					 * See https://support.google.com/merchants/answer/6324508.
 					 */
 					'product:adult_type' => array(
@@ -109,7 +109,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/WeaponConsideration'                      => true,
 					),
 
-					/**
+					/*
 					 * Validated on 2022/09/24.
 					 *
 					 * See https://developers.facebook.com/docs/marketing-api/catalog/reference/.
@@ -126,7 +126,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'newborn'  => 'newborn',
 					),
 
-					/**
+					/*
 					 * See https://support.google.com/merchants/answer/6324448.
 					 */
 					'product:availability' => array(
@@ -142,7 +142,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/SoldOut'             => 'out_of_stock',	// OUT_OF_STOCK.
 					),
 
-					/**
+					/*
 					 * Validated 2022/12/24.
 					 *
 					 * See https://support.google.com/merchants/answer/6324469.
@@ -154,7 +154,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/UsedCondition'        => 'used',		// USED.
 					),
 
-					/**
+					/*
 					 * Validated 2022/12/24.
 					 *
 					 * See https://schema.org/EUEnergyEfficiencyEnumeration.
@@ -197,7 +197,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
 					),
 
-					/**
+					/*
 					 * See https://support.google.com/merchants/answer/6324497.
 					 */
 					'product:size_group' => array(
@@ -209,7 +209,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'https://schema.org/WearableSizeGroupMaternity' => 'maternity',
 					),
 
-					/**
+					/*
 					 * Validated on 2022/12/26.
 					 *
 					 * See https://support.google.com/merchants/answer/6324502.
@@ -256,7 +256,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 
 			$info =& self::$cf[ 'plugin' ][ 'wpssogmf' ];
 
-			/**
+			/*
 			 * Define fixed constants.
 			 */
 			define( 'WPSSOGMF_FILEPATH', $plugin_file );
@@ -266,7 +266,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			define( 'WPSSOGMF_URLPATH', trailingslashit( plugins_url( '', $plugin_file ) ) );
 			define( 'WPSSOGMF_VERSION', $info[ 'version' ] );
 
-			/**
+			/*
 			 * Define variable constants.
 			 */
 			self::set_variable_constants();
@@ -279,7 +279,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 				$var_const = (array) self::get_variable_constants();
 			}
 
-			/**
+			/*
 			 * Define the variable constants, if not already defined.
 			 */
 			foreach ( $var_const as $name => $value ) {
@@ -297,7 +297,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 
 			$var_const[ 'WPSSOGMF_PAGENAME' ] = 'google-merchant';
 
-			/**
+			/*
 			 * Maybe override the default constant value with a pre-defined constant value.
 			 */
 			foreach ( $var_const as $name => $value ) {
@@ -311,7 +311,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			return $var_const;
 		}
 
-		/**
+		/*
 		 * Require library files with functions or static methods in require_libs().
 		 *
 		 * Require and instantiate library files with dynamic methods in init_objects().
