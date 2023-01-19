@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 5.1.0-rc.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 5.1.0-rc.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -45,25 +45,25 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr ""
 
-#: lib/actions.php:57
+#: lib/actions.php:64
 msgid "checking google merchant feeds"
 msgstr ""
 
-#: lib/actions.php:106
+#: lib/actions.php:122
 msgid "getting google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:131
+#: lib/actions.php:147
 msgid "checking google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:137
+#: lib/actions.php:153
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:139
+#: lib/actions.php:155
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."
@@ -160,7 +160,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:88
+#: lib/filters.php:91
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 
@@ -176,12 +176,17 @@ msgstr ""
 msgid "Requested locale value is empty."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:58
+#: lib/submenu/gmf-general.php:51
+msgctxt "submit button"
+msgid "Refresh Feed XML Cache"
+msgstr ""
+
+#: lib/submenu/gmf-general.php:64
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:105
+#: lib/submenu/gmf-general.php:111
 msgctxt "option comment"
 msgid ""
 "%1$s items, %2$s image links, %3$s addl image links, %4$s KB feed XML size."

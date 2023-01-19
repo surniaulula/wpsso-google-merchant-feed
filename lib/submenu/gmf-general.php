@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
  * Copyright 2020-2022 Jean-Sebastien Morisset (https://wpsso.com/)
@@ -42,11 +42,17 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 		}
 
 		/*
-		 * Remove all submit / action buttons from this settings page.
+		 * Remove all action buttons from this settings page and add a "Refresh Feed XML Cache" button.
 		 */
 		public function filter_form_button_rows( $form_button_rows ) {
 
-			return array();
+			$form_button_rows = array(
+				array(
+					'refresh_feed_xml_cache' => _x( 'Refresh Feed XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
+				),
+			);
+
+			return $form_button_rows;
 		}
 
 		/*
@@ -101,7 +107,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 						$table_rows[ 'gmf_url_' . $locale ] = '' .
 							$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
-							'<p class="status-msg left">' .
+							'<p class="status-msg">' .
 							sprintf( _x( '%1$s items, %2$s image links, %3$s addl image links, %4$s KB feed XML size.',
 								'option comment', 'wpsso-google-merchant-feed' ),
 									$item_count, $img_count, $addl_count, $xml_size ) .
