@@ -33,13 +33,13 @@
 
 <p>The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.</p>
 
-<p><strong>Multilingual:</strong></p>
+<p><strong>Automatic Multilingual Support:</strong></p>
 
 <p>The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.</p>
 
 <p>After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.</p>
 
-<h3>Google Merchant Feed XML Attributes</h3>
+<p><strong>Google Merchant Feed XML Attributes:</strong></p>
 
 <p>The following XML product attributes are automatically created based on your WooCommerce, Easy Digital Downloads, and custom products (including WooCommerce product variations):</p>
 
