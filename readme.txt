@@ -127,6 +127,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 5.2.0-dev.1 (2023/01/21)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added a filter hook to sort the variations array (moving the requested variation first).
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a 'wpsso_request_url_query_attrs_cache_disable' filter hook to return true.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.2.
+	* WPSSO Core v14.6.0-dev.1.
+
 **Version 5.1.0 (2023/01/20)**
 
 * **New Features**
@@ -360,6 +375,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v13.0.0.
 
 == Upgrade Notice ==
+
+= 5.2.0-dev.1 =
+
+(2023/01/21) Added a filter hook to sort the variations array (moving the requested variation first).
 
 = 5.1.0 =
 
