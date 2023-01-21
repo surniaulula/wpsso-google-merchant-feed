@@ -38,8 +38,9 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_filters( $this, array(
-				'plugin_image_sizes'     => 1,
-				'cache_refreshed_notice' => 3,
+				'plugin_image_sizes'                    => 1,
+				'cache_refreshed_notice'                => 3,
+				'request_url_query_attrs_cache_disable' => '__return_true',
 			) );
 
 			if ( is_admin() ) {

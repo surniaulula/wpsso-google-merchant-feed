@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 5.1.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 5.2.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -69,7 +69,7 @@ msgid ""
 "the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-advanced.php:42 lib/filters.php:65
+#: lib/filters-advanced.php:42 lib/filters.php:66
 msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -160,7 +160,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:91
+#: lib/filters.php:92
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 
