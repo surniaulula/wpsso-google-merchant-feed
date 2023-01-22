@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.0-dev.2 (2023/01/21)**
+**Version 5.2.0-dev.2 (2023/01/22)**
 
 * **New Features**
 	* None.
@@ -378,7 +378,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.2.0-dev.2 =
 
-(2023/01/21) Added a filter hook to sort the WooCommerce variations array (moving the requested variation first).
+(2023/01/22) Added a filter hook to sort the WooCommerce variations array (moving the requested variation first).
 
 = 5.1.0 =
 
