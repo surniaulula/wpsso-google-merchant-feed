@@ -222,7 +222,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				$url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/feed/rss2/' . $locale . '.xml' );
 			}
 
-			return apply_filters( 'wpsso_google_merchant_feed_url', $url, $locale, WPSSOGMF_PAGENAME, $blog_id );
+			return $url;
 		}
 	}
 }

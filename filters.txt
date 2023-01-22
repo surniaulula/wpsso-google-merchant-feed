@@ -1,5 +1,3 @@
 
-'wpsso_google_merchant_feed_url' ( $url, $locale, $pagename, $blog_id )
-
 'wpsso_cache_expire_gmf_xml' ( WEEK_IN_SECONDS, $cache_type, $mod = false )
 
