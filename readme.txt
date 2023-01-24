@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Updated the `WpssoAbstractAddOn` class.
+	* Updated the `WpssoAbstractAddOn` library class.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.2.
@@ -393,7 +393,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 5.2.1-dev.2 =
 
-(2023/01/24) Added compatibility declaration for WooCommerce HPOS.
+(2023/01/24) Added compatibility declaration for WooCommerce HPOS. Updated the `WpssoAbstractAddOn` library class.
 
 = 5.2.0 =
 
