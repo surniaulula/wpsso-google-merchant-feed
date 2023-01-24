@@ -78,6 +78,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				if ( false !== $xml ) {
 
+					if ( $is_switched ) {
+
+						restore_previous_locale();
+					}
+
 					return $xml;
 				}
 			}
@@ -87,18 +92,26 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->log( 'creating new feed' );
 			}
 
-			$site_title      = SucomUtil::get_site_name( $wpsso->options, $current_locale );
-			$site_url        = SucomUtil::get_home_url( $wpsso->options, $current_locale );
-			$site_desc       = SucomUtil::get_site_description( $wpsso->options, $current_locale );
-			$rss2_feed       = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
-			$public_post_ids = WpssoPost::get_public_ids( array( 'meta_query' => self::get_meta_query() ) );
+			$site_title = SucomUtil::get_site_name( $wpsso->options, $current_locale );
+			$site_url   = SucomUtil::get_home_url( $wpsso->options, $current_locale );
+			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $current_locale );
+			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
+			$query_args = array( 'meta_query' => self::get_meta_query() );
+
+			if ( SucomUtil::get_const( 'WPSSO_FEED_XML_QUERY_CACHE_DISABLE' ) ) {
+				$query_args[ 'cache_results' ]          = false;
+				$query_args[ 'update_post_meta_cache' ] = false;
+				$query_args[ 'update_post_term_cache' ] = false;
+			}
+
+			$public_ids = WpssoPost::get_public_ids( $query_args );
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->log_arr( 'public_post_ids', $public_post_ids );
+				$wpsso->debug->log_arr( 'public_ids', $public_ids );
 			}
 
-			foreach ( $public_post_ids as $post_id ) {
+			foreach ( $public_ids as $post_id ) {
 
 				$mod = $wpsso->post->get_mod( $post_id );
 
