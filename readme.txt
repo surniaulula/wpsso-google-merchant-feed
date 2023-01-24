@@ -135,7 +135,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added compatibility declaration for WooCommerce HPOS.
 	* Updated the minimum WordPress version from v5.2 to v5.4.
 * **Bugfixes**
-	* None.
+	* Fixed possible incorrect locale for the "Refresh Feed XML Cache" button text on sites with multiple languages.
 * **Developer Notes**
 	* Added support for a new WPSSO_FEED_XML_QUERY_CACHE_DISABLE constant (false by default).
 	* Updated the `WpssoAbstractAddOn` library class.
