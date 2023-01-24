@@ -127,20 +127,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.1-dev.3 (2023/01/24)**
+**Version 5.2.1-dev.4 (2023/01/24)**
 
 * **New Features**
 	* None.
 * **Improvements**
 	* Added compatibility declaration for WooCommerce HPOS.
+	* Updated the minimum WordPress version from v5.2 to v5.4.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
+	* Added support for a new WPSSO_FEED_XML_QUERY_CACHE_DISABLE constant (false by default).
 	* Updated the `WpssoAbstractAddOn` library class.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v14.6.1-dev.3.
+	* WPSSO Core v14.6.1-dev.4.
 
 **Version 5.2.0 (2023/01/22)**
 
@@ -391,7 +393,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.2.1-dev.3 =
+= 5.2.1-dev.4 =
 
 (2023/01/24) Added compatibility declaration for WooCommerce HPOS. Updated the `WpssoAbstractAddOn` library class.
 
