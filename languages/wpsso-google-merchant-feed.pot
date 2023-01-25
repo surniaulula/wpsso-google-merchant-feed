@@ -49,21 +49,21 @@ msgstr ""
 msgid "checking google merchant feeds"
 msgstr ""
 
-#: lib/actions.php:124
+#: lib/actions.php:127
 msgid "getting google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:149
+#: lib/actions.php:152
 msgid "checking google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:155
+#: lib/actions.php:158
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:157
+#: lib/actions.php:160
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."
