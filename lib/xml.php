@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
 			$query_args = array( 'meta_query' => self::get_meta_query() );
 
-			if ( SucomUtil::get_const( 'WPSSO_FEED_XML_QUERY_CACHE_DISABLE' ) ) {
+			if ( ! $read_cache || SucomUtil::get_const( 'WPSSO_FEED_XML_QUERY_CACHE_DISABLE' ) ) {
 
 				$query_args[ 'cache_results' ]          = false;
 				$query_args[ 'update_post_meta_cache' ] = false;

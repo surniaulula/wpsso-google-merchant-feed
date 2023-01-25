@@ -160,7 +160,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:88
+#: lib/filters.php:94
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 

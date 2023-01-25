@@ -76,7 +76,13 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			$xml_count = 0;
 
-			$locale_names = SucomUtil::get_available_feed_locale_names();	// Uses a local cache.
+			$current_locale = SucomUtil::get_locale();
+			$locale_names   = SucomUtil::get_available_feed_locale_names();	// Uses a local cache.
+
+			/*
+			 * Move the current locale last to generate any notices in the current locale.
+			 */
+			SucomUtil::move_to_end( $locale_names, $current_locale );
 
 			foreach ( $locale_names as $locale => $native_name ) {
 
