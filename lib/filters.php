@@ -80,14 +80,10 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			foreach ( $locale_names as $locale => $native_name ) {
 
-				switch_to_locale( $locale );
-
-				$xml = WpssoGmfXml::get( $read_cache );
+				$xml = WpssoGmfXml::get( $read_cache, $locale );
 
 				$xml_count++;
 			}
-
-			restore_current_locale();	// Calls an action to clear the SucomUtil::get_locale() cache.
 
 			$notice_msg .= sprintf( __( 'The Google Merchant Feed XML for %d locales has been refreshed.',
 				'wpsso-google-merchant-feed' ), $xml_count ) . ' ';

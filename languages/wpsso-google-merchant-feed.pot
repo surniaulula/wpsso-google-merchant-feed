@@ -49,21 +49,21 @@ msgstr ""
 msgid "checking google merchant feeds"
 msgstr ""
 
-#: lib/actions.php:122
+#: lib/actions.php:124
 msgid "getting google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:147
+#: lib/actions.php:149
 msgid "checking google merchant feeds images"
 msgstr ""
 
-#: lib/actions.php:153
+#: lib/actions.php:155
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:155
+#: lib/actions.php:157
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."
@@ -160,7 +160,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:92
+#: lib/filters.php:88
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 

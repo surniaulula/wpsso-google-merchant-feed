@@ -18,6 +18,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
+		/*
+		 * See WpssoGmfActions->action_refresh_post_cache().
+		 */
 		static public function clear_cache( $request_locale = null ) {
 
 			$wpsso =& Wpsso::get_instance();
@@ -99,6 +102,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$query_args = array( 'meta_query' => self::get_meta_query() );
 
 			if ( SucomUtil::get_const( 'WPSSO_FEED_XML_QUERY_CACHE_DISABLE' ) ) {
+
 				$query_args[ 'cache_results' ]          = false;
 				$query_args[ 'update_post_meta_cache' ] = false;
 				$query_args[ 'update_post_term_cache' ] = false;
