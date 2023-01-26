@@ -6,7 +6,7 @@ Domain Path: /languages
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl.txt
 Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
-Tags: google shopping feed, woocommerce product feed, google merchant, google shopping, woocommerce, wpml, polylang, easy digital downloads
+Tags: google shopping feed, google merchant center, woocommerce product feed, google shopping, woocommerce, wpml, polylang, easy digital downloads
 Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2
