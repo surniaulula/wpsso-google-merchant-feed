@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 5.2.1-rc.1 (2023/01/25)**
+**Version 5.2.1 (2023/01/26)**
 
 * **New Features**
 	* None.
@@ -142,7 +142,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v14.7.0-rc.1.
+	* WPSSO Core v14.7.0.
 
 **Version 5.2.0 (2023/01/22)**
 
@@ -393,9 +393,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 5.2.1-rc.1 =
+= 5.2.1 =
 
-(2023/01/25) Added compatibility declaration for WooCommerce HPOS. Updated the minimum WordPress version from v5.2 to v5.4.
+(2023/01/26) Added compatibility declaration for WooCommerce HPOS. Updated the minimum WordPress version from v5.2 to v5.4.
 
 = 5.2.0 =
 
