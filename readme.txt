@@ -127,6 +127,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.0.0-dev.2 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Removed the WPSSO_FEED_XML_QUERY_CACHE_DISABLE constant.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v14.8.0-dev.2.
+
 **Version 5.2.1 (2023/01/26)**
 
 * **New Features**
@@ -392,6 +407,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v13.0.0.
 
 == Upgrade Notice ==
+
+= 6.0.0-dev.2 =
+
+(TBD) None.
 
 = 5.2.1 =
 
