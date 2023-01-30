@@ -103,9 +103,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 		public function action_load_setting_page_refresh_feed_xml_cache( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
-			$notice_msg = '';
-
-			$notice_msg = $this->a->filters->filter_cache_refreshed_notice( $notice_msg );
+			$notice_msg = $this->a->filters->filter_cache_refreshed_notice( $notice_msg = '' );
 
 			$this->p->notice->upd( $notice_msg );
 		}
