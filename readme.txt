@@ -139,6 +139,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Removed support for the 'product:offers' meta tags array.
 	* Removed the WPSSO_FEED_XML_QUERY_CACHE_DISABLE constant.
 	* Removed the 'wpsso_request_url_query_attrs_cache_disable' filter hook.
+	* Renamed the `WpssoGmfActions->get_product_image_url()` method to `check_product_image_urls()`.
+	* Refactored the `WpssoGmfXml::add_feed_product()` method.
+	* Refactored the `WpssoGmfXml::add_product_data()` method.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
