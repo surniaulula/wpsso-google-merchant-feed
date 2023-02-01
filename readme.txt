@@ -132,12 +132,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **New Features**
 	* Added support for the new 'product:variants' meta tags array in WPSSO Core v15.0.0.
 * **Improvements**
-	* None.
+	* Removed the filter hook to sort the WooCommerce variations array (no longer needed).
 * **Bugfixes**
 	* None.
 * **Developer Notes**
 	* Removed support for the 'product:offers' meta tags array.
 	* Removed the WPSSO_FEED_XML_QUERY_CACHE_DISABLE constant.
+	* Removed the 'wpsso_request_url_query_attrs_cache_disable' filter hook.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
