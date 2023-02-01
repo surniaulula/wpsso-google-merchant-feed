@@ -127,7 +127,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.0.0-dev.3 (2023/02/01)**
+**Version 6.0.0-dev.4 (2023/02/01)**
 
 * **New Features**
 	* Added support for the new 'product:variants' meta tags array in WPSSO Core v15.0.0.
@@ -142,7 +142,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v15.0.0-dev.3.
+	* WPSSO Core v15.0.0-dev.4.
 
 **Version 5.2.1 (2023/01/26)**
 
@@ -410,7 +410,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.0.0-dev.3 =
+= 6.0.0-dev.4 =
 
 (2023/02/01) Added support for the new 'product:variants' meta tags array in WPSSO Core v15.0.0.
 
