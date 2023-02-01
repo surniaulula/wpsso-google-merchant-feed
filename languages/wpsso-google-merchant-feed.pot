@@ -69,7 +69,7 @@ msgid ""
 "the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-advanced.php:42 lib/filters.php:66
+#: lib/filters-advanced.php:42 lib/filters.php:65
 msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -160,7 +160,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:93
+#: lib/filters.php:92
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 
