@@ -370,40 +370,17 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			$mt_images = array();
+			$image_urls = $wpsso->og->get_product_retailer_item_image_urls( $mt_single, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-			if ( isset( $mt_single[ 'og:image' ] ) && is_array( $mt_single[ 'og:image' ] ) ) {
+			foreach ( $image_urls as $num => $image_url ) {
 
-				$mt_images = $mt_single[ 'og:image' ];
+				if ( 0 === $num ) {
 
-			} elseif ( ! empty( $mt_single[ 'product:retailer_item_id' ] ) && is_numeric( $mt_single[ 'product:retailer_item_id' ] ) ) {
+					$product->setImage( $image_url );
 
-				$post_id   = $mt_single[ 'product:retailer_item_id' ];
-				$mod       = $wpsso->post->get_mod( $post_id );
-				$max_nums  = $wpsso->util->get_max_nums( $mod, 'og' );
-				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ],
-					$size_names = 'wpsso-gmf', $mod, $md_pre = array( 'gmf', 'schema', 'og' ) );
-			}
+				} else {
 
-			if ( is_array( $mt_images ) ) {	// Just in case.
-
-				$have_image = false;
-
-				foreach ( $mt_images as $mt_image ) {
-
-					if ( $image_url = SucomUtil::get_first_og_image_url( $mt_image ) ) {
-
-						if ( ! $have_image ) {
-
-							$product->setImage( $image_url );
-
-							$have_image = true;
-
-						} else {
-
-							$product->addAdditionalImage( $image_url );
-						}
-					}
+					$product->addAdditionalImage( $image_url );
 				}
 			}
 		}

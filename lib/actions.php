@@ -50,7 +50,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 		/*
 		 * The post, term, or user has an ID, is public, and (in the case of a post) the post status is published.
 		 */
-		public function action_check_head_info( array $head_info, array $mod, $ref_url ) {
+		public function action_check_head_info( array $head_info, array $mod, $canonical_url ) {
 
 			$is_product = isset( $head_info[ 'og:type' ] ) && 'product' === $head_info[ 'og:type' ] ? true : false;
 
@@ -61,7 +61,8 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 					$this->p->debug->log( 'getting open graph array for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] );
 				}
 
-				$this->p->util->maybe_set_ref( $ref_url, $mod, __( 'checking google merchant feed', 'wpsso-google-merchant-feed' ) );
+				$ref_url = $this->p->util->maybe_set_ref( $canonical_url, $mod,
+					__( 'checking google merchant feed', 'wpsso-google-merchant-feed' ) );
 
 				$mt_og = $this->p->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
@@ -71,12 +72,12 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 					foreach ( $mt_og[ 'product:variants' ] as $num => $mt_single ) {
 
-						$image_url = $this->get_product_image_url( $mt_single, $mod, $ref_url );
+						$this->check_product_image_urls( $mt_single );
 					}
 
 				} else {
 
-					$image_url = $this->get_product_image_url( $mt_og, $mod, $ref_url );
+					$this->check_product_image_urls( $mt_og );
 				}
 			}
 		}
@@ -105,62 +106,42 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			$this->p->notice->upd( $notice_msg );
 		}
 
-		private function get_product_image_url( $mt_single, $mod, $ref_url ) {
+		private function check_product_image_urls( $mt_single ) {
 
-			$mt_images = array();
+			$image_urls = $this->p->og->get_product_retailer_item_image_urls( $mt_single,
+				$size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-			if ( isset( $mt_single[ 'og:image' ] ) && is_array( $mt_single[ 'og:image' ] ) ) {
+			if ( ! empty( $image_urls ) ) {
 
-				$mt_images = $mt_single[ 'og:image' ];
+				return;
 
-			} elseif ( ! empty( $mt_single[ 'product:retailer_item_id' ] ) && is_numeric( $mt_single[ 'product:retailer_item_id' ] ) ) {
+			} elseif ( ! $this->p->notice->is_admin_pre_notices() ) {
 
-				$post_id   = $mt_single[ 'product:retailer_item_id' ];
-				$mod       = $this->p->post->get_mod( $post_id );	// Redefine the $mod array for the variation post ID.
-				$max_nums  = $this->p->util->get_max_nums( $mod, 'og' );
-
-				$this->p->util->maybe_set_ref( $ref_url, $mod, __( 'getting google merchant feed images', 'wpsso-google-merchant-feed' ) );
-
-				$mt_images = $this->p->media->get_all_images( $max_nums[ 'og_img_max' ],
-					$size_names = 'wpsso-gmf', $mod, $md_pre = array( 'gmf', 'schema', 'og' ) );
-
-				$this->p->util->maybe_unset_ref( $ref_url );
+				return;
 			}
 
-			if ( is_array( $mt_images ) ) {	// Just in case.
+			$mod = $this->p->og->get_product_retailer_item_mod( $mt_single );
 
-				foreach ( $mt_images as $mt_image ) {
+			if ( ! empty( $mod[ 'post_type_label_single' ] ) ) {
 
-					if ( $image_url = SucomUtil::get_first_og_image_url( $mt_image ) ) {
-
-						return $image_url;
-					}
-				}
+				$ref_url = $this->p->util->maybe_set_ref( $canonical_url = '', $mod,
+					__( 'checking google merchant feed images', 'wpsso-google-merchant-feed' ) );
 
 				/*
-				 * An is_admin() test is required to make sure the WpssoMessages class is available.
+				 * See https://support.google.com/merchants/answer/7052112.
+				 * See https://support.google.com/merchants/answer/6324350.
 				 */
-				if ( $this->p->notice->is_admin_pre_notices() ) {
+				$notice_msg = sprintf( __( 'A Google merchant feed XML %1$s attribute could not be generated for %2$s ID %3$s.',
+					'wpsso-google-merchant-feed' ), '<code>image_link</code>', $mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
 
-					if ( ! empty( $mod[ 'post_type_label_single' ] ) ) {
+				$notice_msg .= sprintf( __( 'Google requires at least one %1$s attribute for each product variation in the Google merchant feed XML.',
+					'wpsso-google-merchant-feed' ), '<code>image_link</code>' );
 
-						$this->p->util->maybe_set_ref( $ref_url, $mod, __( 'checking google merchant feed images', 'wpsso-google-merchant-feed' ) );
+				$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
 
-						/*
-						 * See https://support.google.com/merchants/answer/7052112.
-						 * See https://support.google.com/merchants/answer/6324350.
-						 */
-						$notice_msg = sprintf( __( 'A Google merchant feed XML %1$s attribute could not be generated for %2$s ID %3$s.', 'wpsso-google-merchant-feed' ), '<code>image_link</code>', $mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
+				$this->p->notice->err( $notice_msg, null, $notice_key );
 
-						$notice_msg .= sprintf( __( 'Google requires at least one %1$s attribute for each product variation in the Google merchant feed XML.', 'wpsso-google-merchant-feed' ), '<code>image_link</code>' );
-
-						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
-
-						$this->p->notice->err( $notice_msg, null, $notice_key );
-
-						$this->p->util->maybe_unset_ref( $ref_url );
-					}
-				}
+				$this->p->util->maybe_unset_ref( $ref_url );
 			}
 		}
 	}
