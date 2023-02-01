@@ -108,41 +108,39 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 		private function check_product_image_urls( $mt_single ) {
 
+			$mod = $this->p->og->get_product_retailer_item_mod( $mt_single );
+
+			$ref_url = $this->p->util->maybe_set_ref( $canonical_url = '', $mod,
+				__( 'checking google merchant feed images', 'wpsso-google-merchant-feed' ) );
+
 			$image_urls = $this->p->og->get_product_retailer_item_image_urls( $mt_single,
 				$size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-			if ( ! empty( $image_urls ) ) {
+			if ( empty( $image_urls ) ) {
 
-				return;
+				if ( $this->p->notice->is_admin_pre_notices() ) {
 
-			} elseif ( ! $this->p->notice->is_admin_pre_notices() ) {
+					if ( ! empty( $mod[ 'post_type_label_single' ] ) ) {	// Just in case.
 
-				return;
+						/*
+						 * See https://support.google.com/merchants/answer/7052112.
+						 * See https://support.google.com/merchants/answer/6324350.
+						 */
+						$notice_msg = sprintf( __( 'A Google merchant feed XML %1$s attribute could not be generated for %2$s ID %3$s.',
+							'wpsso-google-merchant-feed' ), '<code>image_link</code>',
+								$mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
+
+						$notice_msg .= sprintf( __( 'Google requires at least one %1$s attribute for each product variation in the Google merchant feed XML.',
+							'wpsso-google-merchant-feed' ), '<code>image_link</code>' );
+		
+						$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
+
+						$this->p->notice->err( $notice_msg, null, $notice_key );
+					}
+				}
 			}
 
-			$mod = $this->p->og->get_product_retailer_item_mod( $mt_single );
-
-			if ( ! empty( $mod[ 'post_type_label_single' ] ) ) {
-
-				$ref_url = $this->p->util->maybe_set_ref( $canonical_url = '', $mod,
-					__( 'checking google merchant feed images', 'wpsso-google-merchant-feed' ) );
-
-				/*
-				 * See https://support.google.com/merchants/answer/7052112.
-				 * See https://support.google.com/merchants/answer/6324350.
-				 */
-				$notice_msg = sprintf( __( 'A Google merchant feed XML %1$s attribute could not be generated for %2$s ID %3$s.',
-					'wpsso-google-merchant-feed' ), '<code>image_link</code>', $mod[ 'post_type_label_single' ], $mod[ 'id' ] ) . ' ';
-
-				$notice_msg .= sprintf( __( 'Google requires at least one %1$s attribute for each product variation in the Google merchant feed XML.',
-					'wpsso-google-merchant-feed' ), '<code>image_link</code>' );
-
-				$notice_key = $mod[ 'name' ] . '-' . $mod[ 'id' ] . '-notice-missing-gmf-image';
-
-				$this->p->notice->err( $notice_msg, null, $notice_key );
-
-				$this->p->util->maybe_unset_ref( $ref_url );
-			}
+			$this->p->util->maybe_unset_ref( $ref_url );
 		}
 	}
 }
