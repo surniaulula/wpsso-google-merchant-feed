@@ -131,31 +131,31 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-				if ( empty( $mt_og[ 'product:offers' ] ) ) {
+				if ( ! empty( $mt_og[ 'product:variants' ] ) && is_array( $mt_og[ 'product:variants' ] ) ) {
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'adding single offer for post id ' . $post_id );
+						$wpsso->debug->log( 'adding ' . count( $mt_og[ 'product:variants' ] ) . ' variants for post id ' . $post_id );
 					}
 
-					self::add_feed_product( $rss2_feed, $mt_og );
-
-				} elseif ( is_array( $mt_og[ 'product:offers' ] ) ) {
-
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'adding ' . count( $mt_og[ 'product:offers' ] ) . ' offers for post id ' . $post_id );
-					}
-
-					foreach ( $mt_og[ 'product:offers' ] as $num => $mt_offer ) {
+					foreach ( $mt_og[ 'product:variants' ] as $num => $mt_single ) {
 
 						if ( $wpsso->debug->enabled ) {
 
-							$wpsso->debug->log( 'adding offer #' . $num . ' for post id ' . $post_id );
+							$wpsso->debug->log( 'adding variant #' . $num . ' for post id ' . $post_id );
 						}
 
-						self::add_feed_product( $rss2_feed, $mt_og, $mt_offer );
+						self::add_feed_product( $rss2_feed, $mt_single );
 					}
+
+				} else {
+
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'adding product for post id ' . $post_id );
+					}
+
+					self::add_feed_product( $rss2_feed, $mt_og );
 				}
 			}
 
@@ -211,52 +211,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $local_cache;	// Return an empty string or array.
 		}
 
-		static private function add_feed_product( &$rss2_feed, $mt_og, $mt_offer = null ) {
-
-			$wpsso =& Wpsso::get_instance();
-
-			$product = new Vitalybaev\GoogleMerchant\Product();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->log( 'adding product data' );
-			}
-
-			self::add_product_data( $product, $mt_og, $dupe_check );
-
-			if ( is_array( $mt_offer ) ) {
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'adding product data from offer' );
-				}
-
-				self::add_product_data( $product, $mt_offer, $dupe_check );
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'adding product images from offer' );
-				}
-
-				self::add_product_images( $product, $mt_offer );
-
-			} else {
-
-				if ( $wpsso->debug->enabled ) {
-
-					$wpsso->debug->log( 'adding product images' );
-				}
-
-				self::add_product_images( $product, $mt_og );
-			}
-
-			$rss2_feed->addProduct( $product );
-		}
-
-		/*
-		 * See https://support.google.com/merchants/answer/7052112.
-		 */
-		static private function add_product_data( &$product, $mt_data, &$dupe_check = array() ) {
+		static private function add_feed_product( &$rss2_feed, array $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -265,7 +220,28 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark();
 			}
 
-			self::sanitize_mt_array( $mt_data );
+			$product = new Vitalybaev\GoogleMerchant\Product();
+
+			self::add_product_data( $product, $mt_single );
+
+			self::add_product_images( $product, $mt_single );
+
+			$rss2_feed->addProduct( $product );
+		}
+
+		/*
+		 * See https://support.google.com/merchants/answer/7052112.
+		 */
+		static private function add_product_data( &$product, $mt_single ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
+			self::sanitize_mt_array( $mt_single );
 
 			$names = array(
 
@@ -341,7 +317,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			foreach ( $names as $mt_name => $mixed ) {
 
-				if ( isset( $mt_data[ $mt_name ] ) && '' !== $mt_data[ $mt_name ] ) {
+				if ( isset( $mt_single[ $mt_name ] ) && '' !== $mt_single[ $mt_name ] ) {	// Not null or empty string.
 
 					if ( is_array( $mixed ) ) {
 
@@ -352,7 +328,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						list( $method_name, $prop_name, $is_cdata ) = array( $mixed, '', false );
 					}
 
-					$values = is_array( $mt_data[ $mt_name ] ) ? $mt_data[ $mt_name ] : array( $mt_data[ $mt_name ] );
+					$values = is_array( $mt_single[ $mt_name ] ) ? $mt_single[ $mt_name ] : array( $mt_single[ $mt_name ] );
 
 					foreach ( $values as $value ) {
 
@@ -360,15 +336,10 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 							$mt_name_units = preg_replace( '/:value$/', ':units', $mt_name );
 
-							if ( ! empty( $mt_data[ $mt_name_units ] ) ) {
+							if ( ! empty( $mt_single[ $mt_name_units ] ) ) {
 
-								$value .= ' ' . $mt_data[ $mt_name_units ];
+								$value .= ' ' . $mt_single[ $mt_name_units ];
 							}
-						}
-
-						if ( ! empty( $dupe_check[ $method_name ][ $prop_name ][ $value ] ) ) {
-
-							continue;
 						}
 
 						/*
@@ -384,15 +355,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 								$product->$method_name( $value );
 							}
-
-							$dupe_check[ $method_name ][ $prop_name ][ $value ] = true;
 						}
 					}
 				}
 			}
 		}
 
-		static private function add_product_images( &$product, $mt_data ) {
+		static private function add_product_images( &$product, $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -403,13 +372,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$mt_images = array();
 
-			if ( isset( $mt_data[ 'og:image' ] ) && is_array( $mt_data[ 'og:image' ] ) ) {
+			if ( isset( $mt_single[ 'og:image' ] ) && is_array( $mt_single[ 'og:image' ] ) ) {
 
-				$mt_images = $mt_data[ 'og:image' ];
+				$mt_images = $mt_single[ 'og:image' ];
 
-			} elseif ( ! empty( $mt_data[ 'product:retailer_item_id' ] ) && is_numeric( $mt_data[ 'product:retailer_item_id' ] ) ) {
+			} elseif ( ! empty( $mt_single[ 'product:retailer_item_id' ] ) && is_numeric( $mt_single[ 'product:retailer_item_id' ] ) ) {
 
-				$post_id   = $mt_data[ 'product:retailer_item_id' ];
+				$post_id   = $mt_single[ 'product:retailer_item_id' ];
 				$mod       = $wpsso->post->get_mod( $post_id );
 				$max_nums  = $wpsso->util->get_max_nums( $mod, 'og' );
 				$mt_images = $wpsso->media->get_all_images( $max_nums[ 'og_img_max' ],
@@ -439,7 +408,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 		}
 
-		static private function sanitize_mt_array( &$mt_data ) {
+		static private function sanitize_mt_array( &$mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -452,36 +421,36 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			foreach ( $content_maps as $mt_name => $map ) {
 
-				if ( isset( $mt_data[ $mt_name ] ) ) {
+				if ( isset( $mt_single[ $mt_name ] ) ) {
 
-					self::sanitize_mt_value( $mt_data[ $mt_name ], $map );
+					self::map_mt_value( $mt_single[ $mt_name ], $map );
 				}
 			}
 
 			foreach ( array( 'product:price', 'product:sale_price' ) as $mt_name ) {
 
-				if ( isset( $mt_data[ $mt_name . ':amount' ] ) && isset( $mt_data[ $mt_name . ':currency' ] ) ) {
+				if ( isset( $mt_single[ $mt_name . ':amount' ] ) && isset( $mt_single[ $mt_name . ':currency' ] ) ) {
 
-					$mt_data[ $mt_name ] = trim( $mt_data[ $mt_name . ':amount' ] . ' '. $mt_data[ $mt_name . ':currency' ] );
+					$mt_single[ $mt_name ] = trim( $mt_single[ $mt_name . ':amount' ] . ' '. $mt_single[ $mt_name . ':currency' ] );
 				}
 			}
 
 			foreach ( array( 'product:sale_price_dates' ) as $mt_name ) {
 
-				if ( ! empty( $mt_data[ $mt_name . ':start_iso' ] ) && ! empty( $mt_data[ $mt_name . ':end_iso' ] ) ) {
+				if ( ! empty( $mt_single[ $mt_name . ':start_iso' ] ) && ! empty( $mt_single[ $mt_name . ':end_iso' ] ) ) {
 
-					$mt_data[ $mt_name ] = $mt_data[ $mt_name . ':start_iso' ] . '/' . $mt_data[ $mt_name . ':end_iso' ];
+					$mt_single[ $mt_name ] = $mt_single[ $mt_name . ':start_iso' ] . '/' . $mt_single[ $mt_name . ':end_iso' ];
 				}
 			}
 		}
 
-		static private function sanitize_mt_value( &$value, array $map ) {
+		static private function map_mt_value( &$value, array $map ) {
 
 			if ( is_array( $value ) ) {
 
 				foreach ( $value as $num => &$arr_val ) {
 
-					self::sanitize_mt_value( $arr_val, $map );
+					self::map_mt_value( $arr_val, $map );
 				}
 
 			} else {

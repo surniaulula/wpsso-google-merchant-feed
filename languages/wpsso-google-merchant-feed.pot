@@ -46,24 +46,24 @@ msgid "WPSSO Core"
 msgstr ""
 
 #: lib/actions.php:64
-msgid "checking google merchant feeds"
+msgid "checking google merchant feed"
 msgstr ""
 
-#: lib/actions.php:125
-msgid "getting google merchant feeds images"
+#: lib/actions.php:122
+msgid "getting google merchant feed images"
 msgstr ""
 
-#: lib/actions.php:150
-msgid "checking google merchant feeds images"
+#: lib/actions.php:147
+msgid "checking google merchant feed images"
 msgstr ""
 
-#: lib/actions.php:156
+#: lib/actions.php:153
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:158
+#: lib/actions.php:155
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."
