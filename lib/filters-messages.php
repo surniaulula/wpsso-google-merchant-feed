@@ -49,13 +49,17 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 					 */
 					$text = '<p class="pro-feature-msg">';
 
-					$text .= __( 'Product images must accurately display the entire product and include minimal or no product staging.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'Product images must accurately display the entire product and include minimal or no product staging.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'Each product variation must use a unique image that represents the distinguishing details of that variation.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'Do not use a generic image, logo, icon, or illustration that is not of the actual product.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'Do not use an image that contains promotional elements or content that covers the product.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
 					if ( ! empty( $this->p->avail[ 'ecom' ][ 'woocommerce' ] ) ) {
 
@@ -63,7 +67,8 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 							if ( $this->p->util->wc->is_mod_variable( $info[ 'mod' ] ) ) {
 
-								$text .= __( 'This is a variable product - images from product variations will supersede the main product image selected here.', 'wpsso-google-merchant-feed' ) . ' ';
+								$text .= __( 'This is a variable product - images from product variations will supersede the main product image selected here.',
+									'wpsso-google-merchant-feed' ) . ' ';
 							}
 						}
 					}
@@ -89,7 +94,8 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$def_img_dims = $this->p->msgs->get_def_img_dims( 'gmf' );
 
-					$text = sprintf( __( 'The dimensions used for the Google merchant feed XML image (default dimensions are %s).', 'wpsso-google-merchant-feed' ), $def_img_dims ) . ' ';
+					$text = sprintf( __( 'The dimensions used for the Google merchant feed XML image (default dimensions are %s).',
+						'wpsso-google-merchant-feed' ), $def_img_dims ) . ' ';
 
 					break;
 
@@ -112,21 +118,27 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 				 */
 				case 'tooltip-meta-gmf_img_id':		// Image ID.
 
-					$text = __( 'A customized image ID for the Google merchant feed XML.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text = __( 'A customized image ID for the Google merchant feed XML.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'The default value is inherited from the Schema markup or priority image.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'The default value is inherited from the Schema markup or priority image.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= '<em>' . __( 'This option is disabled if a custom image URL is entered.', 'wpsso-google-merchant-feed' ) . '</em>';
+					$text .= '<em>' . __( 'This option is disabled if a custom image URL is entered.',
+						'wpsso-google-merchant-feed' ) . '</em>';
 
 				 	break;
 
 				case 'tooltip-meta-gmf_img_url':	// or an Image URL.
 
-					$text = __( 'A customized image URL (instead of an image ID) for the Google merchant feed XML.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text = __( 'A customized image URL (instead of an image ID) for the Google merchant feed XML.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'The default value is inherited from the Schema markup or priority image.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'The default value is inherited from the Schema markup or priority image.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= '<em>' . __( 'This option is disabled if a custom image ID is selected.', 'wpsso-google-merchant-feed' ) . '</em>';
+					$text .= '<em>' . __( 'This option is disabled if a custom image ID is selected.',
+						'wpsso-google-merchant-feed' ) . '</em>';
 
 				 	break;
 

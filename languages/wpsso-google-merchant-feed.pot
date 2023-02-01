@@ -71,7 +71,7 @@ msgid "Google Merchant Feed XML"
 msgstr ""
 
 #: lib/filters-edit.php:49
-msgid "getting google merchant feeds image"
+msgid "getting google merchant feed image"
 msgstr ""
 
 #: lib/filters-edit.php:55
@@ -103,56 +103,56 @@ msgid ""
 "minimal or no product staging."
 msgstr ""
 
-#: lib/filters-messages.php:54
+#: lib/filters-messages.php:55
 msgid ""
 "Each product variation must use a unique image that represents the "
 "distinguishing details of that variation."
 msgstr ""
 
-#: lib/filters-messages.php:56
+#: lib/filters-messages.php:58
 msgid ""
 "Do not use a generic image, logo, icon, or illustration that is not of the "
 "actual product."
 msgstr ""
 
-#: lib/filters-messages.php:58
+#: lib/filters-messages.php:61
 msgid ""
 "Do not use an image that contains promotional elements or content that "
 "covers the product."
 msgstr ""
 
-#: lib/filters-messages.php:66
+#: lib/filters-messages.php:70
 msgid ""
 "This is a variable product - images from product variations will supersede "
 "the main product image selected here."
 msgstr ""
 
-#: lib/filters-messages.php:92
+#: lib/filters-messages.php:97
 msgid ""
 "The dimensions used for the Google merchant feed XML image (default "
 "dimensions are %s)."
 msgstr ""
 
-#: lib/filters-messages.php:115
+#: lib/filters-messages.php:121
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-messages.php:117 lib/filters-messages.php:127
+#: lib/filters-messages.php:124 lib/filters-messages.php:137
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:119
+#: lib/filters-messages.php:127
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:125
+#: lib/filters-messages.php:134
 msgid ""
 "A customized image URL (instead of an image ID) for the Google merchant feed "
 "XML."
 msgstr ""
 
-#: lib/filters-messages.php:129
+#: lib/filters-messages.php:140
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
