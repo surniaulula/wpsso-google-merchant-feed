@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 5.1.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-01-19 12:36-0800\n"
+"PO-Revision-Date: 2023-02-02 06:56-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -42,22 +42,18 @@ msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
 #: lib/actions.php:64
-msgid "checking google merchant feeds"
+msgid "checking google merchant feed"
 msgstr "vérification flux de marchand google"
 
-#: lib/actions.php:122
-msgid "getting google merchant feeds images"
-msgstr "obtenir des images flux de marchand google"
+#: lib/actions.php:117
+msgid "checking google merchant feed images"
+msgstr "vérification d'images flux de marchand google"
 
-#: lib/actions.php:147
-msgid "checking google merchant feeds images"
-msgstr "vérification des images flux de marchand google"
-
-#: lib/actions.php:153
+#: lib/actions.php:134
 msgid "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID %3$s."
 msgstr "Impossible de générer l'attribut %1$s de flux XML de marchand Google pour l'identifiant %2$s %3$s."
 
-#: lib/actions.php:155
+#: lib/actions.php:136
 msgid "Google requires at least one %1$s attribute for each product variation in the Google merchant feed XML."
 msgstr "Google exige au moins un attribut %1$s pour chaque variante de produit dans le flux XML de marchand Google."
 
@@ -67,7 +63,7 @@ msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
 
 #: lib/filters-edit.php:49
-msgid "getting google merchant feeds image"
+msgid "getting google merchant feed image"
 msgstr "obtenir l'image flux de marchand google"
 
 #: lib/filters-edit.php:55
@@ -97,47 +93,47 @@ msgstr "ou URL d'une image"
 msgid "Product images must accurately display the entire product and include minimal or no product staging."
 msgstr "Les images de produits doivent afficher l'intégralité du produit et inclure peu ou pas de mise en scène du produit."
 
-#: lib/filters-messages.php:54
+#: lib/filters-messages.php:55
 msgid "Each product variation must use a unique image that represents the distinguishing details of that variation."
 msgstr "Chaque variation de produit doit utiliser une image unique qui représente les détails distinctifs de cette variation."
 
-#: lib/filters-messages.php:56
+#: lib/filters-messages.php:58
 msgid "Do not use a generic image, logo, icon, or illustration that is not of the actual product."
 msgstr "N'utilisez pas d'image générique, de logo, d'icône ou d'illustration qui ne correspond pas au produit réel."
 
-#: lib/filters-messages.php:58
+#: lib/filters-messages.php:61
 msgid "Do not use an image that contains promotional elements or content that covers the product."
 msgstr "N'utilisez pas d'image contenant des éléments promotionnels ou du contenu couvrant le produit."
 
-#: lib/filters-messages.php:66
+#: lib/filters-messages.php:70
 msgid "This is a variable product - images from product variations will supersede the main product image selected here."
 msgstr "Ceci est un produit variable - les images des variantes du produit remplaceront l'image du produit principale sélectionnée ici."
 
-#: lib/filters-messages.php:92
+#: lib/filters-messages.php:97
 msgid "The dimensions used for the Google merchant feed XML image (default dimensions are %s)."
 msgstr "Les dimensions utilisées pour l'image flux XML de marchand Google (les dimensions par défaut sont %s)."
 
-#: lib/filters-messages.php:115
+#: lib/filters-messages.php:121
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr "ID d'image personnalisé pour le flux XML de marchand Google."
 
-#: lib/filters-messages.php:117 lib/filters-messages.php:127
+#: lib/filters-messages.php:124 lib/filters-messages.php:137
 msgid "The default value is inherited from the Schema markup or priority image."
 msgstr "La valeur par défaut est héritée du balisage de Schéma ou de l'image prioritaire."
 
-#: lib/filters-messages.php:119
+#: lib/filters-messages.php:127
 msgid "This option is disabled if a custom image URL is entered."
 msgstr "Cette option est désactivée si une URL d'image personnalisée est fournie."
 
-#: lib/filters-messages.php:125
+#: lib/filters-messages.php:134
 msgid "A customized image URL (instead of an image ID) for the Google merchant feed XML."
 msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour le flux XML de marchand Google."
 
-#: lib/filters-messages.php:129
+#: lib/filters-messages.php:140
 msgid "This option is disabled if a custom image ID is selected."
 msgstr "Cette option est désactivée si un ID d'image personnalisé est sélectionné."
 
-#: lib/filters.php:91
+#: lib/filters.php:92
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr "Le flux XML de marchand Google pour %d langues a été actualisé."
 
