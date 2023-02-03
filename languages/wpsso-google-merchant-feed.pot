@@ -160,15 +160,15 @@ msgstr ""
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 
-#: lib/rewrite.php:107 lib/rewrite.php:121
+#: lib/rewrite.php:123 lib/rewrite.php:137
 msgid "%s error: %s"
 msgstr ""
 
-#: lib/rewrite.php:108
+#: lib/rewrite.php:124
 msgid "Requested feed type is invalid."
 msgstr ""
 
-#: lib/rewrite.php:122
+#: lib/rewrite.php:138
 msgid "Requested locale value is empty."
 msgstr ""
 

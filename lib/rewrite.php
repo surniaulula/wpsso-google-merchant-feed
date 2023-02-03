@@ -35,13 +35,16 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$this->a =& $addon;
 
 			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ), 2000 );
+			//add_action( 'activated_plugin', array( __CLASS__, 'flush_rules' ) );
+			//add_action( 'after_switch_theme', array( __CLASS__, 'flush_rules' ) );
+			//add_action( 'upgrader_process_complete', array( __CLASS__, 'flush_rules' ) );
 			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -2000 );
 
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ), 2000 );
 		}
 
 		/*
-		 * Adds and flushes rewrite rules only if necessary.
+		 * Add and flush rewrite rules only if necessary.
 		 */
 		static public function add_rules() {
 
@@ -63,8 +66,21 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
 
-				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option.
+				self::flush_rules();
 			}
+		}
+
+		/*
+		 * By default, update only the 'rewrite_rules' option, not the .htaccess file.
+		 */
+		static public function flush_rules( $hard = false ) {
+
+			/*
+			 * This function is useful when used with custom post types as it allows for automatic flushing of the
+			 * WordPress rewrite rules (usually needs to be done manually for new custom post types). However, this is
+			 * an expensive operation so it should only be used when necessary.
+			 */
+			flush_rewrite_rules( $hard );
 		}
 
 		/*
