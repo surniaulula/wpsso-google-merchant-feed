@@ -34,10 +34,10 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ), 0 );
+			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ), -1000 );
 			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -1000 );
 
-			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ), 0 );
+			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ), -1000 );
 		}
 
 		/*
