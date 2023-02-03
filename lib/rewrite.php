@@ -34,11 +34,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ), 2000 );
-			//add_action( 'activated_plugin', array( __CLASS__, 'flush_rules' ) );
-			//add_action( 'after_switch_theme', array( __CLASS__, 'flush_rules' ) );
-			//add_action( 'upgrader_process_complete', array( __CLASS__, 'flush_rules' ) );
-			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -2000 );
+			add_action( 'wp_loaded', array( __CLASS__, 'add_rules' ), 1000 );
+			add_action( 'template_redirect', array( __CLASS__, 'template_redirect' ), -1000 );
 
 			add_filter( 'query_vars', array( __CLASS__, 'query_vars' ), 2000 );
 		}
@@ -53,34 +50,25 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$rewrite_rules = $wp_rewrite->wp_rewrite_rules();
 			$rewrite_key   = '^(' . WPSSOGMF_PAGENAME . ')/feed/(rss2)/([^\./]+)\.xml$';
 			$rewrite_value = 'index.php?pagename=$matches[1]&feed=$matches[2]&locale=$matches[3]';
-
-			if ( empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_value !== $rewrite_rules[ $rewrite_key ] ) {
-
-				/*
-				 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
-				 */
-				if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
-
-					add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?pagename=' . WPSSOGMF_PAGENAME . '&feed=rss2&locale=$matches[1]', 'top' );
-				}
-
-				add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
-
-				self::flush_rules();
-			}
-		}
-
-		/*
-		 * By default, update only the 'rewrite_rules' option, not the .htaccess file.
-		 */
-		static public function flush_rules( $hard = false ) {
+			$rewrite_flush = empty( $rewrite_rules[ $rewrite_key ] ) ? true : false;
 
 			/*
-			 * This function is useful when used with custom post types as it allows for automatic flushing of the
-			 * WordPress rewrite rules (usually needs to be done manually for new custom post types). However, this is
-			 * an expensive operation so it should only be used when necessary.
+			 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
 			 */
-			flush_rewrite_rules( $hard );
+			if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
+
+				add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?pagename=' . WPSSOGMF_PAGENAME . '&feed=rss2&locale=$matches[1]', 'top' );
+			}
+
+			/*
+			 * Always re-add and move the rewrite rule back to the top.
+			 */
+			add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
+
+			if ( $rewrite_flush ) {
+			
+				flush_rewrite_rules( $hard = false );
+			}
 		}
 
 		/*
