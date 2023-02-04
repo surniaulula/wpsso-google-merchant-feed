@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.1.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -160,15 +160,15 @@ msgstr ""
 msgid "The Google Merchant Feed XML for %d locales has been refreshed."
 msgstr ""
 
-#: lib/rewrite.php:111 lib/rewrite.php:125
+#: lib/rewrite.php:102 lib/rewrite.php:116
 msgid "%s error: %s"
 msgstr ""
 
-#: lib/rewrite.php:112
+#: lib/rewrite.php:103
 msgid "Requested feed type is invalid."
 msgstr ""
 
-#: lib/rewrite.php:126
+#: lib/rewrite.php:117
 msgid "Requested locale value is empty."
 msgstr ""
 
