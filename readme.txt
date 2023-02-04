@@ -129,6 +129,22 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.1.0-dev.1 (2023/02/04)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Changed the rewrite registration hook from 'wp_loaded' to 'init'.
+	* Updated feed query arguments to 'feed_name', 'feed_type', and 'feed_locale'.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v15.0.1-dev.1.
+
 **Version 6.0.0 (2023/02/03)**
 
 * **New Features**
@@ -150,6 +166,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.0.0.
 
 == Upgrade Notice ==
+
+= 6.1.0-dev.1 =
+
+(2023/02/04) Changed the rewrite registration hook. Updated feed query arguments.
 
 = 6.0.0 =
 
