@@ -50,18 +50,18 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$rewrite_value   = 'index.php?feed_name=$matches[1]&feed_type=$matches[2]&feed_locale=$matches[3]';
 			$rewrite_missing = empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_rules[ $rewrite_key ] !== $rewrite_value ? true : false;
 
+			/*
+			 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
+			 */
+			if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
+
+				add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?feed_name=' .
+					WPSSOGMF_PAGENAME . '&feed_type=rss2&feed_locale=$matches[1]', 'top' );
+			}
+
+			add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
+
 			if ( $rewrite_missing ) {
-
-				/*
-				 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
-				 */
-				if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
-
-					add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?feed_name=' .
-						WPSSOGMF_PAGENAME . '&feed_type=rss2&feed_locale=$matches[1]', 'top' );
-				}
-
-				add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
 
 				flush_rewrite_rules( $hard = false );	// Update only the 'rewrite_rules' option, not the .htaccess file.
 			}
