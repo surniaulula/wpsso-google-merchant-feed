@@ -112,8 +112,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->log_arr( 'public_ids', $public_ids );
 			}
 
-			$mod = $wpsso->post->md_cache_disable();	// Save memory by disabling the local cache.
-
 			foreach ( $public_ids as $post_id ) {
 
 				$mod = $wpsso->post->get_mod( $post_id );
