@@ -129,6 +129,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.2.0-dev.2 (2023/02/10)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added support for metadata cache disabling in WPSSO Core v15.2.0 when creating the feed XML.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v15.2.0-dev.2.
+
 **Version 6.1.0 (2023/02/04)**
 
 * **New Features**
@@ -166,6 +181,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.0.0.
 
 == Upgrade Notice ==
+
+= 6.2.0-dev.2 =
+
+(2023/02/10) Added support for metadata cache disabling in WPSSO Core v15.2.0 when creating the feed XML.
 
 = 6.1.0 =
 
