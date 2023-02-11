@@ -129,7 +129,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.2.0-dev.5 (2023/02/11)**
+**Version 6.2.0-dev.6 (2023/02/11)**
 
 * **New Features**
 	* None.
@@ -142,7 +142,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v15.2.0-dev.5.
+	* WPSSO Core v15.2.0-dev.6.
 
 **Version 6.1.0 (2023/02/04)**
 
@@ -182,7 +182,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.2.0-dev.5 =
+= 6.2.0-dev.6 =
 
 (2023/02/11) Updated rewrite rules to add the rules whether they already exist or not.
 
