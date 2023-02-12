@@ -97,11 +97,6 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 					if ( 'clear' === $doing_task || 'refresh' === $doing_task ) {
 			
-						foreach ( $locale_names as $locale => $native_name ) {
-
-							WpssoGmfXml::clear_cache( $locale );
-						}
-
 						$task_name_transl = _x( $doing_task, 'task name', 'wpsso' );
 						$metabox_title    = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 

@@ -157,7 +157,7 @@ msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
 #: lib/filters.php:91 lib/rewrite.php:102 lib/rewrite.php:117
-#: lib/submenu/gmf-general.php:64 lib/submenu/gmf-general.php:106
+#: lib/submenu/gmf-general.php:64 lib/submenu/gmf-general.php:101
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -179,15 +179,15 @@ msgctxt "submit button"
 msgid "Refresh Feed XML Cache"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:109
+#: lib/submenu/gmf-general.php:104
 msgid "A background task to %s the cache is currently running."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:111
+#: lib/submenu/gmf-general.php:106
 msgid "%s will be available when this task is complete."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:131
+#: lib/submenu/gmf-general.php:126
 msgctxt "option comment"
 msgid ""
 "%1$s feed items, %2$s image links, %3$s addl image links, %4$s KB feed size."
