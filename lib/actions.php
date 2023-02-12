@@ -96,7 +96,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 				$locale = SucomUtil::get_locale( $mod );
 
-				$xml = WpssoGmfXml::clear_cache( $locale );	// Clear the feed XML file cache for this locale.
+				WpssoGmfXml::clear_cache( $locale );	// Clear the feed XML file cache for this locale.
 			}
 		}
 

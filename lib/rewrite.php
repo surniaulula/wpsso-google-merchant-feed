@@ -93,93 +93,42 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			}
 
 			/*
-			 * Make sure the requested feed is valid.
+			 * Make sure the requested type is valid.
 			 */
 			$request_type = get_query_var( 'feed_type' );
 
 			if ( 'rss2' !== $request_type ) {
 
-				SucomUtil::safe_error_log( sprintf( __( '%s error: %s', 'wpsso-google-merchant-feed' ),
-					__METHOD__, __( 'Requested feed type is invalid.', 'wpsso-google-merchant-feed' ) ) );
+				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
-				return;
+				WpssoErrorException::http_error( 400, sprintf( __( '%s requested feed type is unknown.',
+					'wpsso-google-merchant-feed' ), $metabox_title ) );
 			}
 
 			/*
-			 * Make sure the requested locale is valid, otherwise redirect using the default locale.
+			 * Make sure the requested locale is valid.
 			 */
 			$request_locale = get_query_var( 'feed_locale' );
 			$request_locale = SucomUtil::sanitize_locale( $request_locale );
+			$locale_names   = SucomUtil::get_available_feed_locale_names();
 
-			if ( empty( $request_locale ) ) {
+			if ( ! isset( $locale_names[ $request_locale ] ) ) {
 
-				SucomUtil::safe_error_log( sprintf( __( '%s error: %s', 'wpsso-google-merchant-feed' ),
-					__METHOD__, __( 'Requested locale value is empty.', 'wpsso-google-merchant-feed' ) ) );
+				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
-				return;
+				WpssoErrorException::http_error( 400, sprintf( __( '%s requested feed locale is unknown.',
+					'wpsso-google-merchant-feed' ), $metabox_title ) );
 			}
-
-			$current_locale = SucomUtil::get_locale( $mixed = 'current' );
-			$default_locale = SucomUtil::get_locale( $mixed = 'default' );
 
 			$wpsso =& Wpsso::get_instance();
 
-			if ( $wpsso->debug->enabled ) {
+			if ( $doing_task = $wpsso->util->cache->doing_task() ) {
 
-				$wpsso->debug->log( 'locale request = ' . $request_locale );
-				$wpsso->debug->log( 'locale current = ' . $current_locale );
-				$wpsso->debug->log( 'locale default = ' . $default_locale );
+				WpssoGmfXml::clear_cache( $request_locale );
 			}
 
-			if ( $request_locale !== $current_locale ) {
-
-				$locale_names = SucomUtil::get_available_feed_locale_names();
-
-				if ( isset( $locale_names[ $request_locale ] ) ) {	// Just in case.
-
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'switching to request locale ' . $request_locale );
-					}
-
-					$is_switched = switch_to_locale( $request_locale );
-
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'switch to locale ' . ( $is_switched ? 'successful' : 'failed' ) );
-
-						$wp_locale      = get_locale();
-						$current_locale = SucomUtil::get_locale( $mixed = 'current' );
-
-						$wpsso->debug->log( 'locale wp = ' . $wp_locale );
-						$wpsso->debug->log( 'locale current = ' . $current_locale );
-					}
-
-				} else {
-
-					$redirect_url = self::get_url( $default_locale );
-
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'unknown request locale ' . $request_locale );
-
-						$wpsso->debug->log( 'redirect to default locale URL = ' . $redirect_url );
-					}
-
-					wp_redirect( $redirect_url );
-
-					return;
-				}
-			}
-
-			global $wp_query;
-
-			$wp_query->is_404 = false;
-
-			ob_implicit_flush( $enable = true );
-			ob_end_flush();
-
-			$document_xml = WpssoGmfXml::get();
+			$use_cache    = $doing_task ? false : true;
+			$document_xml = WpssoGmfXml::get( $request_locale, $use_cache );
 			$disposition  = 'attachment';
 			$filename     = SucomUtil::sanitize_file_name( $request_name . '-' . $request_locale . '.xml' );
 
@@ -189,6 +138,13 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			}
 
 			$content_len = strlen( $document_xml );
+
+			global $wp_query;
+
+			$wp_query->is_404 = false;
+
+			ob_implicit_flush( $enable = true );
+			ob_end_flush();
 
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );

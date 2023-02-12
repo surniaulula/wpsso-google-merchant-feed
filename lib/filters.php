@@ -68,9 +68,6 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			return $sizes;
 		}
 
-		/*
-		 * See WpssoGmfActions->action_load_setting_page_refresh_feed_xml_cache().
-		 */
 		public function filter_cache_refreshed_notice( $notice_msg, $user_id = null ) {
 
 			$xml_count      = 0;
@@ -84,12 +81,16 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			foreach ( $locale_names as $locale => $native_name ) {
 
-				$xml = WpssoGmfXml::get( $read_cache = false, $locale );
+				WpssoGmfXml::clear_cache( $locale );
+
+				$xml = WpssoGmfXml::get( $locale );
 
 				$xml_count++;
 			}
 
-			$notice_msg .= sprintf( __( 'The Google Merchant Feed XML for %d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count ) . ' ';
+			$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
+			$notice_msg .= sprintf( __( '%1$s for %2$d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count, $metabox_title ) . ' ';
 
 			return $notice_msg;
 		}
