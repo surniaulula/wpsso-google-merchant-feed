@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			foreach ( $locale_names as $locale => $native_name ) {
 
-				WpssoGmfXml::clear_cache( $locale );
+				WpssoGmfXml::clear_cache( $locale );	// Clear the feed XML cache file.
 
 				$xml = WpssoGmfXml::get( $locale );
 

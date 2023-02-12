@@ -98,7 +98,8 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 					if ( 'clear' === $doing_task || 'refresh' === $doing_task ) {
 			
 						$task_name_transl = _x( $doing_task, 'task name', 'wpsso' );
-						$metabox_title    = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
+						$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
 						$table_rows[ 'wpssogmf_disabled' ] = '<tr><td align="center">' .
 							'<p class="status-msg">' . sprintf( __( 'A background task to %s the cache is currently running.',

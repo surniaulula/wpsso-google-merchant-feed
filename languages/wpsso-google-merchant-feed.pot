@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.3.0-dev.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.3.0-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -157,7 +157,8 @@ msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
 #: lib/filters.php:91 lib/rewrite.php:102 lib/rewrite.php:117
-#: lib/submenu/gmf-general.php:64 lib/submenu/gmf-general.php:101
+#: lib/rewrite.php:127 lib/submenu/gmf-general.php:64
+#: lib/submenu/gmf-general.php:102
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -174,20 +175,24 @@ msgstr ""
 msgid "%s requested feed locale is unknown."
 msgstr ""
 
+#: lib/rewrite.php:129
+msgid "%s unavailable pending completion of a maintenance task."
+msgstr ""
+
 #: lib/submenu/gmf-general.php:51
 msgctxt "submit button"
 msgid "Refresh Feed XML Cache"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:104
+#: lib/submenu/gmf-general.php:105
 msgid "A background task to %s the cache is currently running."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:106
+#: lib/submenu/gmf-general.php:107
 msgid "%s will be available when this task is complete."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:126
+#: lib/submenu/gmf-general.php:127
 msgctxt "option comment"
 msgid ""
 "%1$s feed items, %2$s image links, %3$s addl image links, %4$s KB feed size."

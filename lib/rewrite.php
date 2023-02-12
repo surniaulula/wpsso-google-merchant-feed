@@ -124,11 +124,13 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( $doing_task = $wpsso->util->cache->doing_task() ) {
 
-				WpssoGmfXml::clear_cache( $request_locale );
+				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
+				WpssoErrorException::http_error( 503, sprintf( __( '%s unavailable pending completion of a maintenance task.',
+					'wpsso-google-merchant-feed' ), $metabox_title ) );
 			}
 
-			$use_cache    = $doing_task ? false : true;
-			$document_xml = WpssoGmfXml::get( $request_locale, $use_cache );
+			$document_xml = WpssoGmfXml::get( $request_locale );
 			$disposition  = 'attachment';
 			$filename     = SucomUtil::sanitize_file_name( $request_name . '-' . $request_locale . '.xml' );
 
