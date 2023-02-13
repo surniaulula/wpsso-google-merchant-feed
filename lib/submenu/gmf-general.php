@@ -14,6 +14,8 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 	class WpssoGmfSubmenuGmfGeneral extends WpssoAdmin {
 
+		private $doing_task = false;
+
 		public function __construct( &$plugin, $id, $name, $lib, $ext ) {
 
 			$this->p =& $plugin;
@@ -30,11 +32,13 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 		}
 
 		/*
-		 * Called by WpssoAdmin->load_setting_page() after the 'wpsso-action' query is handled.
+		 * Add settings page filters and actions hooks.
 		 *
-		 * Add settings page filter and action hooks.
+		 * Called by WpssoAdmin->load_setting_page() after the 'wpsso-action' query is handled.
 		 */
 		protected function add_plugin_hooks() {
+
+			$this->doing_task = $this->p->util->cache->doing_task();
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'form_button_rows' => 1,	// Form buttons for this settings page.
@@ -46,17 +50,24 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 		 */
 		public function filter_form_button_rows( $form_button_rows ) {
 
-			$form_button_rows = array(
-				array(
-					'refresh_feed_xml_cache' => _x( 'Refresh Feed XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
-				),
-			);
+			if ( $this->doing_task ) {
+
+				$form_button_rows = array();
+
+			} else {
+
+				$form_button_rows = array(
+					array(
+						'refresh_feed_xml_cache' => _x( 'Refresh Feed XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
+					),
+				);
+			}
 
 			return $form_button_rows;
 		}
 
 		/*
-		 * Called by the extended WpssoAdmin class.
+		 * Called by WpssoAdmin->load_setting_page() after the 'wpsso-action' query is handled.
 		 */
 		protected function add_meta_boxes() {
 
@@ -92,24 +103,23 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 				case 'gmf-general':
 
-					$locale_names = SucomUtil::get_available_feed_locale_names();
-					$doing_task   = $this->p->util->cache->doing_task();
-
-					if ( 'clear' === $doing_task || 'refresh' === $doing_task ) {
+					if ( $this->doing_task ) {
 			
-						$task_name_transl = _x( $doing_task, 'task name', 'wpsso' );
+						$task_name_transl = _x( $this->doing_task, 'task name', 'wpsso' );
 
 						$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
 						$table_rows[ 'wpssogmf_disabled' ] = '<tr><td align="center">' .
-							'<p class="status-msg">' . sprintf( __( 'A background task to %s the cache is currently running.',
+							'<p class="status-msg">' . sprintf( __( 'A background task to %s is currently running.',
 								'wpsso-google-merchant-feed' ), $task_name_transl ) . '</p>' .
-							'<p class="status-msg">' . sprintf( __( '%s will be available when this task is complete.',
+							'<p class="status-msg">' . sprintf( __( '%s is unavailable pending completion of this maintenance task.',
 								'wpsso-google-merchant-feed' ), $metabox_title ) . '</p>' .
 							'</td></tr>';
 
 					} else {
 					
+						$locale_names = SucomUtil::get_available_feed_locale_names();
+
 						foreach ( $locale_names as $locale => $native_name ) {
 
 							$url = WpssoGmfRewrite::get_url( $locale );
@@ -118,15 +128,14 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 							$item_count = substr_count( $xml, '<item>' );
 							$img_count  = substr_count( $xml, '<g:image_link>' );
 							$addl_count = substr_count( $xml, '<g:additional_image_link>' );
-							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );
+							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
 	
 							$table_rows[ 'gmf_url_' . $locale ] = '' .
 								$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
 								'<td>' . $this->form->get_no_input_clipboard( $url ) .
 								'<p class="status-msg left">' .
-								sprintf( _x( '%1$s feed items, %2$s image links, %3$s addl image links, %4$s KB feed size.',
-									'option comment', 'wpsso-google-merchant-feed' ),
-										$item_count, $img_count, $addl_count, $xml_size ) .
+								sprintf( _x( '%1$s feed items, %2$s image links, and %3$s additional image links.',
+									'option comment', 'wpsso-google-merchant-feed' ), $item_count, $img_count, $addl_count ) .
 								'</p>' .
 								'</td>';
 						}

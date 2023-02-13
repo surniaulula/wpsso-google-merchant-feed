@@ -90,7 +90,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
-			$notice_msg .= sprintf( __( '%1$s for %2$d locales has been refreshed.', 'wpsso-google-merchant-feed' ), $xml_count, $metabox_title ) . ' ';
+			$notice_msg .= sprintf( __( '%1$s for %2$s locales has been refreshed.', 'wpsso-google-merchant-feed' ), $metabox_title, $xml_count ) . ' ';
 
 			return $notice_msg;
 		}
