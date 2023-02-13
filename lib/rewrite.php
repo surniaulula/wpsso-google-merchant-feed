@@ -126,7 +126,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
-				WpssoErrorException::http_error( 503, sprintf( __( '%s is unavailable pending completion of a maintenance task.',
+				WpssoErrorException::http_error( 503, sprintf( __( '%s is currently unavailable pending completion of a maintenance task.',
 					'wpsso-google-merchant-feed' ), $metabox_title ) );
 			}
 

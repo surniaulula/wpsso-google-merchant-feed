@@ -175,8 +175,8 @@ msgstr ""
 msgid "%s requested feed locale is unknown."
 msgstr ""
 
-#: lib/rewrite.php:129
-msgid "%s is unavailable pending completion of a maintenance task."
+#: lib/rewrite.php:129 lib/submenu/gmf-general.php:115
+msgid "%s is currently unavailable pending completion of a maintenance task."
 msgstr ""
 
 #: lib/submenu/gmf-general.php:61
@@ -186,10 +186,6 @@ msgstr ""
 
 #: lib/submenu/gmf-general.php:113
 msgid "A background task to %s is currently running."
-msgstr ""
-
-#: lib/submenu/gmf-general.php:115
-msgid "%s is unavailable pending completion of this maintenance task."
 msgstr ""
 
 #: lib/submenu/gmf-general.php:137

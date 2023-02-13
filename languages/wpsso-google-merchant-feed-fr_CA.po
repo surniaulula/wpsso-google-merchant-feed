@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-02-09 06:50-0800\n"
+"PO-Revision-Date: 2023-02-13 09:11-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -133,36 +133,42 @@ msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour le flux XM
 msgid "This option is disabled if a custom image ID is selected."
 msgstr "Cette option est désactivée si un ID d'image personnalisé est sélectionné."
 
-#: lib/filters.php:92
-msgid "The Google Merchant Feed XML for %d locales has been refreshed."
-msgstr "Le flux XML de marchand Google pour %d langues a été actualisé."
-
-#: lib/rewrite.php:102 lib/rewrite.php:116
-msgid "%s error: %s"
-msgstr "Erreur %s: %s"
-
-#: lib/rewrite.php:103
-msgid "Requested feed type is invalid."
-msgstr "Le type de flux demandé n'est pas valide."
-
-#: lib/rewrite.php:117
-msgid "Requested locale value is empty."
-msgstr "La valeur de langue demandée est vide."
-
-#: lib/submenu/gmf-general.php:51
-msgctxt "submit button"
-msgid "Refresh Feed XML Cache"
-msgstr "Rafraîchir cache du flux XML"
-
-#: lib/submenu/gmf-general.php:64
+#: lib/filters.php:91 lib/rewrite.php:102 lib/rewrite.php:117
+#: lib/rewrite.php:127 lib/submenu/gmf-general.php:75
+#: lib/submenu/gmf-general.php:110
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
 
-#: lib/submenu/gmf-general.php:111
+#: lib/filters.php:93
+msgid "%1$s for %2$s locales has been refreshed."
+msgstr "%1$s pour %2$s locales a été actualisé."
+
+#: lib/rewrite.php:104
+msgid "%s requested feed type is unknown."
+msgstr "Le type de flux %s demandé est inconnu."
+
+#: lib/rewrite.php:119
+msgid "%s requested feed locale is unknown."
+msgstr "La locale du flux %s demandée est inconnue."
+
+#: lib/rewrite.php:129 lib/submenu/gmf-general.php:115
+msgid "%s is currently unavailable pending completion of a maintenance task."
+msgstr "%s est actuellement indisponible en attendant l'achèvement d'une tâche de maintenance."
+
+#: lib/submenu/gmf-general.php:61
+msgctxt "submit button"
+msgid "Refresh Feed XML Cache"
+msgstr "Rafraîchir cache du flux XML"
+
+#: lib/submenu/gmf-general.php:113
+msgid "A background task to %s is currently running."
+msgstr "Une tâche en arrière-plan pour %s est en cours d'exécution."
+
+#: lib/submenu/gmf-general.php:137
 msgctxt "option comment"
-msgid "%1$s items, %2$s image links, %3$s addl image links, %4$s KB feed XML size."
-msgstr "%1$s éléments, %2$s liens d'image, %3$s liens d'image supp., %4$s Ko taille de flux XML."
+msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
+msgstr "%1$s éléments de flux, %2$s liens d'image et %3$s liens d'image supplémentaires."
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Google Merchant Feed XML"
