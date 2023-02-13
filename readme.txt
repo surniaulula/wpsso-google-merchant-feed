@@ -129,7 +129,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.3.0-dev.3 (2022/02/12)**
+**Version 6.3.0-dev.4 (2022/02/12)**
 
 * **New Features**
 	* None.
@@ -143,7 +143,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v15.3.0-dev.3.
+	* WPSSO Core v15.3.0-dev.4.
 
 **Version 6.2.0 (2023/02/11)**
 
@@ -198,7 +198,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.3.0-dev.3 =
+= 6.3.0-dev.4 =
 
 (2022/02/12) Updated the GMF settings page to show a notice when a background task is active (ie. clear cache or refresh cache).
 
