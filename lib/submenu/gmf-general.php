@@ -104,7 +104,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 				case 'gmf-general':
 
 					if ( $this->doing_task ) {
-			
+
 						$task_name_transl = _x( $this->doing_task, 'task name', 'wpsso' );
 
 						$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
@@ -117,19 +117,19 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 							'</td></tr>';
 
 					} else {
-					
+
 						$locale_names = SucomUtil::get_available_feed_locale_names();
 
 						foreach ( $locale_names as $locale => $native_name ) {
 
 							$url = WpssoGmfRewrite::get_url( $locale );
 							$xml = WpssoGmfXml::get( $locale );
-	
+
 							$item_count = substr_count( $xml, '<item>' );
 							$img_count  = substr_count( $xml, '<g:image_link>' );
 							$addl_count = substr_count( $xml, '<g:additional_image_link>' );
 							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
-	
+
 							$table_rows[ 'gmf_url_' . $locale ] = '' .
 								$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
 								'<td>' . $this->form->get_no_input_clipboard( $url ) .
