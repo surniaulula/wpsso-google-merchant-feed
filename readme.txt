@@ -25,7 +25,7 @@ Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Pr
 
 **E-Commerce Plugin Not Required:**
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required. If you aren't using an e-commerce plugin, the WPSSO Google Merchant Feed XML add-on can retrieve custom product information entered in the Document SSO metabox.
+A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required. In case you aren't using an e-commerce plugin, the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.
 
 **Complete WooCommerce Support:**
 
