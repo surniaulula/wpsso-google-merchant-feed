@@ -29,7 +29,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, <em>i
 
 **Complete WooCommerce Support:**
 
-WooCommerce product variations, attributes, meta data, and custom fields are all fully supported.
+WooCommerce product variations, attributes, meta data, and custom fields are all fully supported. Fixes the "*Price Mismatched value (page crawl): (price [price])*" error in Google Merchant for WooCommerce product variations.
 
 <!-- /about -->
 
