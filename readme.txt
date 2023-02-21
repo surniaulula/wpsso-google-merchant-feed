@@ -31,7 +31,7 @@ In case you are not using an e-commerce plugin, the WPSSO Google Merchant Feed X
 
 **Complete WooCommerce Support:**
 
-All WooCommerce product variations, attributes, meta data, and custom fields are fully supported.
+All WooCommerce product variations, attributes, meta data, and custom fields are all fully supported.
 
 > Fixes all Google Merchant errors for WooCommerce product variations, including the "*Price Mismatched value (page crawl): (price [price])*" error.
 

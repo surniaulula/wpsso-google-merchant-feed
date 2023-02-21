@@ -27,7 +27,7 @@
 
 <p><strong>Complete WooCommerce Support:</strong></p>
 
-<p>All WooCommerce product variations, attributes, meta data, and custom fields are fully supported.</p>
+<p>All WooCommerce product variations, attributes, meta data, and custom fields are all fully supported.</p>
 
 <blockquote>
   <p>Fixes all Google Merchant errors for WooCommerce product variations, including the "<em>Price Mismatched value (page crawl): (price [price])</em>" error.</p>
