@@ -25,17 +25,19 @@ Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Pr
 
 **E-Commerce Plugin Not Required:**
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required. In case you aren't using an e-commerce plugin, the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.
+A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required.
+
+In case you are not using an e-commerce plugin, the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.
 
 **Complete WooCommerce Support:**
 
 All WooCommerce product variations, attributes, meta data, and custom fields are fully supported.
 
-Fixes "*Price Mismatched value (page crawl): (price [price])*" errors in Google Merchant for WooCommerce product variations.
+> Fixes all Google Merchant errors for WooCommerce product variations, including the "*Price Mismatched value (page crawl): (price [price])*" error.
 
 <!-- /about -->
 
-**No Add-on Settings to Configure:**
+**No Settings to Configure:**
 
 The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.
 
