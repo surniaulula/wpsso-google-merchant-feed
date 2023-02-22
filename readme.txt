@@ -15,13 +15,13 @@ Tested Up To: 6.1.1
 WC Tested Up To: 7.4.0
 Stable Tag: 6.3.0
 
-Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products with Multilingual Support.
+Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom products with multilingual support.
 
 == Description ==
 
 <!-- about -->
 
-**Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and Custom Products with Multilingual Support.**
+**Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom products with multilingual support.**
 
 **E-Commerce Plugin Not Required:**
 
