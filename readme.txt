@@ -15,13 +15,13 @@ Tested Up To: 6.1.1
 WC Tested Up To: 7.4.0
 Stable Tag: 6.3.0
 
-Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom products with multilingual support.
+Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom product pages with multilingual support.
 
 == Description ==
 
 <!-- about -->
 
-**Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom products with multilingual support.**
+**Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom product pages with multilingual support.**
 
 **E-Commerce Plugin Not Required:**
 
@@ -47,7 +47,7 @@ After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Goo
 
 **Google Merchant Feed XML Attributes:**
 
-The following XML product attributes are automatically created based on your WooCommerce, Easy Digital Downloads, and custom products (including WooCommerce product variations):
+The following XML product attributes are automatically created from your WooCommerce, Easy Digital Downloads, and custom products:
 
 * Additional image link <code>&#91;additional_image_link&#93;</code>
 * Adult oriented <code>&#91;adult&#93;</code>
