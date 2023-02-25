@@ -31,7 +31,7 @@ A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is su
 
 WooCommerce simple products, product variations, product attributes, product meta data, and custom fields are all fully supported.
 
-> **Looking to fix the Google Merchant "*Price Mismatched value (page crawl): (price [price])*" error for WooCommerce product variations?**
+> **Looking to fix the Google Merchant "*Price Mismatched value*" error for WooCommerce product variations?**
 >
 > The WPSSO Core plugin fixes all Google Search, Google Rich Results, and Google Merchant errors for WooCommerce products.
 
