@@ -33,7 +33,7 @@ WooCommerce simple products, product variations, product attributes, product met
 
 > **Looking to fix the Google Merchant "*Price Mismatched value*" error for WooCommerce product variations?**
 >
-> The WPSSO Core plugin fixes all Google Search, Google Rich Results, and Google Merchant errors for WooCommerce products.
+> The WPSSO Core plugin fixes the "*Price Mismatched value*" error and all other Google Search, Google Rich Results, and Google Merchant errors for WooCommerce products.
 
 <!-- /about -->
 
