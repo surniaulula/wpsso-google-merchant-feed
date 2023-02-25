@@ -28,9 +28,9 @@
 <p>WooCommerce simple products, product variations, product attributes, product meta data, and custom fields are all fully supported.</p>
 
 <blockquote>
-  <p><strong>Looking to fix the Google Merchant "<em>Price Mismatched value (page crawl): (price [price])</em>" error for WooCommerce variations?</strong></p>
+  <p><strong>Looking to fix the Google Merchant "<em>Price Mismatched value (page crawl): (price [price])</em>" error for WooCommerce product variations?</strong></p>
   
-  <p>The WPSSO Core plugin fixes all Google Search and Google Merchant errors for WooCommerce products and product variations.</p>
+  <p>The WPSSO Core plugin fixes all Google Search, Google Rich Results, and Google Merchant errors for WooCommerce products.</p>
 </blockquote>
 
 <!-- /about -->
