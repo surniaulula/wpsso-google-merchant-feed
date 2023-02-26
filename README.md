@@ -35,10 +35,6 @@
 
 <!-- /about -->
 
-<p><strong>No Settings to Configure:</strong></p>
-
-<p>The WPSSO Google Merchant Feed XML add-on automatically retrieves all available product information in the language (aka locale) requested.</p>
-
 <p><strong>Automatic Multilingual Support:</strong></p>
 
 <p>The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.</p>
