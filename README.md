@@ -2,7 +2,7 @@
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feed XML</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom product pages with multilingual support.</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.</td></tr>
 <tr><th align="right" valign="top" nowrap>Stable Version</th><td>6.3.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.4 or newer</td></tr>
@@ -17,11 +17,11 @@
 
 <!-- about -->
 
-<p><strong>Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom product pages with multilingual support.</strong></p>
+<p><strong>Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.</strong></p>
 
 <p><strong>E-Commerce Plugin Optional:</strong></p>
 
-<p>A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required - the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.</p>
+<p>WooCommerce is suggested but not required - the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.</p>
 
 <p><strong>Complete WooCommerce Support:</strong></p>
 
@@ -43,7 +43,7 @@
 
 <p><strong>Google Merchant Feed XML Attributes:</strong></p>
 
-<p>The following XML product attributes are automatically created from your WooCommerce, Easy Digital Downloads, and custom products:</p>
+<p>The following XML product attributes are automatically created from your WooCommerce and custom products:</p>
 
 <ul>
 <li>Additional image link <code>&#91;additional_image_link&#93;</code></li>

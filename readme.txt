@@ -15,17 +15,17 @@ Tested Up To: 6.1.1
 WC Tested Up To: 7.4.1
 Stable Tag: 6.3.0
 
-Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom product pages with multilingual support.
+Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.
 
 == Description ==
 
 <!-- about -->
 
-**Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and custom product pages with multilingual support.**
+**Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.**
 
 **E-Commerce Plugin Optional:**
 
-A supported e-commerce plugin, like WooCommerce or Easy Digital Downloads, is suggested but not required - the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.
+WooCommerce is suggested but not required - the WPSSO Google Merchant Feed XML add-on can also retrieve custom product information entered in the Document SSO metabox.
 
 **Complete WooCommerce Support:**
 
@@ -45,7 +45,7 @@ After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Goo
 
 **Google Merchant Feed XML Attributes:**
 
-The following XML product attributes are automatically created from your WooCommerce, Easy Digital Downloads, and custom products:
+The following XML product attributes are automatically created from your WooCommerce and custom products:
 
 * Additional image link <code>&#91;additional_image_link&#93;</code>
 * Adult oriented <code>&#91;adult&#93;</code>
@@ -129,6 +129,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 7.3.0-dev.3 (TBD)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v15.5.0-dev.3.
+
 **Version 6.3.0 (2023/02/14)**
 
 * **New Features**
@@ -197,6 +212,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.0.0.
 
 == Upgrade Notice ==
+
+= 7.3.0-dev.3 =
+
+(TBD) None.
 
 = 6.3.0 =
 
