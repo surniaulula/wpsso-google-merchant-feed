@@ -43,21 +43,21 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function maybe_add_rules() {
 
-			global $wp_rewrite;
-
-			$rewrite_rules   = $wp_rewrite->wp_rewrite_rules();
-			$rewrite_key     = '^(' . WPSSOGMF_PAGENAME . ')/feed/(rss2)/([^\./]+)\.xml$';
-			$rewrite_value   = 'index.php?feed_name=$matches[1]&feed_type=$matches[2]&feed_locale=$matches[3]';
-			$rewrite_missing = empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_rules[ $rewrite_key ] !== $rewrite_value ? true : false;
-
 			/*
 			 * Maintain support for the old WPSSO GMF pre-v5.0.0 rewrite rule.
 			 */
 			if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
 
 				add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?feed_name=' .
-					WPSSOGMF_PAGENAME . '&feed_type=rss2&feed_locale=$matches[1]', 'top' );
+					WPSSOGMF_PAGENAME . '&feed_type=feed&feed_format=rss2&feed_locale=$matches[1]', 'top' );
 			}
+
+			global $wp_rewrite;
+
+			$rewrite_rules   = $wp_rewrite->wp_rewrite_rules();
+			$rewrite_key     = '^(' . WPSSOGMF_PAGENAME . ')/(feed|inventory)/(rss2)/([^\./]+)\.xml$';
+			$rewrite_value   = 'index.php?feed_name=$matches[1]&feed_type=$matches[2]&feed_format=$matches[3]&feed_locale=$matches[4]';
+			$rewrite_missing = empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_rules[ $rewrite_key ] !== $rewrite_value ? true : false;
 
 			add_rewrite_rule( $rewrite_key, $rewrite_value, $after = 'top' );
 
@@ -69,7 +69,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function query_vars( $vars ) {
 
-			foreach ( array( 'feed_name', 'feed_type', 'feed_locale' ) as $qv ) {
+			foreach ( array( 'feed_name', 'feed_type', 'feed_format', 'feed_locale' ) as $qv ) {
 
 				if ( ! in_array( $qv, $vars, $strict = true ) ) {
 
@@ -82,8 +82,10 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function template_redirect() {
 
+			$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
 			/*
-			 * Make sure the requested feed_name is valid.
+			 * Make sure the requested name is valid.
 			 */
 			$request_name = get_query_var( 'feed_name' );
 
@@ -97,14 +99,41 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			 */
 			$request_type = get_query_var( 'feed_type' );
 
-			if ( 'rss2' !== $request_type ) {
+			if ( 'rss2' === $request_type ) {	// Backwards compatibility.
 
-				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+				$request_type   = 'feed';
+				$request_format = 'rss2';
 
-				WpssoErrorException::http_error( 400, sprintf( __( '%s requested feed type is unknown.',
-					'wpsso-google-merchant-feed' ), $metabox_title ) );
+			} else {
+
+				if ( 'inventory' === $request_type ) {
+	
+					$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
+	
+					if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
+					
+						WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested type "%2$s" is invalid.',
+							'wpsso-google-merchant-feed' ), $metabox_title, $request_type ) );
+					}
+	
+				} elseif ( 'feed' !== $request_type ) {
+	
+					WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested type "%2$s" is unknown.',
+						'wpsso-google-merchant-feed' ), $metabox_title, $request_type ) );
+				}
+	
+				/*
+				 * Make sure the requested format is valid.
+				 */
+				$request_format = get_query_var( 'feed_format' );
+	
+				if ( 'rss2' !== $request_format ) {
+	
+					WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested format "%2$s" is unknown.',
+						'wpsso-google-merchant-feed' ), $metabox_title, $request_format ) );
+				}
 			}
-
+	
 			/*
 			 * Make sure the requested locale is valid.
 			 */
@@ -114,23 +143,19 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( ! isset( $locale_names[ $request_locale ] ) ) {
 
-				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
-
-				WpssoErrorException::http_error( 400, sprintf( __( '%s requested feed locale is unknown.',
-					'wpsso-google-merchant-feed' ), $metabox_title ) );
+				WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested locale "%2$s" is unknown.',
+					'wpsso-google-merchant-feed' ), $metabox_title, $request_locale ) );
 			}
 
 			$wpsso =& Wpsso::get_instance();
 
 			if ( $doing_task = $wpsso->util->cache->doing_task() ) {
 
-				$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
-
 				WpssoErrorException::http_error( 503, sprintf( __( '%s is currently unavailable pending completion of a maintenance task.',
 					'wpsso-google-merchant-feed' ), $metabox_title ) );
 			}
 
-			$document_xml = WpssoGmfXml::get( $request_locale );
+			$document_xml = WpssoGmfXml::get( $request_locale, $request_type );
 			$disposition  = 'attachment';
 			$filename     = SucomUtil::sanitize_file_name( $request_name . '-' . $request_locale . '.xml' );
 
@@ -162,7 +187,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			exit;
 		}
 
-		static public function get_url( $locale, $blog_id = null ) {
+		static public function get_url( $locale, $type = 'feed', $blog_id = null ) {
 
 			global $wp_rewrite;
 
@@ -170,13 +195,14 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				$url = add_query_arg( array(
 					'feed_name'   => WPSSOGMF_PAGENAME,
-					'feed_type'   => 'rss2',
+					'feed_type'   => $type,
+					'feed_format' => 'rss2',
 					'feed_locale' => $locale,
 				), get_home_url( $blog_id ) );
 
 			} else {
 
-				$url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/feed/rss2/' . $locale . '.xml' );
+				$url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $type . '/rss2/' . $locale . '.xml' );
 			}
 
 			return $url;

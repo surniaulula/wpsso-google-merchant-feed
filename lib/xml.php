@@ -19,11 +19,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 	class WpssoGmfXml {
 
 		/*
-		 * Clear the feed XML file cache for this locale, or the requested locale.
+		 * Clear the feed XML cache files.
 		 *
 		 * See WpssoGmfActions->action_refresh_post_cache().
 		 */
-		static public function clear_cache( $request_locale = null ) {
+		static public function clear_cache( $request_locale = null, $request_type = 'feed' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -32,13 +32,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$request_locale = SucomUtil::get_locale();
 			}
 
-			$cache_salt     = __CLASS__ . '(locale:' . $request_locale . ')';
+			$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . ')';
 			$cache_file_ext = '.xml';
 
 			$wpsso->cache->clear_cache_data( $cache_salt, $cache_file_ext );	// Clear the feed XML cache file.
 		}
 
-		static public function get( $request_locale = null ) {
+		static public function get( $request_locale = null, $request_type = 'feed' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -70,7 +70,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$cache_md5_pre  = 'wpsso_g_';
 			$cache_type     = 'file';
-			$cache_salt     = __CLASS__ . '(locale:' . $request_locale . ')';
+			$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . ')';
 			$cache_file_ext = '.xml';
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
 

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.3.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 7.3.0-dev.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -36,8 +36,8 @@ msgstr ""
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
 msgid ""
-"Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
-"Custom Products with Multilingual Support."
+"Google Merchant Feed XMLs for WooCommerce and custom product pages, with "
+"multilingual support."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
@@ -49,17 +49,17 @@ msgstr ""
 msgid "checking google merchant feed"
 msgstr ""
 
-#: lib/actions.php:117
+#: lib/actions.php:118
 msgid "checking google merchant feed images"
 msgstr ""
 
-#: lib/actions.php:134
+#: lib/actions.php:135
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:136
+#: lib/actions.php:137
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."
@@ -156,9 +156,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:91 lib/rewrite.php:102 lib/rewrite.php:117
-#: lib/rewrite.php:127 lib/submenu/gmf-general.php:75
-#: lib/submenu/gmf-general.php:110
+#: lib/filters.php:91 lib/rewrite.php:85 lib/submenu/gmf-general.php:87
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -167,30 +165,57 @@ msgstr ""
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/rewrite.php:104
-msgid "%s requested feed type is unknown."
+#: lib/rewrite.php:111 lib/submenu/gmf-general.php:88
+msgctxt "metabox title"
+msgid "Google Merchant Inventory XML"
 msgstr ""
 
-#: lib/rewrite.php:119
-msgid "%s requested feed locale is unknown."
+#: lib/rewrite.php:115
+msgid "%1$s requested type \"%2$s\" is invalid."
 msgstr ""
 
-#: lib/rewrite.php:129 lib/submenu/gmf-general.php:115
+#: lib/rewrite.php:121
+msgid "%1$s requested type \"%2$s\" is unknown."
+msgstr ""
+
+#: lib/rewrite.php:132
+msgid "%1$s requested format \"%2$s\" is unknown."
+msgstr ""
+
+#: lib/rewrite.php:146
+msgid "%1$s requested locale \"%2$s\" is unknown."
+msgstr ""
+
+#: lib/rewrite.php:154 lib/submenu/gmf-general.php:201
 msgid "%s is currently unavailable pending completion of a maintenance task."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:61
+#: lib/submenu/gmf-general.php:61 lib/submenu/gmf-general.php:75
 msgctxt "submit button"
-msgid "Refresh Feed XML Cache"
-msgstr ""
-
-#: lib/submenu/gmf-general.php:113
-msgid "A background task to %s is currently running."
+msgid "Refresh XML Cache"
 msgstr ""
 
 #: lib/submenu/gmf-general.php:137
 msgctxt "option comment"
 msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
+msgstr ""
+
+#: lib/submenu/gmf-general.php:150
+msgid ""
+"An e-commerce plugin is required to manage product inventory quantities."
+msgstr ""
+
+#: lib/submenu/gmf-general.php:152
+msgid "%s is unavailable pending the activation of an e-commerce plugin."
+msgstr ""
+
+#: lib/submenu/gmf-general.php:170
+msgctxt "option label"
+msgid "Store Code"
+msgstr ""
+
+#: lib/submenu/gmf-general.php:199
+msgid "A background task to %s is currently running."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -203,8 +228,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Google Merchant Feed XMLs for WooCommerce, Easy Digital Downloads, and "
-"Custom Products with Multilingual Support."
+"Google Merchant Feed XMLs for WooCommerce and custom product pages, with "
+"multilingual support."
 msgstr ""
 
 #. Author of the plugin/theme
