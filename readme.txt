@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2
 Requires At Least: 5.4
 Tested Up To: 6.2.0
-WC Tested Up To: 7.5.0
+WC Tested Up To: 7.5.1
 Stable Tag: 6.3.0
 
 Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.
@@ -30,10 +30,6 @@ WooCommerce is suggested but not required - the WPSSO Google Merchant Feed XML a
 **Complete WooCommerce Support:**
 
 WooCommerce simple products, product variations, product attributes, product meta data, and custom fields are all fully supported.
-
-> **Looking to fix the Google Merchant "*Price Mismatched value*" error for WooCommerce product variations?**
->
-> The WPSSO Core plugin fixes the "*Price Mismatched value*" error and all other Google Search, Google Rich Results, and Google Merchant errors for WooCommerce products.
 
 <!-- /about -->
 
