@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.3.0-dev.3 (TBD)**
+**Version 6.4.0-dev.4 (2023/03/30)**
 
 * **New Features**
 	* None.
@@ -134,11 +134,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a 'feed_format' query argument to the rewrite rule.
+	* Added a `$ype` argument for the `WpssoGmfRewrite::get_url()` method.
+	* Added a `$request_type` argument for the `WpssoGmfXml::clear_cache()` method.
+	* Added a `$request_type` argument for the `WpssoGmfXml::get()` method.
+	* Added a `WpssoGmfSubmenuGmfGeneral->add_table_rows_doing_task()` private method.
+	* Refactoted the `WpssoGmfSubmenuGmfGeneral->show_metabox_cmcf()` method.
+	* Refactoted the `WpssoGmfSubmenuGmfGeneral->get_table_rows()` method.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
-	* WPSSO Core v15.5.0-dev.3.
+	* WPSSO Core v15.5.1.
 
 **Version 6.3.0 (2023/02/14)**
 
@@ -209,9 +215,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.3.0-dev.3 =
+= 6.4.0-dev.4 =
 
-(TBD) None.
+(2023/03/30) Added a 'feed_format' query argument to the rewrite rule.
 
 = 6.3.0 =
 
