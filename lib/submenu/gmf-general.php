@@ -85,7 +85,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 			foreach ( array(
 				'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
-				'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+				//'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
 			) as $metabox_id => $metabox_title ) {
 
 				$metabox_screen  = $this->pagehook;
@@ -168,7 +168,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 					 */
 					$table_rows[ 'gmf_store_code' ] = '' .
 						$this->form->get_th_html( _x( 'Store Code', 'option label', 'wpsso' ),
-							$css_class = '', $css_id = 'gmf_store_code' ) .
+							$css_class = 'medium', $css_id = 'gmf_store_code' ) .
 						'<td>' . $this->form->get_input( 'gmf_store_code', 'short' ) . '</td>';
 
 					if ( ! empty( $this->p->options[ 'gmf_store_code' ] ) ) {

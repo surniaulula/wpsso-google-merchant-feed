@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 7.3.0-dev.3\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.4.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -165,7 +165,7 @@ msgstr ""
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/rewrite.php:111 lib/submenu/gmf-general.php:88
+#: lib/rewrite.php:111
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
