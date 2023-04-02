@@ -71,7 +71,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 					$form_button_rows[ 0 ] = SucomUtil::preg_grep_keys( '/^change_show_options/', $form_button_rows[ 0 ], $invert = true );
 				}
-				
+
 				$form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
 			}
 
@@ -110,7 +110,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 			if ( $this->doing_task ) {
 
 				$this->add_table_rows_doing_task( $table_rows, $metabox_title );
-			
+
 				return $table_rows;
 			}
 
@@ -152,7 +152,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 							'<p class="status-msg">' . sprintf( __( '%s is unavailable pending the activation of an e-commerce plugin.',
 								'wpsso-google-merchant-feed' ), $metabox_title ) . '</p>' .
 							'</td></tr>';
-				
+
 						return $table_rows;
 					}
 
@@ -190,7 +190,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 			return $table_rows;
 		}
-		
+
 		private function add_table_rows_doing_task( &$table_rows, $metabox_title ) {	// Pass by reference is OK.
 
 			$task_name_transl = _x( $this->doing_task, 'task name', 'wpsso' );

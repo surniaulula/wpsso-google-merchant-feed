@@ -107,33 +107,33 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			} else {
 
 				if ( 'inventory' === $request_type ) {
-	
+
 					$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
-	
+
 					if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
-					
+
 						WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested type "%2$s" is invalid.',
 							'wpsso-google-merchant-feed' ), $metabox_title, $request_type ) );
 					}
-	
+
 				} elseif ( 'feed' !== $request_type ) {
-	
+
 					WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested type "%2$s" is unknown.',
 						'wpsso-google-merchant-feed' ), $metabox_title, $request_type ) );
 				}
-	
+
 				/*
 				 * Make sure the requested format is valid.
 				 */
 				$request_format = get_query_var( 'feed_format' );
-	
+
 				if ( 'rss2' !== $request_format ) {
-	
+
 					WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested format "%2$s" is unknown.',
 						'wpsso-google-merchant-feed' ), $metabox_title, $request_format ) );
 				}
 			}
-	
+
 			/*
 			 * Make sure the requested locale is valid.
 			 */
