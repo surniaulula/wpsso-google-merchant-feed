@@ -135,12 +135,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* None.
 * **Developer Notes**
 	* Added a 'feed_format' query argument to the rewrite rule.
-	* Added a `$ype` argument for the `WpssoGmfRewrite::get_url()` method.
+	* Added a `$type` argument for the `WpssoGmfRewrite::get_url()` method.
 	* Added a `$request_type` argument for the `WpssoGmfXml::clear_cache()` method.
 	* Added a `$request_type` argument for the `WpssoGmfXml::get()` method.
 	* Added a `WpssoGmfSubmenuGmfGeneral->add_table_rows_doing_task()` private method.
-	* Refactoted the `WpssoGmfSubmenuGmfGeneral->show_metabox_cmcf()` method.
-	* Refactoted the `WpssoGmfSubmenuGmfGeneral->get_table_rows()` method.
+	* Refactored the `WpssoGmfSubmenuGmfGeneral->show_metabox_cmcf()` method.
+	* Refactored the `WpssoGmfSubmenuGmfGeneral->get_table_rows()` method.
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.4.
