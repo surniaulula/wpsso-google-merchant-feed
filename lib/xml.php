@@ -107,7 +107,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_url   = SucomUtil::get_home_url( $wpsso->options, $request_locale );
 			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $request_locale );
 			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
-			$query_args = array( 'meta_query' => self::get_meta_query() );
+			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product' ) );
 
 			$public_ids = WpssoPost::get_public_ids( $query_args );
 
@@ -180,46 +180,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 
 			return $xml;
-		}
-
-		/*
-		 * See https://developer.wordpress.org/reference/classes/wp_meta_query/.
-		 */
-		static private function get_meta_query() {
-
-			static $local_cache = null;
-
-			if ( null === $local_cache ) {
-
-				$local_cache  = '';	// Default WP_Query value is an empty string.
-				$og_type_key  = WpssoAbstractWpMeta::get_column_meta_keys( 'og_type' );
-				$noindex_key  = WpssoAbstractWpMeta::get_column_meta_keys( 'is_noindex' );
-				$redirect_key = WpssoAbstractWpMeta::get_column_meta_keys( 'is_redirect' );
-
-				$local_cache = array(
-					'relation' => 'AND',
-					array(
-						'key'     => $og_type_key,
-						'value'   => 'product',
-						'compare' => '=',
-						'type'    => 'CHAR',
-					),
-					array(
-						'key'     => $noindex_key,
-						'value'   => '1',
-						'compare' => '!=',
-						'type'    => 'CHAR',
-					),
-					array(
-						'key'     => $redirect_key,
-						'value'   => '1',
-						'compare' => '!=',
-						'type'    => 'CHAR',
-					),
-				);
-			}
-
-			return $local_cache;	// Return an empty string or array.
 		}
 
 		static private function add_feed_product( &$rss2_feed, array $mt_single ) {
