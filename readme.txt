@@ -125,6 +125,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.5.0-dev.3 (2023/04/11)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Replaced the `WpssoGmfXml::get_meta_query()` private method by the new `WpssoAbstractWpMeta::get_column_meta_query_og_type()` public method in WPSSO Core v15.8.0.
+* **Requires At Least**
+	* PHP v7.2.
+	* WordPress v5.4.
+	* WPSSO Core v15.8.0-dev.3.
+
 **Version 6.4.0 (2023/03/30)**
 
 * **New Features**
@@ -214,6 +229,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.0.0.
 
 == Upgrade Notice ==
+
+= 6.5.0-dev.3 =
+
+(2023/04/11) Replaced the `WpssoGmfXml::get_meta_query()` private method by a new public method in WPSSO Core v15.8.0.
 
 = 6.4.0 =
 
