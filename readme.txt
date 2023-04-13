@@ -10,7 +10,7 @@ Tags: google shopping feed, google merchant center, woocommerce product feed, go
 Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2
-Requires At Least: 5.4
+Requires At Least: 5.5
 Tested Up To: 6.2.0
 WC Tested Up To: 7.5.1
 Stable Tag: 6.4.0
@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Replaced the `WpssoGmfXml::get_meta_query()` private method by the new `WpssoAbstractWpMeta::get_column_meta_query_og_type()` public method in WPSSO Core v15.8.0.
 * **Requires At Least**
 	* PHP v7.2.
-	* WordPress v5.4.
+	* WordPress v5.5.
 	* WPSSO Core v15.8.0-rc.2.
 
 **Version 6.4.0 (2023/03/30)**
