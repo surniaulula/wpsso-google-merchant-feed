@@ -72,7 +72,15 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 			$xml_count      = 0;
 			$current_locale = SucomUtil::get_locale();
-			$locale_names   = SucomUtil::get_available_feed_locale_names();	// Uses a local cache.
+
+			/*
+			 * Calls SucomUtil::get_available_locale_names() and applies the 'sucom_available_feed_locale_names'
+			 * filter.
+			 *
+			 * Returns an associative array with locale keys and native names (example: 'en_US' => 'English (United
+			 * States)').
+			 */
+			$locale_names = SucomUtil::get_available_feed_locale_names();	// Uses a local cache.
 
 			/*
 			 * Move the current locale last to generate any notices in the current locale.
