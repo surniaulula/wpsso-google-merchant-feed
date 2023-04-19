@@ -13,7 +13,7 @@ Requires PHP: 7.2
 Requires At Least: 5.5
 Tested Up To: 6.2.0
 WC Tested Up To: 7.6.0
-Stable Tag: 6.5.0
+Stable Tag: 6.6.0
 
 Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.
 
@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.6.0 (2023/04/19)**
+**Version 6.6.0 (2023/04/20)**
 
 * **New Features**
 	* None.
@@ -247,7 +247,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 6.6.0 =
 
-(2023/04/19) Added the requested locale to the XML 'meta_query' array.
+(2023/04/20) Added the requested locale to the XML 'meta_query' array.
 
 = 6.5.0 =
 
