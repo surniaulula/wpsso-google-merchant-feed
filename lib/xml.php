@@ -59,8 +59,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					$wpsso->debug->log( 'switching to request locale ' . $request_locale );
 				}
 
-				$is_switched    = switch_to_locale( $request_locale );
-				$current_locale = SucomUtil::get_locale();	// Update the current locale value.
+				$is_switched    = switch_to_locale( $request_locale );	// Switches to locale if the WP language is installed.
+				$current_locale = SucomUtil::get_locale();		// Update the current locale value.
 
 				if ( $wpsso->debug->enabled ) {
 
@@ -107,7 +107,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_url   = SucomUtil::get_home_url( $wpsso->options, $request_locale );
 			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $request_locale );
 			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
-			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product' ) );
+			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
 
 			$public_ids = WpssoPost::get_public_ids( $query_args );
 

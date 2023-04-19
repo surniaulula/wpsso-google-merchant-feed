@@ -47,22 +47,15 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 
 		public function filter_form_button_rows( $form_button_rows ) {
 
+			//$show_save_settings = empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ? false : true;
+
+			$show_save_settings = false;
+
 			if ( $this->doing_task ) {
 
 				$form_button_rows = array();
 
-			} elseif ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
-
-				/*
-				 * Remove all action buttons from this settings page and add a "Refresh XML Cache" button.
-				 */
-				$form_button_rows = array(
-					array(
-						'refresh_feed_xml_cache' => _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
-					),
-				);
-
-			} else {
+			} elseif ( $show_save_settings ) {	// E-commerce plugin active.
 
 				/*
 				 * Remove the "Change to View" button from this settings page.
@@ -73,6 +66,17 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 				}
 
 				$form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
+
+			} else {
+
+				/*
+				 * Remove all action buttons from this settings page and add a "Refresh XML Cache" button.
+				 */
+				$form_button_rows = array(
+					array(
+						'refresh_feed_xml_cache' => _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
+					),
+				);
 			}
 
 			return $form_button_rows;

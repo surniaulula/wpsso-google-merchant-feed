@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.5.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.6.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -156,7 +156,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:87
+#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:91
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -186,35 +186,35 @@ msgstr ""
 msgid "%1$s requested locale \"%2$s\" is unknown."
 msgstr ""
 
-#: lib/rewrite.php:154 lib/submenu/gmf-general.php:201
+#: lib/rewrite.php:154 lib/submenu/gmf-general.php:205
 msgid "%s is currently unavailable pending completion of a maintenance task."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:61 lib/submenu/gmf-general.php:75
+#: lib/submenu/gmf-general.php:68 lib/submenu/gmf-general.php:77
 msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:137
+#: lib/submenu/gmf-general.php:141
 msgctxt "option comment"
 msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:150
+#: lib/submenu/gmf-general.php:154
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:152
+#: lib/submenu/gmf-general.php:156
 msgid "%s is unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:170
+#: lib/submenu/gmf-general.php:174
 msgctxt "option label"
 msgid "Store Code"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:199
+#: lib/submenu/gmf-general.php:203
 msgid "A background task to %s is currently running."
 msgstr ""
 
