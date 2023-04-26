@@ -9,7 +9,7 @@ Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
 Tags: google shopping feed, google merchant center, woocommerce product feed, google shopping, woocommerce, wpml, polylang, easy digital downloads
 Contributors: jsmoriss
 Requires Plugins: wpsso
-Requires PHP: 7.2
+Requires PHP: 7.2.5
 Requires At Least: 5.5
 Tested Up To: 6.2.0
 WC Tested Up To: 7.6.0
@@ -136,7 +136,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* None.
 * **Requires At Least**
-	* PHP v7.2.
+	* PHP v7.2.5.
 	* WordPress v5.5.
 	* WPSSO Core v15.11.0-dev.2.
 
