@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.0-dev.1 (TBD)**
+**Version 7.0.0-dev.2 (TBD)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.
 	* WordPress v5.5.
-	* WPSSO Core v15.11.0-dev.1.
+	* WPSSO Core v15.11.0-dev.2.
 
 **Version 6.6.0 (2023/04/20)**
 
@@ -260,7 +260,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 7.0.0-dev.1 =
+= 7.0.0-dev.2 =
 
 (TBD) None.
 
