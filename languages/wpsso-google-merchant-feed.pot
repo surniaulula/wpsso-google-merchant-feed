@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.6.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 7.0.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -133,30 +133,40 @@ msgid ""
 "dimensions are %s)."
 msgstr ""
 
-#: lib/filters-messages.php:121
+#: lib/filters-messages.php:109
+msgid "The store code from Google's Business Profiles."
+msgstr ""
+
+#: lib/filters-messages.php:111
+msgid ""
+"The value is case-sensitive and must match the store code in your Google "
+"Business Profile."
+msgstr ""
+
+#: lib/filters-messages.php:135
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-messages.php:124 lib/filters-messages.php:137
+#: lib/filters-messages.php:138 lib/filters-messages.php:151
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:127
+#: lib/filters-messages.php:141
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:134
+#: lib/filters-messages.php:148
 msgid ""
 "A customized image URL (instead of an image ID) for the Google merchant feed "
 "XML."
 msgstr ""
 
-#: lib/filters-messages.php:140
+#: lib/filters-messages.php:154
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:91
+#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:89
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -165,7 +175,7 @@ msgstr ""
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/rewrite.php:111
+#: lib/rewrite.php:111 lib/submenu/gmf-general.php:90
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
@@ -186,35 +196,35 @@ msgstr ""
 msgid "%1$s requested locale \"%2$s\" is unknown."
 msgstr ""
 
-#: lib/rewrite.php:154 lib/submenu/gmf-general.php:205
+#: lib/rewrite.php:154 lib/submenu/gmf-general.php:203
 msgid "%s is currently unavailable pending completion of a maintenance task."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:68 lib/submenu/gmf-general.php:77
+#: lib/submenu/gmf-general.php:66 lib/submenu/gmf-general.php:75
 msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:141
+#: lib/submenu/gmf-general.php:139
 msgctxt "option comment"
 msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:154
+#: lib/submenu/gmf-general.php:152
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:156
+#: lib/submenu/gmf-general.php:154
 msgid "%s is unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:174
+#: lib/submenu/gmf-general.php:172
 msgctxt "option label"
 msgid "Store Code"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:203
+#: lib/submenu/gmf-general.php:201
 msgid "A background task to %s is currently running."
 msgstr ""
 

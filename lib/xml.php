@@ -153,7 +153,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							$wpsso->debug->log( 'adding variant #' . $num . ' for post id ' . $post_id );
 						}
 
-						self::add_feed_product( $rss2_feed, $mt_single );
+						self::add_feed_product( $rss2_feed, $mt_single, $request_type );
 					}
 
 				} else {
@@ -163,7 +163,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						$wpsso->debug->log( 'adding product for post id ' . $post_id );
 					}
 
-					self::add_feed_product( $rss2_feed, $mt_og );
+					self::add_feed_product( $rss2_feed, $mt_og, $request_type );
 				}
 			}
 
@@ -182,6 +182,12 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $xml;
 		}
 
+		/*
+		 * See product feed specification https://support.google.com/merchants/answer/7052112.
+		 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
+		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
+		 * See store feed specification at https://support.google.com/merchants/answer/7677622.
+		 */
 		static private function add_feed_product( &$rss2_feed, array $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
@@ -201,7 +207,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		}
 
 		/*
-		 * See https://support.google.com/merchants/answer/7052112.
+		 * See product feed specification https://support.google.com/merchants/answer/7052112.
 		 */
 		static private function add_product_data( &$product, $mt_single ) {
 

@@ -99,6 +99,20 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
+				/*
+				 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
+				 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
+				 * See store feed specification at https://support.google.com/merchants/answer/7677622.
+				 */
+				case 'tooltip-gmf_store_code':
+
+					$text = __( 'The store code from Google\'s Business Profiles.', 'wpsso-google-merchant-feed' ) . ' ';
+
+					$text .= __( 'The value is case-sensitive and must match the store code in your Google Business Profile.',
+						'wpsso-google-merchant-feed' );
+
+					break;
+
 			}	// End of 'tooltip' switch.
 
 			return $text;
