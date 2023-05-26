@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 6.6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-04-19 14:29-0700\n"
+"PO-Revision-Date: 2023-05-26 04:12-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.1\n"
 
 #: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:209
 msgid "The %1$s add-on requires the %2$s plugin."
@@ -113,27 +113,35 @@ msgstr "Ceci est un produit variable - les images des variantes du produit rempl
 msgid "The dimensions used for the Google merchant feed XML image (default dimensions are %s)."
 msgstr "Les dimensions utilisées pour l'image flux XML de marchand Google (les dimensions par défaut sont %s)."
 
-#: lib/filters-messages.php:121
+#: lib/filters-messages.php:109
+msgid "The store code from Google's Business Profiles."
+msgstr "Le code de magasin des profils d'entreprise de Google."
+
+#: lib/filters-messages.php:111
+msgid "The value is case-sensitive and must match the store code in your Google Business Profile."
+msgstr "La valeur est sensible à la casse et doit correspondre au code de magasin dans votre profil d'entreprise Google."
+
+#: lib/filters-messages.php:135
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr "ID d'image personnalisé pour le flux XML de marchand Google."
 
-#: lib/filters-messages.php:124 lib/filters-messages.php:137
+#: lib/filters-messages.php:138 lib/filters-messages.php:151
 msgid "The default value is inherited from the Schema markup or priority image."
 msgstr "La valeur par défaut est héritée du balisage de Schéma ou de l'image prioritaire."
 
-#: lib/filters-messages.php:127
+#: lib/filters-messages.php:141
 msgid "This option is disabled if a custom image URL is entered."
 msgstr "Cette option est désactivée si une URL d'image personnalisée est fournie."
 
-#: lib/filters-messages.php:134
+#: lib/filters-messages.php:148
 msgid "A customized image URL (instead of an image ID) for the Google merchant feed XML."
 msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour le flux XML de marchand Google."
 
-#: lib/filters-messages.php:140
+#: lib/filters-messages.php:154
 msgid "This option is disabled if a custom image ID is selected."
 msgstr "Cette option est désactivée si un ID d'image personnalisé est sélectionné."
 
-#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:91
+#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:89
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
@@ -142,7 +150,7 @@ msgstr "Flux XML de marchand Google"
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr "%1$s pour %2$s locales a été actualisé."
 
-#: lib/rewrite.php:111
+#: lib/rewrite.php:111 lib/submenu/gmf-general.php:90
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr "Inventaire XML de marchand Google"
@@ -163,34 +171,34 @@ msgstr "%1$s format demandé \"%2$s\" est inconnu."
 msgid "%1$s requested locale \"%2$s\" is unknown."
 msgstr "%1$s locale demandée \"%2$s\" est inconnue."
 
-#: lib/rewrite.php:154 lib/submenu/gmf-general.php:205
+#: lib/rewrite.php:154 lib/submenu/gmf-general.php:203
 msgid "%s is currently unavailable pending completion of a maintenance task."
 msgstr "%s est actuellement indisponible en attendant l'achèvement d'une tâche de maintenance."
 
-#: lib/submenu/gmf-general.php:68 lib/submenu/gmf-general.php:77
+#: lib/submenu/gmf-general.php:66 lib/submenu/gmf-general.php:75
 msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr "Rafraîchir cache XML"
 
-#: lib/submenu/gmf-general.php:141
+#: lib/submenu/gmf-general.php:139
 msgctxt "option comment"
 msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
 msgstr "%1$s éléments de flux, %2$s liens d'image et %3$s liens d'image supplémentaires."
 
-#: lib/submenu/gmf-general.php:154
+#: lib/submenu/gmf-general.php:152
 msgid "An e-commerce plugin is required to manage product inventory quantities."
 msgstr "Une extension e-commerce est nécessaire pour gérer les quantités d'inventaire des produits."
 
-#: lib/submenu/gmf-general.php:156
+#: lib/submenu/gmf-general.php:154
 msgid "%s is unavailable pending the activation of an e-commerce plugin."
 msgstr "%s est indisponible en attendant l'activation d'une extension e-commerce."
 
-#: lib/submenu/gmf-general.php:174
+#: lib/submenu/gmf-general.php:172
 msgctxt "option label"
 msgid "Store Code"
 msgstr "Code de magasin"
 
-#: lib/submenu/gmf-general.php:203
+#: lib/submenu/gmf-general.php:201
 msgid "A background task to %s is currently running."
 msgstr "Une tâche en arrière-plan pour %s est en cours d'exécution."
 
