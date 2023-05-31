@@ -108,7 +108,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $request_locale );
 			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
 			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
-
 			$public_ids = WpssoPost::get_public_ids( $query_args );
 
 			if ( $wpsso->debug->enabled ) {
