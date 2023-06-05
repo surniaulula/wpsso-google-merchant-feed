@@ -175,7 +175,7 @@ msgstr ""
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/rewrite.php:111 lib/submenu/gmf-general.php:90
+#: lib/rewrite.php:111
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
