@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 7.0.0-dev.1 (TBD)**
+**Version 7.0.0-dev.1 (2023/06/05)**
 
 * **New Features**
 	* None.
@@ -262,7 +262,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 7.0.0-dev.1 =
 
-(TBD) None.
+(2023/06/05) None.
 
 = 6.6.0 =
 
