@@ -28,7 +28,7 @@ if ( ! class_exists( 'WpssoGmfFiltersAdvanced' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_filters( $this, array(
-					'plugin_image_sizes_rows' => 4,
+					'plugin_image_sizes_rows' => 3,
 				) );
 			}
 		}
@@ -36,11 +36,11 @@ if ( ! class_exists( 'WpssoGmfFiltersAdvanced' ) ) {
 		/*
 		 * SSO > Advanced Settings > Plugin Settings > Image Sizes tab.
 		 */
-		public function filter_plugin_image_sizes_rows( $table_rows, $form, $network, $pp ) {
+		public function filter_plugin_image_sizes_rows( $table_rows, $form, $network ) {
 
 			$table_rows[ 'gmf_img_size' ] = '' .
 				$form->get_th_html( _x( 'Google Merchant Feed XML', 'option label', 'wpsso-google-merchant-feed' ),
-					$css_class = '', $css_id = 'gmf_img_size' ) . ( $pp ?
+					$css_class = '', $css_id = 'gmf_img_size' ) . ( $this->p->check->pp() ?
 				'<td>' . $form->get_input_image_dimensions( 'gmf_img' ) . '</td>' :
 				'<td class="blank">' . $form->get_no_input_image_dimensions( 'gmf_img' ) . '</td>' );
 
