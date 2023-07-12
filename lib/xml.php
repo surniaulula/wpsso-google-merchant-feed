@@ -219,7 +219,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			self::sanitize_mt_array( $mt_single );
 
-			$names = array(
+			$mt_names = array(
 
 				/*
 				 * Basic product data.
@@ -291,7 +291,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				'product:shipping_height:value' => 'setShippingHeight',
 			);
 
-			foreach ( $names as $mt_name => $mixed ) {
+			foreach ( $mt_names as $mt_name => $mixed ) {
 
 				if ( isset( $mt_single[ $mt_name ] ) && '' !== $mt_single[ $mt_name ] ) {	// Not null or empty string.
 
