@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.6.1-rc.1 (2023/07/13)**
+**Version 6.6.1 (2023/07/13)**
 
 * **New Features**
 	* None.
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v15.16.0-rc.1.
+	* WPSSO Core v15.16.0.
 
 **Version 6.6.0 (2023/04/20)**
 
@@ -260,7 +260,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.6.1-rc.1 =
+= 6.6.1 =
 
 (2023/07/13) Updated the 'wpsso_plugin_image_sizes_rows' filter arguments for WPSSO Core v15.16.0.
 
