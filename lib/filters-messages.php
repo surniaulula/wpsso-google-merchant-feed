@@ -15,7 +15,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 	class WpssoGmfFiltersMessages {
 
 		private $p;	// Wpsso class object.
-		private $a;     // WpssoGmf class object.
+		private $a;	// WpssoGmf class object.
 
 		/*
 		 * Instantiated by WpssoGmfFilters->__construct().
