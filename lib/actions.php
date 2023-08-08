@@ -42,7 +42,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			if ( is_admin() ) {
 
 				$this->p->util->add_plugin_actions( $this, array(
-					'load_setting_page_refresh_feed_xml_cache' => 4,
+					'load_settings_page_refresh_feed_xml_cache' => 4,
 				) );
 			}
 		}
@@ -101,7 +101,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			}
 		}
 
-		public function action_load_setting_page_refresh_feed_xml_cache( $pagehook, $menu_id, $menu_name, $menu_lib ) {
+		public function action_load_settings_page_refresh_feed_xml_cache( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
 			$notice_msg = $this->a->filters->filter_cache_refreshed_notice( $notice_msg = '' );
 
