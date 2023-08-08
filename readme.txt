@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.7.0-dev.1 (TBD)**
+**Version 6.7.0-dev.1 (2023/08/08)**
 
 * **New Features**
 	* None.
@@ -134,7 +134,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Updated filter hook names for WPSSO Core v15.19.0:
+		* Renamed the 'load_setting_page_*' filter hooks to 'load_settings_page_*'.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
@@ -277,7 +278,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 6.7.0-dev.1 =
 
-(TBD) None.
+(2023/08/08) Updated filter hook names for WPSSO Core v15.19.0.
 
 = 6.6.1 =
 
