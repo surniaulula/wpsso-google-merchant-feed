@@ -360,7 +360,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 
 					if ( empty( $classname ) ) {
 
-						$classname = SucomUtil::sanitize_classname( 'wpssogmf' . $filespec, $allow_underscore = false );
+						return SucomUtil::sanitize_classname( 'wpssogmf' . $filespec, $allow_underscore = false );
 					}
 
 					return $classname;
