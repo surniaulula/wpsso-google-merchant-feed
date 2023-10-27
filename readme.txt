@@ -125,6 +125,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 6.8.0-dev.4 (2023/10/27)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Change for deprecated method.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Changed deprecated `WpssoUtilCache->doing_task()` call for `WpssoUtilCache->is_refresh_running()`.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v16.5.0-dev.4.
+
 **Version 6.7.0 (2023/08/09)**
 
 * **New Features**
@@ -275,6 +290,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v15.0.0.
 
 == Upgrade Notice ==
+
+= 6.8.0-dev.4 =
+
+(2023/10/27) Change for deprecated method.
 
 = 6.7.0 =
 
