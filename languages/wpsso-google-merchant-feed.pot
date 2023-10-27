@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.8.0-dev.4\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.8.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -196,8 +196,8 @@ msgstr ""
 msgid "%1$s requested locale \"%2$s\" is unknown."
 msgstr ""
 
-#: lib/rewrite.php:154
-msgid "%s is currently unavailable pending a cache refresh task."
+#: lib/rewrite.php:154 lib/submenu/gmf-general.php:199
+msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
 #: lib/submenu/gmf-general.php:62 lib/submenu/gmf-general.php:71
@@ -231,10 +231,6 @@ msgstr ""
 
 #: lib/submenu/gmf-general.php:197
 msgid "A background task to %s is currently running."
-msgstr ""
-
-#: lib/submenu/gmf-general.php:199
-msgid "%s is currently unavailable pending completion of a maintenance task."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

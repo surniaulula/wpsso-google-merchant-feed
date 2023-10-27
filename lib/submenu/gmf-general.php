@@ -196,7 +196,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGmfGeneral' ) && class_exists( 'WpssoAdmin'
 			$table_rows[ 'wpssogmf_disabled' ] = '<tr><td align="center">' .
 				'<p class="status-msg">' . sprintf( __( 'A background task to %s is currently running.',
 					'wpsso-google-merchant-feed' ), $task_name_transl ) . '</p>' .
-				'<p class="status-msg">' . sprintf( __( '%s is currently unavailable pending completion of a maintenance task.',
+				'<p class="status-msg">' . sprintf( __( '%s is currently unavailable pending completion of a cache refresh task.',
 					'wpsso-google-merchant-feed' ), $metabox_title ) . '</p>' .
 				'</td></tr>';
 		}
