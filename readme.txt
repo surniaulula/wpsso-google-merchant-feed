@@ -125,12 +125,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.8.0-b.1 (2023/10/27)**
+**Version 6.8.0-rc.1 (2023/10/28)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Change for deprecated method.
+	* Update for deprecated method.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -138,7 +138,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v16.5.0-b.1.
+	* WPSSO Core v16.5.0-rc.1.
 
 **Version 6.7.0 (2023/08/09)**
 
@@ -291,9 +291,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 6.8.0-b.1 =
+= 6.8.0-rc.1 =
 
-(2023/10/27) Change for deprecated method.
+(2023/10/28) Update for deprecated method.
 
 = 6.7.0 =
 
