@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.8.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.9.0-dev.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -166,7 +166,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/gmf-general.php:85
+#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/google-merchant.php:36
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -196,41 +196,41 @@ msgstr ""
 msgid "%1$s requested locale \"%2$s\" is unknown."
 msgstr ""
 
-#: lib/rewrite.php:154 lib/submenu/gmf-general.php:199
+#: lib/rewrite.php:154 lib/submenu/google-merchant.php:91
 msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
-#: lib/submenu/gmf-general.php:62 lib/submenu/gmf-general.php:71
+#: lib/submenu/google-merchant.php:62 lib/submenu/google-merchant.php:71
 msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:135
-msgctxt "option comment"
-msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
-msgstr ""
-
-#: lib/submenu/gmf-general.php:148
-msgid ""
-"An e-commerce plugin is required to manage product inventory quantities."
-msgstr ""
-
-#: lib/submenu/gmf-general.php:150
-msgid "%s is unavailable pending the activation of an e-commerce plugin."
-msgstr ""
-
-#: lib/submenu/gmf-general.php:168
-msgctxt "option label"
-msgid "Store Code"
-msgstr ""
-
-#: lib/submenu/gmf-general.php:194
+#: lib/submenu/google-merchant.php:86
 msgctxt "task name"
 msgid "refresh the cache"
 msgstr ""
 
-#: lib/submenu/gmf-general.php:197
+#: lib/submenu/google-merchant.php:89
 msgid "A background task to %s is currently running."
+msgstr ""
+
+#: lib/submenu/google-merchant.php:118
+msgctxt "option comment"
+msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
+msgstr ""
+
+#: lib/submenu/google-merchant.php:131
+msgid ""
+"An e-commerce plugin is required to manage product inventory quantities."
+msgstr ""
+
+#: lib/submenu/google-merchant.php:133
+msgid "%s is unavailable pending the activation of an e-commerce plugin."
+msgstr ""
+
+#: lib/submenu/google-merchant.php:151
+msgctxt "option label"
+msgid "Store Code"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
