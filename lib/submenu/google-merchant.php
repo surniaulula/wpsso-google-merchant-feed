@@ -76,7 +76,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 			return $form_button_rows;
 		}
 
-		public function get_table_rows( $page_id, $metabox_id, $tab_key = '', $args = array() ) {
+		protected function get_table_rows( $page_id, $metabox_id, $tab_key = '', $args = array() ) {
 
 			$table_rows = array();
 			$match_rows = trim( $page_id . '-' . $metabox_id . '-' . $tab_key, '-' );
