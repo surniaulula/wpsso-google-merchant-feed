@@ -37,7 +37,12 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 			);
 		}
 
-		protected function add_plugin_hooks() {
+		protected function add_settings_page_callbacks() {
+
+			if ( $this->p->debug->enabled ) {
+
+				$this->p->debug->mark();
+			}
 
 			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 1 ), PHP_INT_MAX );
 		}
