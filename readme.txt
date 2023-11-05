@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.9.0-dev.11 (2021/11/04)**
+**Version 6.9.0-dev.11 (2021/11/05)**
 
 * **New Features**
 	* None.
@@ -308,7 +308,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 6.9.0-dev.11 =
 
-(2021/11/04) Refactored the settings page load process.
+(2021/11/05) Refactored the settings page load process.
 
 = 6.8.0 =
 
