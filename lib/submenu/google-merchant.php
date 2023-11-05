@@ -28,7 +28,8 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 			$this->menu_lib  = $lib;
 			$this->menu_ext  = $ext;
 
-			/* TODO Add an inventory metabox:
+			/*
+			 * TODO Add an inventory metabox:
 			 *
 			 * 'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
 			 */
@@ -37,48 +38,51 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 			);
 		}
 
-		protected function add_settings_page_callbacks() {
+		protected function add_form_buttons( &$form_button_rows ) {
 
-			if ( $this->p->debug->enabled ) {
-
-				$this->p->debug->mark();
-			}
-
-			$this->p->util->add_plugin_filters( $this, array( 'form_button_rows' => 1 ), PHP_INT_MAX );
-		}
-
-		public function filter_form_button_rows( $form_button_rows ) {
-
+			/*
+			 * If a refresh is running, remove all buttons.
+			 */
 			if ( $this->p->util->cache->is_refresh_running() ) {
 
 				return array();
 			}
 			
-			if ( ! empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// E-commerce plugin is active.
+			/*
+			 * TODO Un-comment when adding the inventory metabox:
+			 */
+			// if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {
 
 				/*
-				 * Remove the "Change to View" button from this settings page.
-				 */
-				if ( isset( $form_button_rows[ 0 ] ) ) {	// Just in case.
-
-					$form_button_rows[ 0 ] = SucomUtil::preg_grep_keys( '/^change_show_options/', $form_button_rows[ 0 ], $invert = true );
-				}
-
-				$form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
-
-			} else {
-
-				/*
-				 * Remove all action buttons from this settings page and add a "Refresh XML Cache" button.
+				 * Remove all action buttons and add a "Refresh XML Cache" button.
 				 */
 				$form_button_rows = array(
 					array(
 						'refresh_feed_xml_cache' => _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
 					),
 				);
-			}
 
-			return $form_button_rows;
+			// } else $form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
+		}
+
+		/*
+		 * Remove the "Submit" button from this settings page if an e-commerce plugin is not active.
+		 */
+		protected function add_form_buttons_submit( &$form_button_rows ) {
+
+			/*
+			 * If an e-commerce plugin is active, keep the submit button.
+			 */
+			if ( ! empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {
+
+				parent::add_form_buttons_submit( $form_button_rows );
+			}
+		}
+
+		/*
+		 * Remove the "Change to View" button from this settings page.
+		 */
+		protected function add_form_buttons_change_show_options( &$form_button_rows ) {
 		}
 
 		protected function get_table_rows( $page_id, $metabox_id, $tab_key = '', $args = array() ) {

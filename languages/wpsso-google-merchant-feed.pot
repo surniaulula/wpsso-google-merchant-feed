@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.9.0-dev.10\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 6.9.0-dev.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -166,7 +166,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/google-merchant.php:36
+#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/google-merchant.php:37
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -196,39 +196,39 @@ msgstr ""
 msgid "%1$s requested locale \"%2$s\" is unknown."
 msgstr ""
 
-#: lib/rewrite.php:154 lib/submenu/google-merchant.php:96
+#: lib/rewrite.php:154 lib/submenu/google-merchant.php:100
 msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:67 lib/submenu/google-merchant.php:76
+#: lib/submenu/google-merchant.php:61
 msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:91
+#: lib/submenu/google-merchant.php:95
 msgctxt "task name"
 msgid "refresh the cache"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:94
+#: lib/submenu/google-merchant.php:98
 msgid "A background task to %s is currently running."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:123
+#: lib/submenu/google-merchant.php:127
 msgctxt "option comment"
 msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:136
+#: lib/submenu/google-merchant.php:140
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:138
+#: lib/submenu/google-merchant.php:142
 msgid "%s is unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:156
+#: lib/submenu/google-merchant.php:160
 msgctxt "option label"
 msgid "Store Code"
 msgstr ""
