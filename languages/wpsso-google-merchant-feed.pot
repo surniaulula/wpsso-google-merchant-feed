@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 6.9.0-dev.11\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 7.0.0-dev.13\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -70,29 +70,29 @@ msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
-#: lib/filters-edit.php:49
+#: lib/filters-edit.php:50
 msgid "getting google merchant feed image"
 msgstr ""
 
-#: lib/filters-edit.php:55
+#: lib/filters-edit.php:57
 msgid "getting schema 1:1 image"
 msgstr ""
 
-#: lib/filters-edit.php:61
+#: lib/filters-edit.php:64
 msgid "getting open graph image"
 msgstr ""
 
-#: lib/filters-edit.php:73
+#: lib/filters-edit.php:76
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML (Main Product)"
 msgstr ""
 
-#: lib/filters-edit.php:82
+#: lib/filters-edit.php:85
 msgctxt "option label"
 msgid "Image ID"
 msgstr ""
 
-#: lib/filters-edit.php:89
+#: lib/filters-edit.php:92
 msgctxt "option label"
 msgid "or an Image URL"
 msgstr ""
