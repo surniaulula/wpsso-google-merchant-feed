@@ -125,7 +125,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 6.9.0-dev.11 (2021/11/05)**
+**Version 7.0.0-dev.13 (2021/11/05)**
 
 * **New Features**
 	* None.
@@ -134,11 +134,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* Refactored the settings page load process.
+	* Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v16.7.0-dev.11.
+	* WPSSO Core v17.0.0-dev.13.
 
 **Version 6.8.0 (2023/10/28)**
 
@@ -155,198 +155,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.5.
 	* WPSSO Core v16.5.0.
 
-**Version 6.7.0 (2023/08/09)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated filter hook names for WPSSO Core v15.19.0:
-		* Renamed the 'load_setting_page_*' filter hooks to 'load_settings_page_*'.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.19.0.
-
-**Version 6.6.1 (2023/07/13)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the 'wpsso_plugin_image_sizes_rows' filter arguments for WPSSO Core v15.16.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v15.16.0.
-
-**Version 6.6.0 (2023/04/20)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added the requested locale to the XML 'meta_query' array.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a $request_locale argument for the WpssoAbstractWpMeta::get_column_meta_query_og_type()` method.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v15.9.0.
-
-**Version 6.5.0 (2023/04/13)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Replaced the `WpssoGmfXml::get_meta_query()` private method by the new `WpssoAbstractWpMeta::get_column_meta_query_og_type()` public method in WPSSO Core v15.8.0.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.5.
-	* WPSSO Core v15.8.0.
-
-**Version 6.4.0 (2023/03/30)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a 'feed_format' query argument to the rewrite rule.
-	* Added a `$type` argument for the `WpssoGmfRewrite::get_url()` method.
-	* Added a `$request_type` argument for the `WpssoGmfXml::clear_cache()` method.
-	* Added a `$request_type` argument for the `WpssoGmfXml::get()` method.
-	* Added a `WpssoGmfSubmenuGmfGeneral->add_table_rows_doing_task()` private method.
-	* Refactored the `WpssoGmfSubmenuGmfGeneral->show_metabox_cmcf()` method.
-	* Refactored the `WpssoGmfSubmenuGmfGeneral->get_table_rows()` method.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.4.
-	* WPSSO Core v15.5.1.
-
-**Version 6.3.0 (2023/02/14)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated the GMF settings page to show a notice when a background task is active.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Refactored the `WpssoGmfRewrite::template_redirect()` method.
-	* Refactored the `WpssoGmfXml::get()` method.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.4.
-	* WPSSO Core v15.3.0.
-
-**Version 6.2.0 (2023/02/11)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Updated rewrite rules to add the rules whether they already exist or not.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.4.
-	* WPSSO Core v15.2.0.
-
-**Version 6.1.0 (2023/02/04)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Changed the rewrite registration hook from 'wp_loaded' to 'init'.
-	* Updated feed query arguments to 'feed_name', 'feed_type', and 'feed_locale'.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.4.
-	* WPSSO Core v15.0.1.
-
-**Version 6.0.0 (2023/02/03)**
-
-* **New Features**
-	* Added support for the new 'product:variants' meta tags array in WPSSO Core v15.0.0.
-* **Improvements**
-	* Removed the filter hook to sort the WooCommerce variations array (no longer needed).
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Removed support for the 'product:offers' meta tags array.
-	* Removed the WPSSO_FEED_XML_QUERY_CACHE_DISABLE constant.
-	* Removed the 'wpsso_request_url_query_attrs_cache_disable' filter hook.
-	* Renamed the `WpssoGmfActions->get_product_image_url()` method to `check_product_image_urls()`.
-	* Refactored the `WpssoGmfXml::add_feed_product()` method.
-	* Refactored the `WpssoGmfXml::add_product_data()` method.
-* **Requires At Least**
-	* PHP v7.2.
-	* WordPress v5.4.
-	* WPSSO Core v15.0.0.
-
 == Upgrade Notice ==
 
-= 6.9.0-dev.11 =
+= 7.0.0-dev.13 =
 
-(2021/11/05) Refactored the settings page load process.
+(2021/11/05) Refactored the settings page and metabox load process for WPSSO Core v17.0.0.
 
 = 6.8.0 =
 
 (2023/10/28) Update for deprecated method.
-
-= 6.7.0 =
-
-(2023/08/09) Updated filter hook names for WPSSO Core v15.19.0.
-
-= 6.6.1 =
-
-(2023/07/13) Updated the 'wpsso_plugin_image_sizes_rows' filter arguments for WPSSO Core v15.16.0.
-
-= 6.6.0 =
-
-(2023/04/20) Added the requested locale to the XML 'meta_query' array.
-
-= 6.5.0 =
-
-(2023/04/13) Replaced the `WpssoGmfXml::get_meta_query()` private method by a new public method in WPSSO Core v15.8.0.
-
-= 6.4.0 =
-
-(2023/03/30) Added a 'feed_format' query argument to the rewrite rule.
-
-= 6.3.0 =
-
-(2023/02/14) Updated the GMF settings page to show a notice when a background task is active.
-
-= 6.2.0 =
-
-(2023/02/11) Updated rewrite rules to add the rules whether they already exist or not.
-
-= 6.1.0 =
-
-(2023/02/04) Changed the rewrite registration hook. Updated feed query arguments.
-
-= 6.0.0 =
-
-(2023/02/03) Added support for the new 'product:variants' meta tags array in WPSSO Core v15.0.0.
 
