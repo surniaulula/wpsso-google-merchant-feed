@@ -25,12 +25,9 @@ if ( ! class_exists( 'WpssoGmfFiltersEdit' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			if ( is_admin() ) {
-
-				$this->p->util->add_plugin_filters( $this, array(
-					'mb_sso_edit_media_schema_rows' => 5,
-				) );
-			}
+			$this->p->util->add_plugin_filters( $this, array(
+				'mb_sso_edit_media_schema_rows' => 5,
+			) );
 		}
 
 		public function filter_mb_sso_edit_media_schema_rows( $table_rows, $form, $head_info, $mod, $args ) {

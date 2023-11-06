@@ -25,12 +25,9 @@ if ( ! class_exists( 'WpssoGmfFiltersAdvanced' ) ) {
 			$this->p =& $plugin;
 			$this->a =& $addon;
 
-			if ( is_admin() ) {
-
-				$this->p->util->add_plugin_filters( $this, array(
-					'plugin_image_sizes_rows' => 3,
-				) );
-			}
+			$this->p->util->add_plugin_filters( $this, array(
+				'plugin_image_sizes_rows' => 3,
+			) );
 		}
 
 		/*
