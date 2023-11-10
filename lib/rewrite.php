@@ -82,8 +82,6 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 		static public function template_redirect() {
 
-			$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
-
 			/*
 			 * Make sure the requested name is valid.
 			 */
@@ -108,18 +106,14 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				if ( 'inventory' === $request_type ) {
 
-					$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
-
 					if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
 
-						WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested type "%2$s" is invalid.',
-							'wpsso-google-merchant-feed' ), $metabox_title, $request_type ) );
+						WpssoErrorException::http_error( 400 );
 					}
 
 				} elseif ( 'feed' !== $request_type ) {
 
-					WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested type "%2$s" is unknown.',
-						'wpsso-google-merchant-feed' ), $metabox_title, $request_type ) );
+					WpssoErrorException::http_error( 400 );
 				}
 
 				/*
@@ -129,8 +123,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				if ( 'rss2' !== $request_format ) {
 
-					WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested format "%2$s" is unknown.',
-						'wpsso-google-merchant-feed' ), $metabox_title, $request_format ) );
+					WpssoErrorException::http_error( 400 );
 				}
 			}
 
@@ -143,16 +136,14 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			if ( ! isset( $locale_names[ $request_locale ] ) ) {
 
-				WpssoErrorException::http_error( 400, sprintf( __( '%1$s requested locale "%2$s" is unknown.',
-					'wpsso-google-merchant-feed' ), $metabox_title, $request_locale ) );
+				WpssoErrorException::http_error( 400 );
 			}
 
 			$wpsso =& Wpsso::get_instance();
 
 			if ( $wpsso->util->cache->is_refresh_running() ) {
 
-				WpssoErrorException::http_error( 503, sprintf( __( '%s is currently unavailable pending completion of a cache refresh task.',
-					'wpsso-google-merchant-feed' ), $metabox_title ) );
+				WpssoErrorException::http_error( 503 );
 			}
 
 			$document_xml = WpssoGmfXml::get( $request_locale, $request_type );

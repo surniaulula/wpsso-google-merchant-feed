@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 7.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 7.0.1-dev.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -166,38 +166,13 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:99 lib/rewrite.php:85 lib/submenu/google-merchant.php:37
+#: lib/filters.php:99 lib/submenu/google-merchant.php:37
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
 #: lib/filters.php:101
 msgid "%1$s for %2$s locales has been refreshed."
-msgstr ""
-
-#: lib/rewrite.php:111
-msgctxt "metabox title"
-msgid "Google Merchant Inventory XML"
-msgstr ""
-
-#: lib/rewrite.php:115
-msgid "%1$s requested type \"%2$s\" is invalid."
-msgstr ""
-
-#: lib/rewrite.php:121
-msgid "%1$s requested type \"%2$s\" is unknown."
-msgstr ""
-
-#: lib/rewrite.php:132
-msgid "%1$s requested format \"%2$s\" is unknown."
-msgstr ""
-
-#: lib/rewrite.php:146
-msgid "%1$s requested locale \"%2$s\" is unknown."
-msgstr ""
-
-#: lib/rewrite.php:154 lib/submenu/google-merchant.php:100
-msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
 #: lib/submenu/google-merchant.php:61
@@ -212,6 +187,10 @@ msgstr ""
 
 #: lib/submenu/google-merchant.php:98
 msgid "A background task to %s is currently running."
+msgstr ""
+
+#: lib/submenu/google-merchant.php:100
+msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
 #: lib/submenu/google-merchant.php:127
