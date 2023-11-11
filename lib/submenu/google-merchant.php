@@ -47,7 +47,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 				return array();
 			}
-			
+
 			/*
 			 * TODO Un-comment when adding the inventory metabox:
 			 */
