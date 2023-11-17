@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.4.1
-WC Tested Up To: 8.2.2
+WC Tested Up To: 8.3.0
 Stable Tag: 7.0.1
 
 Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.
