@@ -18,6 +18,115 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
+		static $product_callbacks = array(
+
+			/*
+			 * Basic product data.
+			 */
+			'og:title'                 => 'setTitle',
+			'og:description'           => 'setDescription',
+			'og:url'                   => array( 'setAttribute', 'canonical_link', true ),
+			'product:retailer_item_id' => 'setId',
+			'product:title'            => 'setTitle',
+			'product:description'      => 'setDescription',
+			'product:url'              => 'setLink',
+
+			/*
+			 * Price & availability.
+			 */
+			'product:availability'     => 'setAvailability',
+			'product:price'            => 'setPrice',
+			'product:sale_price'       => 'setSalePrice',
+			'product:sale_price_dates' => array( 'setAttribute', 'sale_price_effective_date', false ),
+
+			/*
+			 * Product category.
+			 */
+			'product:category'          => 'setGoogleCategory',
+			'product:retailer_category' => 'setProductType',
+
+			/*
+			 * Product identifiers.
+			 */
+			'product:brand'       => 'setBrand',
+			'product:ean'         => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:gtin14'      => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:gtin13'      => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:gtin12'      => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:gtin8'       => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:gtin'        => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:isbn'        => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:upc'         => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:mfr_part_no' => 'setMpn',
+
+			/*
+			 * Detailed product description.
+			 */
+			'product:condition'                   => 'setCondition',
+			'product:adult_type'                  => 'setAdult',
+			'product:energy_efficiency:value'     => array( 'setAttribute', 'energy_efficiency_class', false ),
+			'product:energy_efficiency:min_value' => array( 'setAttribute', 'min_energy_efficiency_class', false ),
+			'product:energy_efficiency:max_value' => array( 'setAttribute', 'max_energy_efficiency_class', false ),
+			'product:age_group'                   => array( 'setAttribute', 'age_group', false ),
+			'product:color'                       => 'setColor',
+			'product:target_gender'               => array( 'setAttribute', 'gender', false ),
+			'product:material'                    => 'setMaterial',
+			'product:pattern'                     => array( 'setAttribute', 'pattern', false ),
+			'product:size'                        => 'setSize',
+			'product:size_group'                  => array( 'addAttribute', 'size_type', false ),	// One or more.
+			'product:size_system'                 => array( 'setAttribute', 'size_system', false ),
+			'product:item_group_id'               => array( 'setAttribute', 'item_group_id', false ),
+			'product:length:value'                => array( 'setAttribute', 'product_length', false ),
+			'product:length:units'                => null,
+			'product:width:value'                 => array( 'setAttribute', 'product_width', false ),
+			'product:width:units'                 => null,
+			'product:height:value'                => array( 'setAttribute', 'product_height', false ),
+			'product:height:units'                => null,
+			'product:weight:value'                => array( 'setAttribute', 'product_weight', false ),
+			'product:weight:units'                => null,
+
+			/*
+			 * Shipping.
+			 */
+			'product:shipping_weight:value' => 'setShippingWeight',
+			'product:shipping_weight:value' => null,
+			'product:shipping_length:value' => 'setShippingLength',
+			'product:shipping_length:value' => null,
+			'product:shipping_width:value'  => 'setShippingWidth',
+			'product:shipping_width:value'  => null,
+			'product:shipping_height:value' => 'setShippingHeight',
+			'product:shipping_height:value' => null,
+		);
+
+		/*
+		 * From wpsso-google-merchant-feed/live/vendor/vitalybaev/google-merchant-feed/src/Product/Shipping.php:
+		 *
+		 *	setCountry()
+		 *	setRegion()
+		 *	setPostalCode()
+		 *	setLocationId()
+		 *	setLocationGroupName()
+		 *	setService()
+		 *	setPrice()
+		 *
+		 * See https://support.google.com/merchants/answer/6324484.
+		 */
+		static $shipping_callbacks = array(
+			'shipping_name'          => 'setLocationGroupName',
+			'shipping_rate_name'     => 'setService',
+			'shipping_rate_cost'     => 'setPrice',
+			'shipping_rate_currency' => null,
+			'country_code'           => 'setCountry',
+			'region_code'            => 'setRegion',
+			'postal_code'            => 'setPostalCode',
+			'handling_minimum'	 => array( 'setAttribute', 'min_handling_time', false ),
+			'handling_maximum'	 => array( 'setAttribute', 'max_handling_time', false ),
+			'handling_unit_code'     => null,
+			'transit_minimum'	 => array( 'setAttribute', 'min_transit_time', false ),
+			'transit_maximum'	 => array( 'setAttribute', 'max_transit_time', false ),
+			'transit_unit_code'      => null,
+		);
+
 		/*
 		 * Clear the feed XML cache files.
 		 *
@@ -181,6 +290,94 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $xml;
 		}
 
+		static public function get_mt_single_shipping( $mt_single ) {
+
+			// error_log( var_export( $mt_single, true ) );
+
+			$shipping = array();
+
+			if ( empty( $mt_single[ 'product:shipping_offers' ] ) ) {
+
+				return $shipping;
+			}
+
+			foreach ( $mt_single[ 'product:shipping_offers' ] as $num => $ship_offer ) {
+
+				if ( empty( $ship_offer[ 'shipping_destinations' ] ) ) {
+
+					continue;
+				}
+
+				foreach ( $ship_offer[ 'shipping_destinations' ] as $ship_num => $ship_dest ) {
+
+					$ship_opts = array();
+
+					foreach ( self::$shipping_callbacks as $key => $callback ) {
+
+						if ( empty( $callback ) ) {	// Not used.
+
+							continue;
+
+						} elseif ( isset( $ship_offer[ $key ] ) ) {
+
+							$ship_opts[ $key ] = $ship_offer[ $key ];
+
+						} elseif ( isset( $ship_offer[ 'shipping_rate' ][ $key ] ) ) {
+
+							$ship_opts[ $key ] = $ship_offer[ 'shipping_rate' ][ $key ];
+
+						} elseif ( isset( $ship_offer[ 'delivery_time' ][ $key ] ) ) {
+							
+							$ship_opts[ $key ] = $ship_offer[ 'delivery_time' ][ $key ];
+
+							/*
+							 * Transit and handling times are in days.
+							 *
+							 * If the unit code is HUR (hours), then convert the hours to days.
+							 */
+							$matches = null;
+
+							if ( preg_match( '/^(.*)_(minimum|maximum)$/', $key, $matches ) ) {
+
+								$unit_key = $matches[ 1 ] . '_unit_code';
+
+								if ( isset( $ship_offer[ 'delivery_time' ][ $unit_key ] ) &&	// Just in case.
+									'HUR' === $ship_offer[ 'delivery_time' ][ $unit_key ] ) {
+
+									$ship_opts[ $key ] = round( $ship_opts[ $key ] / 24, 1 );
+								}
+							}
+
+						} elseif ( isset( $ship_dest[ $key ] ) ) {
+
+							$ship_opts[ $key ] = $ship_dest[ $key ];
+
+						} else $ship_opts[ $key ] = null;
+					}
+
+					if ( empty( $ship_dest[ 'postal_code' ] ) ) {
+
+						$ship_opts[ 'postal_code' ] = null;
+
+						$shipping[] = $ship_opts;
+
+					} else {
+
+						foreach( $ship_dest[ 'postal_code' ] as $post_num => $postal_code ) {
+
+							$postal_code = str_replace( '...', '-', $postal_code );
+
+							$ship_opts[ 'postal_code' ] = $postal_code;
+
+							$shipping[] = $ship_opts;
+						}
+					}
+				}
+			}
+
+			return $shipping;
+		}
+
 		/*
 		 * See product feed specification https://support.google.com/merchants/answer/7052112.
 		 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
@@ -202,6 +399,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			self::add_product_images( $product, $mt_single );
 
+			self::add_product_shipping( $product, $mt_single );
+
 			$rss2_feed->addProduct( $product );
 		}
 
@@ -219,122 +418,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			self::sanitize_mt_array( $mt_single );
 
-			$mt_names = array(
-
-				/*
-				 * Basic product data.
-				 */
-				'og:title'                 => 'setTitle',
-				'og:description'           => 'setDescription',
-				'og:url'                   => array( 'setAttribute', 'canonical_link', true ),
-				'product:retailer_item_id' => 'setId',
-				'product:title'            => 'setTitle',
-				'product:description'      => 'setDescription',
-				'product:url'              => 'setLink',
-
-				/*
-				 * Price & availability.
-				 */
-				'product:availability'     => 'setAvailability',
-				'product:price'            => 'setPrice',
-				'product:sale_price'       => 'setSalePrice',
-				'product:sale_price_dates' => array( 'setAttribute', 'sale_price_effective_date', false ),
-
-				/*
-				 * Product category.
-				 */
-				'product:category'          => 'setGoogleCategory',
-				'product:retailer_category' => 'setProductType',
-
-				/*
-				 * Product identifiers.
-				 */
-				'product:brand'       => 'setBrand',
-				'product:ean'         => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin14'      => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin13'      => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin12'      => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin8'       => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:gtin'        => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:isbn'        => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:upc'         => array( 'addAttribute', 'gtin', false ),	// One or more.
-				'product:mfr_part_no' => 'setMpn',
-
-				/*
-				 * Detailed product description.
-				 */
-				'product:condition'                   => 'setCondition',
-				'product:adult_type'                  => 'setAdult',
-				'product:energy_efficiency:value'     => array( 'setAttribute', 'energy_efficiency_class', false ),
-				'product:energy_efficiency:min_value' => array( 'setAttribute', 'min_energy_efficiency_class', false ),
-				'product:energy_efficiency:max_value' => array( 'setAttribute', 'max_energy_efficiency_class', false ),
-				'product:age_group'                   => array( 'setAttribute', 'age_group', false ),
-				'product:color'                       => 'setColor',
-				'product:target_gender'               => array( 'setAttribute', 'gender', false ),
-				'product:material'                    => 'setMaterial',
-				'product:pattern'                     => array( 'setAttribute', 'pattern', false ),
-				'product:size'                        => 'setSize',
-				'product:size_group'                  => array( 'addAttribute', 'size_type', false ),	// One or more.
-				'product:size_system'                 => array( 'setAttribute', 'size_system', false ),
-				'product:item_group_id'               => array( 'setAttribute', 'item_group_id', false ),
-				'product:length:value'                => array( 'setAttribute', 'product_length', false ),
-				'product:width:value'                 => array( 'setAttribute', 'product_width', false ),
-				'product:height:value'                => array( 'setAttribute', 'product_height', false ),
-				'product:weight:value'                => array( 'setAttribute', 'product_weight', false ),
-
-				/*
-				 * Shipping.
-				 */
-				'product:shipping_weight:value' => 'setShippingWeight',
-				'product:shipping_length:value' => 'setShippingLength',
-				'product:shipping_width:value'  => 'setShippingWidth',
-				'product:shipping_height:value' => 'setShippingHeight',
-			);
-
-			foreach ( $mt_names as $mt_name => $mixed ) {
-
-				if ( isset( $mt_single[ $mt_name ] ) && '' !== $mt_single[ $mt_name ] ) {	// Not null or empty string.
-
-					if ( is_array( $mixed ) ) {
-
-						list( $method_name, $prop_name, $is_cdata ) = $mixed;
-
-					} else {
-
-						list( $method_name, $prop_name, $is_cdata ) = array( $mixed, '', false );
-					}
-
-					$values = is_array( $mt_single[ $mt_name ] ) ? $mt_single[ $mt_name ] : array( $mt_single[ $mt_name ] );
-
-					foreach ( $values as $value ) {
-
-						if ( false !== strpos( $mt_name, ':value' ) ) {
-
-							$mt_name_units = preg_replace( '/:value$/', ':units', $mt_name );
-
-							if ( ! empty( $mt_single[ $mt_name_units ] ) ) {
-
-								$value .= ' ' . $mt_single[ $mt_name_units ];
-							}
-						}
-
-						/*
-						 * Call method from Vitalybaev\GoogleMerchant\Product().
-						 */
-						if ( method_exists( $product, $method_name ) ) {	// Just in case.
-
-							if ( $prop_name ) {
-
-								$product->$method_name( $prop_name, $value, $is_cdata );
-
-							} else {
-
-								$product->$method_name( $value );
-							}
-						}
-					}
-				}
-			}
+			self::add_object_data( $product, $mt_single, self::$product_callbacks );
 		}
 
 		static private function add_product_images( &$product, $mt_single ) {
@@ -350,13 +434,90 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			foreach ( $image_urls as $num => $image_url ) {
 
-				if ( 0 === $num ) {
+				if ( 0 == $num ) {
 
 					$product->setImage( $image_url );
 
-				} else {
+				} else $product->addAdditionalImage( $image_url );
+			}
+		}
 
-					$product->addAdditionalImage( $image_url );
+		static private function add_product_shipping( &$product, $mt_single ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
+			$mt_single_shipping = self::get_mt_single_shipping( $mt_single );
+
+			foreach ( $mt_single_shipping as $num => $ship_opts ) {
+
+				$shipping = new Vitalybaev\GoogleMerchant\Product\Shipping();
+
+				self::add_object_data( $shipping, $ship_opts, self::$shipping_callbacks );
+
+				if ( 0 == $num ) {
+
+					$product->setShipping( $shipping );
+
+				} else $product->addShipping( $shipping );
+			}
+		}
+
+		static private function add_object_data( &$object, array $data, array $callbacks ) {
+
+			foreach ( $callbacks as $key => $callback ) {
+
+				if ( empty( $callback ) ) {	// Not used.
+				
+					continue;
+
+				} elseif ( isset( $data[ $key ] ) && '' !== $data[ $key ] ) {	// Not null or empty string.
+
+					if ( is_array( $callback ) ) {
+
+						list( $method_name, $prop_name, $is_cdata ) = $callback;
+
+					} else {
+
+						list( $method_name, $prop_name, $is_cdata ) = array( $callback, '', false );
+					}
+
+					$values = is_array( $data[ $key ] ) ? $data[ $key ] : array( $data[ $key ] );
+
+					foreach ( $values as $value ) {
+
+						foreach ( array(
+							':value' => ':units',
+							'_cost'  => '_currency',
+						) as $value_suffix => $append_suffix ) {
+
+							if ( false !== strpos( $key, $value_suffix ) ) {
+
+								$key_append = preg_replace( '/' . $value_suffix . '$/', $append_suffix, $key );
+
+								if ( ! empty( $data[ $key_append ] ) ) {
+
+									$value .= ' ' . $data[ $key_append ];
+								}
+							}
+						}
+
+						if ( method_exists( $object, $method_name ) ) {	// Just in case.
+
+							if ( $prop_name ) {
+
+								$object->$method_name( $prop_name, $value, $is_cdata );
+
+							} else {
+
+								$object->$method_name( $value );
+							}
+						}
+					}
 				}
 			}
 		}
@@ -406,12 +567,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					self::map_mt_value( $arr_val, $map );
 				}
 
-			} else {
+			} elseif ( isset( $map[ $value ] ) ) {	// Allow for false.
 
-				if ( isset( $map[ $value ] ) ) {	// Allow for false.
-
-					$value = $map[ $value ];
-				}
+				$value = $map[ $value ];
 			}
 		}
 	}

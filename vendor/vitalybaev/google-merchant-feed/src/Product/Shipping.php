@@ -27,7 +27,7 @@ class Shipping
     }
 
     /**
-     * Sets shipping country.
+     * Sets shipping region.
      *
      * @param string $region
      *
