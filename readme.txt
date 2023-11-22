@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.4.1
-WC Tested Up To: 8.3.0
+WC Tested Up To: 8.3.1
 Stable Tag: 7.0.1
 
 Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.
@@ -73,6 +73,17 @@ The following XML product attributes are automatically created from your WooComm
 * Product width <code>&#91;product_width&#93;</code>
 * Sale price <code>&#91;sale_price&#93;</code>
 * Sale price effective date <code>&#91;sale_price_effective_date&#93;</code>
+* Shipping <code>&#91;shipping&#93;</code>
+	* Country <code>&#91;country&#93;</code>
+	* Region <code>&#91;region&#93;</code>
+	* Postal code <code>&#91;postal_code&#93;</code>
+	* Location group name <code>&#91;location_group_name&#93;</code>
+	* Service <code>&#91;service&#93;</code>
+	* Price <code>&#91;price&#93;</code>
+	* Minimum handling time <code>&#91;min_handling_time&#93;</code> (WPSSO WCSDT add-on required)
+	* Maximum handling time <code>&#91;max_handling_time&#93;</code> (WPSSO WCSDT add-on required)
+	* Minimum transit time <code>&#91;min_transit_time&#93;</code> (WPSSO WCSDT add-on required)
+	* Maximum transit time <code>&#91;max_transit_time&#93;</code> (WPSSO WCSDT add-on required)
 * Shipping length <code>&#91;shipping_length&#93;</code>
 * Shipping height <code>&#91;shipping_height&#93;</code>
 * Shipping weight <code>&#91;shipping_weight&#93;</code>
@@ -125,6 +136,31 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 8.0.0-dev.1 (2023/11/22)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added shipping <code>&#91;shipping&#93;</code> attributes:
+		* Country <code>&#91;country&#93;</code>
+		* Region <code>&#91;region&#93;</code>
+		* Postal code <code>&#91;postal_code&#93;</code>
+		* Location group name <code>&#91;location_group_name&#93;</code>
+		* Service <code>&#91;service&#93;</code>
+		* Price <code>&#91;price&#93;</code>
+		* Minimum handling time <code>&#91;min_handling_time&#93;</code> (WPSSO WCSDT add-on required)
+		* Maximum handling time <code>&#91;max_handling_time&#93;</code> (WPSSO WCSDT add-on required)
+		* Minimum transit time <code>&#91;min_transit_time&#93;</code> (WPSSO WCSDT add-on required)
+		* Maximum transit time <code>&#91;max_transit_time&#93;</code> (WPSSO WCSDT add-on required)
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v17.2.1.
+
 **Version 7.0.1 (2023/11/11)**
 
 * **New Features**
@@ -156,6 +192,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.0.0.
 
 == Upgrade Notice ==
+
+= 8.0.0-dev.1 =
+
+(2023/11/22) Added shipping <code>&#91;shipping&#93;</code> attributes.
 
 = 7.0.1 =
 
