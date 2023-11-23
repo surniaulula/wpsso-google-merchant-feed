@@ -80,7 +80,7 @@ The following XML product attributes are automatically created from your WooComm
 	* Location group name <code>&#91;location_group_name&#93;</code>
 	* Service <code>&#91;service&#93;</code>
 	* Price <code>&#91;price&#93;</code>
-	* [WPSSO Shipping Delivery Time for WooCommerce SEO add-on](https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/) required:
+	* [WPSSO Shipping Delivery Time for WooCommerce SEO](https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/) add-on required:
 		* Minimum handling time <code>&#91;min_handling_time&#93;</code>
 		* Maximum handling time <code>&#91;max_handling_time&#93;</code>
 		* Minimum transit time <code>&#91;min_transit_time&#93;</code>
