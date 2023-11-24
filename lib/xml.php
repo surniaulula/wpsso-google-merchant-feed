@@ -384,7 +384,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
 		 * See store feed specification at https://support.google.com/merchants/answer/7677622.
 		 */
-		static private function add_feed_product( &$rss2_feed, array $mt_single ) {
+		static private function add_feed_product( &$rss2_feed, array $mt_single, $request_type = 'feed' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
