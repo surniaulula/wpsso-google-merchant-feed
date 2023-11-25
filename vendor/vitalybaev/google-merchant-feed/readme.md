@@ -25,7 +25,7 @@ $feed = new Feed("My awesome store", "https://example.com", "My awesome descript
 // Put products to the feed ($products - some data from database for example)
 foreach ($products as $product) {
     $item = new Product();
-
+    
     // Set common product properties
     $item->setId($product->id);
     $item->setTitle($product->title);
@@ -42,7 +42,7 @@ foreach ($products as $product) {
     $item->setBrand($product->brand->name);
     $item->setGtin($product->barcode);
     $item->setCondition('new');
-
+    
     // Some additional properties
     $item->setColor($product->color);
     $item->setSize($product->size);
@@ -64,7 +64,7 @@ foreach ($products as $product) {
     // Set a custom label (optional)
     $item->setCustomLabel('Some Label 1', 0);
     $item->setCustomLabel('Some Label 2', 1);
-
+    
     // Add this product to the feed
     $feed->addProduct($item);
 }

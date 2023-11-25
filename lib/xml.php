@@ -25,7 +25,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			 */
 			'og:title'                 => 'setTitle',
 			'og:description'           => 'setDescription',
-			'og:url'                   => array( 'setAttribute', 'canonical_link', true ),
+			'og:url'                   => 'setCanonicalLink',
 			'product:retailer_item_id' => 'setId',
 			'product:title'            => 'setTitle',
 			'product:description'      => 'setDescription',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			'product:availability'     => 'setAvailability',
 			'product:price'            => 'setPrice',
 			'product:sale_price'       => 'setSalePrice',
-			'product:sale_price_dates' => array( 'setAttribute', 'sale_price_effective_date', false ),
+			'product:sale_price_dates' => 'setSalePriceEffectiveDate',
 
 			/*
 			 * Product category.
@@ -49,14 +49,14 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			 * Product identifiers.
 			 */
 			'product:brand'       => 'setBrand',
-			'product:ean'         => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:gtin14'      => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:gtin13'      => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:gtin12'      => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:gtin8'       => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:gtin'        => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:isbn'        => array( 'addAttribute', 'gtin', false ),	// One or more.
-			'product:upc'         => array( 'addAttribute', 'gtin', false ),	// One or more.
+			'product:ean'         => 'addGtin',
+			'product:gtin14'      => 'addGtin',
+			'product:gtin13'      => 'addGtin',
+			'product:gtin12'      => 'addGtin',
+			'product:gtin8'       => 'addGtin',
+			'product:gtin'        => 'addGtin',
+			'product:isbn'        => 'addGtin',
+			'product:upc'         => 'addGtin',
 			'product:mfr_part_no' => 'setMpn',
 
 			/*
@@ -327,7 +327,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							$ship_opts[ $key ] = $ship_offer[ 'shipping_rate' ][ $key ];
 
 						} elseif ( isset( $ship_offer[ 'delivery_time' ][ $key ] ) ) {
-							
+
 							$ship_opts[ $key ] = $ship_offer[ 'delivery_time' ][ $key ];
 
 							/*
@@ -472,7 +472,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			foreach ( $callbacks as $key => $callback ) {
 
 				if ( empty( $callback ) ) {	// Not used.
-				
+
 					continue;
 
 				} elseif ( isset( $data[ $key ] ) && '' !== $data[ $key ] ) {	// Not null or empty string.

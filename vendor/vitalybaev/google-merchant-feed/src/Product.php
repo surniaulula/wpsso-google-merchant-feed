@@ -63,6 +63,19 @@ class Product
     }
 
     /**
+     * Sets canonical link to the product.
+     *
+     * @param string $link
+     *
+     * @return $this
+     */
+    public function setCanonicalLink($link)
+    {
+        $this->setAttribute('canonical_link', $link, true);
+        return $this;
+    }
+
+    /**
      * Sets mobile link to the product.
      *
      * @param string $link
@@ -160,6 +173,19 @@ class Product
     }
 
     /**
+     * Sets sale price effective date of the product.
+     *
+     * @param string $price
+     *
+     * @return $this
+     */
+    public function setSalePriceEffectiveDate($price)
+    {
+        $this->setAttribute('sale_price_effective_date', $price, false);
+        return $this;
+    }
+
+    /**
      * Sets Google category of the product.
      *
      * @param string $category
@@ -208,6 +234,19 @@ class Product
     public function setGtin($gtin)
     {
         $this->setAttribute('gtin', $gtin, false);
+        return $this;
+    }
+
+    /**
+     * Adds GTIN code of the product.
+     *
+     * @param string $gtin
+     *
+     * @return $this
+     */
+    public function addGtin($gtin)
+    {
+        $this->addAttribute('gtin', $gtin, false);
         return $this;
     }
 

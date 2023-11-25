@@ -1,8 +1,14 @@
 {
-    "require": {
-        "vitalybaev/google-merchant-feed": "^2.6"
-    },
-    "config": {
-        "autoloader-suffix": "WpssoGmf"
-    }
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/jsmoriss/php-google-merchant-feed"
+		}
+	],
+	"require": {
+		"vitalybaev/google-merchant-feed": "dev-wpsso-google-merchant-feed"
+	},
+	"config": {
+		"autoloader-suffix": "WpssoGmf"
+	}
 }
