@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.0.0-rc.1 (2023/11/25)**
+**Version 8.0.0 (2023/11/25)**
 
 * **New Features**
 	* None.
@@ -194,7 +194,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 8.0.0-rc.1 =
+= 8.0.0 =
 
 (2023/11/25) Added shipping <code>&#91;shipping&#93;</code> attributes.
 
