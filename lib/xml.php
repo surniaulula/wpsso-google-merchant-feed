@@ -49,14 +49,14 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			 * Product identifiers.
 			 */
 			'product:brand'       => 'setBrand',
-			'product:ean'         => 'addGtin',
-			'product:gtin14'      => 'addGtin',
-			'product:gtin13'      => 'addGtin',
-			'product:gtin12'      => 'addGtin',
-			'product:gtin8'       => 'addGtin',
-			'product:gtin'        => 'addGtin',
-			'product:isbn'        => 'addGtin',
-			'product:upc'         => 'addGtin',
+			'product:ean'         => 'addGtin',	// One or more.
+			'product:gtin14'      => 'addGtin',	// One or more.
+			'product:gtin13'      => 'addGtin',	// One or more.
+			'product:gtin12'      => 'addGtin',	// One or more.
+			'product:gtin8'       => 'addGtin',	// One or more.
+			'product:gtin'        => 'addGtin',	// One or more.
+			'product:isbn'        => 'addGtin',	// One or more.
+			'product:upc'         => 'addGtin',	// One or more.
 			'product:mfr_part_no' => 'setMpn',
 
 			/*
@@ -490,10 +490,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					foreach ( $values as $value ) {
 
-						foreach ( array(
-							':value' => ':units',
-							'_cost'  => '_currency',
-						) as $value_suffix => $append_suffix ) {
+						foreach ( array( ':value' => ':units', '_cost'  => '_currency' ) as $value_suffix => $append_suffix ) {
 
 							if ( false !== strpos( $key, $value_suffix ) ) {
 
