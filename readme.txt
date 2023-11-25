@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 8.0.0-b.1 (2023/11/24)**
+**Version 8.0.0-rc.1 (2023/11/25)**
 
 * **New Features**
 	* None.
@@ -149,10 +149,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 		* Location group name <code>&#91;location_group_name&#93;</code>
 		* Service <code>&#91;service&#93;</code>
 		* Price <code>&#91;price&#93;</code>
-		* Minimum handling time <code>&#91;min_handling_time&#93;</code> (WPSSO WCSDT add-on required)
-		* Maximum handling time <code>&#91;max_handling_time&#93;</code> (WPSSO WCSDT add-on required)
-		* Minimum transit time <code>&#91;min_transit_time&#93;</code> (WPSSO WCSDT add-on required)
-		* Maximum transit time <code>&#91;max_transit_time&#93;</code> (WPSSO WCSDT add-on required)
+		* Minimum handling time <code>&#91;min_handling_time&#93;</code>
+		* Maximum handling time <code>&#91;max_handling_time&#93;</code>
+		* Minimum transit time <code>&#91;min_transit_time&#93;</code>
+		* Maximum transit time <code>&#91;max_transit_time&#93;</code>
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -194,9 +194,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 8.0.0-b.1 =
+= 8.0.0-rc.1 =
 
-(2023/11/24) Added shipping <code>&#91;shipping&#93;</code> attributes.
+(2023/11/25) Added shipping <code>&#91;shipping&#93;</code> attributes.
 
 = 7.0.1 =
 
