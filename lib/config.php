@@ -103,10 +103,10 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 				'gmf_content_map' => array(
 
 					/*
-					 * Validated on 2022/09/24.
+					 * Validated on 2023/11/26.
 					 *
-					 * See https://developers.facebook.com/docs/marketing-api/catalog/reference/.
 					 * See https://support.google.com/merchants/answer/6324463.
+					 * See https://developers.facebook.com/docs/marketing-api/catalog/reference/.
 					 */
 					'product:age_group' => array(
 						'adult'    => 'adult',
