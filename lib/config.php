@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '8.1.0-dev.1',	// Plugin version.
+					'version'     => '9.0.0-dev.3',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -103,26 +103,9 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 				'gmf_content_map' => array(
 
 					/*
-					 * See https://support.google.com/merchants/answer/6324508.
-					 */
-					'product:adult_type' => array(
-						'https://schema.org/AlcoholConsideration'                     => true,
-						'https://schema.org/DangerousGoodConsideration'               => true,
-						'https://schema.org/HealthcareConsideration'                  => true,
-						'https://schema.org/NarcoticConsideration'                    => true,
-						'https://schema.org/ReducedRelevanceForChildrenConsideration' => true,
-						'https://schema.org/SexualContentConsideration'               => true,
-						'https://schema.org/TobaccoNicotineConsideration'             => true,
-						'https://schema.org/UnclassifiedAdultConsideration'           => true,
-						'https://schema.org/ViolenceConsideration'                    => true,
-						'https://schema.org/WeaponConsideration'                      => true,
-					),
-
-					/*
 					 * Validated on 2022/09/24.
 					 *
 					 * See https://developers.facebook.com/docs/marketing-api/catalog/reference/.
-					 *
 					 * See https://support.google.com/merchants/answer/6324463.
 					 */
 					'product:age_group' => array(
@@ -133,108 +116,6 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'toddler'  => 'toddler',
 						'infant'   => 'infant',
 						'newborn'  => 'newborn',
-					),
-
-					/*
-					 * See https://support.google.com/merchants/answer/6324448.
-					 */
-					'product:availability' => array(
-						'https://schema.org/BackOrder'           => 'backorder',	// BACKORDER.
-						'https://schema.org/Discontinued'        => 'out_of_stock',	// OUT_OF_STOCK.
-						'https://schema.org/InStock'             => 'in_stock',		// IN_STOCK.
-						'https://schema.org/InStoreOnly'         => 'in_stock',		// IN_STOCK.
-						'https://schema.org/LimitedAvailability' => 'in_stock',		// IN_STOCK.
-						'https://schema.org/OnlineOnly'          => 'in_stock',		// IN_STOCK.
-						'https://schema.org/OutOfStock'          => 'out_of_stock',	// OUT_OF_STOCK.
-						'https://schema.org/PreOrder'            => 'preorder',		// PREORDER.
-						'https://schema.org/PreSale'             => 'preorder',		// PREORDER.
-						'https://schema.org/SoldOut'             => 'out_of_stock',	// OUT_OF_STOCK.
-					),
-
-					/*
-					 * Validated 2022/12/24.
-					 *
-					 * See https://support.google.com/merchants/answer/6324469.
-					 */
-					'product:condition' => array(
-						'https://schema.org/DamagedCondition'     => 'used',		// USED.
-						'https://schema.org/NewCondition'         => 'new',		// NEW_PRODUCT.
-						'https://schema.org/RefurbishedCondition' => 'refurbished',	// REFURBISHED.
-						'https://schema.org/UsedCondition'        => 'used',		// USED.
-					),
-
-					/*
-					 * Validated 2022/12/24.
-					 *
-					 * See https://schema.org/EUEnergyEfficiencyEnumeration.
-					 * See https://support.google.com/merchants/answer/7562785.
-					 */
-					'product:energy_efficiency:value' => array(
-						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
-						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
-						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
-						'https://schema.org/EUEnergyEfficiencyCategoryA'      => 'A',
-						'https://schema.org/EUEnergyEfficiencyCategoryB'      => 'B',
-						'https://schema.org/EUEnergyEfficiencyCategoryC'      => 'C',
-						'https://schema.org/EUEnergyEfficiencyCategoryD'      => 'D',
-						'https://schema.org/EUEnergyEfficiencyCategoryE'      => 'E',
-						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
-						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
-					),
-					'product:energy_efficiency:min_value' => array(
-						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
-						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
-						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
-						'https://schema.org/EUEnergyEfficiencyCategoryA'      => 'A',
-						'https://schema.org/EUEnergyEfficiencyCategoryB'      => 'B',
-						'https://schema.org/EUEnergyEfficiencyCategoryC'      => 'C',
-						'https://schema.org/EUEnergyEfficiencyCategoryD'      => 'D',
-						'https://schema.org/EUEnergyEfficiencyCategoryE'      => 'E',
-						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
-						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
-					),
-					'product:energy_efficiency:max_value' => array(
-						'https://schema.org/EUEnergyEfficiencyCategoryA3Plus' => 'A+++',
-						'https://schema.org/EUEnergyEfficiencyCategoryA2Plus' => 'A++',
-						'https://schema.org/EUEnergyEfficiencyCategoryA1Plus' => 'A+',
-						'https://schema.org/EUEnergyEfficiencyCategoryA'      => 'A',
-						'https://schema.org/EUEnergyEfficiencyCategoryB'      => 'B',
-						'https://schema.org/EUEnergyEfficiencyCategoryC'      => 'C',
-						'https://schema.org/EUEnergyEfficiencyCategoryD'      => 'D',
-						'https://schema.org/EUEnergyEfficiencyCategoryE'      => 'E',
-						'https://schema.org/EUEnergyEfficiencyCategoryF'      => 'F',
-						'https://schema.org/EUEnergyEfficiencyCategoryG'      => 'G',
-					),
-
-					/*
-					 * See https://support.google.com/merchants/answer/6324497.
-					 */
-					'product:size_group' => array(
-						'https://schema.org/WearableSizeGroupRegular'   => 'regular',
-						'https://schema.org/WearableSizeGroupPetite'    => 'petite',
-						'https://schema.org/WearableSizeGroupPlus'      => 'plus',
-						'https://schema.org/WearableSizeGroupTall'      => 'tall',
-						'https://schema.org/WearableSizeGroupBig'       => 'big',
-						'https://schema.org/WearableSizeGroupMaternity' => 'maternity',
-					),
-
-					/*
-					 * Validated on 2022/12/26.
-					 *
-					 * See https://support.google.com/merchants/answer/6324502.
-					 */
-					'product:size_system' => array(
-						'https://schema.org/WearableSizeSystemAU'     => 'AU',
-						'https://schema.org/WearableSizeSystemBR'     => 'BR',
-						'https://schema.org/WearableSizeSystemCN'     => 'CN',
-						'https://schema.org/WearableSizeSystemDE'     => 'DE',
-						'https://schema.org/WearableSizeSystemEurope' => 'EU',
-						'https://schema.org/WearableSizeSystemFR'     => 'FR',
-						'https://schema.org/WearableSizeSystemIT'     => 'IT',
-						'https://schema.org/WearableSizeSystemJP'     => 'JP',
-						'https://schema.org/WearableSizeSystemMX'     => 'MEX',
-						'https://schema.org/WearableSizeSystemUK'     => 'UK',
-						'https://schema.org/WearableSizeSystemUS'     => 'US',
 					),
 				),
 			),

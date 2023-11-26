@@ -64,38 +64,38 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			 */
 			'product:condition'                   => 'setCondition',
 			'product:adult_type'                  => 'setAdult',
-			'product:energy_efficiency:value'     => array( 'setAttribute', 'energy_efficiency_class', false ),
-			'product:energy_efficiency:min_value' => array( 'setAttribute', 'min_energy_efficiency_class', false ),
-			'product:energy_efficiency:max_value' => array( 'setAttribute', 'max_energy_efficiency_class', false ),
-			'product:age_group'                   => array( 'setAttribute', 'age_group', false ),
+			'product:energy_efficiency:value'     => 'setEnergyEfficiencyClass',
+			'product:energy_efficiency:min_value' => 'setMinEnergyEfficiencyClass',
+			'product:energy_efficiency:max_value' => 'setMaxEnergyEfficiencyClass',
+			'product:age_group'                   => 'setAgeGroup',
 			'product:color'                       => 'setColor',
-			'product:target_gender'               => array( 'setAttribute', 'gender', false ),
+			'product:target_gender'               => 'setGender',
 			'product:material'                    => 'setMaterial',
-			'product:pattern'                     => array( 'setAttribute', 'pattern', false ),
+			'product:pattern'                     => 'setPattern',
 			'product:size'                        => 'setSize',
-			'product:size_group'                  => array( 'addAttribute', 'size_type', false ),	// One or more.
-			'product:size_system'                 => array( 'setAttribute', 'size_system', false ),
-			'product:item_group_id'               => array( 'setAttribute', 'item_group_id', false ),
-			'product:length:value'                => array( 'setAttribute', 'product_length', false ),
+			'product:size_group'                  => 'addSizeType',	// One or more.
+			'product:size_system'                 => 'setSizeSystem',
+			'product:item_group_id'               => 'setItemGroupId',
+			'product:length:value'                => 'setProductLength',
 			'product:length:units'                => null,
-			'product:width:value'                 => array( 'setAttribute', 'product_width', false ),
+			'product:width:value'                 => 'setProductWidth',
 			'product:width:units'                 => null,
-			'product:height:value'                => array( 'setAttribute', 'product_height', false ),
+			'product:height:value'                => 'setProductHeight',
 			'product:height:units'                => null,
-			'product:weight:value'                => array( 'setAttribute', 'product_weight', false ),
+			'product:weight:value'                => 'setProductWeight',
 			'product:weight:units'                => null,
 
 			/*
 			 * Shipping.
 			 */
-			'product:shipping_weight:value' => 'setShippingWeight',
-			'product:shipping_weight:value' => null,
 			'product:shipping_length:value' => 'setShippingLength',
 			'product:shipping_length:value' => null,
 			'product:shipping_width:value'  => 'setShippingWidth',
 			'product:shipping_width:value'  => null,
 			'product:shipping_height:value' => 'setShippingHeight',
 			'product:shipping_height:value' => null,
+			'product:shipping_weight:value' => 'setShippingWeight',
+			'product:shipping_weight:value' => null,
 		);
 
 		/*
@@ -291,8 +291,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		}
 
 		static public function get_mt_single_shipping( $mt_single ) {
-
-			// error_log( var_export( $mt_single, true ) );
 
 			$shipping = array();
 
@@ -513,6 +511,15 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 								$object->$method_name( $value );
 							}
+
+						} else {
+
+							$notice_pre = sprintf( '%s error:', __METHOD__ );
+
+							$notice_msg = sprintf( __( '%1$s::%2$s() method does not exist.', 'wpsso-google-merchant-feed' ),
+								get_class( $object ), $method_name );
+
+							SucomUtil::safe_error_log( $notice_pre . ' ' . $notice_msg );
 						}
 					}
 				}

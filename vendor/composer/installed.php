@@ -43,7 +43,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../vitalybaev/google-merchant-feed',
             'aliases' => array(),
-            'reference' => 'a597d297d2e324abaa5769809af2088ad557a48f',
+            'reference' => '3315e9bfa1c96ac96a6f96bc27eff4b91ef4bef2',
             'dev_requirement' => false,
         ),
     ),
