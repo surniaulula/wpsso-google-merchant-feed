@@ -28,13 +28,9 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 			$this->menu_lib  = $lib;
 			$this->menu_ext  = $ext;
 
-			/*
-			 * TODO Add an inventory metabox:
-			 *
-			 * 'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
-			 */
 			$this->menu_metaboxes = array(
-				'feedxml' => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+				'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+			 	'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
 			);
 		}
 
@@ -48,10 +44,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 				return array();
 			}
 
-			/*
-			 * TODO Un-comment when adding the inventory metabox:
-			 */
-			// if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {
+			 if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {
 
 				/*
 				 * Remove all action buttons and add a "Refresh XML Cache" button.
@@ -62,7 +55,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					),
 				);
 
-			// } else $form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
+			} else $form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
 		}
 
 		/*
@@ -106,7 +99,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 			switch ( $match_rows ) {
 
-				case 'google-merchant-feedxml':
+				case 'google-merchant-feed':
 
 					$locale_names = SucomUtil::get_available_feed_locale_names();
 
@@ -119,9 +112,11 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						$img_count  = substr_count( $xml, '<g:image_link>' );
 						$addl_count = substr_count( $xml, '<g:additional_image_link>' );
 						$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+						$css_id     = SucomUtil::sanitize_css_id( 'gmf_feed_' . $locale . '_url' );
 
-						$table_rows[ 'gmf_url_' . $locale ] = '' .
-							$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
+						$table_rows[ $css_id ] = '' .
+							$this->form->get_th_html( $native_name, $css_class = 'medium', $css_id,
+								array( 'locale' => $locale, 'native_name' => $native_name ) ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
 							'<p class="status-msg left">' .
 							sprintf( _x( '%1$s feed items, %2$s image links, and %3$s additional image links.',
@@ -134,12 +129,14 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 				case 'google-merchant-inventory':
 
+			 		$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
 					if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
 
 						$table_rows[ 'wpssogmf_inventory_disabled' ] = '<tr><td align="center">' .
 							'<p class="status-msg">' . __( 'An e-commerce plugin is required to manage product inventory quantities.',
 								'wpsso-google-merchant-feed' ) . '</p>' .
-							'<p class="status-msg">' . sprintf( __( '%s is unavailable pending the activation of an e-commerce plugin.',
+							'<p class="status-msg">' . sprintf( __( '%s URLs are unavailable pending the activation of an e-commerce plugin.',
 								'wpsso-google-merchant-feed' ), $metabox_title ) . '</p>' .
 							'</td></tr>';
 
@@ -147,30 +144,53 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					}
 
 					/*
+					 * The merchant ID of this retailer.
+					 *
+					 * See https://support.google.com/merchants/answer/7677785.
+					 */
+					$table_rows[ 'gmf_merchant_id' ] = '' .
+						$this->form->get_th_html( _x( 'Google Merchant ID', 'option label', 'wpsso' ),
+							$css_class = 'medium', $css_id = 'gmf_merchant_id' ) .
+						'<td>' . $this->form->get_input( 'gmf_merchant_id', 'short' ) . '</td>';
+
+					/*
 					 * Store Code: The store identifier from Google's Business Profiles.
 					 *
+					 * See https://support.google.com/merchants/answer/7677785.
+					 * See https://support.google.com/business/answer/6300665.
 					 * See https://www.google.com/business/.
-					 * See https://support.google.com/business/answer/6300665?hl=en.
 					 *
 					 * A unique alphanumeric identifier for each local business. This attribute is
 					 * case-sensitive and must match the store codes that you submitted in your Business
 					 * Profiles.
 					 */
 					$table_rows[ 'gmf_store_code' ] = '' .
-						$this->form->get_th_html( _x( 'Store Code', 'option label', 'wpsso' ),
+						$this->form->get_th_html( _x( 'Google Store Code', 'option label', 'wpsso' ),
 							$css_class = 'medium', $css_id = 'gmf_store_code' ) .
 						'<td>' . $this->form->get_input( 'gmf_store_code', 'short' ) . '</td>';
 
-					if ( ! empty( $this->p->options[ 'gmf_store_code' ] ) ) {
+					if ( empty( $this->p->options[ 'gmf_merchant_id' ] ) ||
+						empty( $this->p->options[ 'gmf_store_code' ] ) ) {
+
+						$table_rows[ 'wpssogmf_inventory_disabled' ] = '<tr><td align="center" colspan="2">' .
+							'<p class="status-msg">' . __( 'The Google Merchant ID and Store Code are required to create inventory XML.',
+								'wpsso-google-merchant-feed' ) . '</p>' .
+							'<p class="status-msg">' . sprintf( __( '%s URLs are unavailable pending Google Merchant ID and Store Code values.',
+								'wpsso-google-merchant-feed' ), $metabox_title ) . '</p>' .
+							'</td></tr>';
+
+					} else {
 
 						$locale_names = SucomUtil::get_available_feed_locale_names();
 
 						foreach ( $locale_names as $locale => $native_name ) {
 
-							$url = WpssoGmfRewrite::get_url( $locale, $content = 'inventory' );
+							$url    = WpssoGmfRewrite::get_url( $locale, $content = 'inventory' );
+							$css_id = SucomUtil::sanitize_css_id( 'gmf_inventory_' . $locale . '_url' );
 
-							$table_rows[ 'gmf_url_' . $locale ] = '' .
-								$this->form->get_th_html( $native_name, $css_class = 'medium' ) .
+							$table_rows[ $css_id ] = '' .
+								$this->form->get_th_html( $native_name, $css_class = 'medium', $css_id,
+									array( 'locale' => $locale, 'native_name' => $native_name ) ) .
 								'<td>' . $this->form->get_no_input_clipboard( $url ) . '</td>';
 						}
 					}

@@ -92,6 +92,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				return;
 			}
 
+			$wpsso =& Wpsso::get_instance();
+
 			/*
 			 * Make sure the requested type is valid.
 			 */
@@ -106,7 +108,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				if ( 'inventory' === $request_type ) {
 
-					if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
+					if ( empty( $wpsso->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
 
 						WpssoErrorException::http_error( 400 );
 					}
@@ -138,8 +140,6 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 				WpssoErrorException::http_error( 400 );
 			}
-
-			$wpsso =& Wpsso::get_instance();
 
 			if ( $wpsso->util->cache->is_refresh_running() ) {
 

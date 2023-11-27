@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0-dev.3\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0-dev.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -133,86 +133,140 @@ msgid ""
 "dimensions are %s)."
 msgstr ""
 
-#: lib/filters-messages.php:109
+#: lib/filters-messages.php:104
+msgid ""
+"When merchants set up a payments profile, Google assigns them a unique "
+"numeric code called a Merchant ID."
+msgstr ""
+
+#: lib/filters-messages.php:106
+msgid ""
+"To find your Merchant ID follow these steps: Sign in to your payments "
+"profile, at the top click Settings, find \"Public merchant profile\" for "
+"your merchant ID."
+msgstr ""
+
+#: lib/filters-messages.php:108 lib/filters-messages.php:120
+msgid "See the <a href=\"%1$s\">%2$s</a> documentation for additional details."
+msgstr ""
+
+#: lib/filters-messages.php:109 lib/filters-messages.php:121
+msgid "https://support.google.com/merchants/answer/7677785"
+msgstr ""
+
+#: lib/filters-messages.php:110 lib/filters-messages.php:122
+msgid "About the inventory feed specification"
+msgstr ""
+
+#: lib/filters-messages.php:116
 msgid "The store code from Google's Business Profiles."
 msgstr ""
 
-#: lib/filters-messages.php:111
+#: lib/filters-messages.php:118
 msgid ""
 "The value is case-sensitive and must match the store code in your Google "
 "Business Profile."
 msgstr ""
 
-#: lib/filters-messages.php:135
+#: lib/filters-messages.php:128 lib/filters.php:99
+#: lib/submenu/google-merchant.php:32
+msgctxt "metabox title"
+msgid "Google Merchant Feed XML"
+msgstr ""
+
+#: lib/filters-messages.php:130 lib/filters-messages.php:138
+msgid ""
+"The %1$s includes all public WordPress post objects (ie. posts, pages, and "
+"custom post types) with an Open Graph type of \"product\" and a language of "
+"%2$s (ie. locale \"%3$s\")."
+msgstr ""
+
+#: lib/filters-messages.php:136 lib/submenu/google-merchant.php:33
+#: lib/submenu/google-merchant.php:132
+msgctxt "metabox title"
+msgid "Google Merchant Inventory XML"
+msgstr ""
+
+#: lib/filters-messages.php:161
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-messages.php:138 lib/filters-messages.php:151
+#: lib/filters-messages.php:164 lib/filters-messages.php:177
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:141
+#: lib/filters-messages.php:167
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:148
+#: lib/filters-messages.php:174
 msgid ""
 "A customized image URL (instead of an image ID) for the Google merchant feed "
 "XML."
 msgstr ""
 
-#: lib/filters-messages.php:154
+#: lib/filters-messages.php:180
 msgid "This option is disabled if a custom image ID is selected."
-msgstr ""
-
-#: lib/filters.php:99 lib/submenu/google-merchant.php:37
-msgctxt "metabox title"
-msgid "Google Merchant Feed XML"
 msgstr ""
 
 #: lib/filters.php:101
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:61
+#: lib/submenu/google-merchant.php:54 lib/submenu/google-merchant.php:58
 msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:95
+#: lib/submenu/google-merchant.php:88
 msgctxt "task name"
 msgid "refresh the cache"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:98
+#: lib/submenu/google-merchant.php:91
 msgid "A background task to %s is currently running."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:100
+#: lib/submenu/google-merchant.php:93
 msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:127
+#: lib/submenu/google-merchant.php:122
 msgctxt "option comment"
 msgid "%1$s feed items, %2$s image links, and %3$s additional image links."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:140
+#: lib/submenu/google-merchant.php:137
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:142
-msgid "%s is unavailable pending the activation of an e-commerce plugin."
+#: lib/submenu/google-merchant.php:139
+msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:160
+#: lib/submenu/google-merchant.php:152
 msgctxt "option label"
-msgid "Store Code"
+msgid "Google Merchant ID"
 msgstr ""
 
-#: lib/xml.php:519
+#: lib/submenu/google-merchant.php:168
+msgctxt "option label"
+msgid "Google Store Code"
+msgstr ""
+
+#: lib/submenu/google-merchant.php:176
+msgid ""
+"The Google Merchant ID and Store Code are required to create inventory XML."
+msgstr ""
+
+#: lib/submenu/google-merchant.php:178
+msgid ""
+"%s URLs are unavailable pending Google Merchant ID and Store Code values."
+msgstr ""
+
+#: lib/xml.php:334
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 

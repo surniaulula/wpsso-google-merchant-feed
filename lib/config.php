@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '9.0.0-dev.3',	// Plugin version.
+					'version'     => '9.0.0-dev.4',	// Plugin version.
 					'opt_version' => '2',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -65,6 +65,97 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					),
 
 					/*
+					 * Callbacks for Vitalybaev\GoogleMerchant classes.
+					 */
+					'callbacks' => array(
+						'inventory' => array(
+							'product:merchant_id'      => 'setTargetCustomerId',
+							'product:store_code'       => 'setStoreCode',
+							'product:retailer_item_id' => 'setId',
+							'product:ean'              => 'addGtin',	// One or more.
+							'product:gtin14'           => 'addGtin',	// One or more.
+							'product:gtin13'           => 'addGtin',	// One or more.
+							'product:gtin12'           => 'addGtin',	// One or more.
+							'product:gtin8'            => 'addGtin',	// One or more.
+							'product:gtin'             => 'addGtin',	// One or more.
+							'product:isbn'             => 'addGtin',	// One or more.
+							'product:upc'              => 'addGtin',	// One or more.
+							'product:quantity'         => 'setQuantity',
+							'product:price'            => 'setPrice',
+						),
+						'product' => array(
+							'og:title'                            => 'setTitle',
+							'og:description'                      => 'setDescription',
+							'og:url'                              => 'setCanonicalLink',
+							'product:retailer_item_id'            => 'setId',
+							'product:title'                       => 'setTitle',
+							'product:description'                 => 'setDescription',
+							'product:url'                         => 'setLink',
+							'product:availability'                => 'setAvailability',
+							'product:price'                       => 'setPrice',
+							'product:sale_price'                  => 'setSalePrice',
+							'product:sale_price_dates'            => 'setSalePriceEffectiveDate',
+							'product:category'                    => 'setGoogleCategory',
+							'product:retailer_category'           => 'setProductType',
+							'product:brand'                       => 'setBrand',
+							'product:ean'                         => 'addGtin',	// One or more.
+							'product:gtin14'                      => 'addGtin',	// One or more.
+							'product:gtin13'                      => 'addGtin',	// One or more.
+							'product:gtin12'                      => 'addGtin',	// One or more.
+							'product:gtin8'                       => 'addGtin',	// One or more.
+							'product:gtin'                        => 'addGtin',	// One or more.
+							'product:isbn'                        => 'addGtin',	// One or more.
+							'product:upc'                         => 'addGtin',	// One or more.
+							'product:mfr_part_no'                 => 'setMpn',
+							'product:condition'                   => 'setCondition',
+							'product:adult_type'                  => 'setAdult',
+							'product:energy_efficiency:value'     => 'setEnergyEfficiencyClass',
+							'product:energy_efficiency:min_value' => 'setMinEnergyEfficiencyClass',
+							'product:energy_efficiency:max_value' => 'setMaxEnergyEfficiencyClass',
+							'product:age_group'                   => 'setAgeGroup',
+							'product:color'                       => 'setColor',
+							'product:target_gender'               => 'setGender',
+							'product:material'                    => 'setMaterial',
+							'product:pattern'                     => 'setPattern',
+							'product:size'                        => 'setSize',
+							'product:size_group'                  => 'addSizeType',	// One or more.
+							'product:size_system'                 => 'setSizeSystem',
+							'product:item_group_id'               => 'setItemGroupId',
+							'product:length:value'                => 'setProductLength',
+							'product:length:units'                => null,
+							'product:width:value'                 => 'setProductWidth',
+							'product:width:units'                 => null,
+							'product:height:value'                => 'setProductHeight',
+							'product:height:units'                => null,
+							'product:weight:value'                => 'setProductWeight',
+							'product:weight:units'                => null,
+							'product:shipping_length:value'       => 'setShippingLength',
+							'product:shipping_length:value'       => null,
+							'product:shipping_width:value'        => 'setShippingWidth',
+							'product:shipping_width:value'        => null,
+							'product:shipping_height:value'       => 'setShippingHeight',
+							'product:shipping_height:value'       => null,
+							'product:shipping_weight:value'       => 'setShippingWeight',
+							'product:shipping_weight:value'       => null,
+						),
+						'shipping' => array(
+							'shipping_name'          => 'setLocationGroupName',
+							'shipping_rate_name'     => 'setService',
+							'shipping_rate_cost'     => 'setPrice',
+							'shipping_rate_currency' => null,
+							'country_code'           => 'setCountry',
+							'region_code'            => 'setRegion',
+							'postal_code'            => 'setPostalCode',
+							'handling_minimum'	 => array( 'setAttribute', 'min_handling_time', false ),
+							'handling_maximum'	 => array( 'setAttribute', 'max_handling_time', false ),
+							'handling_unit_code'     => null,
+							'transit_minimum'	 => array( 'setAttribute', 'min_transit_time', false ),
+							'transit_maximum'	 => array( 'setAttribute', 'max_transit_time', false ),
+							'transit_unit_code'      => null,
+						),
+					),
+
+					/*
 					 * Declare compatibility with WooCommerce HPOS.
 					 *
 					 * See https://github.com/woocommerce/woocommerce/wiki/High-Performance-Order-Storage-Upgrade-Recipe-Book.
@@ -76,11 +167,13 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			),
 			'opt' => array(
 				'defaults' => array(
-					'gmf_img_width'  => 1200,
-					'gmf_img_height' => 1200,
-					'gmf_img_crop'   => 1,
-					'gmf_img_crop_x' => 'center',
-					'gmf_img_crop_y' => 'center',
+					'gmf_img_width'   => 1200,
+					'gmf_img_height'  => 1200,
+					'gmf_img_crop'    => 1,
+					'gmf_img_crop_x'  => 'center',
+					'gmf_img_crop_y'  => 'center',
+					'gmf_merchant_id' => '',
+					'gmf_store_code'  => '',
 				),
 			),
 			'head' => array(
@@ -135,6 +228,11 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			$info =& self::$cf[ 'plugin' ][ 'wpssogmf' ];
 
 			return $add_slug ? $info[ 'slug' ] . '-' . $info[ 'version' ] : $info[ 'version' ];
+		}
+
+		public static function get_callbacks( $item_type ) {
+
+			return self::$cf[ 'plugin' ][ 'wpssogmf' ][ 'callbacks' ][ $item_type ];
 		}
 
 		public static function set_constants( $plugin_file ) {

@@ -18,115 +18,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
-		static $product_callbacks = array(
-
-			/*
-			 * Basic product data.
-			 */
-			'og:title'                 => 'setTitle',
-			'og:description'           => 'setDescription',
-			'og:url'                   => 'setCanonicalLink',
-			'product:retailer_item_id' => 'setId',
-			'product:title'            => 'setTitle',
-			'product:description'      => 'setDescription',
-			'product:url'              => 'setLink',
-
-			/*
-			 * Price & availability.
-			 */
-			'product:availability'     => 'setAvailability',
-			'product:price'            => 'setPrice',
-			'product:sale_price'       => 'setSalePrice',
-			'product:sale_price_dates' => 'setSalePriceEffectiveDate',
-
-			/*
-			 * Product category.
-			 */
-			'product:category'          => 'setGoogleCategory',
-			'product:retailer_category' => 'setProductType',
-
-			/*
-			 * Product identifiers.
-			 */
-			'product:brand'       => 'setBrand',
-			'product:ean'         => 'addGtin',	// One or more.
-			'product:gtin14'      => 'addGtin',	// One or more.
-			'product:gtin13'      => 'addGtin',	// One or more.
-			'product:gtin12'      => 'addGtin',	// One or more.
-			'product:gtin8'       => 'addGtin',	// One or more.
-			'product:gtin'        => 'addGtin',	// One or more.
-			'product:isbn'        => 'addGtin',	// One or more.
-			'product:upc'         => 'addGtin',	// One or more.
-			'product:mfr_part_no' => 'setMpn',
-
-			/*
-			 * Detailed product description.
-			 */
-			'product:condition'                   => 'setCondition',
-			'product:adult_type'                  => 'setAdult',
-			'product:energy_efficiency:value'     => 'setEnergyEfficiencyClass',
-			'product:energy_efficiency:min_value' => 'setMinEnergyEfficiencyClass',
-			'product:energy_efficiency:max_value' => 'setMaxEnergyEfficiencyClass',
-			'product:age_group'                   => 'setAgeGroup',
-			'product:color'                       => 'setColor',
-			'product:target_gender'               => 'setGender',
-			'product:material'                    => 'setMaterial',
-			'product:pattern'                     => 'setPattern',
-			'product:size'                        => 'setSize',
-			'product:size_group'                  => 'addSizeType',	// One or more.
-			'product:size_system'                 => 'setSizeSystem',
-			'product:item_group_id'               => 'setItemGroupId',
-			'product:length:value'                => 'setProductLength',
-			'product:length:units'                => null,
-			'product:width:value'                 => 'setProductWidth',
-			'product:width:units'                 => null,
-			'product:height:value'                => 'setProductHeight',
-			'product:height:units'                => null,
-			'product:weight:value'                => 'setProductWeight',
-			'product:weight:units'                => null,
-
-			/*
-			 * Shipping.
-			 */
-			'product:shipping_length:value' => 'setShippingLength',
-			'product:shipping_length:value' => null,
-			'product:shipping_width:value'  => 'setShippingWidth',
-			'product:shipping_width:value'  => null,
-			'product:shipping_height:value' => 'setShippingHeight',
-			'product:shipping_height:value' => null,
-			'product:shipping_weight:value' => 'setShippingWeight',
-			'product:shipping_weight:value' => null,
-		);
-
-		/*
-		 * From wpsso-google-merchant-feed/live/vendor/vitalybaev/google-merchant-feed/src/Product/Shipping.php:
-		 *
-		 *	setCountry()
-		 *	setRegion()
-		 *	setPostalCode()
-		 *	setLocationId()
-		 *	setLocationGroupName()
-		 *	setService()
-		 *	setPrice()
-		 *
-		 * See https://support.google.com/merchants/answer/6324484.
-		 */
-		static $shipping_callbacks = array(
-			'shipping_name'          => 'setLocationGroupName',
-			'shipping_rate_name'     => 'setService',
-			'shipping_rate_cost'     => 'setPrice',
-			'shipping_rate_currency' => null,
-			'country_code'           => 'setCountry',
-			'region_code'            => 'setRegion',
-			'postal_code'            => 'setPostalCode',
-			'handling_minimum'	 => array( 'setAttribute', 'min_handling_time', false ),
-			'handling_maximum'	 => array( 'setAttribute', 'max_handling_time', false ),
-			'handling_unit_code'     => null,
-			'transit_minimum'	 => array( 'setAttribute', 'min_transit_time', false ),
-			'transit_maximum'	 => array( 'setAttribute', 'max_transit_time', false ),
-			'transit_unit_code'      => null,
-		);
-
 		/*
 		 * Clear the feed XML cache files.
 		 *
@@ -261,7 +152,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							$wpsso->debug->log( 'adding variant #' . $num . ' for post id ' . $post_id );
 						}
 
-						self::add_feed_product( $rss2_feed, $mt_single, $request_type );
+						self::add_feed_item( $rss2_feed, $mt_single, $request_type );
 					}
 
 				} else {
@@ -271,7 +162,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						$wpsso->debug->log( 'adding product for post id ' . $post_id );
 					}
 
-					self::add_feed_product( $rss2_feed, $mt_og, $request_type );
+					self::add_feed_item( $rss2_feed, $mt_og, $request_type );
 				}
 			}
 
@@ -290,14 +181,176 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $xml;
 		}
 
-		static public function get_mt_single_shipping( $mt_single ) {
+		/*
+		 * See product feed specification https://support.google.com/merchants/answer/7052112.
+		 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
+		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
+		 * See store feed specification at https://support.google.com/merchants/answer/7677622.
+		 */
+		static private function add_feed_item( &$rss2_feed, array $mt_single, $request_type = 'feed' ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
+			$item = null;
+
+			self::sanitize_mt_array( $mt_single );
+
+			switch ( $request_type ) {
+
+				case 'feed':
+
+					$callbacks = WpssoGmfConfig::get_callbacks( 'product' );
+
+					$item = new Vitalybaev\GoogleMerchant\Product();
+
+					self::add_item_data( $item, $mt_single, $callbacks );
+	
+					self::add_item_images( $item, $mt_single );
+
+					self::add_item_shipping( $item, $mt_single );
+
+					break;
+
+				case 'inventory':
+
+					$mt_single[ 'product:merchant_id' ] = isset( $wpsso->options[ 'gmf_merchant_id' ] ) ?  $wpsso->options[ 'gmf_merchant_id' ] : '';
+					$mt_single[ 'product:store_code' ]  = isset( $wpsso->options[ 'gmf_store_code' ] ) ?  $wpsso->options[ 'gmf_store_code' ] : '';
+
+					$callbacks = WpssoGmfConfig::get_callbacks( 'inventory' );
+
+					$item = new Vitalybaev\GoogleMerchant\Inventory();
+
+					self::add_item_data( $item, $mt_single, $callbacks );
+
+					break;
+			}
+
+			if ( ! empty( $item ) ) $rss2_feed->addItem( $item );
+		}
+
+		static private function add_item_images( &$product, $mt_single ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
+			$image_urls = $wpsso->og->get_product_retailer_item_image_urls( $mt_single, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
+
+			foreach ( $image_urls as $num => $image_url ) {
+
+				if ( 0 == $num ) {
+
+					$product->setImage( $image_url );
+
+				} else $product->addAdditionalImage( $image_url );
+			}
+		}
+
+		static private function add_item_shipping( &$product, $mt_single ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
+			$mt_single_shipping = self::get_mt_single_shipping( $mt_single );
+
+			if ( empty( $mt_single_shipping ) ) {	// Nothing to do.
+
+				return;
+			}
+
+			$callbacks = WpssoGmfConfig::get_callbacks( 'shipping' );
+
+			foreach ( $mt_single_shipping as $num => $ship_opts ) {
+
+				$shipping = new Vitalybaev\GoogleMerchant\Product\Shipping();
+
+				self::add_item_data( $shipping, $ship_opts, $callbacks );
+
+				if ( 0 == $num ) {
+
+					$product->setShipping( $shipping );
+
+				} else $product->addShipping( $shipping );
+			}
+		}
+
+		static private function add_item_data( &$item, array $data, array $callbacks ) {
+
+			foreach ( $callbacks as $key => $callback ) {
+
+				if ( empty( $callback ) ) {	// Not used.
+
+					continue;
+
+				} elseif ( isset( $data[ $key ] ) && '' !== $data[ $key ] ) {	// Not null or empty string.
+
+					if ( is_array( $callback ) ) {
+
+						list( $method_name, $prop_name, $is_cdata ) = $callback;
+
+					} else list( $method_name, $prop_name, $is_cdata ) = array( $callback, '', false );
+
+					$values = is_array( $data[ $key ] ) ? $data[ $key ] : array( $data[ $key ] );
+
+					foreach ( $values as $value ) {
+
+						foreach ( array( ':value' => ':units', '_cost'  => '_currency' ) as $value_suffix => $append_suffix ) {
+
+							if ( false !== strpos( $key, $value_suffix ) ) {
+
+								$key_append = preg_replace( '/' . $value_suffix . '$/', $append_suffix, $key );
+
+								if ( ! empty( $data[ $key_append ] ) ) {
+
+									$value .= ' ' . $data[ $key_append ];
+								}
+							}
+						}
+
+						if ( method_exists( $item, $method_name ) ) {	// Just in case.
+
+							if ( $prop_name ) {
+
+								$item->$method_name( $prop_name, $value, $is_cdata );
+
+							} else $item->$method_name( $value );
+
+						} else {
+
+							$notice_pre = sprintf( '%s error:', __METHOD__ );
+
+							$notice_msg = sprintf( __( '%1$s::%2$s() method does not exist.', 'wpsso-google-merchant-feed' ),
+								get_class( $item ), $method_name );
+
+							SucomUtil::safe_error_log( $notice_pre . ' ' . $notice_msg );
+						}
+					}
+				}
+			}
+		}
+
+		static private function get_mt_single_shipping( $mt_single ) {
 
 			$shipping = array();
 
-			if ( empty( $mt_single[ 'product:shipping_offers' ] ) ) {
+			if ( empty( $mt_single[ 'product:shipping_offers' ] ) ) {	// Nothing to do.
 
 				return $shipping;
 			}
+
+			$callbacks = WpssoGmfConfig::get_callbacks( 'shipping' );
 
 			foreach ( $mt_single[ 'product:shipping_offers' ] as $num => $ship_offer ) {
 
@@ -310,7 +363,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					$ship_opts = array();
 
-					foreach ( self::$shipping_callbacks as $key => $callback ) {
+					foreach ( $callbacks as $key => $callback ) {
 
 						if ( empty( $callback ) ) {	// Not used.
 
@@ -374,156 +427,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 
 			return $shipping;
-		}
-
-		/*
-		 * See product feed specification https://support.google.com/merchants/answer/7052112.
-		 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
-		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
-		 * See store feed specification at https://support.google.com/merchants/answer/7677622.
-		 */
-		static private function add_feed_product( &$rss2_feed, array $mt_single, $request_type = 'feed' ) {
-
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
-			$product = new Vitalybaev\GoogleMerchant\Product();
-
-			self::add_product_data( $product, $mt_single );
-
-			self::add_product_images( $product, $mt_single );
-
-			self::add_product_shipping( $product, $mt_single );
-
-			$rss2_feed->addProduct( $product );
-		}
-
-		/*
-		 * See product feed specification https://support.google.com/merchants/answer/7052112.
-		 */
-		static private function add_product_data( &$product, $mt_single ) {
-
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
-			self::sanitize_mt_array( $mt_single );
-
-			self::add_object_data( $product, $mt_single, self::$product_callbacks );
-		}
-
-		static private function add_product_images( &$product, $mt_single ) {
-
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
-			$image_urls = $wpsso->og->get_product_retailer_item_image_urls( $mt_single, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
-
-			foreach ( $image_urls as $num => $image_url ) {
-
-				if ( 0 == $num ) {
-
-					$product->setImage( $image_url );
-
-				} else $product->addAdditionalImage( $image_url );
-			}
-		}
-
-		static private function add_product_shipping( &$product, $mt_single ) {
-
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
-			$mt_single_shipping = self::get_mt_single_shipping( $mt_single );
-
-			foreach ( $mt_single_shipping as $num => $ship_opts ) {
-
-				$shipping = new Vitalybaev\GoogleMerchant\Product\Shipping();
-
-				self::add_object_data( $shipping, $ship_opts, self::$shipping_callbacks );
-
-				if ( 0 == $num ) {
-
-					$product->setShipping( $shipping );
-
-				} else $product->addShipping( $shipping );
-			}
-		}
-
-		static private function add_object_data( &$object, array $data, array $callbacks ) {
-
-			foreach ( $callbacks as $key => $callback ) {
-
-				if ( empty( $callback ) ) {	// Not used.
-
-					continue;
-
-				} elseif ( isset( $data[ $key ] ) && '' !== $data[ $key ] ) {	// Not null or empty string.
-
-					if ( is_array( $callback ) ) {
-
-						list( $method_name, $prop_name, $is_cdata ) = $callback;
-
-					} else {
-
-						list( $method_name, $prop_name, $is_cdata ) = array( $callback, '', false );
-					}
-
-					$values = is_array( $data[ $key ] ) ? $data[ $key ] : array( $data[ $key ] );
-
-					foreach ( $values as $value ) {
-
-						foreach ( array( ':value' => ':units', '_cost'  => '_currency' ) as $value_suffix => $append_suffix ) {
-
-							if ( false !== strpos( $key, $value_suffix ) ) {
-
-								$key_append = preg_replace( '/' . $value_suffix . '$/', $append_suffix, $key );
-
-								if ( ! empty( $data[ $key_append ] ) ) {
-
-									$value .= ' ' . $data[ $key_append ];
-								}
-							}
-						}
-
-						if ( method_exists( $object, $method_name ) ) {	// Just in case.
-
-							if ( $prop_name ) {
-
-								$object->$method_name( $prop_name, $value, $is_cdata );
-
-							} else {
-
-								$object->$method_name( $value );
-							}
-
-						} else {
-
-							$notice_pre = sprintf( '%s error:', __METHOD__ );
-
-							$notice_msg = sprintf( __( '%1$s::%2$s() method does not exist.', 'wpsso-google-merchant-feed' ),
-								get_class( $object ), $method_name );
-
-							SucomUtil::safe_error_log( $notice_pre . ' ' . $notice_msg );
-						}
-					}
-				}
-			}
 		}
 
 		static private function sanitize_mt_array( &$mt_single ) {

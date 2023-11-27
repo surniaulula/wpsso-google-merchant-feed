@@ -27,7 +27,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 			$this->p->util->add_plugin_filters( $this, array(
 				'messages_info'         => 3,
-				'messages_tooltip'      => 2,
+				'messages_tooltip'      => 3,
 				'messages_tooltip_meta' => 2,
 			) );
 		}
@@ -81,7 +81,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 			return $text;
 		}
 
-		public function filter_messages_tooltip( $text, $msg_key ) {
+		public function filter_messages_tooltip( $text, $msg_key, $info ) {
 
 			if ( 0 !== strpos( $msg_key, 'tooltip-gmf_' ) ) {
 
@@ -99,17 +99,43 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
-				/*
-				 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
-				 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
-				 * See store feed specification at https://support.google.com/merchants/answer/7677622.
-				 */
+				case 'tooltip-gmf_merchant_id':
+
+					$text = __( 'When merchants set up a payments profile, Google assigns them a unique numeric code called a Merchant ID.', 'wpsso-google-merchant-feed' ) . ' ';
+
+					$text .= __( 'To find your Merchant ID follow these steps: Sign in to your payments profile, at the top click Settings, find "Public merchant profile" for your merchant ID.', 'wpsso-google-merchant-feed' ) . ' ';
+
+					$text .= sprintf( __( 'See the <a href="%1$s">%2$s</a> documentation for additional details.', 'wpsso-google-merchant-feed' ),
+						__( 'https://support.google.com/merchants/answer/7677785', 'wpsso-google-merchant-feed' ),
+						__( 'About the inventory feed specification', 'wpsso-google-merchant-feed' ) );
+
+					break;
+
 				case 'tooltip-gmf_store_code':
 
 					$text = __( 'The store code from Google\'s Business Profiles.', 'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'The value is case-sensitive and must match the store code in your Google Business Profile.',
-						'wpsso-google-merchant-feed' );
+					$text .= __( 'The value is case-sensitive and must match the store code in your Google Business Profile.', 'wpsso-google-merchant-feed' ) . ' ';
+
+					$text .= sprintf( __( 'See the <a href="%1$s">%2$s</a> documentation for additional details.', 'wpsso-google-merchant-feed' ),
+						__( 'https://support.google.com/merchants/answer/7677785', 'wpsso-google-merchant-feed' ),
+						__( 'About the inventory feed specification', 'wpsso-google-merchant-feed' ) );
+
+					break;
+
+				case ( 0 === strpos( $msg_key, 'tooltip-gmf_feed_' ) ? true : false ):
+
+					$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
+					$text = sprintf( __( 'The %1$s includes all public WordPress post objects (ie. posts, pages, and custom post types) with an Open Graph type of "product" and a language of %2$s (ie. locale "%3$s").', 'wpsso-google-merchant-feed' ), $metabox_title, $info[ 'native_name' ], $info[ 'locale' ] );
+
+					break;
+
+				case ( 0 === strpos( $msg_key, 'tooltip-gmf_inventory_' ) ? true : false ):
+
+			 		$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
+
+					$text = sprintf( __( 'The %1$s includes all public WordPress post objects (ie. posts, pages, and custom post types) with an Open Graph type of "product" and a language of %2$s (ie. locale "%3$s").', 'wpsso-google-merchant-feed' ), $metabox_title, $info[ 'native_name' ], $info[ 'locale' ] );
 
 					break;
 
