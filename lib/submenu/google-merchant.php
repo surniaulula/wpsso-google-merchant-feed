@@ -105,24 +105,25 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
-						$url = WpssoGmfRewrite::get_url( $locale, $request_type = 'feed' );
-						$xml = WpssoGmfXml::get( $locale, $request_type = 'feed' );
-
+						$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'feed' );
+						$xml        = WpssoGmfXml::get( $locale, $request_type = 'feed' );
+						$css_id     = SucomUtil::sanitize_css_id( 'gmf_feed_' . $locale . '_url' );
 						$item_count = substr_count( $xml, '<item>' );
 						$img_count  = substr_count( $xml, '<g:image_link>' );
 						$addl_count = substr_count( $xml, '<g:additional_image_link>' );
 						$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
-						$css_id     = SucomUtil::sanitize_css_id( 'gmf_feed_' . $locale . '_url' );
+						$xml_info   = array(
+							sprintf( _x( '%s feed items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
+							sprintf( _x( '%s image links', 'option comment', 'wpsso-google-merchant-feed' ), $img_count ),
+							sprintf( _x( '%s additional image links', 'option comment', 'wpsso-google-merchant-feed' ), $addl_count ),
+							sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
+						);
 
 						$table_rows[ $css_id ] = '' .
 							$this->form->get_th_html( $native_name, $css_class = 'medium', $css_id,
 								array( 'locale' => $locale, 'native_name' => $native_name ) ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
-							'<p class="status-msg left">' .
-							sprintf( _x( '%1$s feed items, %2$s image links, and %3$s additional image links.',
-								'option comment', 'wpsso-google-merchant-feed' ), $item_count, $img_count, $addl_count ) .
-							'</p>' .
-							'</td>';
+							'<p class="status-msg left">' . implode( '; ', $xml_info ) . '</p></td>';
 					}
 
 					break;
@@ -185,13 +186,21 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 						foreach ( $locale_names as $locale => $native_name ) {
 
-							$url    = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory' );
-							$css_id = SucomUtil::sanitize_css_id( 'gmf_inventory_' . $locale . '_url' );
+							$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory' );
+							$xml        = WpssoGmfXml::get( $locale, $request_type = 'inventory' );
+							$css_id     = SucomUtil::sanitize_css_id( 'gmf_inventory_' . $locale . '_url' );
+							$item_count = substr_count( $xml, '<item>' );
+							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+							$xml_info   = array(
+								sprintf( _x( '%s inventory items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
+								sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
+							);
 
 							$table_rows[ $css_id ] = '' .
 								$this->form->get_th_html( $native_name, $css_class = 'medium', $css_id,
 									array( 'locale' => $locale, 'native_name' => $native_name ) ) .
-								'<td>' . $this->form->get_no_input_clipboard( $url ) . '</td>';
+								'<td>' . $this->form->get_no_input_clipboard( $url ) .
+								'<p class="status-msg left">' . implode( '; ', $xml_info ) . '</p></td>';
 						}
 					}
 
