@@ -87,18 +87,22 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 			 */
 			SucomUtil::move_to_end( $locale_names, $current_locale );
 
-			foreach ( $locale_names as $locale => $native_name ) {
+			foreach ( array(
+				'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+			 	'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+			) as $request_type => $metabox_title ) {
 
-				WpssoGmfXml::clear_cache( $locale );	// Clear the feed XML cache file.
+				foreach ( $locale_names as $request_locale => $native_name ) {
 
-				$xml = WpssoGmfXml::get( $locale );
+					WpssoGmfXml::clear_cache( $request_locale, $request_type );
 
-				$xml_count++;
+					$xml = WpssoGmfXml::get( $request_locale, $request_type );
+
+					$xml_count++;
+				}
+
+				$notice_msg .= sprintf( __( '%1$s for %2$s locales has been refreshed.', 'wpsso-google-merchant-feed' ), $metabox_title, $xml_count ) . ' ';
 			}
-
-			$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
-
-			$notice_msg .= sprintf( __( '%1$s for %2$s locales has been refreshed.', 'wpsso-google-merchant-feed' ), $metabox_title, $xml_count ) . ' ';
 
 			return $notice_msg;
 		}

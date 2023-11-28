@@ -218,6 +218,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				case 'inventory':
 
+					if ( ! isset( $mt_single[ 'product:quantity' ] ) ) break;	// Nothing to do.
+
 					$mt_single[ 'product:merchant_id' ] = isset( $wpsso->options[ 'gmf_merchant_id' ] ) ?  $wpsso->options[ 'gmf_merchant_id' ] : '';
 					$mt_single[ 'product:store_code' ]  = isset( $wpsso->options[ 'gmf_store_code' ] ) ?  $wpsso->options[ 'gmf_store_code' ] : '';
 
@@ -233,7 +235,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			if ( ! empty( $item ) ) $rss2_feed->addItem( $item );
 		}
 
-		static private function add_item_images( &$product, $mt_single ) {
+		static private function add_item_images( &$item, $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -248,13 +250,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				if ( 0 == $num ) {
 
-					$product->setImage( $image_url );
+					$item->setImage( $image_url );
 
-				} else $product->addAdditionalImage( $image_url );
+				} else $item->addAdditionalImage( $image_url );
 			}
 		}
 
-		static private function add_item_shipping( &$product, $mt_single ) {
+		static private function add_item_shipping( &$item, $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -280,9 +282,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				if ( 0 == $num ) {
 
-					$product->setShipping( $shipping );
+					$item->setShipping( $shipping );
 
-				} else $product->addShipping( $shipping );
+				} else $item->addShipping( $shipping );
 			}
 		}
 

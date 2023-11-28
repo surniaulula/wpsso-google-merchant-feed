@@ -105,8 +105,8 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
-						$url = WpssoGmfRewrite::get_url( $locale );
-						$xml = WpssoGmfXml::get( $locale );
+						$url = WpssoGmfRewrite::get_url( $locale, $request_type = 'feed' );
+						$xml = WpssoGmfXml::get( $locale, $request_type = 'feed' );
 
 						$item_count = substr_count( $xml, '<item>' );
 						$img_count  = substr_count( $xml, '<g:image_link>' );
@@ -185,7 +185,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 						foreach ( $locale_names as $locale => $native_name ) {
 
-							$url    = WpssoGmfRewrite::get_url( $locale, $content = 'inventory' );
+							$url    = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory' );
 							$css_id = SucomUtil::sanitize_css_id( 'gmf_inventory_' . $locale . '_url' );
 
 							$table_rows[ $css_id ] = '' .

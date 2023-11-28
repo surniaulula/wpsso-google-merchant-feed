@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 8.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-11-23 06:39-0800\n"
+"PO-Revision-Date: 2023-11-26 10:52-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -185,6 +185,10 @@ msgstr "%s est indisponible en attendant l'activation d'une extension e-commerce
 msgctxt "option label"
 msgid "Store Code"
 msgstr "Code de magasin"
+
+#: lib/xml.php:519
+msgid "%1$s::%2$s() method does not exist."
+msgstr "La méthode %1$s::%2$s() n'existe pas."
 
 #. Plugin Name of the plugin/theme
 msgid "WPSSO Google Merchant Feed XML"

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0-dev.4\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0-dev.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -168,7 +168,7 @@ msgid ""
 "Business Profile."
 msgstr ""
 
-#: lib/filters-messages.php:128 lib/filters.php:99
+#: lib/filters-messages.php:128 lib/filters.php:91
 #: lib/submenu/google-merchant.php:32
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
@@ -181,8 +181,8 @@ msgid ""
 "%2$s (ie. locale \"%3$s\")."
 msgstr ""
 
-#: lib/filters-messages.php:136 lib/submenu/google-merchant.php:33
-#: lib/submenu/google-merchant.php:132
+#: lib/filters-messages.php:136 lib/filters.php:92
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:132
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
@@ -210,7 +210,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:101
+#: lib/filters.php:104
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
@@ -266,7 +266,7 @@ msgid ""
 "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr ""
 
-#: lib/xml.php:334
+#: lib/xml.php:336
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 
