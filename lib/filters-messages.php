@@ -101,9 +101,28 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 				case 'tooltip-gmf_feed_exp_secs':
 
+					$def_value = $this->p->opt->get_defaults( 'gmf_feed_exp_secs' );
+
+					$text = sprintf( __( 'The XML file cache expiration time in seconds (default is %s).',
+						'wpsso-google-merchant-feed' ), $def_value ) . ' ';
+
+					$text .= __( 'When a product is updated, or the cache expires, the XML file cache is automatically refreshed.',
+						'wpsso-google-merchant-feed' ) . ' ';
+
 					break;
 
 				case 'tooltip-gmf_inventory_exp_secs':
+
+					$def_value = $this->p->opt->get_defaults( 'gmf_inventory_exp_secs' );
+
+					$text = sprintf( __( 'The XML file cache expiration time in seconds (default is %s).',
+						'wpsso-google-merchant-feed' ), $def_value ) . ' ';
+
+					$text .= __( 'When a product is updated, or the cache expires, the XML file cache is automatically refreshed.',
+						'wpsso-google-merchant-feed' ) . ' ';
+
+					$text .= __( 'You can decrease the expiration time if you need to refresh product quantities in the XML file more frequently.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
 					break;
 
