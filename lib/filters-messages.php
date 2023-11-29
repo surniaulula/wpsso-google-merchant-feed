@@ -99,6 +99,14 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
+				case 'tooltip-gmf_feed_exp_secs':
+
+					break;
+
+				case 'tooltip-gmf_inventory_exp_secs':
+
+					break;
+
 				case 'tooltip-gmf_merchant_id':
 
 					$text = __( 'When merchants set up a payments profile, Google assigns them a unique numeric code called a Merchant ID.', 'wpsso-google-merchant-feed' ) . ' ';
@@ -123,7 +131,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
-				case ( 0 === strpos( $msg_key, 'tooltip-gmf_feed_' ) ? true : false ):
+				case ( 0 === strpos( $msg_key, 'tooltip-gmf_feed_xml_' ) ? true : false ):
 
 					$metabox_title = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
@@ -131,7 +139,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
-				case ( 0 === strpos( $msg_key, 'tooltip-gmf_inventory_' ) ? true : false ):
+				case ( 0 === strpos( $msg_key, 'tooltip-gmf_inventory_xml_' ) ? true : false ):
 
 			 		$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
 

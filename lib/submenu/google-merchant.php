@@ -101,13 +101,19 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 				case 'google-merchant-feed':
 
+					$table_rows[ 'gmf_feed_exp_secs' ] = '' .
+						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
+							$css_class = 'medium', $css_id = 'gmf_feed_exp_secs' ) .
+						'<td>' . $this->form->get_input( 'gmf_feed_exp_secs', 'short' ) . ' ' .
+							_x( 'seconds', 'option comment', 'wpsso' ) . '</td>';
+
 					$locale_names = SucomUtil::get_available_feed_locale_names();
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
 						$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'feed' );
 						$xml        = WpssoGmfXml::get( $locale, $request_type = 'feed' );
-						$css_id     = SucomUtil::sanitize_css_id( 'gmf_feed_' . $locale . '_url' );
+						$css_id     = SucomUtil::sanitize_css_id( 'gmf_feed_xml_' . $locale );
 						$item_count = substr_count( $xml, '<item>' );
 						$img_count  = substr_count( $xml, '<g:image_link>' );
 						$addl_count = substr_count( $xml, '<g:additional_image_link>' );
@@ -143,6 +149,12 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 						return $table_rows;
 					}
+
+					$table_rows[ 'gmf_inventory_exp_secs' ] = '' .
+						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
+							$css_class = 'medium', $css_id = 'gmf_inventory_exp_secs' ) .
+						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'short' ) . ' ' .
+							_x( 'seconds', 'option comment', 'wpsso' ) . '</td>';
 
 					/*
 					 * The merchant ID of this retailer.
@@ -188,7 +200,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 							$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory' );
 							$xml        = WpssoGmfXml::get( $locale, $request_type = 'inventory' );
-							$css_id     = SucomUtil::sanitize_css_id( 'gmf_inventory_' . $locale . '_url' );
+							$css_id     = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
 							$item_count = substr_count( $xml, '<item>' );
 							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
 							$xml_info   = array(

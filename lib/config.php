@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '9.0.0-dev.7',	// Plugin version.
-					'opt_version' => '2',		// Increment when changing default option values.
+					'version'     => '9.0.0-dev.8',	// Plugin version.
+					'opt_version' => '3',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
 					'desc'        => 'Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '17.3.0-dev.7',
+							'min_version'   => '17.3.0-dev.8',
 						),
 					),
 
@@ -168,13 +168,15 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			),
 			'opt' => array(
 				'defaults' => array(
-					'gmf_img_width'   => 1200,
-					'gmf_img_height'  => 1200,
-					'gmf_img_crop'    => 1,
-					'gmf_img_crop_x'  => 'center',
-					'gmf_img_crop_y'  => 'center',
-					'gmf_merchant_id' => '',
-					'gmf_store_code'  => '',
+					'gmf_img_width'          => 1200,
+					'gmf_img_height'         => 1200,
+					'gmf_img_crop'           => 1,
+					'gmf_img_crop_x'         => 'center',
+					'gmf_img_crop_y'         => 'center',
+					'gmf_feed_exp_secs'      => WEEK_IN_SECONDS,
+					'gmf_inventory_exp_secs' => HOUR_IN_SECONDS,
+					'gmf_merchant_id'        => '',
+					'gmf_store_code'         => '',
 				),
 			),
 			'head' => array(
@@ -217,14 +219,14 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 				'cache' => array(
 					'file' => array(
 						'wpssogmf_feed_' => array(
-							'label'  => 'Google Merchant Feed XML',
-							'value'  => WEEK_IN_SECONDS,
-							'filter' => 'wpsso_cache_expire_gmf_feed_xml',	// See WpssoUtil->get_cache_exp_secs().
+							'label'   => 'Google Merchant Feed XML',
+							'opt_key' => 'gmf_feed_exp_secs',
+							'filter'  => 'wpsso_cache_expire_gmf_feed_xml',	// See WpssoUtil->get_cache_exp_secs().
 						),
 						'wpssogmf_inventory_' => array(
-							'label'  => 'Google Merchant Inventory XML',
-							'value'  => HOUR_IN_SECONDS,
-							'filter' => 'wpsso_cache_expire_gmf_inventory_xml',	// See WpssoUtil->get_cache_exp_secs().
+							'label'   => 'Google Merchant Inventory XML',
+							'opt_key' => 'gmf_inventory_exp_secs',
+							'filter'  => 'wpsso_cache_expire_gmf_inventory_xml',	// See WpssoUtil->get_cache_exp_secs().
 						),
 					),
 				),

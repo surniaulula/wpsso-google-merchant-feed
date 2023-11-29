@@ -208,7 +208,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					$item = new Vitalybaev\GoogleMerchant\Product();
 
 					self::add_item_data( $item, $mt_single, $callbacks );
-	
+
 					self::add_item_images( $item, $mt_single );
 
 					self::add_item_shipping( $item, $mt_single );
