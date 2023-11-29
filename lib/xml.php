@@ -68,11 +68,10 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			$cache_md5_pre  = 'wpsso_g_';
-			$cache_type     = 'file';
 			$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . ')';
+			$cache_type     = 'file';
 			$cache_file_ext = '.xml';
-			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_md5_pre, $cache_type );
+			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_key = 'wpssogmf_' . $request_type . '_', $cache_type );
 
 			if ( $wpsso->debug->enabled ) {
 
