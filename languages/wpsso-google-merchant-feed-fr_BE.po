@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-11-29 11:29-0800\n"
+"PO-Revision-Date: 2023-11-29 18:07-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -167,7 +167,7 @@ msgstr "Flux XML de marchand Google"
 
 #: lib/filters-messages.php:157 lib/filters-messages.php:165
 msgid "The %1$s includes all public WordPress post objects (ie. posts, pages, and custom post types) with an Open Graph type of \"product\" and a language of %2$s (ie. locale \"%3$s\")."
-msgstr ""
+msgstr "Le %1$s inclut tous les objets d'article WordPress publics (c'est-à-dire les articles, les pages et les types d'articles personnalisés) avec un type Open Graph \"produit\" et une langue de %2$s (c'est-à-dire les paramètres régionaux \"%3$s\")."
 
 #: lib/filters-messages.php:163 lib/filters.php:92
 #: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:139
@@ -245,7 +245,7 @@ msgstr "%s liens d'images supplémentaires"
 #: lib/submenu/google-merchant.php:125 lib/submenu/google-merchant.php:208
 msgctxt "option comment"
 msgid "%s KB file size"
-msgstr "%4$s Ko taille du fichier"
+msgstr "%s Ko taille du fichier"
 
 #: lib/submenu/google-merchant.php:144
 msgid "An e-commerce plugin is required to manage product inventory quantities."

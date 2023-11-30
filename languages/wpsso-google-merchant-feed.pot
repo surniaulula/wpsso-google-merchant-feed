@@ -163,9 +163,9 @@ msgstr ""
 
 #: lib/filters-messages.php:133
 msgid ""
-"To find your Merchant ID follow these steps: Sign in to your payments "
-"profile, at the top click Settings, find \"Public merchant profile\" for "
-"your merchant ID."
+"<a href=\"%s\">To find your Merchant ID follow these steps</a>: Sign in to "
+"your payments profile, at the top click Settings, find \"Public merchant "
+"profile\" for your merchant ID."
 msgstr ""
 
 #: lib/filters-messages.php:135 lib/filters-messages.php:147

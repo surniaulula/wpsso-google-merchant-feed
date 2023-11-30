@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text = __( 'When merchants set up a payments profile, Google assigns them a unique numeric code called a Merchant ID.', 'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'To find your Merchant ID follow these steps: Sign in to your payments profile, at the top click Settings, find "Public merchant profile" for your merchant ID.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= sprintf( __( '<a href="%s">To find your Merchant ID follow these steps</a>: Sign in to your payments profile, at the top click Settings, find "Public merchant profile" for your merchant ID.', 'wpsso-google-merchant-feed' ), 'https://support.google.com/paymentscenter/answer/7163092' ) . ' ';
 
 					$text .= sprintf( __( 'See the <a href="%1$s">%2$s</a> documentation for additional details.', 'wpsso-google-merchant-feed' ),
 						__( 'https://support.google.com/merchants/answer/7677785', 'wpsso-google-merchant-feed' ),
