@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-11-30 10:32-0800\n"
+"PO-Revision-Date: 2023-11-30 10:56-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -136,7 +136,6 @@ msgid "When merchants set up a payments profile, Google assigns them a unique nu
 msgstr "Lorsque les commerçants créent un profil de paiement, Google leur attribue un code numérique unique appelé identifiant de marchand."
 
 #: lib/filters-messages.php:133
-#| msgid "To find your Merchant ID follow these steps: Sign in to your payments profile, at the top click Settings, find \"Public merchant profile\" for your merchant ID."
 msgid "<a href=\"%s\">To find your Merchant ID follow these steps</a>: Sign in to your payments profile, at the top click Settings, find \"Public merchant profile\" for your merchant ID."
 msgstr "<a href=\"%s\">Pour trouver votre référence marchand, procédez comme suit</a>: Connectez-vous à votre profil de paiement, en haut de la page cliquez sur Paramètres, sous \"Profil public de marchand\" recherchez votre référence marchand."
 
@@ -144,15 +143,15 @@ msgstr "<a href=\"%s\">Pour trouver votre référence marchand, procédez comme 
 msgid "https://support.google.com/paymentscenter/answer/7163092"
 msgstr "https://support.google.com/paymentscenter/answer/7163092?hl=fr"
 
-#: lib/filters-messages.php:135 lib/filters-messages.php:147
+#: lib/filters-messages.php:135
 msgid "See the <a href=\"%1$s\">%2$s</a> documentation for additional details."
 msgstr "Consultez la documentation <a href=\"%1$s\">%2$s</a> pour plus de détails."
 
-#: lib/filters-messages.php:136 lib/filters-messages.php:148
+#: lib/filters-messages.php:136 lib/filters-messages.php:150
 msgid "https://support.google.com/merchants/answer/7677785"
 msgstr "https://support.google.com/merchants/answer/7677785?hl=fr"
 
-#: lib/filters-messages.php:137 lib/filters-messages.php:149
+#: lib/filters-messages.php:137 lib/filters-messages.php:151
 msgid "About the inventory feed specification"
 msgstr "À propos des spécifications du flux d'inventaire"
 
@@ -164,39 +163,51 @@ msgstr "Le code de magasin des profils d'entreprise de Google."
 msgid "The value is case-sensitive and must match the store code in your Google Business Profile."
 msgstr "La valeur est sensible à la casse et doit correspondre au code de magasin dans votre profil d'entreprise Google."
 
-#: lib/filters-messages.php:155 lib/filters.php:91
+#: lib/filters-messages.php:148
+msgid "See the <a href=\"%1$s\">%2$s</a> or the <a href=\"%3$s\">%4$s</a> documentation for additional details."
+msgstr "Consultez la documentation <a href=\"%1$s\">%2$s</a> ou <a href=\"%3$s\">%4$s</a> pour plus de détails."
+
+#: lib/filters-messages.php:152
+msgid "https://support.google.com/merchants/topic/9671633"
+msgstr "https://support.google.com/merchants/topic/9671633?hl=fr"
+
+#: lib/filters-messages.php:153
+msgid "Store errors in local product inventory feed"
+msgstr "Erreurs liées au magasin dans le flux d'inventaire de produits en magasin"
+
+#: lib/filters-messages.php:159 lib/filters.php:91
 #: lib/submenu/google-merchant.php:32
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
 
-#: lib/filters-messages.php:157 lib/filters-messages.php:165
+#: lib/filters-messages.php:161 lib/filters-messages.php:169
 msgid "The %1$s includes all public WordPress post objects (ie. posts, pages, and custom post types) with an Open Graph type of \"product\" and a language of %2$s (ie. locale \"%3$s\")."
 msgstr "Le %1$s inclut tous les objets d'article WordPress publics (c'est-à-dire les articles, les pages et les types d'articles personnalisés) avec un type Open Graph \"produit\" et une langue de %2$s (c'est-à-dire les paramètres régionaux \"%3$s\")."
 
-#: lib/filters-messages.php:163 lib/filters.php:92
+#: lib/filters-messages.php:167 lib/filters.php:92
 #: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:139
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr "Inventaire XML de marchand Google"
 
-#: lib/filters-messages.php:188
+#: lib/filters-messages.php:192
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr "ID d'image personnalisé pour le flux XML de marchand Google."
 
-#: lib/filters-messages.php:191 lib/filters-messages.php:204
+#: lib/filters-messages.php:195 lib/filters-messages.php:208
 msgid "The default value is inherited from the Schema markup or priority image."
 msgstr "La valeur par défaut est héritée du balisage de Schéma ou de l'image prioritaire."
 
-#: lib/filters-messages.php:194
+#: lib/filters-messages.php:198
 msgid "This option is disabled if a custom image URL is entered."
 msgstr "Cette option est désactivée si une URL d'image personnalisée est fournie."
 
-#: lib/filters-messages.php:201
+#: lib/filters-messages.php:205
 msgid "A customized image URL (instead of an image ID) for the Google merchant feed XML."
 msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour le flux XML de marchand Google."
 
-#: lib/filters-messages.php:207
+#: lib/filters-messages.php:211
 msgid "This option is disabled if a custom image ID is selected."
 msgstr "Cette option est désactivée si un ID d'image personnalisé est sélectionné."
 

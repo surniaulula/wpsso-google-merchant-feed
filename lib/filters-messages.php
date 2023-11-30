@@ -142,11 +142,15 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text = __( 'The store code from Google\'s Business Profiles.', 'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= __( 'The value is case-sensitive and must match the store code in your Google Business Profile.', 'wpsso-google-merchant-feed' ) . ' ';
+					$text .= __( 'The value is case-sensitive and must match the store code in your Google Business Profile.',
+						'wpsso-google-merchant-feed' ) . ' ';
 
-					$text .= sprintf( __( 'See the <a href="%1$s">%2$s</a> documentation for additional details.', 'wpsso-google-merchant-feed' ),
+					$text .= sprintf( __( 'See the <a href="%1$s">%2$s</a> or the <a href="%3$s">%4$s</a> documentation for additional details.',
+						'wpsso-google-merchant-feed' ),
 						__( 'https://support.google.com/merchants/answer/7677785', 'wpsso-google-merchant-feed' ),
-						__( 'About the inventory feed specification', 'wpsso-google-merchant-feed' ) );
+						__( 'About the inventory feed specification', 'wpsso-google-merchant-feed' ),
+						__( 'https://support.google.com/merchants/topic/9671633', 'wpsso-google-merchant-feed' ),
+						__( 'Store errors in local product inventory feed', 'wpsso-google-merchant-feed' ) );
 
 					break;
 

@@ -172,15 +172,15 @@ msgstr ""
 msgid "https://support.google.com/paymentscenter/answer/7163092"
 msgstr ""
 
-#: lib/filters-messages.php:135 lib/filters-messages.php:147
+#: lib/filters-messages.php:135
 msgid "See the <a href=\"%1$s\">%2$s</a> documentation for additional details."
 msgstr ""
 
-#: lib/filters-messages.php:136 lib/filters-messages.php:148
+#: lib/filters-messages.php:136 lib/filters-messages.php:150
 msgid "https://support.google.com/merchants/answer/7677785"
 msgstr ""
 
-#: lib/filters-messages.php:137 lib/filters-messages.php:149
+#: lib/filters-messages.php:137 lib/filters-messages.php:151
 msgid "About the inventory feed specification"
 msgstr ""
 
@@ -194,45 +194,59 @@ msgid ""
 "Business Profile."
 msgstr ""
 
-#: lib/filters-messages.php:155 lib/filters.php:91
+#: lib/filters-messages.php:148
+msgid ""
+"See the <a href=\"%1$s\">%2$s</a> or the <a href=\"%3$s\">%4$s</a> "
+"documentation for additional details."
+msgstr ""
+
+#: lib/filters-messages.php:152
+msgid "https://support.google.com/merchants/topic/9671633"
+msgstr ""
+
+#: lib/filters-messages.php:153
+msgid "Store errors in local product inventory feed"
+msgstr ""
+
+#: lib/filters-messages.php:159 lib/filters.php:91
 #: lib/submenu/google-merchant.php:32
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
-#: lib/filters-messages.php:157 lib/filters-messages.php:165
+#: lib/filters-messages.php:161 lib/filters-messages.php:169
 msgid ""
 "The %1$s includes all public WordPress post objects (ie. posts, pages, and "
 "custom post types) with an Open Graph type of \"product\" and a language of "
 "%2$s (ie. locale \"%3$s\")."
 msgstr ""
 
-#: lib/filters-messages.php:163 lib/filters.php:92
+#: lib/filters-messages.php:167 lib/filters.php:92
 #: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:139
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
 
-#: lib/filters-messages.php:188
+#: lib/filters-messages.php:192
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-messages.php:191 lib/filters-messages.php:204
+#: lib/filters-messages.php:195 lib/filters-messages.php:208
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:194
+#: lib/filters-messages.php:198
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:201
+#: lib/filters-messages.php:205
 msgid ""
 "A customized image URL (instead of an image ID) for the Google merchant feed "
 "XML."
 msgstr ""
 
-#: lib/filters-messages.php:207
+#: lib/filters-messages.php:211
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
