@@ -137,7 +137,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.0.0-dev.8 (2023/11/29)**
+**Version 9.0.0-b.1 (2023/11/29)**
 
 * **New Features**
 	* None.
@@ -154,7 +154,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v17.3.0-dev.8.
+	* WPSSO Core v17.3.0-b.1.
 
 **Version 8.0.0 (2023/11/25)**
 
@@ -183,7 +183,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.0.0-dev.8 =
+= 9.0.0-b.1 =
 
 (2023/11/29) Added a new "Google Merchant Inventory XML" metabox. Updated product callbacks for new methods in "vitalybaev/google-merchant-feed".
 
