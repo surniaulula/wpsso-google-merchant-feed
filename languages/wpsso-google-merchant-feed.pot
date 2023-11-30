@@ -168,6 +168,10 @@ msgid ""
 "profile\" for your merchant ID."
 msgstr ""
 
+#: lib/filters-messages.php:133
+msgid "https://support.google.com/paymentscenter/answer/7163092"
+msgstr ""
+
 #: lib/filters-messages.php:135 lib/filters-messages.php:147
 msgid "See the <a href=\"%1$s\">%2$s</a> documentation for additional details."
 msgstr ""
