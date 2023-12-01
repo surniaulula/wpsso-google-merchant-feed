@@ -36,8 +36,8 @@ msgstr ""
 #: gettext/gettext-lib-config.php:7
 msgctxt "plugin description"
 msgid ""
-"Google Merchant Feed XMLs for WooCommerce and custom product pages, with "
-"multilingual support."
+"Google Merchant feed and inventory XMLs for WooCommerce and custom product "
+"pages, including multilingual support."
 msgstr ""
 
 #: gettext/gettext-lib-config.php:8
@@ -350,8 +350,8 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Google Merchant Feed XMLs for WooCommerce and custom product pages, with "
-"multilingual support."
+"Google Merchant feed and inventory XMLs for WooCommerce and custom product "
+"pages, including multilingual support."
 msgstr ""
 
 #. Author of the plugin/theme
