@@ -25,12 +25,12 @@
         </ul>
       </header>
       <section>
-<h1>WPSSO Google Merchant Feed XML</h1>
+<h1>WPSSO Google Merchant Feed and Inventory XML</h1>
 
 <table>
 <tr><th align="right" valign="top" nowrap>Plugin Name</th><td>WPSSO Google Merchant Feed XML</td></tr>
-<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.</td></tr>
-<tr><th align="right" valign="top" nowrap>Stable Version</th><td>8.0.0</td></tr>
+<tr><th align="right" valign="top" nowrap>Summary</th><td>Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, with multilingual support.</td></tr>
+<tr><th align="right" valign="top" nowrap>Stable Version</th><td>9.0.0</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires PHP</th><td>7.2.34 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Requires WordPress</th><td>5.5 or newer</td></tr>
 <tr><th align="right" valign="top" nowrap>Tested Up To WordPress</th><td>6.4.1</td></tr>
@@ -44,7 +44,7 @@
 
 <!-- about -->
 
-<p><strong>Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.</strong></p>
+<p><strong>Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, with multilingual support.</strong></p>
 
 <p><strong>E-Commerce Plugin Optional:</strong></p>
 
@@ -64,7 +64,7 @@
 
 <p><strong>Google Merchant Feed XML Attributes:</strong></p>
 
-<p>The following XML product attributes are automatically created from your WooCommerce and custom products:</p>
+<p>XML product attributes are automatically created from your WooCommerce and custom products:</p>
 
 <ul>
 <li>Additional image link <code>&#91;additional_image_link&#93;</code></li>
@@ -80,7 +80,6 @@
 <li>Google product category <code>&#91;google_product_category&#93;</code></li>
 <li>Google search index <code>&#91;canonical_link&#93;</code></li>
 <li>GTIN <code>&#91;gtin&#93;</code> (inluding UPC, EAN, and ISBN)</li>
-<li>ID <code>&#91;id&#93;</code></li>
 <li>Image link <code>&#91;image_link&#93;</code></li>
 <li>Item group ID <code>&#91;item_group_id&#93;</code></li>
 <li>Link <code>&#91;link&#93;</code></li>
@@ -90,6 +89,7 @@
 <li>MPN <code>&#91;mpn&#93;</code></li>
 <li>Pattern <code>&#91;pattern&#93;</code></li>
 <li>Price <code>&#91;price&#93;</code></li>
+<li>Product ID <code>&#91;id&#93;</code></li>
 <li>Product length <code>&#91;product_length&#93;</code></li>
 <li>Product height <code>&#91;product_height&#93;</code></li>
 <li>Product type <code>&#91;product_type&#93;</code></li>
@@ -101,18 +101,18 @@
 
 <ul>
 <li>Country <code>&#91;country&#93;</code></li>
-<li>Region <code>&#91;region&#93;</code></li>
-<li>Postal code <code>&#91;postal_code&#93;</code></li>
 <li>Location group name <code>&#91;location_group_name&#93;</code></li>
-<li>Service <code>&#91;service&#93;</code></li>
+<li>Postal code <code>&#91;postal_code&#93;</code></li>
 <li>Price <code>&#91;price&#93;</code></li>
+<li>Region <code>&#91;region&#93;</code></li>
+<li>Service <code>&#91;service&#93;</code></li>
 <li><a href="https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/">WPSSO Shipping Delivery Time for WooCommerce SEO</a> add-on required for handling and transit times:
 
 <ul>
-<li>Minimum handling time <code>&#91;min_handling_time&#93;</code></li>
 <li>Maximum handling time <code>&#91;max_handling_time&#93;</code></li>
-<li>Minimum transit time <code>&#91;min_transit_time&#93;</code></li>
+<li>Minimum handling time <code>&#91;min_handling_time&#93;</code></li>
 <li>Maximum transit time <code>&#91;max_transit_time&#93;</code></li>
+<li>Minimum transit time <code>&#91;min_transit_time&#93;</code></li>
 </ul></li>
 </ul></li>
 <li>Shipping length <code>&#91;shipping_length&#93;</code></li>
@@ -123,6 +123,20 @@
 <li>Size system <code>&#91;size_system&#93;</code></li>
 <li>Size type <code>&#91;size_type&#93;</code></li>
 <li>Title <code>&#91;title&#93;</code></li>
+</ul>
+
+<p><strong>Google Merchant Inventory XML Attributes:</strong></p>
+
+<p>XML product attributes are automatically created from your WooCommerce and custom products:</p>
+
+<ul>
+<li>GTIN <code>&#91;gtin&#93;</code></li>
+<li>Merchant ID <code>&#91;target_customer_id&#93;</code></li>
+<li>Price <code>&#91;price&#93;</code></li>
+<li>Product ID <code>&#91;id&#93;</code></li>
+<li>Quantity <code>&#91;quantity&#93;</code></li>
+<li>Store code <code>&#91;store_code&#93;</code></li>
+<li>Timestamp <code>&#91;timestamp&#93;</code></li>
 </ul>
 
 <h3>WPSSO Core Required</h3>
