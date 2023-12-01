@@ -10,7 +10,7 @@
  * Author URI: https://wpsso.com/
  * License: GPLv3
  * License URI: https://www.gnu.org/licenses/gpl.txt
- * Description: Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, including multilingual support.
+ * Description: Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
  * Requires Plugins: wpsso
  * Requires PHP: 7.2.34
  * Requires At Least: 5.5
