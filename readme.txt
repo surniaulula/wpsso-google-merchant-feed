@@ -15,13 +15,13 @@ Tested Up To: 6.4.1
 WC Tested Up To: 8.3.1
 Stable Tag: 9.0.0
 
-Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, with multilingual support.
+Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, including multilingual support.
 
 == Description ==
 
 <!-- about -->
 
-**Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, with multilingual support.**
+**Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, including multilingual support.**
 
 **E-Commerce Plugin Optional:**
 
