@@ -1,4 +1,4 @@
-=== WPSSO Google Merchant Feed and Inventory XML ===
+=== WPSSO Google Merchant Feed XML ===
 Plugin Name: WPSSO Google Merchant Feed XML
 Plugin Slug: wpsso-google-merchant-feed
 Text Domain: wpsso-google-merchant-feed
@@ -15,13 +15,13 @@ Tested Up To: 6.4.1
 WC Tested Up To: 8.3.1
 Stable Tag: 9.0.0
 
-Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, including multilingual support.
+Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
 
 == Description ==
 
 <!-- about -->
 
-**Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, including multilingual support.**
+**Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.**
 
 **E-Commerce Plugin Optional:**
 
