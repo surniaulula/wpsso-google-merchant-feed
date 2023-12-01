@@ -1,4 +1,4 @@
-=== WPSSO Google Merchant Feed XML ===
+=== WPSSO Google Merchant Feed and Inventory XML ===
 Plugin Name: WPSSO Google Merchant Feed XML
 Plugin Slug: wpsso-google-merchant-feed
 Text Domain: wpsso-google-merchant-feed
@@ -13,15 +13,15 @@ Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.4.1
 WC Tested Up To: 8.3.1
-Stable Tag: 8.0.0
+Stable Tag: 9.0.0
 
-Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.
+Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, with multilingual support.
 
 == Description ==
 
 <!-- about -->
 
-**Google Merchant Feed XMLs for WooCommerce and custom product pages, with multilingual support.**
+**Google Merchant feed and inventory XMLs for WooCommerce and custom product pages, with multilingual support.**
 
 **E-Commerce Plugin Optional:**
 
@@ -41,7 +41,7 @@ After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Goo
 
 **Google Merchant Feed XML Attributes:**
 
-The following XML product attributes are automatically created from your WooCommerce and custom products:
+XML product attributes are automatically created from your WooCommerce and custom products:
 
 * Additional image link <code>&#91;additional_image_link&#93;</code>
 * Adult oriented <code>&#91;adult&#93;</code>
@@ -56,7 +56,6 @@ The following XML product attributes are automatically created from your WooComm
 * Google product category <code>&#91;google_product_category&#93;</code>
 * Google search index <code>&#91;canonical_link&#93;</code>
 * GTIN <code>&#91;gtin&#93;</code> (inluding UPC, EAN, and ISBN)
-* ID <code>&#91;id&#93;</code>
 * Image link <code>&#91;image_link&#93;</code>
 * Item group ID <code>&#91;item_group_id&#93;</code>
 * Link <code>&#91;link&#93;</code>
@@ -66,6 +65,7 @@ The following XML product attributes are automatically created from your WooComm
 * MPN <code>&#91;mpn&#93;</code>
 * Pattern <code>&#91;pattern&#93;</code>
 * Price <code>&#91;price&#93;</code>
+* Product ID <code>&#91;id&#93;</code>
 * Product length <code>&#91;product_length&#93;</code>
 * Product height <code>&#91;product_height&#93;</code>
 * Product type <code>&#91;product_type&#93;</code>
@@ -75,16 +75,16 @@ The following XML product attributes are automatically created from your WooComm
 * Sale price effective date <code>&#91;sale_price_effective_date&#93;</code>
 * Shipping <code>&#91;shipping&#93;</code>
 	* Country <code>&#91;country&#93;</code>
-	* Region <code>&#91;region&#93;</code>
-	* Postal code <code>&#91;postal_code&#93;</code>
 	* Location group name <code>&#91;location_group_name&#93;</code>
-	* Service <code>&#91;service&#93;</code>
+	* Postal code <code>&#91;postal_code&#93;</code>
 	* Price <code>&#91;price&#93;</code>
+	* Region <code>&#91;region&#93;</code>
+	* Service <code>&#91;service&#93;</code>
 	* [WPSSO Shipping Delivery Time for WooCommerce SEO](https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/) add-on required for handling and transit times:
-		* Minimum handling time <code>&#91;min_handling_time&#93;</code>
 		* Maximum handling time <code>&#91;max_handling_time&#93;</code>
-		* Minimum transit time <code>&#91;min_transit_time&#93;</code>
+		* Minimum handling time <code>&#91;min_handling_time&#93;</code>
 		* Maximum transit time <code>&#91;max_transit_time&#93;</code>
+		* Minimum transit time <code>&#91;min_transit_time&#93;</code>
 * Shipping length <code>&#91;shipping_length&#93;</code>
 * Shipping height <code>&#91;shipping_height&#93;</code>
 * Shipping weight <code>&#91;shipping_weight&#93;</code>
@@ -93,6 +93,18 @@ The following XML product attributes are automatically created from your WooComm
 * Size system <code>&#91;size_system&#93;</code>
 * Size type <code>&#91;size_type&#93;</code>
 * Title <code>&#91;title&#93;</code>
+
+**Google Merchant Inventory XML Attributes:**
+
+XML product attributes are automatically created from your WooCommerce and custom products:
+
+* GTIN <code>&#91;gtin&#93;</code>
+* Merchant ID <code>&#91;target_customer_id&#93;</code>
+* Price <code>&#91;price&#93;</code>
+* Product ID <code>&#91;id&#93;</code>
+* Quantity <code>&#91;quantity&#93;</code>
+* Store code <code>&#91;store_code&#93;</code>
+* Timestamp <code>&#91;timestamp&#93;</code>
 
 <h3>WPSSO Core Required</h3>
 
