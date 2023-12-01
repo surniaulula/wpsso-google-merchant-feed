@@ -37,7 +37,7 @@
 
 <p><strong>Google Merchant Feed XML Attributes:</strong></p>
 
-<p>XML product attributes are automatically created from your WooCommerce and custom products:</p>
+<p>XML attributes are automatically created from your WooCommerce and custom products:</p>
 
 <ul>
 <li>Additional image link <code>&#91;additional_image_link&#93;</code></li>
@@ -100,7 +100,7 @@
 
 <p><strong>Google Merchant Inventory XML Attributes:</strong></p>
 
-<p>XML product attributes are automatically created from your WooCommerce and custom products:</p>
+<p>XML attributes are automatically created from your WooCommerce and custom products:</p>
 
 <ul>
 <li>GTIN <code>&#91;gtin&#93;</code></li>
