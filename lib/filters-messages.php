@@ -99,6 +99,12 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
+				case 'tooltip-gmf_add_shipping':
+
+					$text = __( 'Include shipping information for each product in the feed XML.', 'wpsso-google-merchant-feed' ) . ' ';
+
+					break;
+
 				case 'tooltip-gmf_feed_exp_secs':
 
 					$def_value = $this->p->opt->get_defaults( 'gmf_feed_exp_secs' );

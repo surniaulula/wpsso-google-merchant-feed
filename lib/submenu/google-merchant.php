@@ -101,6 +101,11 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 				case 'google-merchant-feed':
 
+					$table_rows[ 'gmf_add_shipping' ] = '' .
+						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso' ),
+							$css_class = 'medium', $css_id = 'gmf_add_shipping' ) .
+						'<td>' . $this->form->get_checkbox( 'gmf_add_shipping' ) . '</td>';
+
 					$table_rows[ 'gmf_feed_exp_secs' ] = '' .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
 							$css_class = 'medium', $css_id = 'gmf_feed_exp_secs' ) .
@@ -150,12 +155,6 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						return $table_rows;
 					}
 
-					$table_rows[ 'gmf_inventory_exp_secs' ] = '' .
-						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
-							$css_class = 'medium', $css_id = 'gmf_inventory_exp_secs' ) .
-						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'short' ) . ' ' .
-							_x( 'seconds', 'option comment', 'wpsso' ) . '</td>';
-
 					/*
 					 * The merchant ID of this retailer.
 					 *
@@ -181,6 +180,12 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						$this->form->get_th_html( _x( 'Google Store Code', 'option label', 'wpsso' ),
 							$css_class = 'medium', $css_id = 'gmf_store_code' ) .
 						'<td>' . $this->form->get_input( 'gmf_store_code', 'short' ) . '</td>';
+
+					$table_rows[ 'gmf_inventory_exp_secs' ] = '' .
+						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
+							$css_class = 'medium', $css_id = 'gmf_inventory_exp_secs' ) .
+						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'short' ) . ' ' .
+							_x( 'seconds', 'option comment', 'wpsso' ) . '</td>';
 
 					if ( empty( $this->p->options[ 'gmf_merchant_id' ] ) ||
 						empty( $this->p->options[ 'gmf_store_code' ] ) ) {

@@ -211,7 +211,10 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					self::add_item_images( $item, $mt_single );
 
-					self::add_item_shipping( $item, $mt_single );
+					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
+
+						self::add_item_shipping( $item, $mt_single );
+					}
 
 					break;
 

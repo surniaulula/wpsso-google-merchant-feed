@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.1-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -139,114 +139,118 @@ msgid ""
 "dimensions are %s)."
 msgstr ""
 
-#: lib/filters-messages.php:106 lib/filters-messages.php:118
+#: lib/filters-messages.php:104
+msgid "Include shipping information for each product in the feed XML."
+msgstr ""
+
+#: lib/filters-messages.php:112 lib/filters-messages.php:124
 msgid "The XML file cache expiration time in seconds (default is %s)."
 msgstr ""
 
-#: lib/filters-messages.php:109 lib/filters-messages.php:121
+#: lib/filters-messages.php:115 lib/filters-messages.php:127
 msgid ""
 "When a product is updated, or the cache expires, the XML file cache is "
 "automatically refreshed."
 msgstr ""
 
-#: lib/filters-messages.php:124
+#: lib/filters-messages.php:130
 msgid ""
 "You can decrease the expiration time if you need to refresh product "
 "quantities in the XML file more frequently."
 msgstr ""
 
-#: lib/filters-messages.php:131
+#: lib/filters-messages.php:137
 msgid ""
 "When merchants set up a payments profile, Google assigns them a unique "
 "numeric code called a Merchant ID."
 msgstr ""
 
-#: lib/filters-messages.php:133
+#: lib/filters-messages.php:139
 msgid ""
 "<a href=\"%s\">To find your Merchant ID follow these steps</a>: Sign in to "
 "your payments profile, at the top click Settings, find \"Public merchant "
 "profile\" for your merchant ID."
 msgstr ""
 
-#: lib/filters-messages.php:133
+#: lib/filters-messages.php:139
 msgid "https://support.google.com/paymentscenter/answer/7163092"
 msgstr ""
 
-#: lib/filters-messages.php:135
+#: lib/filters-messages.php:141
 msgid "See the <a href=\"%1$s\">%2$s</a> documentation for additional details."
 msgstr ""
 
-#: lib/filters-messages.php:136 lib/filters-messages.php:150
+#: lib/filters-messages.php:142 lib/filters-messages.php:156
 msgid "https://support.google.com/merchants/answer/7677785"
 msgstr ""
 
-#: lib/filters-messages.php:137 lib/filters-messages.php:151
+#: lib/filters-messages.php:143 lib/filters-messages.php:157
 msgid "About the inventory feed specification"
 msgstr ""
 
-#: lib/filters-messages.php:143
+#: lib/filters-messages.php:149
 msgid "The store code from Google's Business Profiles."
 msgstr ""
 
-#: lib/filters-messages.php:145
+#: lib/filters-messages.php:151
 msgid ""
 "The value is case-sensitive and must match the store code in your Google "
 "Business Profile."
 msgstr ""
 
-#: lib/filters-messages.php:148
+#: lib/filters-messages.php:154
 msgid ""
 "See the <a href=\"%1$s\">%2$s</a> or the <a href=\"%3$s\">%4$s</a> "
 "documentation for additional details."
 msgstr ""
 
-#: lib/filters-messages.php:152
+#: lib/filters-messages.php:158
 msgid "https://support.google.com/merchants/topic/9671633"
 msgstr ""
 
-#: lib/filters-messages.php:153
+#: lib/filters-messages.php:159
 msgid "Store errors in local product inventory feed"
 msgstr ""
 
-#: lib/filters-messages.php:159 lib/filters.php:91
+#: lib/filters-messages.php:165 lib/filters.php:91
 #: lib/submenu/google-merchant.php:32
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
-#: lib/filters-messages.php:161 lib/filters-messages.php:169
+#: lib/filters-messages.php:167 lib/filters-messages.php:175
 msgid ""
 "The %1$s includes all public WordPress post objects (ie. posts, pages, and "
 "custom post types) with an Open Graph type of \"product\" and a language of "
 "%2$s (ie. locale \"%3$s\")."
 msgstr ""
 
-#: lib/filters-messages.php:167 lib/filters.php:92
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:139
+#: lib/filters-messages.php:173 lib/filters.php:92
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:144
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
 
-#: lib/filters-messages.php:192
+#: lib/filters-messages.php:198
 msgid "A customized image ID for the Google merchant feed XML."
 msgstr ""
 
-#: lib/filters-messages.php:195 lib/filters-messages.php:208
+#: lib/filters-messages.php:201 lib/filters-messages.php:214
 msgid ""
 "The default value is inherited from the Schema markup or priority image."
 msgstr ""
 
-#: lib/filters-messages.php:198
+#: lib/filters-messages.php:204
 msgid "This option is disabled if a custom image URL is entered."
 msgstr ""
 
-#: lib/filters-messages.php:205
+#: lib/filters-messages.php:211
 msgid ""
 "A customized image URL (instead of an image ID) for the Google merchant feed "
 "XML."
 msgstr ""
 
-#: lib/filters-messages.php:211
+#: lib/filters-messages.php:217
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
@@ -272,71 +276,76 @@ msgstr ""
 msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:105 lib/submenu/google-merchant.php:154
+#: lib/submenu/google-merchant.php:105
+msgctxt "option label"
+msgid "Include Shipping"
+msgstr ""
+
+#: lib/submenu/google-merchant.php:110 lib/submenu/google-merchant.php:185
 msgctxt "option label"
 msgid "XML Cache Expiration"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:108 lib/submenu/google-merchant.php:157
+#: lib/submenu/google-merchant.php:113 lib/submenu/google-merchant.php:188
 msgctxt "option comment"
 msgid "seconds"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:122
+#: lib/submenu/google-merchant.php:127
 msgctxt "option comment"
 msgid "%s feed items"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:123
+#: lib/submenu/google-merchant.php:128
 msgctxt "option comment"
 msgid "%s image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:124
+#: lib/submenu/google-merchant.php:129
 msgctxt "option comment"
 msgid "%s additional image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:125 lib/submenu/google-merchant.php:208
+#: lib/submenu/google-merchant.php:130 lib/submenu/google-merchant.php:213
 msgctxt "option comment"
 msgid "%s KB file size"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:144
+#: lib/submenu/google-merchant.php:149
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:146
+#: lib/submenu/google-merchant.php:151
 msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:165
+#: lib/submenu/google-merchant.php:164
 msgctxt "option label"
 msgid "Google Merchant ID"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:181
+#: lib/submenu/google-merchant.php:180
 msgctxt "option label"
 msgid "Google Store Code"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:189
+#: lib/submenu/google-merchant.php:194
 msgid ""
 "The Google Merchant ID and Store Code are required to create inventory XML."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:191
+#: lib/submenu/google-merchant.php:196
 msgid ""
 "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:207
+#: lib/submenu/google-merchant.php:212
 msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
 
-#: lib/xml.php:335
+#: lib/xml.php:338
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 
