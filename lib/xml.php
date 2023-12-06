@@ -399,7 +399,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 								if ( isset( $ship_offer[ 'delivery_time' ][ $unit_key ] ) &&	// Just in case.
 									'HUR' === $ship_offer[ 'delivery_time' ][ $unit_key ] ) {
 
-									$ship_opts[ $key ] = round( $ship_opts[ $key ] / 24, 1 );
+									$ship_opts[ $key ] = round( $ship_opts[ $key ] / 24 );
 								}
 							}
 
