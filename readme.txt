@@ -149,6 +149,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.0.1-dev.1 (2023/12/06)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v17.3.0.
+
 **Version 9.0.0 (2023/12/01)**
 
 * **New Features**
@@ -196,6 +211,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.2.1.
 
 == Upgrade Notice ==
+
+= 9.0.1-dev.1 =
+
+(2023/12/06) None.
 
 = 9.0.0 =
 
