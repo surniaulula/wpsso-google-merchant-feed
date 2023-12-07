@@ -149,7 +149,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.0.1-dev.2 (2023/12/07)**
+**Version 9.0.1-dev.3 (2023/12/07)**
 
 * **New Features**
 	* None.
@@ -158,11 +158,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Updated the "vitalybaev/google-merchant-feed" library.
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v17.3.0.
+	* WPSSO Core v17.3.1.
 
 **Version 9.0.0 (2023/12/01)**
 
@@ -212,9 +212,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.0.1-dev.2 =
+= 9.0.1-dev.3 =
 
-(2023/12/07) Added an "Include Shipping" option (unchecked by default).
+(2023/12/07) Added an "Include Shipping" option (unchecked by default). Updated the "vitalybaev/google-merchant-feed" library.
 
 = 9.0.0 =
 
