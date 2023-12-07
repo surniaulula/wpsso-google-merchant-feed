@@ -149,12 +149,12 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.0.1-dev.1 (2023/12/06)**
+**Version 9.0.1-dev.2 (2023/12/07)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* None.
+	* Added an "Include Shipping" option (unchecked by default).
 * **Bugfixes**
 	* None.
 * **Developer Notes**
@@ -212,9 +212,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.0.1-dev.1 =
+= 9.0.1-dev.2 =
 
-(2023/12/06) None.
+(2023/12/07) Added an "Include Shipping" option (unchecked by default).
 
 = 9.0.0 =
 
