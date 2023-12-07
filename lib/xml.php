@@ -152,6 +152,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						}
 
 						self::add_feed_item( $rss2_feed, $mt_single, $request_type );
+
+						unset( $mt_og[ 'product:variants' ][ $num ] );
 					}
 
 				} else {
@@ -163,7 +165,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					self::add_feed_item( $rss2_feed, $mt_og, $request_type );
 				}
+			
+				unset( $mt_og );
 			}
+
+			unset( $public_ids );
 
 			$xml = $rss2_feed->build();
 
@@ -181,12 +187,12 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		}
 
 		/*
-		 * See product feed specification https://support.google.com/merchants/answer/7052112.
-		 * See sales feed specification at https://support.google.com/merchants/answer/7676872.
-		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785.
-		 * See store feed specification at https://support.google.com/merchants/answer/7677622.
+		 * See product feed specification https://support.google.com/merchants/answer/7052112?hl=en.
+		 * See sales feed specification at https://support.google.com/merchants/answer/7676872?hl=en.
+		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785?hl=en.
+		 * See store feed specification at https://support.google.com/merchants/answer/7677622?hl=en.
 		 */
-		static private function add_feed_item( &$rss2_feed, array $mt_single, $request_type = 'feed' ) {
+		static private function add_feed_item( &$rss2_feed, &$mt_single, $request_type = 'feed' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -211,6 +217,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					self::add_item_images( $item, $mt_single );
 
+					/*
+					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
+					 */
 					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
 
 						self::add_item_shipping( $item, $mt_single );
@@ -237,7 +246,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			if ( ! empty( $item ) ) $rss2_feed->addItem( $item );
 		}
 
-		static private function add_item_images( &$item, $mt_single ) {
+		static private function add_item_images( &$item, &$mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -256,9 +265,14 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				} else $item->addAdditionalImage( $image_url );
 			}
+
+			unset( $image_urls );
 		}
 
-		static private function add_item_shipping( &$item, $mt_single ) {
+		/*
+		 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
+		 */
+		static private function add_item_shipping( &$item, &$mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -287,7 +301,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					$item->setShipping( $shipping );
 
 				} else $item->addShipping( $shipping );
+
+				unset( $mt_single_shipping[ $num ] );
 			}
+
+			unset( $mt_single_shipping );
 		}
 
 		static private function add_item_data( &$item, array $data, array $callbacks ) {
@@ -345,7 +363,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 		}
 
-		static private function get_mt_single_shipping( $mt_single ) {
+		static private function get_mt_single_shipping( &$mt_single ) {
 
 			$shipping = array();
 
@@ -356,14 +374,14 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$callbacks = WpssoGmfConfig::get_callbacks( 'shipping' );
 
-			foreach ( $mt_single[ 'product:shipping_offers' ] as $num => $ship_offer ) {
+			foreach ( $mt_single[ 'product:shipping_offers' ] as $offer_num => $ship_offer ) {
 
 				if ( empty( $ship_offer[ 'shipping_destinations' ] ) ) {
 
 					continue;
 				}
 
-				foreach ( $ship_offer[ 'shipping_destinations' ] as $ship_num => $ship_dest ) {
+				foreach ( $ship_offer[ 'shipping_destinations' ] as $dest_num => $ship_dest ) {
 
 					$ship_opts = array();
 
@@ -418,16 +436,22 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					} else {
 
-						foreach( $ship_dest[ 'postal_code' ] as $post_num => $postal_code ) {
+						foreach( $ship_dest[ 'postal_code' ] as $code_num => $postal_code ) {
 
 							$postal_code = str_replace( '...', '-', $postal_code );
 
 							$ship_opts[ 'postal_code' ] = $postal_code;
 
 							$shipping[] = $ship_opts;
+
+							unset( $ship_dest[ 'postal_code' ][ $code_num ] );
 						}
 					}
+
+					unset( $ship_offer[ 'shipping_destinations' ][ $dest_num ] );
 				}
+
+				unset( $mt_single[ 'product:shipping_offers' ][ $offer_num ] );
 			}
 
 			return $shipping;

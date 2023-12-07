@@ -99,9 +99,14 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
+				/*
+				 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
+				 */
 				case 'tooltip-gmf_add_shipping':
 
 					$text = __( 'Include shipping information for each product in the feed XML.', 'wpsso-google-merchant-feed' ) . ' ';
+
+					$text .= __( 'Use this setting when shipping costs for your product are not defined in your Merchant Center account or when you need to override shipping costs or speeds defined in your Merchant Center account.', 'wpsso-google-merchant-feed' ) . ' ';
 
 					break;
 

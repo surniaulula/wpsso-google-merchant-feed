@@ -101,6 +101,9 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 				case 'google-merchant-feed':
 
+					/*
+					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
+					 */
 					$table_rows[ 'gmf_add_shipping' ] = '' .
 						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso' ),
 							$css_class = 'medium', $css_id = 'gmf_add_shipping' ) .
