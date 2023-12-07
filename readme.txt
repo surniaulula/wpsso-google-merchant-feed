@@ -149,7 +149,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.0.1-dev.3 (2023/12/07)**
+**Version 9.0.1-dev.4 (2023/12/07)**
 
 * **New Features**
 	* None.
@@ -212,7 +212,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.0.1-dev.3 =
+= 9.0.1-dev.4 =
 
 (2023/12/07) Added an "Include Shipping" option (unchecked by default). Updated the "vitalybaev/google-merchant-feed" library.
 
