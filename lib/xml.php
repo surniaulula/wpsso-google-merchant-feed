@@ -166,7 +166,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					self::add_feed_item( $rss2_feed, $mt_og, $request_type );
 				}
 
-				unset( $mt_og );
+				unset( $mod, $mt_og );
 			}
 
 			unset( $public_ids );
