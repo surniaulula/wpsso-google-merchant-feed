@@ -99,15 +99,15 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->log( 'creating new feed' );
+				$wpsso->debug->mark( 'create feed' );	// Begin timer.
 			}
 
 			$site_title = SucomUtil::get_site_name( $wpsso->options, $request_locale );
 			$site_url   = SucomUtil::get_home_url( $wpsso->options, $request_locale );
 			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $request_locale );
-			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
 			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
 			$public_ids = WpssoPost::get_public_ids( $query_args );
+			$rss2_feed  = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -171,7 +171,19 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			unset( $public_ids );
 
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark( 'create feed' );	// End timer.
+
+				$wpsso->debug->mark( 'build xml' );	// Begin timer.
+			}
+
 			$xml = $rss2_feed->build();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark( 'build xml' );	// End timer.
+			}
 
 			if ( $cache_exp_secs ) {
 
@@ -310,6 +322,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 		static private function add_item_data( &$item, array $data, array $callbacks ) {
 
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
 			foreach ( $callbacks as $key => $callback ) {
 
 				if ( empty( $callback ) ) {	// Not used.
@@ -364,6 +383,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		}
 
 		static private function get_mt_single_shipping( &$mt_single ) {
+
+			$wpsso =& Wpsso::get_instance();
+
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
 
 			$shipping = array();
 

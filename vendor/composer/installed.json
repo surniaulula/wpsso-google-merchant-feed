@@ -142,13 +142,13 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsmoriss/php-google-merchant-feed",
-                "reference": "59089ea7a065b6b91a7cc7e7745069ff655bf508"
+                "reference": "a2c13a8d57f32db1c6369c74cced1720416af293"
             },
             "require": {
                 "php": ">=5.5",
                 "sabre/xml": "^1.5 || ^2.0"
             },
-            "time": "2023-12-07T16:43:51+00:00",
+            "time": "2023-12-08T17:44:06+00:00",
             "type": "library",
             "installation-source": "source",
             "autoload": {

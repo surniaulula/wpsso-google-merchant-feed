@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.1-dev.5\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.0.1-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -352,7 +352,7 @@ msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
 
-#: lib/xml.php:356
+#: lib/xml.php:375
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 
