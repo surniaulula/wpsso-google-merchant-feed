@@ -6,102 +6,116 @@ use Sabre\Xml\Element\Cdata;
 
 class ProductProperty
 {
-    /**
-     * @var string
-     */
-    private $name;
+	/**
+	 * @var string
+	 */
+	private $name;
 
-    /**
-     * @var string
-     */
-    private $value;
+	/**
+	 * @var string
+	 */
+	private $value;
 
-    /**
-     * @var bool
-     */
-    private $isCData = false;
+	/**
+	 * @var bool
+	 */
+	private $isCData = false;
 
-    /**
-     * ProductProperty constructor.
-     *
-     * @param      $name
-     * @param      $value
-     * @param bool $isCData
-     */
-    public function __construct($name, $value, $isCData)
-    {
-        $this->name = strtolower($name);
-        $this->value = $value;
-        $this->isCData = $isCData;
-    }
+	private static $instances = [];
 
-    /**
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
+	/**
+	 * ProductProperty constructor.
+	 *
+	 * @param      $name
+	 * @param      $value
+	 * @param bool $isCData
+	 */
+	public function __construct( $name, $value, $isCData )
+	{
+		$this->name    = strtolower( $name );
+		$this->value   = $value;
+		$this->isCData = $isCData;
+	}
 
-    /**
-     * @param string $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
+	public static function &getInstance( $name, $value, $isCData )
+	{
+		$key = md5( strtolower( $name ) . '-' . serialize( $value ) . '-' . serialize( $isCData ) );
 
-    /**
-     * @return string|PropertyBag
-     */
-    public function getValue()
-    {
-        return $this->value;
-    }
+		if ( ! isset( self::$instances[ $key ] ) ) {
 
-    /**
-     * @param string $value
-     */
-    public function setValue($value)
-    {
-        $this->value = $value;
-    }
+			self::$instances[ $key ] = new self( $name, $value, $isCData );
+		}
 
-    /**
-     * @return bool
-     */
-    public function isCData()
-    {
-        return $this->isCData;
-    }
+		return self::$instances[ $key ];
+	}
 
-    /**
-     * @param bool $isCData
-     */
-    public function setIsCData($isCData)
-    {
-        $this->isCData = $isCData;
-    }
+	/**
+	 * @return string
+	 */
+	public function getName()
+	{
+		return $this->name;
+	}
 
-    /**
-     * @param $namespace
-     *
-     * @return array
-     */
-    public function getXmlStructure($namespace)
-    {
-        $value = $this->isCData() ? new Cdata($this->getValue()) : $this->getValue();
-        
-        if (is_object($value) && $value instanceof PropertyBag) {
-            return [
-                'name' => $namespace . $this->getName(),
-                'value' => $value->getPropertiesXmlStructure($namespace),
-            ];
-        }
+	/**
+	 * @param string $name
+	 */
+	public function setName( $name )
+	{
+		$this->name = $name;
+	}
 
-        return [
-            'name' => $namespace . $this->getName(),
-            'value' => $value,
-        ];
-    }
+	/**
+	 * @return string|PropertyBag
+	 */
+	public function getValue()
+	{
+		return $this->value;
+	}
+
+	/**
+	 * @param string $value
+	 */
+	public function setValue( $value )
+	{
+		$this->value = $value;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isCData()
+	{
+		return $this->isCData;
+	}
+
+	/**
+	 * @param bool $isCData
+	 */
+	public function setIsCData( $isCData )
+	{
+		$this->isCData = $isCData;
+	}
+
+	/**
+	 * @param $namespace
+	 *
+	 * @return array
+	 */
+	public function getXmlStructure( $namespace )
+	{
+		$value = $this->isCData() ? new Cdata( $this->getValue() ) : $this->getValue();
+		
+		if ( is_object( $value ) && $value instanceof PropertyBag ) {
+			return [
+				'name'  => $namespace . $this->getName(),
+				'value' => $value->getPropertiesXmlStructure( $namespace ),
+			];
+		}
+
+		return [
+			'name'  => $namespace . $this->getName(),
+			'value' => $value,
+		];
+	}
 }
