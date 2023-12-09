@@ -41,8 +41,6 @@ After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Goo
 
 **Google Merchant Feed XML Attributes:**
 
-XML attributes are automatically created from your WooCommerce and custom products:
-
 * Additional image link <code>&#91;additional_image_link&#93;</code>
 * Adult oriented <code>&#91;adult&#93;</code>
 * Age group <code>&#91;age_group&#93;</code>
@@ -95,8 +93,6 @@ XML attributes are automatically created from your WooCommerce and custom produc
 * Title <code>&#91;title&#93;</code>
 
 **Google Merchant Inventory XML Attributes:**
-
-XML attributes are automatically created from your WooCommerce and custom products:
 
 * GTIN <code>&#91;gtin&#93;</code>
 * Merchant ID <code>&#91;target_customer_id&#93;</code>

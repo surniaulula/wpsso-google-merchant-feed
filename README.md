@@ -37,8 +37,6 @@
 
 <p><strong>Google Merchant Feed XML Attributes:</strong></p>
 
-<p>XML attributes are automatically created from your WooCommerce and custom products:</p>
-
 <ul>
 <li>Additional image link <code>&#91;additional_image_link&#93;</code></li>
 <li>Adult oriented <code>&#91;adult&#93;</code></li>
@@ -99,8 +97,6 @@
 </ul>
 
 <p><strong>Google Merchant Inventory XML Attributes:</strong></p>
-
-<p>XML attributes are automatically created from your WooCommerce and custom products:</p>
 
 <ul>
 <li>GTIN <code>&#91;gtin&#93;</code></li>
