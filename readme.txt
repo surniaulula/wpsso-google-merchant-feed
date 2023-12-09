@@ -149,6 +149,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.1.0-dev.1 (2023/12/09)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a `Vitalybaev\GoogleMerchant\ProductProperty::getInstance()` method to reduce memory usage.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v17.3.1.
+
 **Version 9.0.1 (2023/12/08)**
 
 * **New Features**
@@ -211,6 +226,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.2.1.
 
 == Upgrade Notice ==
+
+= 9.1.0-dev.1 =
+
+(2023/12/09) Added a `Vitalybaev\GoogleMerchant\ProductProperty::getInstance()` method to reduce memory usage.
 
 = 9.0.1 =
 
