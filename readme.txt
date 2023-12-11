@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.1.0-dev.2 (2023/12/11)**
+**Version 9.1.0-rc.1 (2023/12/11)**
 
 * **New Features**
 	* None.
@@ -223,7 +223,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.1.0-dev.2 =
+= 9.1.0-rc.1 =
 
 (2023/12/11) Added a `Vitalybaev\GoogleMerchant\ProductProperty::getInstance()` method to reduce memory usage.
 
