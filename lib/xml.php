@@ -322,13 +322,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 		static private function add_item_data( &$item, array $data, array $callbacks ) {
 
-			$wpsso =& Wpsso::get_instance();
-
-			if ( $wpsso->debug->enabled ) {
-
-				$wpsso->debug->mark();
-			}
-
 			foreach ( $callbacks as $key => $callback ) {
 
 				if ( empty( $callback ) ) {	// Not used.
