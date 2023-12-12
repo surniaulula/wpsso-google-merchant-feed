@@ -112,8 +112,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			if ( $wpsso->debug->enabled ) {
 
 				$wpsso->debug->log( 'adding ' . count( $public_ids ) . ' public ids' );
-
 				$wpsso->debug->log_arr( 'public_ids', $public_ids );
+				$wpsso->debug->mark_diff();
 			}
 
 			foreach ( $public_ids as $post_id ) {
@@ -167,6 +167,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 
 				unset( $mod, $mt_og );
+			
+				if ( $wpsso->debug->enabled ) {
+
+					$wpsso->debug->mark_diff();
+				}
 			}
 
 			unset( $public_ids );
