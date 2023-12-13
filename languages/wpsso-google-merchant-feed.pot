@@ -352,7 +352,7 @@ msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
 
-#: lib/xml.php:373
+#: lib/xml.php:375
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 

@@ -187,6 +187,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			if ( $wpsso->debug->enabled ) {
 
+				$wpsso->debug->mark_diff();
+
 				$wpsso->debug->mark( 'build xml' );	// End timer.
 			}
 
