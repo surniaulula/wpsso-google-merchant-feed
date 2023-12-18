@@ -85,7 +85,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 			if ( $this->p->util->cache->is_refresh_running() ) {
 
-				$task_name_transl = _x( 'refresh the cache', 'task name', 'wpsso' );
+				$task_name_transl = _x( 'refresh the cache', 'task name', 'wpsso-google-merchant-feed' );
 
 				$table_rows[ 'wpssogmf_disabled' ] = '<tr><td align="center">' .
 					'<p class="status-msg">' . sprintf( __( 'A background task to %s is currently running.',
@@ -105,16 +105,16 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 					 */
 					$table_rows[ 'gmf_add_shipping' ] = '' .
-						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso' ),
+						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = 'medium', $css_id = 'gmf_add_shipping' ) .
 						'<td>' . $this->form->get_checkbox( 'gmf_add_shipping' ) . ' ' .
-							_x( '(may exceed available memory)', 'option comment', 'wpsso' ) . '</td>';
+							_x( '(not recommended)', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
 					$table_rows[ 'gmf_feed_exp_secs' ] = '' .
-						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
+						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = 'medium', $css_id = 'gmf_feed_exp_secs' ) .
 						'<td>' . $this->form->get_input( 'gmf_feed_exp_secs', 'short' ) . ' ' .
-							_x( 'seconds', 'option comment', 'wpsso' ) . '</td>';
+							_x( 'seconds', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
 					$locale_names = SucomUtil::get_available_feed_locale_names();
 
@@ -165,7 +165,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					 * See https://support.google.com/merchants/answer/7677785.
 					 */
 					$table_rows[ 'gmf_merchant_id' ] = '' .
-						$this->form->get_th_html( _x( 'Google Merchant ID', 'option label', 'wpsso' ),
+						$this->form->get_th_html( _x( 'Google Merchant ID', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = 'medium', $css_id = 'gmf_merchant_id' ) .
 						'<td>' . $this->form->get_input( 'gmf_merchant_id', 'short' ) . '</td>';
 
@@ -181,15 +181,15 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					 * Profiles.
 					 */
 					$table_rows[ 'gmf_store_code' ] = '' .
-						$this->form->get_th_html( _x( 'Google Store Code', 'option label', 'wpsso' ),
+						$this->form->get_th_html( _x( 'Google Store Code', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = 'medium', $css_id = 'gmf_store_code' ) .
 						'<td>' . $this->form->get_input( 'gmf_store_code', 'short' ) . '</td>';
 
 					$table_rows[ 'gmf_inventory_exp_secs' ] = '' .
-						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),
+						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = 'medium', $css_id = 'gmf_inventory_exp_secs' ) .
 						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'short' ) . ' ' .
-							_x( 'seconds', 'option comment', 'wpsso' ) . '</td>';
+							_x( 'seconds', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
 					if ( empty( $this->p->options[ 'gmf_merchant_id' ] ) ||
 						empty( $this->p->options[ 'gmf_store_code' ] ) ) {

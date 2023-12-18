@@ -152,8 +152,8 @@ msgstr ""
 
 #: lib/filters-messages.php:111
 msgid ""
-"If you offer multiple world-wide shipping options, adding shipping "
-"information to each product for each country may exceed available memory."
+"If you offer several world-wide shipping options, adding the shipping "
+"information for each country to each product may exceed available memory."
 msgstr ""
 
 #: lib/filters-messages.php:119 lib/filters-messages.php:131
@@ -296,7 +296,7 @@ msgstr ""
 
 #: lib/submenu/google-merchant.php:111
 msgctxt "option comment"
-msgid "(may exceed available memory)"
+msgid "(not recommended)"
 msgstr ""
 
 #: lib/submenu/google-merchant.php:114 lib/submenu/google-merchant.php:189

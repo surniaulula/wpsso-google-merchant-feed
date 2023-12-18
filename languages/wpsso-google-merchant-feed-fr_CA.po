@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-12-18 08:37-0800\n"
+"PO-Revision-Date: 2023-12-18 13:54-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -128,8 +128,8 @@ msgid "Use this setting when shipping costs for your product are not defined in 
 msgstr "Utilisez ce paramètre lorsque les frais de port de votre produit ne sont pas définis dans votre compte Merchant Center, ou lorsque vous devez remplacer les délais de livraison ou les frais de port définis dans votre compte Merchant Center."
 
 #: lib/filters-messages.php:111
-msgid "If you offer multiple world-wide shipping options, adding shipping information to each product for each country may exceed available memory."
-msgstr "Si vous proposez plusieurs options d'expédition dans le monde entier, l'ajout d'informations d'expédition à chaque produit pour chaque pays peut dépasser la mémoire disponible."
+msgid "If you offer several world-wide shipping options, adding the shipping information for each country to each product may exceed available memory."
+msgstr "Si vous proposez plusieurs options d'expédition dans le monde entier, l'ajout des informations d'expédition pour chaque pays à chaque produit peut dépasser la mémoire disponible."
 
 #: lib/filters-messages.php:119 lib/filters-messages.php:131
 msgid "The XML file cache expiration time in seconds (default is %s)."
@@ -252,8 +252,8 @@ msgstr "Inclure l'expédition"
 
 #: lib/submenu/google-merchant.php:111
 msgctxt "option comment"
-msgid "(may exceed available memory)"
-msgstr "(peut dépasser la mémoire disponible)"
+msgid "(not recommended)"
+msgstr "(non recommandé)"
 
 #: lib/submenu/google-merchant.php:114 lib/submenu/google-merchant.php:189
 msgctxt "option label"
