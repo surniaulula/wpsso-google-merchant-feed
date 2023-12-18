@@ -234,7 +234,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785?hl=en.
 		 * See store feed specification at https://support.google.com/merchants/answer/7677622?hl=en.
 		 */
-		static private function add_feed_item( &$rss2_feed, &$mt_single, $request_type = 'feed' ) {
+		static private function add_feed_item( &$rss2_feed, $mt_single, $request_type = 'feed' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -293,7 +293,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			if ( ! empty( $item ) ) $rss2_feed->addItem( $item );
 		}
 
-		static private function add_item_images( &$item, &$mt_single ) {
+		static private function add_item_images( &$item, $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -317,7 +317,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		/*
 		 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 		 */
-		static private function add_item_shipping( &$item, &$mt_single ) {
+		static private function add_item_shipping( &$item, $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -404,7 +404,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 		}
 
-		static private function get_mt_single_shipping( &$mt_single ) {
+		static private function get_mt_single_shipping( $mt_single ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -515,7 +515,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			return $shipping;
 		}
 
-		static private function sanitize_mt_array( &$mt_single ) {
+		static private function sanitize_mt_array( &$mt_single ) {	// Pass by reference is OK.
 
 			$wpsso =& Wpsso::get_instance();
 
