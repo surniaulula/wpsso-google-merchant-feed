@@ -141,7 +141,7 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsmoriss/php-google-merchant-feed",
-                "reference": "4314b8124bbb2b7619840c8a2a91cfb8f7152123"
+                "reference": "9e8f624d1defd4d0b73a9afb69656435e0597da7"
             },
             "require": {
                 "php": ">=5.5",
@@ -168,7 +168,7 @@
                 "google",
                 "merchant"
             ],
-            "time": "2023-12-17T16:16:23+00:00"
+            "time": "2023-12-18T12:10:30+00:00"
         }
     ],
     "packages-dev": [],

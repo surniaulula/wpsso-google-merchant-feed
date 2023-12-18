@@ -162,8 +162,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						}
 
 						self::add_feed_item( $rss2_feed, $mt_single, $request_type );
-
-						unset( $mt_og[ 'product:variants' ][ $num ] );
 					}
 
 				} else {
@@ -266,6 +264,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					 */
 					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
 
+						if ( $wpsso->debug->enabled ) {
+
+							$wpsso->debug->log( 'add shipping is enabled' );
+						}
+
 						self::add_item_shipping( $item, $mt_single );
 					}
 
@@ -309,8 +312,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				} else $item->addAdditionalImage( $image_url );
 			}
-
-			unset( $image_urls );
 		}
 
 		/*
@@ -345,11 +346,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					$item->setShipping( $shipping );
 
 				} else $item->addShipping( $shipping );
-
-				unset( $mt_single_shipping[ $num ] );
 			}
-
-			unset( $mt_single_shipping );
 		}
 
 		static private function add_item_data( &$item, array $data, array $callbacks ) {
@@ -420,6 +417,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			if ( empty( $mt_single[ 'product:shipping_offers' ] ) ) {	// Nothing to do.
 
+				if ( $wpsso->debug->enabled ) {
+
+					$wpsso->debug->log( 'exiting early: product shipping offers is empty' );
+				}
+
 				return $shipping;
 			}
 
@@ -427,7 +429,18 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			foreach ( $mt_single[ 'product:shipping_offers' ] as $offer_num => $ship_offer ) {
 
+				if ( $wpsso->debug->enabled ) {
+
+					$wpsso->debug->log( 'adding shipping offer ' . $offer_num . ( isset( $ship_offer[ 'shipping_name' ] ) ?
+						' for ' . $ship_offer[ 'shipping_name' ] : '' ) );
+				}
+
 				if ( empty( $ship_offer[ 'shipping_destinations' ] ) ) {
+
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'skipped offer ' . $offer_num . ': no shipping destinations' );
+					}
 
 					continue;
 				}
@@ -494,15 +507,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							$ship_opts[ 'postal_code' ] = $postal_code;
 
 							$shipping[] = $ship_opts;
-
-							unset( $ship_dest[ 'postal_code' ][ $code_num ] );
 						}
 					}
-
-					unset( $ship_offer[ 'shipping_destinations' ][ $dest_num ] );
 				}
-
-				unset( $mt_single[ 'product:shipping_offers' ][ $offer_num ] );
 			}
 
 			return $shipping;
@@ -553,7 +560,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					self::map_mt_value( $arr_val, $map );
 				}
 
-			} elseif ( isset( $map[ $value ] ) ) {	// Allow for false.
+			} elseif ( isset( $map[ $value ] ) ) {	// Allow false.
 
 				$value = $map[ $value ];
 			}
