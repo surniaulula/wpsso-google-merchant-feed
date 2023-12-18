@@ -107,7 +107,9 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					$table_rows[ 'gmf_add_shipping' ] = '' .
 						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso' ),
 							$css_class = 'medium', $css_id = 'gmf_add_shipping' ) .
-						'<td>' . $this->form->get_checkbox( 'gmf_add_shipping' ) . '</td>';
+						'<td>' . $this->form->get_checkbox( 'gmf_add_shipping' ) . ' ' .
+							_x( 'may exceed available memory', 'option comment', 'wpsso' ) . ' ';
+							_x( '(not recommended)', 'option comment', 'wpsso' ) . '</td>';
 
 					$table_rows[ 'gmf_feed_exp_secs' ] = '' .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso' ),

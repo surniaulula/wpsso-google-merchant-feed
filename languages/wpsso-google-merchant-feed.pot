@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.3.0-dev.4\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.3.0-b.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -233,7 +233,7 @@ msgid ""
 msgstr ""
 
 #: lib/filters-messages.php:178 lib/filters.php:92
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:147
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:149
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
@@ -288,66 +288,76 @@ msgctxt "option label"
 msgid "Include Shipping"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:113 lib/submenu/google-merchant.php:188
+#: lib/submenu/google-merchant.php:111
+msgctxt "option comment"
+msgid "may exceed available memory"
+msgstr ""
+
+#: lib/submenu/google-merchant.php:112
+msgctxt "option comment"
+msgid "(not recommended)"
+msgstr ""
+
+#: lib/submenu/google-merchant.php:115 lib/submenu/google-merchant.php:190
 msgctxt "option label"
 msgid "XML Cache Expiration"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:116 lib/submenu/google-merchant.php:191
+#: lib/submenu/google-merchant.php:118 lib/submenu/google-merchant.php:193
 msgctxt "option comment"
 msgid "seconds"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:130
+#: lib/submenu/google-merchant.php:132
 msgctxt "option comment"
 msgid "%s feed items"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:131
+#: lib/submenu/google-merchant.php:133
 msgctxt "option comment"
 msgid "%s image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:132
+#: lib/submenu/google-merchant.php:134
 msgctxt "option comment"
 msgid "%s additional image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:133 lib/submenu/google-merchant.php:216
+#: lib/submenu/google-merchant.php:135 lib/submenu/google-merchant.php:218
 msgctxt "option comment"
 msgid "%s KB file size"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:152
+#: lib/submenu/google-merchant.php:154
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:154
+#: lib/submenu/google-merchant.php:156
 msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:167
+#: lib/submenu/google-merchant.php:169
 msgctxt "option label"
 msgid "Google Merchant ID"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:183
+#: lib/submenu/google-merchant.php:185
 msgctxt "option label"
 msgid "Google Store Code"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:197
+#: lib/submenu/google-merchant.php:199
 msgid ""
 "The Google Merchant ID and Store Code are required to create inventory XML."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:199
+#: lib/submenu/google-merchant.php:201
 msgid ""
 "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:215
+#: lib/submenu/google-merchant.php:217
 msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
