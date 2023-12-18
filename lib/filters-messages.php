@@ -108,6 +108,8 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text .= __( 'Use this setting when shipping costs for your product are not defined in your Merchant Center account or when you need to override shipping costs or speeds defined in your Merchant Center account.', 'wpsso-google-merchant-feed' ) . ' ';
 
+					$text .= __( 'If you offer multiple world-wide shipping options, adding shipping information to each product for each country may exceed available memory.', 'wpsso-google-merchant-feed' ) . ' ';
+
 					break;
 
 				case 'tooltip-gmf_feed_exp_secs':
