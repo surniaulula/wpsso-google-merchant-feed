@@ -82,6 +82,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 			$table_rows = array();
 			$match_rows = trim( $page_id . '-' . $metabox_id . '-' . $tab_key, '-' );
+			$is_public  = get_option( 'blog_public' );
 
 			if ( $this->p->util->cache->is_refresh_running() ) {
 
@@ -95,6 +96,23 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					'</td></tr>';
 
 				return $table_rows;
+
+			} elseif ( ! $is_public ) {
+
+				$settings_url         = get_admin_url( $blog_id = null, 'options-reading.php' );
+				$noindex_label_transl = _x( 'No Index', 'option label', 'wpsso' );
+				$directives           = WpssoUtilRobots::get_default_directives();
+
+				if ( ! empty( $directives[ 'noindex' ] ) ) {	// Just in case.
+
+					$table_rows[ 'wpssogmf_disabled' ] = '<tr><td align="center">' .
+						'<p class="status-msg">' . sprintf( __( 'The WordPress <a href="%s">Search Engine Visibility</a> option is set to discourage search engines from indexing this site.', 'wpsso-google-merchant-feed' ), $settings_url ) . '</p>' .
+						'<p class="status-msg">' . sprintf( __( '%1$s is currenty unavailable since all products are marked as %2$s by default.',
+							'wpsso-google-merchant-feed' ), $args[ 'metabox_title' ], $noindex_label_transl ) . '</p>' .
+						'</td></tr>';
+
+					return $table_rows;
+				}
 			}
 
 			switch ( $match_rows ) {
