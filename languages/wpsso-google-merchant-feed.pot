@@ -302,7 +302,7 @@ msgstr ""
 
 #: lib/submenu/google-merchant.php:110
 msgid ""
-"%1$s is currenty unavailable since all products are marked as %2$s by "
+"%1$s is currently unavailable since all products are marked as %2$s by "
 "default."
 msgstr ""
 

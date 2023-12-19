@@ -107,7 +107,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 					$table_rows[ 'wpssogmf_disabled' ] = '<tr><td align="center">' .
 						'<p class="status-msg">' . sprintf( __( 'The WordPress <a href="%s">Search Engine Visibility</a> option is set to discourage search engines from indexing this site.', 'wpsso-google-merchant-feed' ), $settings_url ) . '</p>' .
-						'<p class="status-msg">' . sprintf( __( '%1$s is currenty unavailable since all products are marked as %2$s by default.',
+						'<p class="status-msg">' . sprintf( __( '%1$s is currently unavailable since all products are marked as %2$s by default.',
 							'wpsso-google-merchant-feed' ), $args[ 'metabox_title' ], $noindex_label_transl ) . '</p>' .
 						'</td></tr>';
 
