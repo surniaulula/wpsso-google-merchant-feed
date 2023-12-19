@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-12-18 13:54-0800\n"
+"PO-Revision-Date: 2023-12-19 09:39-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -198,7 +198,7 @@ msgid "The %1$s includes all public WordPress post objects (ie. posts, pages, an
 msgstr "Le %1$s inclut tous les objets d'article WordPress publics (c'est-à-dire les articles, les pages et les types d'articles personnalisés) avec un type Open Graph \"produit\" et une langue de %2$s (c'est-à-dire les paramètres régionaux \"%3$s\")."
 
 #: lib/filters-messages.php:180 lib/filters.php:92
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:148
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:166
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr "Inventaire XML de marchand Google"
@@ -232,86 +232,99 @@ msgctxt "submit button"
 msgid "Refresh XML Cache"
 msgstr "Rafraîchir cache XML"
 
-#: lib/submenu/google-merchant.php:88
+#: lib/submenu/google-merchant.php:89
 msgctxt "task name"
 msgid "refresh the cache"
 msgstr "rafraîchir le cache"
 
-#: lib/submenu/google-merchant.php:91
+#: lib/submenu/google-merchant.php:92
 msgid "A background task to %s is currently running."
 msgstr "Une tâche en arrière-plan pour %s est en cours d'exécution."
 
-#: lib/submenu/google-merchant.php:93
+#: lib/submenu/google-merchant.php:94
 msgid "%s is currently unavailable pending completion of a cache refresh task."
 msgstr "%s est actuellement indisponible en attendant la fin d'une tâche d'actualisation du cache."
 
-#: lib/submenu/google-merchant.php:108
+#: lib/submenu/google-merchant.php:103
+msgctxt "option label"
+msgid "No Index"
+msgstr "Pas d'indexation"
+
+#: lib/submenu/google-merchant.php:109
+msgid "The WordPress <a href=\"%s\">Search Engine Visibility</a> option is set to discourage search engines from indexing this site."
+msgstr "L'option WordPress <a href=\"%s\">Visibilité par les moteurs de recherche</a> est configurée pour décourager les moteurs de recherche d'indexer ce site."
+
+#: lib/submenu/google-merchant.php:110
+msgid "%1$s is currently unavailable since all products are marked as %2$s by default."
+msgstr "%1$s est actuellement indisponible car tous les produits sont marqués comme %2$s par défaut."
+
+#: lib/submenu/google-merchant.php:126
 msgctxt "option label"
 msgid "Include Shipping"
 msgstr "Inclure l'expédition"
 
-#: lib/submenu/google-merchant.php:111
+#: lib/submenu/google-merchant.php:129
 msgctxt "option comment"
 msgid "(not recommended)"
 msgstr "(non recommandé)"
 
-#: lib/submenu/google-merchant.php:114 lib/submenu/google-merchant.php:189
+#: lib/submenu/google-merchant.php:132 lib/submenu/google-merchant.php:207
 msgctxt "option label"
 msgid "XML Cache Expiration"
 msgstr "Expiration du cache XML"
 
-#: lib/submenu/google-merchant.php:117 lib/submenu/google-merchant.php:192
+#: lib/submenu/google-merchant.php:135 lib/submenu/google-merchant.php:210
 msgctxt "option comment"
 msgid "seconds"
 msgstr "secondes"
 
-#: lib/submenu/google-merchant.php:131
+#: lib/submenu/google-merchant.php:149
 msgctxt "option comment"
 msgid "%s feed items"
 msgstr "%s éléments de flux"
 
-#: lib/submenu/google-merchant.php:132
+#: lib/submenu/google-merchant.php:150
 msgctxt "option comment"
 msgid "%s image links"
 msgstr "%s liens d'image"
 
-#: lib/submenu/google-merchant.php:133
+#: lib/submenu/google-merchant.php:151
 msgctxt "option comment"
 msgid "%s additional image links"
 msgstr "%s liens d'images supplémentaires"
 
-#: lib/submenu/google-merchant.php:134 lib/submenu/google-merchant.php:217
+#: lib/submenu/google-merchant.php:152 lib/submenu/google-merchant.php:235
 msgctxt "option comment"
 msgid "%s KB file size"
 msgstr "%s Ko taille du fichier"
 
-#: lib/submenu/google-merchant.php:153
+#: lib/submenu/google-merchant.php:171
 msgid "An e-commerce plugin is required to manage product inventory quantities."
 msgstr "Une extension e-commerce est nécessaire pour gérer les quantités d'inventaire des produits."
 
-#: lib/submenu/google-merchant.php:155
+#: lib/submenu/google-merchant.php:173
 msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr "Les URL %s ne sont pas disponibles en attendant l'activation d'une extension e-commerce."
 
-#: lib/submenu/google-merchant.php:168
+#: lib/submenu/google-merchant.php:186
 msgctxt "option label"
 msgid "Google Merchant ID"
 msgstr "ID de marchand Google"
 
-#: lib/submenu/google-merchant.php:184
+#: lib/submenu/google-merchant.php:202
 msgctxt "option label"
 msgid "Google Store Code"
 msgstr "Code de magasin Google"
 
-#: lib/submenu/google-merchant.php:198
+#: lib/submenu/google-merchant.php:216
 msgid "The Google Merchant ID and Store Code are required to create inventory XML."
 msgstr "L'ID de marchand Google et le code de magasin sont requis pour créer le XML d'inventaire."
 
-#: lib/submenu/google-merchant.php:200
+#: lib/submenu/google-merchant.php:218
 msgid "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr "Les URL %s ne sont pas disponibles en attendant les valeurs d'ID de marchand Google et du code de magasin."
 
-#: lib/submenu/google-merchant.php:216
+#: lib/submenu/google-merchant.php:234
 msgctxt "option comment"
 msgid "%s inventory items"
 msgstr "%s éléments d'inventaire"
