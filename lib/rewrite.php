@@ -139,9 +139,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			if ( ! isset( $locale_names[ $request_locale ] ) ) {
 
 				WpssoErrorException::http_error( 400 );
-			}
 
-			if ( $wpsso->util->cache->is_refresh_running() ) {
+			} elseif ( $wpsso->util->cache->is_refresh_running() ) {
 
 				WpssoErrorException::http_error( 503 );
 			}
