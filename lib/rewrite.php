@@ -146,17 +146,6 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				WpssoErrorException::http_error( 503 );
 			}
 
-			$document_xml = WpssoGmfXml::get( $request_locale, $request_type );
-			$disposition  = 'attachment';
-			$filename     = SucomUtil::sanitize_file_name( $request_name . '-' . $request_locale . '.xml' );
-
-			if ( $wpsso->debug->enabled ) {
-
-				$document_xml .= $wpsso->debug->get_html( null, 'debug log' );
-			}
-
-			$content_len = strlen( $document_xml );
-
 			global $wp_query;
 
 			$wp_query->is_404 = false;
@@ -164,13 +153,28 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			ob_implicit_flush( $enable = true );
 			ob_end_flush();
 
+			$filename = SucomUtil::sanitize_file_name( $request_name . '-' . $request_locale . '.xml' );
+
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
-			header( 'Content-Disposition: ' . $disposition . '; filename="' . $filename . '"' );
-			header( 'Content-Length: ' . $content_len );
+			header( 'Content-Disposition: attachment; filename="' . $filename . '"' );
+			
+			$document_xml = WpssoGmfXml::get( $request_locale, $request_type );
+
+			if ( ! $wpsso->debug->is_enabled( 'html' ) ) {	// Only add content length if not adding debug messages.
+
+				header( 'Content-Length: ' . strlen( $document_xml ) );
+			}
 
 			// phpcs:ignore $document_xml is a complete rss2 XML document that should not be encoded - tag values have already been sanitized and encoded.
 			echo $document_xml;
+
+			unset( $document_xml );
+
+			if ( $wpsso->debug->is_enabled( 'html' ) ) {
+
+				echo $wpsso->debug->get_html( null, 'debug log' );
+			}
 
 			flush();
 			sleep( $seconds = 1 );
