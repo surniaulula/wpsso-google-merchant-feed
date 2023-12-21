@@ -145,6 +145,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.3.1-dev.1 (2023/12/21)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* Fixed adding or excluding shipping information in the feed XML, independently of the WPSSO Shipping Delivery Time for WooCommerce SEO add-on.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.5.
+	* WPSSO Core v17.5.0.
+
 **Version 9.3.0 (2023/12/19)**
 
 * **New Features**
@@ -252,6 +267,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.2.1.
 
 == Upgrade Notice ==
+
+= 9.3.1-dev.1 =
+
+(2023/12/21) Fixed adding or excluding shipping information in the feed XML, independently of the WPSSO Shipping Delivery Time for WooCommerce SEO add-on.
 
 = 9.3.0 =
 
