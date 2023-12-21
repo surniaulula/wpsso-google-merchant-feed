@@ -152,7 +152,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* Fixed adding or excluding shipping information in the feed XML, independently of the WPSSO Shipping Delivery Time for WooCommerce SEO add-on.
+	* Fixed enabling/disabling the creation of shipping information, independent of the WPSSO WCSDT add-on.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
@@ -270,7 +270,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 9.3.1-dev.1 =
 
-(2023/12/21) Fixed adding or excluding shipping information in the feed XML, independently of the WPSSO Shipping Delivery Time for WooCommerce SEO add-on.
+(2023/12/21) Fixed enabling/disabling the creation of shipping information, independent of the WPSSO WCSDT add-on.
 
 = 9.3.0 =
 
