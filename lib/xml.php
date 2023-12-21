@@ -263,9 +263,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				case 'feed':
 
-					$callbacks = WpssoGmfConfig::get_callbacks( 'product' );
-
-					$item = new Vitalybaev\GoogleMerchant\Product();
+					$ship_enabled = empty( $wpsso->options[ 'gmf_add_shipping' ] ) ? false : true;
+					$callbacks    = WpssoGmfConfig::get_callbacks( 'product' );
+					$item        = new Vitalybaev\GoogleMerchant\Product();
 
 					self::add_item_data( $item, $mt_single, $callbacks );
 
@@ -274,7 +274,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					/*
 					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 					 */
-					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
+					if ( $ship_enabled ) {
 
 						self::add_item_shipping( $item, $mt_single );
 					}
