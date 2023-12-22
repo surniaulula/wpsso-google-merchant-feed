@@ -145,14 +145,14 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.3.1-dev.1 (2023/12/21)**
+**Version 9.3.1-dev.1 (2023/12/22)**
 
 * **New Features**
 	* None.
 * **Improvements**
 	* None.
 * **Bugfixes**
-	* Fixed enabling/disabling the creation of shipping information, independent of the WPSSO WCSDT add-on.
+	* Fixed enabling the creation of shipping information from WPSSO Core, independent of the WPSSO WCSDT add-on.
 * **Developer Notes**
 	* None.
 * **Requires At Least**
@@ -270,7 +270,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 9.3.1-dev.1 =
 
-(2023/12/21) Fixed enabling/disabling the creation of shipping information, independent of the WPSSO WCSDT add-on.
+(2023/12/22) Fixed enabling the creation of shipping information from WPSSO Core, independent of the WPSSO WCSDT add-on.
 
 = 9.3.0 =
 
