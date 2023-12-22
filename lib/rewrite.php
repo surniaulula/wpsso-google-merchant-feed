@@ -157,7 +157,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			header( 'HTTP/1.1 200 OK' );
 			header( 'Content-Type: application/rss+xml' );
 			header( 'Content-Disposition: attachment; filename="' . $filename . '"' );
-			
+
 			$document_xml = WpssoGmfXml::get( $request_locale, $request_type );
 
 			if ( ! $wpsso->debug->is_enabled( 'html' ) ) {	// Only add content length if not adding debug messages.

@@ -175,7 +175,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 
 				unset( $mod, $mt_og );
-			
+
 				if ( $wpsso->debug->enabled ) {
 
 					$wpsso->debug->mark_diff( 'added post id ' . $post_id );
@@ -208,7 +208,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			if ( $cache_exp_secs ) {
 
 				$wpsso->cache->save_cache_data( $cache_salt, $xml, $cache_type, $cache_exp_secs, $cache_file_ext );
-			
+
 				if ( $wpsso->debug->enabled ) {
 
 					$wpsso->debug->mark_diff( 'xml saved' );
