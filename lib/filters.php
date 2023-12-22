@@ -42,6 +42,13 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 				'cache_refreshed_notice' => 2,
 			) );
 
+			if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
+
+				$this->p->util->add_plugin_filters( $this, array(
+					'og_add_mt_shipping_offers' => '__return_true',
+				), PHP_INT_MAX );	// Run last.
+			}
+
 			if ( is_admin() ) {
 
 				require_once WPSSOGMF_PLUGINDIR . 'lib/filters-advanced.php';
@@ -96,7 +103,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 					WpssoGmfXml::clear_cache( $request_locale, $request_type );
 
-					$xml = WpssoGmfXml::get( $request_locale, $request_type );
+					WpssoGmfXml::get( $request_locale, $request_type );
 
 					$xml_count++;
 				}

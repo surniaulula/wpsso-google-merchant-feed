@@ -46,7 +46,7 @@ msgid "WPSSO Core"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:9 lib/filters-advanced.php:39
-#: lib/filters.php:65
+#: lib/filters.php:72
 msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -225,7 +225,7 @@ msgstr ""
 msgid "Store errors in local product inventory feed"
 msgstr ""
 
-#: lib/filters-messages.php:172 lib/filters.php:91
+#: lib/filters-messages.php:172 lib/filters.php:98
 #: lib/submenu/google-merchant.php:32
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
@@ -238,8 +238,8 @@ msgid ""
 "%2$s (ie. locale \"%3$s\")."
 msgstr ""
 
-#: lib/filters-messages.php:180 lib/filters.php:92
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:166
+#: lib/filters-messages.php:180 lib/filters.php:99
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:169
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
@@ -267,7 +267,7 @@ msgstr ""
 msgid "This option is disabled if a custom image ID is selected."
 msgstr ""
 
-#: lib/filters.php:104
+#: lib/filters.php:111
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
@@ -316,71 +316,71 @@ msgctxt "option comment"
 msgid "(not recommended)"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:132 lib/submenu/google-merchant.php:207
+#: lib/submenu/google-merchant.php:132 lib/submenu/google-merchant.php:210
 msgctxt "option label"
 msgid "XML Cache Expiration"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:135 lib/submenu/google-merchant.php:210
+#: lib/submenu/google-merchant.php:135 lib/submenu/google-merchant.php:213
 msgctxt "option comment"
 msgid "seconds"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:149
+#: lib/submenu/google-merchant.php:152
 msgctxt "option comment"
 msgid "%s feed items"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:150
+#: lib/submenu/google-merchant.php:153
 msgctxt "option comment"
 msgid "%s image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:151
+#: lib/submenu/google-merchant.php:154
 msgctxt "option comment"
 msgid "%s additional image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:152 lib/submenu/google-merchant.php:235
+#: lib/submenu/google-merchant.php:155 lib/submenu/google-merchant.php:241
 msgctxt "option comment"
 msgid "%s KB file size"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:171
+#: lib/submenu/google-merchant.php:174
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:173
+#: lib/submenu/google-merchant.php:176
 msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:186
+#: lib/submenu/google-merchant.php:189
 msgctxt "option label"
 msgid "Google Merchant ID"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:202
+#: lib/submenu/google-merchant.php:205
 msgctxt "option label"
 msgid "Google Store Code"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:216
+#: lib/submenu/google-merchant.php:219
 msgid ""
 "The Google Merchant ID and Store Code are required to create inventory XML."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:218
+#: lib/submenu/google-merchant.php:221
 msgid ""
 "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:234
+#: lib/submenu/google-merchant.php:240
 msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
 
-#: lib/xml.php:404
+#: lib/xml.php:391
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 

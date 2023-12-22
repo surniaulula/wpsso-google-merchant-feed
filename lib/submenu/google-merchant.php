@@ -145,7 +145,10 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						$img_count  = substr_count( $xml, '<g:image_link>' );
 						$addl_count = substr_count( $xml, '<g:additional_image_link>' );
 						$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
-						$xml_info   = array(
+
+						unset( $xml );
+
+						$xml_info = array(
 							sprintf( _x( '%s feed items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
 							sprintf( _x( '%s image links', 'option comment', 'wpsso-google-merchant-feed' ), $img_count ),
 							sprintf( _x( '%s additional image links', 'option comment', 'wpsso-google-merchant-feed' ), $addl_count ),
@@ -230,7 +233,10 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 							$css_id     = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
 							$item_count = substr_count( $xml, '<item>' );
 							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
-							$xml_info   = array(
+
+							unset( $xml );
+
+							$xml_info = array(
 								sprintf( _x( '%s inventory items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
 								sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
 							);

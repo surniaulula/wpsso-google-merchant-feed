@@ -118,16 +118,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$query_args   = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
 			$public_ids   = WpssoPost::get_public_ids( $query_args );
 			$rss2_feed    = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
-			$ship_enabled = empty( $wpsso->options[ 'gmf_add_shipping' ] ) ? false : true;
-
-			/*
-			 * Add or exclude the addition of shipping information to the Open Graph meta tags.
-			 */
-			add_filter( 'wpsso_og_add_mt_shipping_offers', ( $ship_enabled ? '__return_true' : '__return_false' ), 1000, 1 );
 
 			if ( $wpsso->debug->enabled ) {
 
-				$wpsso->debug->log( 'add shipping is ' . ( $ship_enabled ? 'enabled' : 'disabled' ) );
 				$wpsso->debug->log( 'adding ' . count( $public_ids ) . ' public ids' );
 				$wpsso->debug->log_arr( 'public_ids', $public_ids );
 				$wpsso->debug->mark_diff( 'adding ' . count( $public_ids ) . ' public ids' );
@@ -190,11 +183,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 
 			unset( $public_ids );
-
-			/*
-			 * Remove the filter hook, just in case.
-			 */
-			remove_filter( 'wpsso_og_add_mt_shipping_offers', ( $ship_enabled ? '__return_true' : '__return_false' ), 1000 );
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -263,9 +251,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				case 'feed':
 
-					$ship_enabled = empty( $wpsso->options[ 'gmf_add_shipping' ] ) ? false : true;
-					$callbacks    = WpssoGmfConfig::get_callbacks( 'product' );
-					$item        = new Vitalybaev\GoogleMerchant\Product();
+					$callbacks = WpssoGmfConfig::get_callbacks( 'product' );
+					$item      = new Vitalybaev\GoogleMerchant\Product();
 
 					self::add_item_data( $item, $mt_single, $callbacks );
 
@@ -274,7 +261,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					/*
 					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 					 */
-					if ( $ship_enabled ) {
+					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
 
 						self::add_item_shipping( $item, $mt_single );
 					}
