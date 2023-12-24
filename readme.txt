@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.4.0-dev.1 (2023/12/24)**
+**Version 9.4.0-dev.2 (2023/12/24)**
 
 * **New Features**
 	* None.
@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v17.6.1-dev.1.
+	* WPSSO Core v17.6.1-dev.2.
 
 **Version 9.3.1 (2023/12/23)**
 
@@ -283,7 +283,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.4.0-dev.1 =
+= 9.4.0-dev.2 =
 
 (2023/12/24) Added an 'updated' property to the feed XML and its items.
 
