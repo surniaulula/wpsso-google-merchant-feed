@@ -14,8 +14,8 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 	class WpssoGmfRewrite {
 
-		private $p;		// Wpsso class object.
-		private $a;		// WpssoGmf class object.
+		private $p;	// Wpsso class object.
+		private $a;	// WpssoGmf class object.
 
 		/*
 		 * Instantiated by WpssoGmf->init_objects().
@@ -49,13 +49,13 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			if ( 'google-merchant' === WPSSOGMF_PAGENAME ) {
 
 				add_rewrite_rule( '^merchant-feed/([^/]+)\.xml$', 'index.php?feed_name=' .
-					WPSSOGMF_PAGENAME . '&feed_type=feed&feed_format=rss2&feed_locale=$matches[1]', 'top' );
+					WPSSOGMF_PAGENAME . '&feed_type=feed&feed_format=rss&feed_locale=$matches[1]', 'top' );
 			}
 
 			global $wp_rewrite;
 
 			$rewrite_rules   = $wp_rewrite->wp_rewrite_rules();
-			$rewrite_key     = '^(' . WPSSOGMF_PAGENAME . ')/(feed|inventory)/(rss2)/([^\./]+)\.xml$';
+			$rewrite_key     = '^(' . WPSSOGMF_PAGENAME . ')/(feed|inventory)/(atom|rss|rss2)/([^\./]+)\.xml$';
 			$rewrite_value   = 'index.php?feed_name=$matches[1]&feed_type=$matches[2]&feed_format=$matches[3]&feed_locale=$matches[4]';
 			$rewrite_missing = empty( $rewrite_rules[ $rewrite_key ] ) || $rewrite_rules[ $rewrite_key ] !== $rewrite_value ? true : false;
 
@@ -94,39 +94,51 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 
 			$wpsso =& Wpsso::get_instance();
 
-			/*
-			 * Make sure the requested type is valid.
-			 */
-			$request_type = get_query_var( 'feed_type' );
+			$request_type   = get_query_var( 'feed_type' );
+			$request_format = get_query_var( 'feed_format' );
 
 			if ( 'rss2' === $request_type ) {	// Backwards compatibility.
 
 				$request_type   = 'feed';
-				$request_format = 'rss2';
+				$request_format = 'rss';
+			}
 
-			} else {
+			switch ( $request_type ) {
 
-				if ( 'inventory' === $request_type ) {
+				case 'inventory':
 
 					if ( empty( $wpsso->avail[ 'ecom' ][ 'any' ] ) ) {	// No e-commerce plugin active.
 
 						WpssoErrorException::http_error( 400 );
 					}
 
-				} elseif ( 'feed' !== $request_type ) {
+					break;
+
+				case 'feed':
+
+					break;
+
+				default:
 
 					WpssoErrorException::http_error( 400 );
-				}
+			}
 
-				/*
-				 * Make sure the requested format is valid.
-				 */
-				$request_format = get_query_var( 'feed_format' );
+			switch ( $request_format ) {
 
-				if ( 'rss2' !== $request_format ) {
+				case 'atom':
+
+					break;
+
+				case 'rss':
+				case 'rss2':
+
+					$request_format = 'rss';
+
+					break;
+
+				default;
 
 					WpssoErrorException::http_error( 400 );
-				}
 			}
 
 			/*
@@ -155,17 +167,17 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			$filename = SucomUtil::sanitize_file_name( $request_name . '-' . $request_locale . '.xml' );
 
 			header( 'HTTP/1.1 200 OK' );
-			header( 'Content-Type: application/rss+xml' );
+			header( 'Content-Type: application/' . $request_format . '+xml' );	// $request_format = 'atom' or 'rss'.
 			header( 'Content-Disposition: attachment; filename="' . $filename . '"' );
 
-			$document_xml = WpssoGmfXml::get( $request_locale, $request_type );
+			$document_xml = WpssoGmfXml::get( $request_locale, $request_type, $request_format );
 
 			if ( ! $wpsso->debug->is_enabled( 'html' ) ) {	// Only add content length if not adding debug messages.
 
 				header( 'Content-Length: ' . strlen( $document_xml ) );
 			}
 
-			// phpcs:ignore $document_xml is a complete rss2 XML document that should not be encoded - tag values have already been sanitized and encoded.
+			// phpcs:ignore $document_xml is a complete XML document that should not be encoded - values have already been sanitized and encoded.
 			echo $document_xml;
 
 			unset( $document_xml );
@@ -176,7 +188,6 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			}
 
 			flush();
-			sleep( $seconds = 1 );
 
 			exit;
 		}
@@ -190,11 +201,11 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 				$url = add_query_arg( array(
 					'feed_name'   => WPSSOGMF_PAGENAME,
 					'feed_type'   => $request_type,
-					'feed_format' => 'rss2',
+					'feed_format' => 'rss',
 					'feed_locale' => $locale,
 				), get_home_url( $blog_id ) );
 
-			} else $url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $request_type . '/rss2/' . $locale . '.xml' );
+			} else $url = get_home_url( $blog_id, WPSSOGMF_PAGENAME . '/' . $request_type . '/rss/' . $locale . '.xml' );
 
 			return $url;
 		}

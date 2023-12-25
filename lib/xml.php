@@ -10,7 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'These aren\'t the droids you\'re looking for.' );
 }
 
-use Vitalybaev\GoogleMerchant\Feed;
+use Vitalybaev\GoogleMerchant\AtomFeed;
+use Vitalybaev\GoogleMerchant\RssFeed;
 use Vitalybaev\GoogleMerchant\Product;
 use Vitalybaev\GoogleMerchant\Product\Shipping;
 
@@ -48,7 +49,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 		}
 
-		static public function get( $request_locale = null, $request_type = 'feed' ) {
+		static public function get( $request_locale = null, $request_type = 'feed', $request_format = 'rss' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -112,12 +113,15 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark( 'create feed' );	// Begin timer.
 			}
 
-			$site_title   = SucomUtil::get_site_name( $wpsso->options, $request_locale );
-			$site_url     = SucomUtil::get_home_url( $wpsso->options, $request_locale );
-			$site_desc    = SucomUtil::get_site_description( $wpsso->options, $request_locale );
-			$query_args   = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
-			$public_ids   = WpssoPost::get_public_ids( $query_args );
-			$rss2_feed    = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, '2.0' );
+			$site_title  = SucomUtil::get_site_name( $wpsso->options, $request_locale );
+			$site_url    = SucomUtil::get_home_url( $wpsso->options, $request_locale );
+			$site_desc   = SucomUtil::get_site_description( $wpsso->options, $request_locale );
+			$query_args  = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
+			$public_ids  = WpssoPost::get_public_ids( $query_args );
+
+			$feed = 'atom' === $request_format ?
+				new Vitalybaev\GoogleMerchant\AtomFeed( $site_title, $site_url, $site_desc ) :
+				new Vitalybaev\GoogleMerchant\RssFeed( $site_title, $site_url, $site_desc );
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -161,7 +165,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							$wpsso->debug->log( 'adding variant #' . $num . ' for post id ' . $post_id );
 						}
 
-						self::add_feed_item( $rss2_feed, $mt_single, $request_type );
+						self::add_feed_item( $feed, $mt_single, $request_type );
 					}
 
 				} else {
@@ -171,7 +175,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						$wpsso->debug->log( 'adding product for post id ' . $post_id );
 					}
 
-					self::add_feed_item( $rss2_feed, $mt_og, $request_type );
+					self::add_feed_item( $feed, $mt_og, $request_type );
 				}
 
 				unset( $mod, $mt_og );
@@ -190,7 +194,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark( 'build xml' );	// Begin timer.
 			}
 
-			$xml = $rss2_feed->build();
+			$xml = $feed->build();
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -234,7 +238,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785?hl=en.
 		 * See store feed specification at https://support.google.com/merchants/answer/7677622?hl=en.
 		 */
-		static private function add_feed_item( &$rss2_feed, $mt_single, $request_type = 'feed' ) {
+		static private function add_feed_item( &$feed, $mt_single, $request_type = 'feed' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -252,7 +256,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				case 'feed':
 
 					$callbacks = WpssoGmfConfig::get_callbacks( 'product' );
-					$item      = new Vitalybaev\GoogleMerchant\Product();
+
+					$item = new Vitalybaev\GoogleMerchant\Product();
 
 					self::add_item_data( $item, $mt_single, $callbacks );
 
@@ -284,7 +289,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					break;
 			}
 
-			if ( ! empty( $item ) ) $rss2_feed->addItem( $item );
+			if ( ! empty( $item ) ) $feed->addItem( $item );
 		}
 
 		static private function add_item_images( &$item, $mt_single ) {

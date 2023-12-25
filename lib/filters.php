@@ -42,7 +42,7 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 				'cache_refreshed_notice' => 2,
 			) );
 
-			if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
+			if ( ! empty( $this->p->options[ 'gmf_add_shipping' ] ) ) {
 
 				$this->p->util->add_plugin_filters( $this, array(
 					'og_add_mt_shipping_offers' => '__return_true',
