@@ -60,17 +60,29 @@ msgstr ""
 msgid "checking google merchant feed"
 msgstr ""
 
-#: lib/actions.php:118
+#: lib/actions.php:100 lib/filters-messages.php:172 lib/filters.php:98
+#: lib/submenu/google-merchant.php:32
+msgctxt "metabox title"
+msgid "Google Merchant Feed XML"
+msgstr ""
+
+#: lib/actions.php:101 lib/filters-messages.php:180 lib/filters.php:99
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:169
+msgctxt "metabox title"
+msgid "Google Merchant Inventory XML"
+msgstr ""
+
+#: lib/actions.php:123
 msgid "checking google merchant feed images"
 msgstr ""
 
-#: lib/actions.php:135
+#: lib/actions.php:140
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:137
+#: lib/actions.php:142
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."
@@ -225,23 +237,11 @@ msgstr ""
 msgid "Store errors in local product inventory feed"
 msgstr ""
 
-#: lib/filters-messages.php:172 lib/filters.php:98
-#: lib/submenu/google-merchant.php:32
-msgctxt "metabox title"
-msgid "Google Merchant Feed XML"
-msgstr ""
-
 #: lib/filters-messages.php:174 lib/filters-messages.php:182
 msgid ""
 "The %1$s includes all public WordPress post objects (ie. posts, pages, and "
 "custom post types) with an Open Graph type of \"product\" and a language of "
 "%2$s (ie. locale \"%3$s\")."
-msgstr ""
-
-#: lib/filters-messages.php:180 lib/filters.php:99
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:169
-msgctxt "metabox title"
-msgid "Google Merchant Inventory XML"
 msgstr ""
 
 #: lib/filters-messages.php:205
@@ -380,7 +380,7 @@ msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
 
-#: lib/xml.php:396
+#: lib/xml.php:399
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 

@@ -96,8 +96,13 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 				$locale = SucomUtil::get_locale( $mod );
 
-				WpssoGmfXml::clear_cache( $locale, $request_type = 'feed' );
-				WpssoGmfXml::clear_cache( $locale, $request_type = 'inventory' );
+				foreach ( array(
+					'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+			 		'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+				) as $request_type => $metabox_title ) {
+
+					WpssoGmfXml::clear_cache( $locale, $request_type );
+				}
 			}
 		}
 

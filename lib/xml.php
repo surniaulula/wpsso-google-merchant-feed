@@ -38,10 +38,13 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$request_locale = SucomUtil::get_locale();
 			}
 
-			$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . ')';
-			$cache_file_ext = '.xml';
+			foreach ( array( 'atom', 'rss' ) as $request_format ) {
 
-			$wpsso->cache->clear_cache_data( $cache_salt, $cache_file_ext );	// Clear the feed XML cache file.
+				$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . '_format:' . $request_format . ')';
+				$cache_file_ext = '.xml';
+
+				$wpsso->cache->clear_cache_data( $cache_salt, $cache_file_ext );	// Clear the feed XML cache file.
+			}
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -79,7 +82,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . ')';
+			$cache_salt     = __CLASS__ . '::get(locale:' . $request_locale . '_type:' . $request_type . '_format:' . $request_format . ')';
 			$cache_type     = 'file';
 			$cache_file_ext = '.xml';
 			$cache_exp_secs = $wpsso->util->get_cache_exp_secs( $cache_key = 'wpssogmf_' . $request_type . '_', $cache_type );
