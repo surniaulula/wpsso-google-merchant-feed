@@ -103,7 +103,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					$table_rows[ 'gmf_feed_exp_secs' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_feed_exp_secs' ) .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = '', $css_id = 'gmf_feed_exp_secs' ) .
-						'<td>' . $this->form->get_input( 'gmf_feed_exp_secs', 'short' ) . ' ' .
+						'<td>' . $this->form->get_input( 'gmf_feed_exp_secs', 'medium' ) . ' ' .
 							_x( 'seconds', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
 					$table_rows[ 'gmf_feed_format' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_feed_format' ) .
@@ -167,7 +167,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					$table_rows[ 'gmf_merchant_id' ] = '' .
 						$this->form->get_th_html( _x( 'Google Merchant ID', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = '', $css_id = 'gmf_merchant_id' ) .
-						'<td>' . $this->form->get_input( 'gmf_merchant_id', 'short' ) . '</td>';
+						'<td>' . $this->form->get_input( 'gmf_merchant_id', 'medium' ) . '</td>';
 
 					/*
 					 * Store Code: The store identifier from Google's Business Profiles.
@@ -183,12 +183,12 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					$table_rows[ 'gmf_store_code' ] = '' .
 						$this->form->get_th_html( _x( 'Google Store Code', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = '', $css_id = 'gmf_store_code' ) .
-						'<td>' . $this->form->get_input( 'gmf_store_code', 'short' ) . '</td>';
+						'<td>' . $this->form->get_input( 'gmf_store_code', 'medium' ) . '</td>';
 
 					$table_rows[ 'gmf_inventory_exp_secs' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_inventory_exp_secs' ) .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = '', $css_id = 'gmf_inventory_exp_secs' ) .
-						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'short' ) . ' ' .
+						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'medium' ) . ' ' .
 							_x( 'seconds', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
 					$table_rows[ 'gmf_inventory_format' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_inventory_format' ) .
