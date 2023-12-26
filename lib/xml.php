@@ -46,7 +46,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			}
 		}
 
-		static public function get( $request_locale = null, $request_type = 'feed', $request_format = 'rss' ) {
+		static public function get( $request_locale = null, $request_type = 'feed', $request_format = 'atom' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
