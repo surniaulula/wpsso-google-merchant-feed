@@ -37,45 +37,17 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 		protected function add_form_buttons( &$form_button_rows ) {
 
 			/*
-			 * If a refresh is running, remove all buttons.
+			 * Remove all buttons if a cache refresh is running.
 			 */
 			if ( $this->p->util->cache->is_refresh_running() ) {
 
 				return array();
 			}
 
-			 if ( empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {
-
-				/*
-				 * Remove all action buttons and add a "Refresh XML Cache" button.
-				 */
-				$form_button_rows = array(
-					array(
-						'refresh_feed_xml_cache' => _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' ),
-					),
-				);
-
-			} else $form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
-		}
-
-		/*
-		 * Remove the "Submit" button from this settings page if an e-commerce plugin is not active.
-		 */
-		protected function add_form_buttons_submit( &$form_button_rows ) {
-
 			/*
-			 * If an e-commerce plugin is active, keep the submit button.
+			 * Add a "Refresh XML Cache" button.
 			 */
-			if ( ! empty( $this->p->avail[ 'ecom' ][ 'any' ] ) ) {
-
-				parent::add_form_buttons_submit( $form_button_rows );
-			}
-		}
-
-		/*
-		 * Remove the "Change to View" button from this settings page.
-		 */
-		protected function add_form_buttons_change_show_options( &$form_button_rows ) {
+			$form_button_rows[ 0 ][ 'refresh_feed_xml_cache' ] = _x( 'Refresh XML Cache', 'submit button', 'wpsso-google-merchant-feed' );
 		}
 
 		protected function get_table_rows( $page_id, $metabox_id, $tab_key = '', $args = array() ) {
@@ -122,29 +94,36 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					/*
 					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 					 */
-					$table_rows[ 'gmf_add_shipping' ] = '' .
+					$table_rows[ 'gmf_add_shipping' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_add_shipping' ) .
 						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso-google-merchant-feed' ),
-							$css_class = 'medium', $css_id = 'gmf_add_shipping' ) .
+							$css_class = '', $css_id = 'gmf_add_shipping' ) .
 						'<td>' . $this->form->get_checkbox( 'gmf_add_shipping' ) . ' ' .
 							_x( '(not recommended)', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
-					$table_rows[ 'gmf_feed_exp_secs' ] = '' .
+					$table_rows[ 'gmf_feed_exp_secs' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_feed_exp_secs' ) .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),
-							$css_class = 'medium', $css_id = 'gmf_feed_exp_secs' ) .
+							$css_class = '', $css_id = 'gmf_feed_exp_secs' ) .
 						'<td>' . $this->form->get_input( 'gmf_feed_exp_secs', 'short' ) . ' ' .
 							_x( 'seconds', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
+
+					$table_rows[ 'gmf_feed_format' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_feed_format' ) .
+						$this->form->get_th_html( _x( 'XML Format', 'option label', 'wpsso-google-merchant-feed' ),
+							$css_class = '', $css_id = 'gmf_feed_format' ) .
+						'<td>' . $this->form->get_select( 'gmf_feed_format', $this->p->cf[ 'form' ][ 'feed_formats' ], 'medium' ) . '</td>';
 
 					$locale_names = SucomUtil::get_available_feed_locale_names();
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
-						$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'feed', $request_format = 'atom' );
-						$xml        = WpssoGmfXml::get( $locale, $request_type = 'feed', $request_format = 'atom' );
-						$css_id     = SucomUtil::sanitize_css_id( 'gmf_feed_xml_' . $locale );
-						$item_count = substr_count( $xml, '<entry>' );
-						$img_count  = substr_count( $xml, '<g:image_link>' );
-						$addl_count = substr_count( $xml, '<g:additional_image_link>' );
-						$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+						$feed_type   = 'feed';
+						$feed_format = $this->p->options[ 'gmf_' . $feed_type . '_format' ];
+						$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
+						$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
+						$css_id      = SucomUtil::sanitize_css_id( 'gmf_feed_xml_' . $locale );
+						$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
+						$img_count   = substr_count( $xml, '<g:image_link>' );
+						$addl_count  = substr_count( $xml, '<g:additional_image_link>' );
+						$xml_size    = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
 
 						unset( $xml );
 
@@ -156,7 +135,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						);
 
 						$table_rows[ $css_id ] = '' .
-							$this->form->get_th_html( $native_name, $css_class = 'medium', $css_id,
+							$this->form->get_th_html( $native_name, $css_class = '', $css_id,
 								array( 'locale' => $locale, 'native_name' => $native_name ) ) .
 							'<td>' . $this->form->get_no_input_clipboard( $url ) .
 							'<p class="status-msg left">' . implode( '; ', $xml_info ) . '</p></td>';
@@ -187,7 +166,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					 */
 					$table_rows[ 'gmf_merchant_id' ] = '' .
 						$this->form->get_th_html( _x( 'Google Merchant ID', 'option label', 'wpsso-google-merchant-feed' ),
-							$css_class = 'medium', $css_id = 'gmf_merchant_id' ) .
+							$css_class = '', $css_id = 'gmf_merchant_id' ) .
 						'<td>' . $this->form->get_input( 'gmf_merchant_id', 'short' ) . '</td>';
 
 					/*
@@ -203,14 +182,19 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 					 */
 					$table_rows[ 'gmf_store_code' ] = '' .
 						$this->form->get_th_html( _x( 'Google Store Code', 'option label', 'wpsso-google-merchant-feed' ),
-							$css_class = 'medium', $css_id = 'gmf_store_code' ) .
+							$css_class = '', $css_id = 'gmf_store_code' ) .
 						'<td>' . $this->form->get_input( 'gmf_store_code', 'short' ) . '</td>';
 
-					$table_rows[ 'gmf_inventory_exp_secs' ] = '' .
+					$table_rows[ 'gmf_inventory_exp_secs' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_inventory_exp_secs' ) .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),
-							$css_class = 'medium', $css_id = 'gmf_inventory_exp_secs' ) .
+							$css_class = '', $css_id = 'gmf_inventory_exp_secs' ) .
 						'<td>' . $this->form->get_input( 'gmf_inventory_exp_secs', 'short' ) . ' ' .
 							_x( 'seconds', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
+
+					$table_rows[ 'gmf_inventory_format' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_inventory_format' ) .
+						$this->form->get_th_html( _x( 'XML Format', 'option label', 'wpsso-google-merchant-feed' ),
+							$css_class = '', $css_id = 'gmf_inventory_format' ) .
+						'<td>' . $this->form->get_select( 'gmf_inventory_format', $this->p->cf[ 'form' ][ 'feed_formats' ], 'medium' ) . '</td>';
 
 					if ( empty( $this->p->options[ 'gmf_merchant_id' ] ) ||
 						empty( $this->p->options[ 'gmf_store_code' ] ) ) {
@@ -228,11 +212,13 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 						foreach ( $locale_names as $locale => $native_name ) {
 
-							$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory', $request_format = 'atom' );
-							$xml        = WpssoGmfXml::get( $locale, $request_type = 'inventory', $request_format = 'atom' );
-							$css_id     = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
-							$item_count = substr_count( $xml, '<entry>' );
-							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+							$feed_type   = 'inventory';
+							$feed_format = $this->p->options[ 'gmf_' . $feed_type . '_format' ];
+							$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
+							$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
+							$css_id      = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
+							$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
+							$xml_size    = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
 
 							unset( $xml );
 
@@ -242,7 +228,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 							);
 
 							$table_rows[ $css_id ] = '' .
-								$this->form->get_th_html( $native_name, $css_class = 'medium', $css_id,
+								$this->form->get_th_html( $native_name, $css_class = '', $css_id,
 									array( 'locale' => $locale, 'native_name' => $native_name ) ) .
 								'<td>' . $this->form->get_no_input_clipboard( $url ) .
 								'<p class="status-msg left">' . implode( '; ', $xml_info ) . '</p></td>';

@@ -124,6 +124,16 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					break;
 
+				case 'tooltip-gmf_feed_format':
+				case 'tooltip-gmf_inventory_format':
+
+					$def_value = $this->p->opt->get_defaults( str_replace( 'tooltip-', '', $msg_key ) );
+					$def_label = $this->p->cf[ 'form' ][ 'feed_formats' ][ $def_value ];
+
+					$text = sprintf( __( 'Choose the preferred XML format (default is %s).', 'wpsso-google-merchant-feed' ), $def_label ) . ' ';
+
+					break;
+
 				case 'tooltip-gmf_inventory_exp_secs':
 
 					$def_value = $this->p->opt->get_defaults( 'gmf_inventory_exp_secs' );

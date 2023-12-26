@@ -113,10 +113,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $request_locale );
 			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
 			$public_ids = WpssoPost::get_public_ids( $query_args );
-
-			$feed = 'atom' === $request_format ?
-				new Vitalybaev\GoogleMerchant\AtomFeed( $site_title, $site_url, $site_desc ) :
-				new Vitalybaev\GoogleMerchant\RssFeed( $site_title, $site_url, $site_desc );
+			$feed       = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, $request_format );
 
 			if ( $wpsso->debug->enabled ) {
 
@@ -160,7 +157,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							$wpsso->debug->log( 'adding variant #' . $num . ' for post id ' . $post_id );
 						}
 
-						self::add_feed_item( $feed, $mt_single, $request_type );
+						self::add_feed_item( $feed, $mt_single, $request_type, $request_format );
 					}
 
 				} else {
@@ -170,7 +167,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						$wpsso->debug->log( 'adding product for post id ' . $post_id );
 					}
 
-					self::add_feed_item( $feed, $mt_og, $request_type );
+					self::add_feed_item( $feed, $mt_og, $request_type, $request_format );
 				}
 
 				unset( $mod, $mt_og );
@@ -233,7 +230,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		 * See inventory feed specification at https://support.google.com/merchants/answer/7677785?hl=en.
 		 * See store feed specification at https://support.google.com/merchants/answer/7677622?hl=en.
 		 */
-		static private function add_feed_item( &$feed, $mt_single, $request_type = 'feed' ) {
+		static private function add_feed_item( &$feed, $mt_single, $request_type = 'feed', $request_format = 'atom' ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -252,7 +249,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					$callbacks = WpssoGmfConfig::get_callbacks( 'product' );
 
-					$item = new Vitalybaev\GoogleMerchant\Product();
+					$item = new Vitalybaev\GoogleMerchant\Product( $request_format );
 
 					self::add_item_data( $item, $mt_single, $callbacks );
 
@@ -263,7 +260,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					 */
 					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
 
-						self::add_item_shipping( $item, $mt_single );
+						self::add_item_shipping( $item, $mt_single, $request_type, $request_format );
 					}
 
 					break;
@@ -277,7 +274,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					$callbacks = WpssoGmfConfig::get_callbacks( 'inventory' );
 
-					$item = new Vitalybaev\GoogleMerchant\Inventory();
+					$item = new Vitalybaev\GoogleMerchant\Inventory( $request_format );
 
 					self::add_item_data( $item, $mt_single, $callbacks );
 
@@ -311,7 +308,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 		/*
 		 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 		 */
-		static private function add_item_shipping( &$item, $mt_single ) {
+		static private function add_item_shipping( &$item, $mt_single, $request_type, $request_format ) {
 
 			$wpsso =& Wpsso::get_instance();
 
@@ -331,7 +328,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			foreach ( $mt_single_shipping as $num => $ship_opts ) {
 
-				$shipping = new Vitalybaev\GoogleMerchant\Product\Shipping();
+				$shipping = new Vitalybaev\GoogleMerchant\Product\Shipping( $request_format );
 
 				self::add_item_data( $shipping, $ship_opts, $callbacks );
 

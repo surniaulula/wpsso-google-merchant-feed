@@ -17,8 +17,8 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '9.4.0-dev.5',	// Plugin version.
-					'opt_version' => '4',		// Increment when changing default option values.
+					'version'     => '9.4.0-dev.6',	// Plugin version.
+					'opt_version' => '5',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
 					'desc'        => 'Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '17.7.0-dev.5',
+							'min_version'   => '17.7.0-dev.6',
 						),
 					),
 
@@ -176,12 +176,20 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 					'gmf_img_crop_x'         => 'center',
 					'gmf_img_crop_y'         => 'center',
 					'gmf_feed_exp_secs'      => WEEK_IN_SECONDS,
+					'gmf_feed_format'        => 'atom',
 					'gmf_inventory_exp_secs' => HOUR_IN_SECONDS,
+					'gmf_inventory_format'   => 'atom',
 					'gmf_merchant_id'        => '',
 					'gmf_store_code'         => '',
 					'gmf_add_shipping'       => 0,
 				),
-			),
+			),	// End of 'opt' array.
+			'form' => array(
+				'feed_formats' => array(
+					'atom' => 'Atom 1.0',
+					'rss'  => 'RSS 2.0',
+				),
+			),	// End of 'form' array.
 			'head' => array(
 
 				/*
@@ -217,7 +225,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 						'newborn'  => 'newborn',
 					),
 				),
-			),
+			),	// End of 'head' array.
 			'wp' => array(
 				'cache' => array(
 					'file' => array(

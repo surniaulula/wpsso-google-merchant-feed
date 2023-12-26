@@ -8,3 +8,5 @@ _x( 'Google Merchant product and inventory feed XML for WooCommerce and custom p
 _x( 'WPSSO Core', 'plugin name', 'wpsso-google-merchant-feed' );
 _x( 'Google Merchant Feed XML', 'option label', 'wpsso-google-merchant-feed' );
 _x( 'Google Merchant Inventory XML', 'option label', 'wpsso-google-merchant-feed' );
+_x( 'Atom 1.0', 'option value', 'wpsso-google-merchant-feed' );
+_x( 'RSS 2.0', 'option value', 'wpsso-google-merchant-feed' );
