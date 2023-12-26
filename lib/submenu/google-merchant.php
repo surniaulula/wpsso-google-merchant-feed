@@ -228,10 +228,10 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 						foreach ( $locale_names as $locale => $native_name ) {
 
-							$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory' );
-							$xml        = WpssoGmfXml::get( $locale, $request_type = 'inventory' );
+							$url        = WpssoGmfRewrite::get_url( $locale, $request_type = 'inventory', $request_format = 'atom' );
+							$xml        = WpssoGmfXml::get( $locale, $request_type = 'inventory', $request_format = 'atom' );
 							$css_id     = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
-							$item_count = substr_count( $xml, '<item>' );
+							$item_count = substr_count( $xml, '<entry>' );
 							$xml_size   = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
 
 							unset( $xml );
