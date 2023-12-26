@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.4.0-dev.4 (2023/12/25)**
+**Version 9.4.0-dev.5 (2023/12/26)**
 
 * **New Features**
 	* None.
@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.5.
-	* WPSSO Core v17.7.0-dev.4.
+	* WPSSO Core v17.7.0-dev.5.
 
 **Version 9.3.1 (2023/12/23)**
 
@@ -283,9 +283,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.4.0-dev.4 =
+= 9.4.0-dev.5 =
 
-(2023/12/25) Added an 'updated' property to the atom feed XML and its items.
+(2023/12/26) Added an 'updated' property to the atom feed XML and its items.
 
 = 9.3.1 =
 
