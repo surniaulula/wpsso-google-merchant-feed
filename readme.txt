@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.4.0-b.1 (2023/12/26)**
+**Version 9.4.0-b.1 (2023/12/27)**
 
 * **New Features**
 	* None.
@@ -286,7 +286,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 9.4.0-b.1 =
 
-(2023/12/26) Added a new "XML Format" option. Added an 'updated' property in the Atom 1.0 format XML.
+(2023/12/27) Added a new "XML Format" option. Added an 'updated' property in the Atom 1.0 format XML.
 
 = 9.3.1 =
 
