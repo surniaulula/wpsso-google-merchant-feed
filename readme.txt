@@ -13,7 +13,7 @@ Requires PHP: 7.2.34
 Requires At Least: 5.5
 Tested Up To: 6.4.2
 WC Tested Up To: 8.4.0
-Stable Tag: 9.3.1
+Stable Tag: 9.4.0
 
 Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
 
@@ -161,158 +161,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WordPress v5.5.
 	* WPSSO Core v17.7.0.
 
-**Version 9.3.1 (2023/12/23)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* Fixed enabling the creation of shipping information from WPSSO Core, independent of the WPSSO WCSDT add-on.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.5.0.
-
-**Version 9.3.0 (2023/12/19)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a `Vitalybaev\GoogleMerchant\ProductProperty::getCache()` method to reduce memory usage.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.5.0.
-
-**Version 9.2.0 (2023/12/15)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a `Vitalybaev\GoogleMerchant\ProductProperty::resetCache()` method to reduce memory usage.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.4.0.
-
-**Version 9.1.0 (2023/12/12)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added a `Vitalybaev\GoogleMerchant\ProductProperty::getInstance()` method to reduce memory usage.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.4.0.
-
-**Version 9.0.1 (2023/12/08)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added an "Include Shipping" option (unchecked by default).
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Updated the "vitalybaev/google-merchant-feed" library.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.3.1.
-
-**Version 9.0.0 (2023/12/01)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a new SSO &gt; Google Merchant &gt; Google Merchant Inventory XML metabox.
-	* Added a new "XML Cache Expiration" option in the Feed and in the Inventory XML metaboxes.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added https://github.com/jsmoriss/php-google-merchant-feed repository to composer.json.
-	* Added a new `WpssoGmfConfig::get_callbacks()` method.
-	* Added a new 'wpsso_cache_expire_gmf_inventory_xml' filter.
-	* Renamed the 'wpsso_cache_expire_gmf_xml' filter to 'wpsso_cache_expire_gmf_feed_xml'.
-	* Changed "vitalybaev/google-merchant-feed" require from "^2.6" to "dev-wpsso-google-merchant-feed".
-	* Updated product callbacks for new methods in "vitalybaev/google-merchant-feed".
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.3.0.
-
-**Version 8.0.0 (2023/11/25)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added shipping <code>&#91;shipping&#93;</code> attributes:
-		* Country <code>&#91;country&#93;</code>
-		* Region <code>&#91;region&#93;</code>
-		* Postal code <code>&#91;postal_code&#93;</code>
-		* Location group name <code>&#91;location_group_name&#93;</code>
-		* Service <code>&#91;service&#93;</code>
-		* Price <code>&#91;price&#93;</code>
-		* Minimum handling time <code>&#91;min_handling_time&#93;</code>
-		* Maximum handling time <code>&#91;max_handling_time&#93;</code>
-		* Minimum transit time <code>&#91;min_transit_time&#93;</code>
-		* Maximum transit time <code>&#91;max_transit_time&#93;</code>
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.5.
-	* WPSSO Core v17.2.1.
-
 == Upgrade Notice ==
 
 = 9.4.0 =
 
 (2023/12/28) Added a new "XML Format" option. Added an 'updated' property in the Atom 1.0 format XML.
-
-= 9.3.1 =
-
-(2023/12/23) Fixed enabling the creation of shipping information from WPSSO Core, independent of the WPSSO WCSDT add-on.
-
-= 9.3.0 =
-
-(2023/12/19) Added a `Vitalybaev\GoogleMerchant\ProductProperty::getCache()` method to reduce memory usage.
-
-= 9.2.0 =
-
-(2023/12/15) Added a `Vitalybaev\GoogleMerchant\ProductProperty::resetCache()` method to reduce memory usage.
-
-= 9.1.0 =
-
-(2023/12/12) Added a `Vitalybaev\GoogleMerchant\ProductProperty::getInstance()` method to reduce memory usage.
-
-= 9.0.1 =
-
-(2023/12/08) Added an "Include Shipping" option (unchecked by default). Updated the "vitalybaev/google-merchant-feed" library.
-
-= 9.0.0 =
-
-(2023/12/01) Added a new "Google Merchant Inventory XML" metabox. Updated product callbacks for new methods in "vitalybaev/google-merchant-feed".
-
-= 8.0.0 =
-
-(2023/11/25) Added shipping <code>&#91;shipping&#93;</code> attributes.
 
