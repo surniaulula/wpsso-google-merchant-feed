@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.4.0-b.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.4.0-rc.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
@@ -189,7 +189,8 @@ msgid ""
 msgstr ""
 
 #: lib/filters-messages.php:133
-msgid "Choose the preferred XML format (default is %s)."
+msgid ""
+"Choose the XML format for URLs shown in the settings page (default is %s)."
 msgstr ""
 
 #: lib/filters-messages.php:147

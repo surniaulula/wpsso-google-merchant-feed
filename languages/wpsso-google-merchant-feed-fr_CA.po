@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.4.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-12-26 15:57-0800\n"
+"PO-Revision-Date: 2023-12-28 09:01-0800\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -162,8 +162,8 @@ msgid "When a product is updated, or the cache expires, the XML file cache is au
 msgstr "Lorsqu'un produit est mis à jour ou que le cache expire, le cache du fichier XML est automatiquement actualisé."
 
 #: lib/filters-messages.php:133
-msgid "Choose the preferred XML format (default is %s)."
-msgstr "Choisissez le format XML préféré (%s par défaut)."
+msgid "Choose the XML format for URLs shown in the settings page (default is %s)."
+msgstr "Choisissez le format XML pour les URL affichées dans la page des paramètres (%s par défaut)."
 
 #: lib/filters-messages.php:147
 msgid "You can decrease the expiration time if you need to refresh product quantities in the XML file more frequently."
