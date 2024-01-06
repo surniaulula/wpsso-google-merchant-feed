@@ -31,7 +31,7 @@
 
 <p><strong>Automatic Multilingual Support:</strong></p>
 
-<p>The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.</p>
+<p>The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, qTranslate-XT, WPML, or the installed WordPress languages.</p>
 
 <p>After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.</p>
 

@@ -35,7 +35,7 @@ WooCommerce simple products, product variations, product attributes, product met
 
 **Automatic Multilingual Support:**
 
-The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, WPML, or the installed WordPress languages.
+The Google merchant product feed XMLs are automatically created in your site's language(s) from Polylang, qTranslate-XT, WPML, or the installed WordPress languages.
 
 After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Google Merchant settings page for your feed URLs.
 
