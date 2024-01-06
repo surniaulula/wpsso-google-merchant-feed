@@ -10,7 +10,7 @@ Tags: google shopping feed, google merchant center, woocommerce product feed, go
 Contributors: jsmoriss
 Requires Plugins: wpsso
 Requires PHP: 7.2.34
-Requires At Least: 5.5
+Requires At Least: 5.8
 Tested Up To: 6.4.2
 WC Tested Up To: 8.4.0
 Stable Tag: 9.4.0
@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* Added support for Atom 1.0 format XML in `Vitalybaev\GoogleMerchant`.
 * **Requires At Least**
 	* PHP v7.2.34.
-	* WordPress v5.5.
+	* WordPress v5.8.
 	* WPSSO Core v17.7.0.
 
 == Upgrade Notice ==
