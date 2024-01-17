@@ -12,8 +12,8 @@ Requires Plugins: wpsso
 Requires PHP: 7.2.34
 Requires At Least: 5.8
 Tested Up To: 6.4.2
-WC Tested Up To: 8.4.0
-Stable Tag: 9.4.0
+WC Tested Up To: 8.5.1
+Stable Tag: 9.5.0
 
 Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
 
@@ -145,6 +145,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.5.0 (2024/01/12)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
+* **Requires At Least**
+	* PHP v7.2.34.
+	* WordPress v5.8.
+	* WPSSO Core v17.8.0.
+
 **Version 9.4.0 (2023/12/28)**
 
 * **New Features**
@@ -162,6 +177,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v17.7.0.
 
 == Upgrade Notice ==
+
+= 9.5.0 =
+
+(2024/01/12) Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
 
 = 9.4.0 =
 
