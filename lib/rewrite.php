@@ -149,7 +149,7 @@ if ( ! class_exists( 'WpssoGmfRewrite' ) ) {
 			 */
 			$request_locale = get_query_var( 'feed_locale' );
 			$request_locale = SucomUtil::sanitize_locale( $request_locale );
-			$locale_names   = SucomUtil::get_available_feed_locale_names();
+			$locale_names   = SucomUtilWP::get_available_feed_locale_names();
 
 			if ( ! isset( $locale_names[ $request_locale ] ) ) {
 

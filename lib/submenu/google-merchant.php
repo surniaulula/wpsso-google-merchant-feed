@@ -111,7 +111,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 							$css_class = '', $css_id = 'gmf_feed_format' ) .
 						'<td>' . $this->form->get_select( 'gmf_feed_format', $this->p->cf[ 'form' ][ 'feed_formats' ], 'medium' ) . '</td>';
 
-					$locale_names = SucomUtil::get_available_feed_locale_names();
+					$locale_names = SucomUtilWP::get_available_feed_locale_names();
 
 					foreach ( $locale_names as $locale => $native_name ) {
 
@@ -208,7 +208,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 					} else {
 
-						$locale_names = SucomUtil::get_available_feed_locale_names();
+						$locale_names = SucomUtilWP::get_available_feed_locale_names();
 
 						foreach ( $locale_names as $locale => $native_name ) {
 

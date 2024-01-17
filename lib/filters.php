@@ -77,17 +77,8 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 
 		public function filter_cache_refreshed_notice( $notice_msg, $user_id = null ) {
 
-			$xml_count      = 0;
-			$current_locale = SucomUtil::get_locale();
-
-			/*
-			 * Calls SucomUtil::get_available_locale_names() and applies the 'sucom_available_feed_locale_names'
-			 * filter.
-			 *
-			 * Returns an associative array with locale keys and native names (example: 'en_US' => 'English (United
-			 * States)').
-			 */
-			$locale_names = SucomUtil::get_available_feed_locale_names();	// Uses a local cache.
+			$current_locale = SucomUtilWP::get_locale();
+			$locale_names   = SucomUtilWP::get_available_feed_locale_names();
 
 			/*
 			 * Move the current locale last to generate any notices in the current locale.
@@ -98,6 +89,8 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 				'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
 			 	'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
 			) as $request_type => $metabox_title ) {
+
+				$xml_count = 0;
 
 				foreach ( $locale_names as $request_locale => $native_name ) {
 

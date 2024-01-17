@@ -30,7 +30,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			if ( ! $request_locale ) {
 
-				$request_locale = SucomUtil::get_locale();
+				$request_locale = SucomUtilWP::get_locale();
 			}
 
 			foreach ( array( 'atom', 'rss' ) as $request_format ) {
@@ -55,7 +55,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark_diff( 'method begin' );
 			}
 
-			$original_locale = SucomUtil::get_locale();
+			$original_locale = SucomUtilWP::get_locale();
 			$current_locale  = $original_locale;
 			$request_locale  = $request_locale ? $request_locale : $current_locale;
 			$is_switched     = false;
@@ -68,7 +68,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 
 				$is_switched    = switch_to_locale( $request_locale );	// Switches to locale if the WP language is installed.
-				$current_locale = SucomUtil::get_locale();		// Update the current locale value.
+				$current_locale = SucomUtilWP::get_locale();		// Update the current locale value.
 
 				if ( $wpsso->debug->enabled ) {
 
@@ -108,9 +108,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				$wpsso->debug->mark( 'create feed' );	// Begin timer.
 			}
 
-			$site_title = SucomUtil::get_site_name( $wpsso->options, $request_locale );
-			$site_url   = SucomUtil::get_home_url( $wpsso->options, $request_locale );
-			$site_desc  = SucomUtil::get_site_description( $wpsso->options, $request_locale );
+			$site_title = SucomUtilWP::get_site_name( $wpsso->options, $request_locale );
+			$site_url   = SucomUtilWP::get_home_url( $wpsso->options, $request_locale );
+			$site_desc  = SucomUtilWP::get_site_description( $wpsso->options, $request_locale );
 			$query_args = array( 'meta_query' => WpssoAbstractWpMeta::get_column_meta_query_og_type( $og_type = 'product', $request_locale ) );
 			$public_ids = WpssoPost::get_public_ids( $query_args );
 			$feed       = new Vitalybaev\GoogleMerchant\Feed( $site_title, $site_url, $site_desc, $request_format );

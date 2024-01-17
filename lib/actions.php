@@ -94,7 +94,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 			if ( 'product' === $og_type ) {
 
-				$locale = SucomUtil::get_locale( $mod );
+				$locale = SucomUtilWP::get_locale( $mod );
 
 				foreach ( array(
 					'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
