@@ -134,9 +134,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					}
 
 					continue;
-				}
 
-				if ( $wpsso->debug->enabled ) {
+				} elseif ( $wpsso->debug->enabled ) {
 
 					$wpsso->debug->log( 'getting open graph array for ' . $mod[ 'name' ] . ' id ' . $mod[ 'id' ] );
 				}
@@ -160,9 +159,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 							}
 
 							continue;
-						}
 
-						if ( $wpsso->debug->enabled ) {
+						} elseif ( $wpsso->debug->enabled ) {
 
 							$wpsso->debug->log( 'adding variant #' . $num . ' for post id ' . $post_id );
 						}
@@ -180,9 +178,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 						}
 
 						continue;
-					}
 
-					if ( $wpsso->debug->enabled ) {
+					} elseif ( $wpsso->debug->enabled ) {
 
 						$wpsso->debug->log( 'adding product for post id ' . $post_id );
 					}
