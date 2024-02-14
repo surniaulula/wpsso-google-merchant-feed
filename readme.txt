@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.6.0-dev.1 (2024/02/14)**
+**Version 9.6.0-dev.2 (2024/02/14)**
 
 * **New Features**
 	* None.
@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.2.34.
 	* WordPress v5.8.
-	* WPSSO Core v17.13.0-dev.1.
+	* WPSSO Core v17.13.0-dev.2.
 
 **Version 9.5.0 (2024/01/12)**
 
@@ -193,7 +193,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.6.0-dev.1 =
+= 9.6.0-dev.2 =
 
 (2024/02/14) Added an exclusion for virtual products.
 
