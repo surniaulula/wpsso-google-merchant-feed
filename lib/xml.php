@@ -130,7 +130,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					if ( $wpsso->debug->enabled ) {
 
-						$wpsso->debug->log( 'skipping post id ' . $post_id . ': post is an archive page' );
+						$wpsso->debug->log( 'skipping post id ' . $post_id . ': post is an archive' );
 					}
 
 					continue;
@@ -143,16 +143,6 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
-				if ( ! empty( $mt_og[ 'product:is_virtual' ] ) ) {	// Exclude virtual products.
-
-					if ( $wpsso->debug->enabled ) {
-
-						$wpsso->debug->log( 'skipping post id ' . $post_id . ': post is a virtual product' );
-					}
-
-					continue;
-				}
-
 				if ( ! empty( $mt_og[ 'product:variants' ] ) && is_array( $mt_og[ 'product:variants' ] ) ) {
 
 					if ( $wpsso->debug->enabled ) {
@@ -161,6 +151,16 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					}
 
 					foreach ( $mt_og[ 'product:variants' ] as $num => $mt_single ) {
+
+						if ( ! empty( $mt_single[ 'product:is_virtual' ] ) ) {	// Exclude virtual products.
+
+							if ( $wpsso->debug->enabled ) {
+
+								$wpsso->debug->log( 'skipping variant #' . $num . ': variant is virtual' );
+							}
+
+							continue;
+						}
 
 						if ( $wpsso->debug->enabled ) {
 
@@ -171,6 +171,16 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					}
 
 				} else {
+
+					if ( ! empty( $mt_og[ 'product:is_virtual' ] ) ) {	// Exclude virtual products.
+
+						if ( $wpsso->debug->enabled ) {
+
+							$wpsso->debug->log( 'skipping post id ' . $post_id . ': product is virtual' );
+						}
+
+						continue;
+					}
 
 					if ( $wpsso->debug->enabled ) {
 
