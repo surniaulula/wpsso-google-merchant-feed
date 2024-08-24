@@ -24,10 +24,7 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 			static $do_once = null;
 
-			if ( true === $do_once ) {
-
-				return;	// Stop here.
-			}
+			if ( $do_once ) return;	// Stop here.
 
 			$do_once = true;
 
@@ -108,9 +105,9 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 		public function action_load_settings_page_refresh_feed_xml_cache( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
-			$notice_msg = $this->a->filters->filter_cache_refreshed_notice( $notice_msg = '' );
+			$notice_msg = WpssoGmfXml::cache_refreshed_notice();
 
-			$this->p->notice->upd( $notice_msg );
+			if ( $notice_msg ) $this->p->notice->upd( $notice_msg );
 		}
 
 		private function check_product_image_urls( $mt_single ) {

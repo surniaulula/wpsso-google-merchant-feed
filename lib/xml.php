@@ -14,6 +14,38 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 	class WpssoGmfXml {
 
+		static public function cache_refreshed_notice( $notice_msg = '' ) {
+
+			$current_locale = SucomUtilWP::get_locale();
+			$locale_names   = SucomUtilWP::get_available_feed_locale_names();
+
+			/*
+			 * Move the current locale last to generate any notices in the current locale.
+			 */
+			SucomUtil::move_to_end( $locale_names, $current_locale );
+
+			foreach ( array(
+				'feed'      => _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+			 	'inventory' => _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' ),
+			) as $request_type => $metabox_title ) {
+
+				$xml_count = 0;
+
+				foreach ( $locale_names as $request_locale => $native_name ) {
+
+					self::clear_cache( $request_locale, $request_type );
+
+					self::get( $request_locale, $request_type );
+
+					$xml_count++;
+				}
+
+				$notice_msg .= sprintf( __( '%1$s for %2$s locales has been refreshed.', 'wpsso-google-merchant-feed' ), $metabox_title, $xml_count ) . ' ';
+			}
+
+			return $notice_msg;
+		}
+
 		/*
 		 * Clear the feed XML cache files.
 		 *

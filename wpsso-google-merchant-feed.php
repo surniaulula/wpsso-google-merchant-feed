@@ -16,7 +16,7 @@
  * Requires At Least: 5.8
  * Tested Up To: 6.6.1
  * WC Tested Up To: 9.2.2
- * Version: 9.6.0
+ * Version: 9.7.0-dev.1
  *
  * Version Numbering: {major}.{minor}.{bugfix}[-{stage}.{level}]
  *
@@ -42,11 +42,7 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 
 	class WpssoGmf extends WpssoAbstractAddOn {
 
-		public $actions;	// WpssoGmfActions class object.
-		public $filters;	// WpssoGmfFilters class object.
-		public $rewrite;	// WpssoGmfRewrite class object.
-
-		protected $p;		// Wpsso class object.
+		protected $p;	// Wpsso class object.
 
 		private static $instance = null;	// WpssoGmf class object.
 
@@ -72,12 +68,8 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 
 		/*
 		 * Called by Wpsso->set_objects() which runs at init priority 10.
-		 *
-		 * Require library files with functions or static methods in require_libs().
-		 *
-		 * Require library files with dynamic methods and instantiate the class object in init_objects().
 		 */
-		public function init_objects() {
+		public function init_objects_preloader() {
 
 			$this->p =& Wpsso::get_instance();
 
@@ -91,18 +83,9 @@ if ( ! class_exists( 'WpssoGmf' ) ) {
 				return;	// Stop here.
 			}
 
-			require_once WPSSOGMF_PLUGINDIR . 'lib/actions.php';
-
-			$this->actions = new WpssoGmfActions( $this->p, $this );
-
-			require_once WPSSOGMF_PLUGINDIR . 'lib/filters.php';
-
-			$this->filters = new WpssoGmfFilters( $this->p, $this );
-
-			/*
-			 * lib/rewrite.php already loaded in require_libs() for WpssoGmfRegister->activate_plugin().
-			 */
-			$this->rewrite = new WpssoGmfRewrite( $this->p, $this );
+			new WpssoGmfActions( $this->p, $this );
+			new WpssoGmfFilters( $this->p, $this );
+			new WpssoGmfRewrite( $this->p, $this );
 		}
 	}
 
