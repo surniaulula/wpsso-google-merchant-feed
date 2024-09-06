@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.4.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
-"POT-Creation-Date: 2023-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2023-12-28 09:01-0800\n"
+"POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2024-09-05 15:34-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -11,13 +11,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
-#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:243
+#: gettext/gettext-lib-abstract-com.php:5 lib/abstract/com/add-on.php:235
 msgid "The %1$s add-on requires the %2$s plugin."
 msgstr "L'ajout %1$s requiert l'extension %2$s."
 
-#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:262
+#: gettext/gettext-lib-abstract-com.php:6 lib/abstract/com/add-on.php:254
 msgid "The %1$s add-on requires %2$s version %3$s or newer (version %4$s is currently installed)."
 msgstr "L'ajout %1$s nécessite %2$s version %3$s ou plus récente (la version %4$s est installée actuellement)."
 
@@ -42,7 +42,7 @@ msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
 #: gettext/gettext-lib-config.php:9 lib/filters-advanced.php:39
-#: lib/filters.php:72
+#: lib/filters.php:69
 msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
@@ -62,31 +62,32 @@ msgctxt "option value"
 msgid "RSS 2.0"
 msgstr "RSS 2.0"
 
-#: lib/actions.php:64
+#: lib/actions.php:61
 msgid "checking google merchant feed"
 msgstr "vérification flux de marchand google"
 
-#: lib/actions.php:100 lib/filters-messages.php:182 lib/filters.php:98
-#: lib/submenu/google-merchant.php:32
+#: lib/actions.php:97 lib/filters-messages.php:182
+#: lib/submenu/google-merchant.php:32 lib/xml.php:28
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
 
-#: lib/actions.php:101 lib/filters-messages.php:190 lib/filters.php:99
+#: lib/actions.php:98 lib/filters-messages.php:190
 #: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:148
+#: lib/xml.php:29
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr "Inventaire XML de marchand Google"
 
-#: lib/actions.php:123
+#: lib/actions.php:120
 msgid "checking google merchant feed images"
 msgstr "vérification d'images flux de marchand google"
 
-#: lib/actions.php:140
+#: lib/actions.php:137
 msgid "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID %3$s."
 msgstr "Impossible de générer l'attribut %1$s de flux XML de marchand Google pour l'identifiant %2$s %3$s."
 
-#: lib/actions.php:142
+#: lib/actions.php:139
 msgid "Google requires at least one %1$s attribute for each product variation in the Google merchant feed XML."
 msgstr "Google exige au moins un attribut %1$s pour chaque variante de produit dans le flux XML de marchand Google."
 
@@ -237,10 +238,6 @@ msgstr "Une URL d'image personnalisée (au lieu d'un ID d'image) pour le flux XM
 msgid "This option is disabled if a custom image ID is selected."
 msgstr "Cette option est désactivée si un ID d'image personnalisé est sélectionné."
 
-#: lib/filters.php:111
-msgid "%1$s for %2$s locales has been refreshed."
-msgstr "%1$s pour %2$s locales a été actualisé."
-
 #: lib/submenu/google-merchant.php:50
 msgctxt "submit button"
 msgid "Refresh XML Cache"
@@ -348,7 +345,11 @@ msgctxt "option comment"
 msgid "%s inventory items"
 msgstr "%s éléments d'inventaire"
 
-#: lib/xml.php:388
+#: lib/xml.php:43
+msgid "%1$s for %2$s locales has been refreshed."
+msgstr "%1$s pour %2$s locales a été actualisé."
+
+#: lib/xml.php:435
 msgid "%1$s::%2$s() method does not exist."
 msgstr "La méthode %1$s::%2$s() n'existe pas."
 
