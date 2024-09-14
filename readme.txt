@@ -9,8 +9,8 @@ Assets URI: https://surniaulula.github.io/wpsso-google-merchant-feed/assets/
 Tags: google shopping, merchant center, woocommerce, wpml, polylang
 Contributors: jsmoriss
 Requires Plugins: wpsso
-Requires PHP: 7.2.34
-Requires At Least: 5.8
+Requires PHP: 7.4.33
+Requires At Least: 5.9
 Tested Up To: 6.6.2
 WC Tested Up To: 9.3.1
 Stable Tag: 9.7.0
@@ -156,71 +156,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Developer Notes**
 	* Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
 * **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v18.5.0.
-
-**Version 9.6.0 (2024/02/15)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added an exclusion for virtual products.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* None.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.18.0.
-
-**Version 9.5.0 (2024/01/12)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* None.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.8.0.
-
-**Version 9.4.0 (2023/12/28)**
-
-* **New Features**
-	* None.
-* **Improvements**
-	* Added a new "XML Format" option.
-	* Added an 'updated' property in the Atom 1.0 format XML.
-* **Bugfixes**
-	* None.
-* **Developer Notes**
-	* Added support for Atom 1.0 format XML in `Vitalybaev\GoogleMerchant`.
-* **Requires At Least**
-	* PHP v7.2.34.
-	* WordPress v5.8.
-	* WPSSO Core v17.7.0.
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.7.3.
 
 == Upgrade Notice ==
 
 = 9.7.0 =
 
 (2024/08/25) Changed the main instantiation action hook from 'init_objects' to 'init_objects_preloader'.
-
-= 9.6.0 =
-
-(2024/02/15) Added an exclusion for virtual products.
-
-= 9.5.0 =
-
-(2024/01/12) Update for `SucomUtil` and `SucomUtilWP` changes in WPSSO Core v17.8.0.
-
-= 9.4.0 =
-
-(2023/12/28) Added a new "XML Format" option. Added an 'updated' property in the Atom 1.0 format XML.
 
