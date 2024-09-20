@@ -102,17 +102,14 @@ if ( ! class_exists( 'WpssoGmfRegister' ) ) {
 
 		private function activate_plugin() {
 
-			if ( class_exists( 'Wpsso' ) ) {
+			/*
+			 * Register plugin install, activation, update times.
+			 */
+			if ( class_exists( 'WpssoUtilReg' ) ) {
 
-				/*
-				 * Register plugin install, activation, update times.
-				 */
-				if ( class_exists( 'WpssoUtilReg' ) ) {	// Since WPSSO Core v6.13.1.
+				$version = WpssoGmfConfig::get_version();
 
-					$version = WpssoGmfConfig::get_version();
-
-					WpssoUtilReg::update_ext_version( 'wpssogmf', $version );
-				}
+				WpssoUtilReg::update_ext_version( 'wpssogmf', $version );
 			}
 
 			WpssoGmfRewrite::maybe_add_rules();
