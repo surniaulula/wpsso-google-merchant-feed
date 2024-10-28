@@ -32,8 +32,8 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 			$this->a =& $addon;
 
 			$this->p->util->add_plugin_actions( $this, array(
-				'check_head_info'    => 3,
-				'refresh_post_cache' => 2,
+				'check_head_info'  => 3,
+				'clear_post_cache' => 2,
 			) );
 
 			if ( is_admin() ) {
@@ -73,19 +73,11 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 						$this->check_product_image_urls( $mt_single );
 					}
 
-				} else {
-
-					$this->check_product_image_urls( $mt_og );
-				}
+				} else $this->check_product_image_urls( $mt_og );
 			}
 		}
 
-		/*
-		 * Once the post cache is cleared and refreshed, clear the feed XML.
-		 *
-		 * See WpssoPost->refresh_cache().
-		 */
-		public function action_refresh_post_cache( $post_id, $mod ) {
+		public function action_clear_post_cache( $post_id, $mod ) {
 
 			$og_type = $this->p->og->get_mod_og_type_id( $mod );
 
