@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.8.0-b.6 (2024/10/30)**
+**Version 9.8.0-b.7 (2024/10/30)**
 
 * **New Features**
 	* None.
@@ -158,7 +158,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v18.16.0-b.6.
+	* WPSSO Core v18.16.0-b.7.
 
 **Version 9.7.0 (2024/08/25)**
 
@@ -177,7 +177,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.8.0-b.6 =
+= 9.8.0-b.7 =
 
 (2024/10/30) Moved the cache clearing process from 'wpsso_refresh_post_cache' to 'wpsso_clear_post_cache'.
 
