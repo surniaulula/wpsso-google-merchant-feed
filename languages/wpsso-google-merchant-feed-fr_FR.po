@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-10-29 08:46-0700\n"
+"PO-Revision-Date: 2024-10-30 17:16-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -67,14 +67,14 @@ msgid "checking google merchant feed"
 msgstr "vérification flux de marchand google"
 
 #: lib/actions.php:89 lib/filters-messages.php:182
-#: lib/submenu/google-merchant.php:32 lib/xml.php:28
+#: lib/submenu/google-merchant.php:32 lib/xml.php:30
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
 
 #: lib/actions.php:90 lib/filters-messages.php:190
 #: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:148
-#: lib/xml.php:29
+#: lib/xml.php:31
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr "Inventaire XML de marchand Google"
@@ -345,11 +345,15 @@ msgctxt "option comment"
 msgid "%s inventory items"
 msgstr "%s éléments d'inventaire"
 
-#: lib/xml.php:43
+#: lib/xml.php:38
+msgid "Processing %1$s for %2$s."
+msgstr "Traitement de %1$s pour %2$s."
+
+#: lib/xml.php:50
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr "%1$s pour %2$s locales a été actualisé."
 
-#: lib/xml.php:435
+#: lib/xml.php:443
 msgid "%1$s::%2$s() method does not exist."
 msgstr "La méthode %1$s::%2$s() n'existe pas."
 
