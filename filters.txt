@@ -1,3 +1,5 @@
 
 'wpsso_cache_expire_gmf_xml' ( WEEK_IN_SECONDS, $cache_type, $mod = false )
 
+'wpsso_gmf_add_shipping' ( $bool )
+

@@ -45,7 +45,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 					$xml_count++;
 				}
-					
+
 				$wpsso->util->cache->task_update( $task_name );
 
 				$notice_msg .= sprintf( __( '%1$s for %2$s locales has been refreshed.', 'wpsso-google-merchant-feed' ),
@@ -314,7 +314,9 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 					/*
 					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 					 */
-					if ( ! empty( $wpsso->options[ 'gmf_add_shipping' ] ) ) {
+					$add_shipping = apply_filters( 'wpsso_gmf_add_shipping', empty( $wpsso->options[ 'gmf_add_shipping' ] ) ? false : true );
+
+					if ( $add_shipping ) {
 
 						self::add_item_shipping( $item, $mt_single, $request_type, $request_format );
 					}

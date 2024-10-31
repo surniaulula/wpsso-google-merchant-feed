@@ -98,7 +98,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						$this->form->get_th_html( _x( 'Include Shipping', 'option label', 'wpsso-google-merchant-feed' ),
 							$css_class = '', $css_id = 'gmf_add_shipping' ) .
 						'<td>' . $this->form->get_checkbox( 'gmf_add_shipping' ) . ' ' .
-							_x( '(not recommended)', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
+							_x( '(not recommended - see help for warning)', 'option comment', 'wpsso-google-merchant-feed' ) . '</td>';
 
 					$table_rows[ 'gmf_feed_exp_secs' ] = $this->form->get_tr_hide( $in_view = 'basic', 'gmf_feed_exp_secs' ) .
 						$this->form->get_th_html( _x( 'XML Cache Expiration', 'option label', 'wpsso-google-merchant-feed' ),

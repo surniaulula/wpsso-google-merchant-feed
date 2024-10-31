@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.8.0-rc.1\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.8.0-rc.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
@@ -46,7 +46,7 @@ msgid "WPSSO Core"
 msgstr ""
 
 #: gettext/gettext-lib-config.php:9 lib/filters-advanced.php:39
-#: lib/filters.php:69
+#: lib/filters.php:74
 msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr ""
@@ -325,7 +325,7 @@ msgstr ""
 
 #: lib/submenu/google-merchant.php:101
 msgctxt "option comment"
-msgid "(not recommended)"
+msgid "(not recommended - see help for warning)"
 msgstr ""
 
 #: lib/submenu/google-merchant.php:104 lib/submenu/google-merchant.php:189
@@ -405,7 +405,7 @@ msgstr ""
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/xml.php:444
+#: lib/xml.php:446
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 

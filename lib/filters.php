@@ -39,7 +39,12 @@ if ( ! class_exists( 'WpssoGmfFilters' ) ) {
 				'cache_refreshed_notice' => 2,
 			) );
 
-			if ( ! empty( $this->p->options[ 'gmf_add_shipping' ] ) ) {
+			/*
+			 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
+			 */
+			$add_shipping = apply_filters( 'wpsso_gmf_add_shipping', empty( $this->p->options[ 'gmf_add_shipping' ] ) ? false : true );
+
+			if ( $add_shipping ) {
 
 				$this->p->util->add_plugin_filters( $this, array(
 					'og_add_mt_shipping_offers' => '__return_true',
