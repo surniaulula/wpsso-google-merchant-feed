@@ -9,3 +9,7 @@ WPSSOGMF_PLUGINSLUG
 WPSSOGMF_URLPATH
 WPSSOGMF_VERSION
 
+/*
+ * Define in your wp-config.php file to change the default value.
+ */
+WPSSOGMF_XML_INFO_DISABLE = false
