@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.8.0-rc.2 (2024/10/31)**
+**Version 9.8.0-rc.3 (2024/10/31)**
 
 * **New Features**
 	* None.
@@ -160,7 +160,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v18.16.0-rc.2.
+	* WPSSO Core v18.16.0-rc.3.
 
 **Version 9.7.0 (2024/08/25)**
 
@@ -179,7 +179,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.8.0-rc.2 =
+= 9.8.0-rc.3 =
 
 (2024/10/31) Added progress information to the notification message when refreshing the cache.
 
