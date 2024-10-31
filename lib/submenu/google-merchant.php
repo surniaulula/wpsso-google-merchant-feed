@@ -118,21 +118,26 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						$feed_type   = 'feed';
 						$feed_format = $this->p->options[ 'gmf_' . $feed_type . '_format' ];
 						$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
-						$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
 						$css_id      = SucomUtil::sanitize_css_id( 'gmf_feed_xml_' . $locale );
-						$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
-						$img_count   = substr_count( $xml, '<g:image_link>' );
-						$addl_count  = substr_count( $xml, '<g:additional_image_link>' );
-						$xml_size    = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+						$xml_info    = array();
 
-						unset( $xml );
+						if ( ! SucomUtil::get_const( 'WPSSOGMF_XML_INFO_DISABLE', false ) ) {
 
-						$xml_info = array(
-							sprintf( _x( '%s feed items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
-							sprintf( _x( '%s image links', 'option comment', 'wpsso-google-merchant-feed' ), $img_count ),
-							sprintf( _x( '%s additional image links', 'option comment', 'wpsso-google-merchant-feed' ), $addl_count ),
-							sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
-						);
+							$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
+							$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
+							$img_count   = substr_count( $xml, '<g:image_link>' );
+							$addl_count  = substr_count( $xml, '<g:additional_image_link>' );
+							$xml_size    = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+
+							unset( $xml );
+
+							$xml_info = array(
+								sprintf( _x( '%s feed items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
+								sprintf( _x( '%s image links', 'option comment', 'wpsso-google-merchant-feed' ), $img_count ),
+								sprintf( _x( '%s additional image links', 'option comment', 'wpsso-google-merchant-feed' ), $addl_count ),
+								sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
+							);
+						}
 
 						$table_rows[ $css_id ] = '' .
 							$this->form->get_th_html( $native_name, $css_class = '', $css_id,
@@ -215,17 +220,22 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 							$feed_type   = 'inventory';
 							$feed_format = $this->p->options[ 'gmf_' . $feed_type . '_format' ];
 							$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
-							$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
 							$css_id      = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
-							$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
-							$xml_size    = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
+							$xml_info    = array();
+							
+							if ( ! SucomUtil::get_const( 'WPSSOGMF_XML_INFO_DISABLE', false ) ) {
 
-							unset( $xml );
+								$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
+								$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
+								$xml_size    = number_format( ( strlen( $xml ) / 1024 ) );	// XML size in KB.
 
-							$xml_info = array(
-								sprintf( _x( '%s inventory items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
-								sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
-							);
+								unset( $xml );
+
+								$xml_info = array(
+									sprintf( _x( '%s inventory items', 'option comment', 'wpsso-google-merchant-feed' ), $item_count ),
+									sprintf( _x( '%s KB file size', 'option comment', 'wpsso-google-merchant-feed' ), $xml_size ),
+								);
+							}
 
 							$table_rows[ $css_id ] = '' .
 								$this->form->get_th_html( $native_name, $css_class = '', $css_id,
