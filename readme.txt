@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.8.0-rc.1 (2024/10/31)**
+**Version 9.8.0-rc.2 (2024/10/31)**
 
 * **New Features**
 	* None.
@@ -154,12 +154,13 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
+	* Added a new 'wpsso_gmf_add_shipping' filter.
 	* Moved the cache clearing process from 'wpsso_refresh_post_cache' to 'wpsso_clear_post_cache'.
 	* Updated `WpssoGmfXml::cache_refreshed_notice()` to save progress information for each locale processed.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v18.16.0-rc.1.
+	* WPSSO Core v18.16.0-rc.2.
 
 **Version 9.7.0 (2024/08/25)**
 
@@ -178,7 +179,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.8.0-rc.1 =
+= 9.8.0-rc.2 =
 
 (2024/10/31) Added progress information to the notification message when refreshing the cache.
 
