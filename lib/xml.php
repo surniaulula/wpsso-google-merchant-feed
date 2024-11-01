@@ -18,6 +18,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 			$wpsso =& Wpsso::get_instance();
 
+			if ( $wpsso->debug->enabled ) {
+
+				$wpsso->debug->mark();
+			}
+
 			$task_name      = 'refresh the cache';
 			$current_locale = SucomUtilWP::get_locale();
 			$locale_names   = SucomUtilWP::get_available_feed_locale_names();

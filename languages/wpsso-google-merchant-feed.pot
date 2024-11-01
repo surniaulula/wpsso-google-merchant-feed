@@ -71,14 +71,14 @@ msgid "checking google merchant feed"
 msgstr ""
 
 #: lib/actions.php:89 lib/filters-messages.php:182
-#: lib/submenu/google-merchant.php:32 lib/xml.php:31
+#: lib/submenu/google-merchant.php:32 lib/xml.php:36
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr ""
 
 #: lib/actions.php:90 lib/filters-messages.php:190
 #: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:153
-#: lib/xml.php:32
+#: lib/xml.php:37
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
@@ -397,15 +397,15 @@ msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""
 
-#: lib/xml.php:39
+#: lib/xml.php:44
 msgid "Processing %1$s for %2$s."
 msgstr ""
 
-#: lib/xml.php:51
+#: lib/xml.php:56
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr ""
 
-#: lib/xml.php:446
+#: lib/xml.php:451
 msgid "%1$s::%2$s() method does not exist."
 msgstr ""
 
