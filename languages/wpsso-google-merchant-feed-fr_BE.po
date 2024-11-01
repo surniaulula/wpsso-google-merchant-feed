@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WPSSO Google Merchant Feed XML 9.8.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-merchant-feed\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2024-10-30 17:16-0700\n"
+"PO-Revision-Date: 2024-11-01 07:20-0700\n"
 "Last-Translator: JS Morisset <jsm@surniaulula.com>\n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -41,8 +41,8 @@ msgctxt "plugin name"
 msgid "WPSSO Core"
 msgstr "WPSSO Core"
 
-#: gettext/gettext-lib-config.php:9 lib/filters-advanced.php:39
-#: lib/filters.php:69
+#: gettext/gettext-lib-config.php:9 lib/filters-advanced.php:44
+#: lib/filters.php:74
 msgctxt "option label"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
@@ -67,14 +67,14 @@ msgid "checking google merchant feed"
 msgstr "vérification flux de marchand google"
 
 #: lib/actions.php:89 lib/filters-messages.php:182
-#: lib/submenu/google-merchant.php:32 lib/xml.php:30
+#: lib/submenu/google-merchant.php:32 lib/xml.php:31
 msgctxt "metabox title"
 msgid "Google Merchant Feed XML"
 msgstr "Flux XML de marchand Google"
 
 #: lib/actions.php:90 lib/filters-messages.php:190
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:148
-#: lib/xml.php:31
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:153
+#: lib/xml.php:32
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr "Inventaire XML de marchand Google"
@@ -276,84 +276,84 @@ msgstr "Inclure l'expédition"
 
 #: lib/submenu/google-merchant.php:101
 msgctxt "option comment"
-msgid "(not recommended)"
-msgstr "(non recommandé)"
+msgid "(not recommended - see help for warning)"
+msgstr "(non recommandé - voir l'aide pour préavis)"
 
-#: lib/submenu/google-merchant.php:104 lib/submenu/google-merchant.php:189
+#: lib/submenu/google-merchant.php:104 lib/submenu/google-merchant.php:194
 msgctxt "option label"
 msgid "XML Cache Expiration"
 msgstr "Expiration du cache XML"
 
-#: lib/submenu/google-merchant.php:107 lib/submenu/google-merchant.php:192
+#: lib/submenu/google-merchant.php:107 lib/submenu/google-merchant.php:197
 msgctxt "option comment"
 msgid "seconds"
 msgstr "secondes"
 
-#: lib/submenu/google-merchant.php:110 lib/submenu/google-merchant.php:195
+#: lib/submenu/google-merchant.php:110 lib/submenu/google-merchant.php:200
 msgctxt "option label"
 msgid "XML Format"
 msgstr "Format XML"
 
-#: lib/submenu/google-merchant.php:131
+#: lib/submenu/google-merchant.php:135
 msgctxt "option comment"
 msgid "%s feed items"
 msgstr "%s éléments de flux"
 
-#: lib/submenu/google-merchant.php:132
+#: lib/submenu/google-merchant.php:136
 msgctxt "option comment"
 msgid "%s image links"
 msgstr "%s liens d'image"
 
-#: lib/submenu/google-merchant.php:133
+#: lib/submenu/google-merchant.php:137
 msgctxt "option comment"
 msgid "%s additional image links"
 msgstr "%s liens d'images supplémentaires"
 
-#: lib/submenu/google-merchant.php:134 lib/submenu/google-merchant.php:227
+#: lib/submenu/google-merchant.php:138 lib/submenu/google-merchant.php:236
 msgctxt "option comment"
 msgid "%s KB file size"
 msgstr "%s Ko taille du fichier"
 
-#: lib/submenu/google-merchant.php:153
+#: lib/submenu/google-merchant.php:158
 msgid "An e-commerce plugin is required to manage product inventory quantities."
 msgstr "Une extension e-commerce est nécessaire pour gérer les quantités d'inventaire des produits."
 
-#: lib/submenu/google-merchant.php:155
+#: lib/submenu/google-merchant.php:160
 msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr "Les URL %s ne sont pas disponibles en attendant l'activation d'une extension e-commerce."
 
-#: lib/submenu/google-merchant.php:168
+#: lib/submenu/google-merchant.php:173
 msgctxt "option label"
 msgid "Google Merchant ID"
 msgstr "ID de marchand Google"
 
-#: lib/submenu/google-merchant.php:184
+#: lib/submenu/google-merchant.php:189
 msgctxt "option label"
 msgid "Google Store Code"
 msgstr "Code de magasin Google"
 
-#: lib/submenu/google-merchant.php:203
+#: lib/submenu/google-merchant.php:208
 msgid "The Google Merchant ID and Store Code are required to create inventory XML."
 msgstr "L'ID de marchand Google et le code de magasin sont requis pour créer le XML d'inventaire."
 
-#: lib/submenu/google-merchant.php:205
+#: lib/submenu/google-merchant.php:210
 msgid "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr "Les URL %s ne sont pas disponibles en attendant les valeurs d'ID de marchand Google et du code de magasin."
 
-#: lib/submenu/google-merchant.php:226
+#: lib/submenu/google-merchant.php:235
 msgctxt "option comment"
 msgid "%s inventory items"
 msgstr "%s éléments d'inventaire"
 
-#: lib/xml.php:38
+#: lib/xml.php:39
 msgid "Processing %1$s for %2$s."
 msgstr "Traitement de %1$s pour %2$s."
 
-#: lib/xml.php:50
+#: lib/xml.php:51
 msgid "%1$s for %2$s locales has been refreshed."
 msgstr "%1$s pour %2$s locales a été actualisé."
 
-#: lib/xml.php:443
+#: lib/xml.php:446
 msgid "%1$s::%2$s() method does not exist."
 msgstr "La méthode %1$s::%2$s() n'existe pas."
 
