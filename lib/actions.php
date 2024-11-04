@@ -97,6 +97,14 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 
 		public function action_load_settings_page_refresh_feed_xml_cache( $pagehook, $menu_id, $menu_name, $menu_lib ) {
 
+			/*
+			 * Temporarily suspends WordPress cache additions.
+			 *
+			 * Stops more data being added to the cache, but still allows cache retrieval. This is useful for actions,
+			 * such as imports, when a lot of data would otherwise be almost uselessly added to the cache.
+			 */
+			wp_suspend_cache_addition();
+
 			$notice_msg = WpssoGmfXml::cache_refreshed_notice();
 
 			if ( $notice_msg ) $this->p->notice->upd( $notice_msg );

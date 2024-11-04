@@ -41,6 +41,11 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				foreach ( $locale_names as $request_locale => $native_name ) {
 
+					if ( $wpsso->debug->enabled ) {
+
+						$wpsso->debug->log( 'processing ' . $metabox_title . ' for ' . $native_name );
+					}
+
 					$wpsso->util->cache->task_update( $task_name, sprintf( __( 'Processing %1$s for %2$s.', 'wpsso-google-merchant-feed' ),
 						$metabox_title, $native_name ) );
 

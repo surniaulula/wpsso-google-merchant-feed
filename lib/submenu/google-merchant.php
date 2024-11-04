@@ -222,7 +222,7 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 							$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
 							$css_id      = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
 							$xml_info    = array();
-							
+
 							if ( ! SucomUtil::get_const( 'WPSSOGMF_XML_INFO_DISABLE', false ) ) {
 
 								$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
