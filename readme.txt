@@ -145,6 +145,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.9.0-dev.4 (2024/11/04)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* None.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* Added a call to `wp_suspend_cache_addition()` before refreshing the cache.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v18.17.0-dev.4.
+
 **Version 9.8.0 (2024/11/01)**
 
 * **New Features**
@@ -179,6 +194,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 9.9.0-dev.4 =
+
+(2024/11/04) Added a call to `wp_suspend_cache_addition()` before refreshing the cache.
 
 = 9.8.0 =
 
