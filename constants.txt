@@ -12,4 +12,6 @@ WPSSOGMF_VERSION
 /*
  * Define in your wp-config.php file to change the default value.
  */
-WPSSOGMF_XML_INFO_DISABLE = false
+WPSSOGMF_XML_INFO_DISABLE       = false
+WPSSOGMF_CACHE_REFRESH_MAX_TIME = 1800		// 10 mins by default.
+
