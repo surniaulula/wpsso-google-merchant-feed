@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.9.0-dev.6 (2024/11/05)**
+**Version 9.9.0-dev.7 (2024/11/05)**
 
 * **New Features**
 	* None.
@@ -154,11 +154,11 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added support for a new `WPSSOGMF_CACHE_REFRESH_MAX_TIME` constant.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
-	* WPSSO Core v18.17.0-dev.6.
+	* WPSSO Core v18.17.0-dev.7.
 
 **Version 9.8.0 (2024/11/01)**
 
@@ -195,9 +195,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.9.0-dev.6 =
+= 9.9.0-dev.7 =
 
-(2024/11/05) None.
+(2024/11/05) Added support for a new `WPSSOGMF_CACHE_REFRESH_MAX_TIME` constant.
 
 = 9.8.0 =
 
