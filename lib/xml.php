@@ -193,6 +193,8 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 
 				$mt_og = $wpsso->og->get_array( $mod, $size_names = 'wpsso-gmf', $md_pre = array( 'gmf', 'schema', 'og' ) );
 
+				unset( $mod );	// No longer needed.
+
 				if ( ! empty( $mt_og[ 'product:variants' ] ) && is_array( $mt_og[ 'product:variants' ] ) ) {
 
 					if ( $wpsso->debug->enabled ) {
@@ -244,7 +246,7 @@ if ( ! class_exists( 'WpssoGmfXml' ) ) {
 				}
 			}
 
-			unset( $public_ids, $mod, $mt_og );
+			unset( $public_ids, $mt_og );
 
 			if ( $wpsso->debug->enabled ) {
 
