@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.9.0-dev.5\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.9.0-dev.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2024-MO-DA HO:MI+ZONE\n"
@@ -83,17 +83,17 @@ msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
 msgstr ""
 
-#: lib/actions.php:127
+#: lib/actions.php:119
 msgid "checking google merchant feed images"
 msgstr ""
 
-#: lib/actions.php:144
+#: lib/actions.php:136
 msgid ""
 "A Google merchant feed XML %1$s attribute could not be generated for %2$s ID "
 "%3$s."
 msgstr ""
 
-#: lib/actions.php:146
+#: lib/actions.php:138
 msgid ""
 "Google requires at least one %1$s attribute for each product variation in "
 "the Google merchant feed XML."

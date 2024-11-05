@@ -102,14 +102,6 @@ if ( ! class_exists( 'WpssoGmfActions' ) ) {
 				$this->p->debug->mark();
 			}
 
-			/*
-			 * Temporarily suspends WordPress cache additions.
-			 *
-			 * Stops more data being added to the cache, but still allows cache retrieval. This is useful for actions,
-			 * such as imports, when a lot of data would otherwise be almost uselessly added to the cache.
-			 */
-			wp_suspend_cache_addition();
-
 			set_time_limit( WPSSOGMF_CACHE_REFRESH_MAX_TIME );	// 10 mins by default.
 
 			$notice_msg = WpssoGmfXml::cache_refreshed_notice();
