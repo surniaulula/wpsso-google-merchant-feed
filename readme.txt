@@ -13,7 +13,7 @@ Requires PHP: 7.4.33
 Requires At Least: 5.9
 Tested Up To: 6.7.1
 WC Tested Up To: 9.4.2
-Stable Tag: 9.10.0
+Stable Tag: 9.11.0
 
 Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
 
