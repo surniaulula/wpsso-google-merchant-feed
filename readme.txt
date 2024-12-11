@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.11.0-dev.3 (2024/12/10)**
+**Version 9.11.0-rc.1 (2024/12/11)**
 
 * **New Features**
 	* None.
@@ -227,7 +227,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.11.0-dev.3 =
+= 9.11.0-rc.1 =
 
 (2024/12/11) Updated vendor/sabre/uri and vendor/sabre/xml.
 
