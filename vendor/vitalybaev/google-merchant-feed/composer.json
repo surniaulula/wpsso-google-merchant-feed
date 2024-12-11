@@ -10,8 +10,8 @@
     }
   ],
   "require": {
-    "php": ">=5.5",
-    "sabre/xml": "^1.5 || ^2.0"
+    "php": ">=7.4.33",
+    "sabre/xml": "^2.2."
   },
   "autoload": {
     "psr-4": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9b97675865ef1b85826e97bec9953cd2",
+    "content-hash": "544b2b3686b85eb27c2d626cfdf7bd78",
     "packages": [
         {
             "name": "sabre/uri",
@@ -141,11 +141,11 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsmoriss/php-google-merchant-feed",
-                "reference": "73fb6335c98eb692bd2eb84f81d43c9e214fa924"
+                "reference": "c8c2dce22cb87585f167e8988ad804480790da3e"
             },
             "require": {
-                "php": ">=5.5",
-                "sabre/xml": "^1.5 || ^2.0"
+                "php": ">=7.4.33",
+                "sabre/xml": "^2.2."
             },
             "type": "library",
             "autoload": {
@@ -168,7 +168,7 @@
                 "google",
                 "merchant"
             ],
-            "time": "2023-12-27T14:47:15+00:00"
+            "time": "2024-12-11T00:59:23+00:00"
         }
     ],
     "packages-dev": [],

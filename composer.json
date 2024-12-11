@@ -6,8 +6,7 @@
 		}
 	],
 	"require": {
-		"vitalybaev/google-merchant-feed": "dev-wpsso-google-merchant-feed",
-                "sabre/xml": ">=2.2.11"
+		"vitalybaev/google-merchant-feed": "dev-wpsso-google-merchant-feed"
 	},
 	"config": {
 		"autoloader-suffix": "WpssoGmf"
