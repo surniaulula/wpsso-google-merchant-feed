@@ -145,16 +145,17 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.11.0-dev.2 (2024/12/10)**
+**Version 9.11.0-dev.3 (2024/12/10)**
 
 * **New Features**
 	* None.
 * **Improvements**
-	* Added "sabre/xml" minimum version check in composer.json.
+	* None.
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Updated vendor/sabre/uri v2.3.4 to v3.0.2.
+	* Updated vendor/sabre/xml v2.2.11 to v4.0.6.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
@@ -226,9 +227,9 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.11.0-dev.2 =
+= 9.11.0-dev.3 =
 
-(2024/12/10) Added "sabre/xml" minimum version check in composer.json.
+(2024/12/11) Updated vendor/sabre/uri and vendor/sabre/xml.
 
 = 9.10.0 =
 
