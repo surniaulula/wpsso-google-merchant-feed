@@ -31,6 +31,8 @@ interface XmlDeserializable
      *
      * $reader->parseInnerTree() will parse the entire sub-tree, and advance to
      * the next element.
+     *
+     * @return mixed see comments above
      */
     public static function xmlDeserialize(Reader $reader);
 }

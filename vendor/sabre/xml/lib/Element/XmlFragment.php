@@ -26,10 +26,8 @@ class XmlFragment implements Element
 {
     /**
      * The inner XML value.
-     *
-     * @var string
      */
-    protected $xml;
+    protected string $xml;
 
     /**
      * Constructor.
@@ -63,7 +61,7 @@ class XmlFragment implements Element
      *
      * If you are opening new elements, you must also close them again.
      */
-    public function xmlSerialize(Writer $writer)
+    public function xmlSerialize(Writer $writer): void
     {
         $reader = new Reader();
 

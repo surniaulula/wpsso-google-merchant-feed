@@ -22,7 +22,7 @@ class LibXMLException extends ParseException
      *
      * @var \LibXMLError[]
      */
-    protected $errors;
+    protected array $errors;
 
     /**
      * Creates the exception.
@@ -39,6 +39,8 @@ class LibXMLException extends ParseException
 
     /**
      * Returns the LibXML errors.
+     *
+     * @return \LibXMLError[]
      */
     public function getErrors(): array
     {

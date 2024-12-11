@@ -8,23 +8,23 @@
     "packages": [
         {
             "name": "sabre/uri",
-            "version": "2.3.4",
+            "version": "3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sabre-io/uri.git",
-                "reference": "b76524c22de90d80ca73143680a8e77b1266c291"
+                "reference": "38eeab6ed9eec435a2188db489d4649c56272c51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/uri/zipball/b76524c22de90d80ca73143680a8e77b1266c291",
-                "reference": "b76524c22de90d80ca73143680a8e77b1266c291",
+                "url": "https://api.github.com/repos/sabre-io/uri/zipball/38eeab6ed9eec435a2188db489d4649c56272c51",
+                "reference": "38eeab6ed9eec435a2188db489d4649c56272c51",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.4 || ^8.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.63",
+                "friendsofphp/php-cs-fixer": "^3.64",
                 "phpstan/extension-installer": "^1.4",
                 "phpstan/phpstan": "^1.12",
                 "phpstan/phpstan-phpunit": "^1.4",
@@ -64,20 +64,20 @@
                 "issues": "https://github.com/sabre-io/uri/issues",
                 "source": "https://github.com/fruux/sabre-uri"
             },
-            "time": "2024-08-27T12:18:16+00:00"
+            "time": "2024-09-04T15:30:08+00:00"
         },
         {
             "name": "sabre/xml",
-            "version": "2.2.11",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sabre-io/xml.git",
-                "reference": "01a7927842abf3e10df3d9c2d9b0cc9d813a3fcc"
+                "reference": "a89257fd188ce30e456b841b6915f27905dfdbe3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sabre-io/xml/zipball/01a7927842abf3e10df3d9c2d9b0cc9d813a3fcc",
-                "reference": "01a7927842abf3e10df3d9c2d9b0cc9d813a3fcc",
+                "url": "https://api.github.com/repos/sabre-io/xml/zipball/a89257fd188ce30e456b841b6915f27905dfdbe3",
+                "reference": "a89257fd188ce30e456b841b6915f27905dfdbe3",
                 "shasum": ""
             },
             "require": {
@@ -85,13 +85,13 @@
                 "ext-xmlreader": "*",
                 "ext-xmlwriter": "*",
                 "lib-libxml": ">=2.6.20",
-                "php": "^7.1 || ^8.0",
-                "sabre/uri": ">=1.0,<3.0.0"
+                "php": "^7.4 || ^8.0",
+                "sabre/uri": ">=2.0,<4.0.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "~2.17.1||3.63.2",
-                "phpstan/phpstan": "^0.12",
-                "phpunit/phpunit": "^7.5 || ^8.5 || ^9.6"
+                "friendsofphp/php-cs-fixer": "^3.64",
+                "phpstan/phpstan": "^1.12",
+                "phpunit/phpunit": "^9.6"
             },
             "type": "library",
             "autoload": {
@@ -133,7 +133,7 @@
                 "issues": "https://github.com/sabre-io/xml/issues",
                 "source": "https://github.com/fruux/sabre-xml"
             },
-            "time": "2024-09-06T07:37:46+00:00"
+            "time": "2024-09-06T08:00:55+00:00"
         },
         {
             "name": "vitalybaev/google-merchant-feed",
@@ -141,11 +141,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsmoriss/php-google-merchant-feed",
-                "reference": "c8c2dce22cb87585f167e8988ad804480790da3e"
+                "reference": "41ba155f5dd964aeb0a9c9e583ee3c92a44d7f25"
             },
             "require": {
                 "php": ">=7.4.33",
-                "sabre/xml": "^2.2."
+                "sabre/uri": ">=3.0.2",
+                "sabre/xml": ">=4.0.6"
             },
             "type": "library",
             "autoload": {
@@ -168,7 +169,7 @@
                 "google",
                 "merchant"
             ],
-            "time": "2024-12-11T00:59:23+00:00"
+            "time": "2024-12-11T15:19:06+00:00"
         }
     ],
     "packages-dev": [],
