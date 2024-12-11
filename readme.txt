@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.11.0-dev.1 (2024/12/10)**
+**Version 9.11.0-dev.2 (2024/12/10)**
 
 * **New Features**
 	* None.
@@ -226,7 +226,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.11.0-dev.1 =
+= 9.11.0-dev.2 =
 
 (2024/12/10) Added "sabre/xml" minimum version check in composer.json.
 
