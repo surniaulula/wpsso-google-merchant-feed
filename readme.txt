@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.12.0-dev.1 (2025/04/09)**
+**Version 9.12.0-rc.1 (2025/04/09)**
 
 * **New Features**
 	* None.
@@ -243,7 +243,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.12.0-dev.1 =
+= 9.12.0-rc.1 =
 
 (2025/04/09) Added a new `WPSSOGMF_ADMIN_FEED_XML_STATS` constant (false by default).
 
