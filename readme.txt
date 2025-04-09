@@ -154,7 +154,8 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 * **Bugfixes**
 	* None.
 * **Developer Notes**
-	* None.
+	* Added a new `WPSSOGMF_ADMIN_FEED_XML_STATS` constant (false by default).
+	* Removed the `WPSSOGMF_XML_INFO_DISABLE` constant.
 * **Requires At Least**
 	* PHP v7.4.33.
 	* WordPress v5.9.
@@ -244,7 +245,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 = 9.12.0-dev.1 =
 
-(2025/04/09) None.
+(2025/04/09) Added a new `WPSSOGMF_ADMIN_FEED_XML_STATS` constant (false by default).
 
 = 9.11.0 =
 
