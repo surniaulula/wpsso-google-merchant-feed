@@ -17,7 +17,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 		public static $cf = array(
 			'plugin' => array(
 				'wpssogmf' => array(			// Plugin acronym.
-					'version'     => '9.11.0',	// Plugin version.
+					'version'     => '9.12.0-dev.1',	// Plugin version.
 					'opt_version' => '5',		// Increment when changing default option values.
 					'short'       => 'WPSSO GMF',	// Short plugin name.
 					'name'        => 'WPSSO Google Merchant Feed XML',
@@ -37,7 +37,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 							'home'          => 'https://wordpress.org/plugins/wpsso/',
 							'plugin_class'  => 'Wpsso',
 							'version_const' => 'WPSSO_VERSION',
-							'min_version'   => '18.19.5',
+							'min_version'   => '18.20.0',
 						),
 					),
 
@@ -316,8 +316,9 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 
 			$var_const = array();
 
-			$var_const[ 'WPSSOGMF_PAGENAME' ]               = 'google-merchant';
-			$var_const[ 'WPSSOGMF_CACHE_REFRESH_MAX_TIME' ] = 600;		// 10 mins by default.
+			$var_const[ 'WPSSOGMF_PAGENAME' ]               = 'google-merchant';	// WordPress rewrite rules base page name.
+			$var_const[ 'WPSSOGMF_ADMIN_FEED_XML_STATS' ]   = false;		// Show feed XML stats in the GMF admin settings page.
+			$var_const[ 'WPSSOGMF_CACHE_REFRESH_MAX_TIME' ] = 600;			// 10 mins by default.
 
 			/*
 			 * Maybe override the default constant value with a pre-defined constant value.
