@@ -78,7 +78,7 @@ After activating the WPSSO Google Merchant Feed XML add-on, see the SSO &gt; Goo
 	* Price <code>&#91;price&#93;</code>
 	* Region <code>&#91;region&#93;</code>
 	* Service <code>&#91;service&#93;</code>
-	* [WPSSO Shipping Delivery Time for WooCommerce SEO](https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/) add-on required for handling and transit times:
+	* [WPSSO Schema Shipping Delivery Time for WooCommerce](https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/) add-on required for handling and transit times:
 		* Maximum handling time <code>&#91;max_handling_time&#93;</code>
 		* Minimum handling time <code>&#91;min_handling_time&#93;</code>
 		* Maximum transit time <code>&#91;max_transit_time&#93;</code>

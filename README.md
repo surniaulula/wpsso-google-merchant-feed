@@ -77,7 +77,7 @@
 <li>Price <code>&#91;price&#93;</code></li>
 <li>Region <code>&#91;region&#93;</code></li>
 <li>Service <code>&#91;service&#93;</code></li>
-<li><a href="https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/">WPSSO Shipping Delivery Time for WooCommerce SEO</a> add-on required for handling and transit times:
+<li><a href="https://wordpress.org/plugins/wpsso-wc-shipping-delivery-time/">WPSSO Schema Shipping Delivery Time for WooCommerce</a> add-on required for handling and transit times:
 
 <ul>
 <li>Maximum handling time <code>&#91;max_handling_time&#93;</code></li>
