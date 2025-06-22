@@ -91,6 +91,8 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 
 				case 'google-merchant-feed':
 
+					$table_rows[ 'gmf_info_xml' ] = '<td colspan="2">' . $this->p->msgs->get( 'info-gmf-xml' ) . '</td>';
+
 					/*
 					 * See https://support.google.com/merchants/answer/7052112?hl=en#shipping_and_returns.
 					 */
