@@ -145,6 +145,21 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
+**Version 9.13.0-dev.1 (2025/06/22)**
+
+* **New Features**
+	* None.
+* **Improvements**
+	* Added information about product inclusion criteria in the SSO &gt; Google Merchant settings page.
+* **Bugfixes**
+	* None.
+* **Developer Notes**
+	* None.
+* **Requires At Least**
+	* PHP v7.4.33.
+	* WordPress v5.9.
+	* WPSSO Core v21.0.0.
+
 **Version 9.12.0 (2025/04/09)**
 
 * **New Features**
@@ -242,6 +257,10 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 	* WPSSO Core v18.10.0.
 
 == Upgrade Notice ==
+
+= 9.13.0-dev.1 =
+
+(2025/06/22) Added information about product inclusion criteria in the SSO &gt; Google Merchant settings page.
 
 = 9.12.0 =
 
