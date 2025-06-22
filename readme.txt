@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.13.0-rc.1 (2025/06/22)**
+**Version 9.13.0 (2025/06/22)**
 
 * **New Features**
 	* None.
@@ -258,7 +258,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.13.0-rc.1 =
+= 9.13.0 =
 
 (2025/06/22) Added information about product inclusion criteria in the SSO &gt; Google Merchant settings page.
 
