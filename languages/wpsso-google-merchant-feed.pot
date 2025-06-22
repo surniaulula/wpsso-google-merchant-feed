@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WPSSO Google Merchant Feed XML package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WPSSO Google Merchant Feed XML 9.12.0\n"
+"Project-Id-Version: WPSSO Google Merchant Feed XML 9.13.0-dev.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wpsso-google-"
 "merchant-feed\n"
 "POT-Creation-Date: 2025-MO-DA HO:MI+ZONE\n"
@@ -173,7 +173,8 @@ msgstr ""
 
 #: lib/filters-messages.php:92
 msgid ""
-"To be included in the %1$s, in the %2$s metabox when editing a product, the "
+"To be included in the %1$s a product must be published, public (not private "
+"or password protected), in the %2$s metabox (when editing a product) the "
 "Open Graph type must be \"%3$s\" under the %4$s tab, have a matching "
 "language under the %5$s tab, and allowed to be indexed without a redirect "
 "URL under the %6$s tab."

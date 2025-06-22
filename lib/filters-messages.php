@@ -89,7 +89,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text .= '<p>';
 
-					$text .= sprintf( __( 'To be included in the %1$s, in the %2$s metabox when editing a product, the Open Graph type must be "%3$s" under the %4$s tab, have a matching language under the %5$s tab, and allowed to be indexed without a redirect URL under the %6$s tab.', 'wpsso-google-merchant-feed' ), $feed, $metabox_title, 'product', $edit_general, $edit_schema, $edit_visibility ) . ' ';
+					$text .= sprintf( __( 'To be included in the %1$s a product must be published, public (not private or password protected), in the %2$s metabox (when editing a product) the Open Graph type must be "%3$s" under the %4$s tab, have a matching language under the %5$s tab, and allowed to be indexed without a redirect URL under the %6$s tab.', 'wpsso-google-merchant-feed' ), $feed, $metabox_title, 'product', $edit_general, $edit_schema, $edit_visibility ) . ' ';
 
 					 $text .= '</p>';
 
