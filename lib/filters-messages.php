@@ -79,8 +79,8 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 				case 'info-gmf-xml':
 
-					$feed            = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
-					$metabox_title   = _x( $this->p->cf[ 'meta' ][ 'title' ], 'metabox title', 'wpsso' );
+					$metabox_title   = _x( 'Google Merchant Feed XML', 'metabox title', 'wpsso-google-merchant-feed' );
+					$edit_title      = _x( $this->p->cf[ 'meta' ][ 'title' ], 'metabox title', 'wpsso' );
 					$edit_general    = _x( 'Edit General', 'metabox tab', 'wpsso' );
 					$edit_schema     = _x( 'Edit Schema', 'metabox tab', 'wpsso' );
 					$edit_visibility = _x( 'Edit Visibility', 'metabox tab', 'wpsso' );
@@ -89,7 +89,9 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 					$text .= '<p>';
 
-					$text .= sprintf( __( 'To be included in the %1$s a product must be published, public (not private or password protected), in the %2$s metabox (when editing a product) the Open Graph type must be "%3$s" under the %4$s tab, have a matching language under the %5$s tab, and allowed to be indexed without a redirect URL under the %6$s tab.', 'wpsso-google-merchant-feed' ), $feed, $metabox_title, 'product', $edit_general, $edit_schema, $edit_visibility ) . ' ';
+					$text .= sprintf( __( 'To be included in the %1$s a product must be published, public (not private or password protected), in the %2$s metabox (when editing a product) the Open Graph type must be "%3$s" under the %4$s tab, have a matching language under the %5$s tab, and allowed to be indexed without a redirect URL under the %6$s tab.', 'wpsso-google-merchant-feed' ), $metabox_title, $edit_title, 'product', $edit_general, $edit_schema, $edit_visibility ) . ' ';
+
+					//$text .= sprintf( __( 'You can define the <code>%1$s</code> constant as <code>%2$s</code> to pre-generate each %3$s and show brief statistics below each URL.', 'wpsso-google-merchant-feed' ), 'WPSSOGMF_ADMIN_FEED_XML_STATS', 'true', $metabox_title ) . ' ';
 
 					 $text .= '</p>';
 
@@ -209,7 +211,7 @@ if ( ! class_exists( 'WpssoGmfFiltersMessages' ) ) {
 
 			 		$metabox_title = _x( 'Google Merchant Inventory XML', 'metabox title', 'wpsso-google-merchant-feed' );
 
-					$text = sprintf( __( 'The %1$s includes all public WordPress post objects (ie. posts, pages, and custom post types) with an Open Graph type of "product" and a language of %2$s (ie. locale "%3$s").', 'wpsso-google-merchant-feed' ), $metabox_title, $info[ 'native_name' ], $info[ 'locale' ] );
+					$text = sprintf( __( 'The %1$s includes all public WordPress post objects (ie. posts, pages, and custom post types) with an Open Graph type of "product" and a language of %2$s (ie. locale "%3$s").', 'wpsso-google-merchant-feed' ), $metabox_title, $info[ 'native_name' ], $info[ 'locale' ] ) . ' ';
 
 					break;
 
