@@ -12,6 +12,6 @@ WPSSOGMF_VERSION
 /*
  * Define in your wp-config.php file to change the default value.
  */
-WPSSOCMF_ADMIN_FEED_XML_STATS   = false		// Pre-generate and show feed XML stats in the CMCF admin settings page.
+WPSSOGMF_ADMIN_FEED_XML_STATS   = false		// Pre-generate and show feed XML stats in the CMCF admin settings page.
 WPSSOGMF_CACHE_REFRESH_MAX_TIME = 1800		// 10 mins by default.
 
