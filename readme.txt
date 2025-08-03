@@ -145,7 +145,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 <h3>Changelog / Release Notes</h3>
 
-**Version 9.14.0-rc.1 (2025/07/03)**
+**Version 9.14.0 (2025/07/03)**
 
 * **New Features**
 	* None.
@@ -273,7 +273,7 @@ Version components: `{major}.{minor}.{bugfix}[-{stage}.{level}]`
 
 == Upgrade Notice ==
 
-= 9.14.0-rc.1 =
+= 9.14.0 =
 
 (2025/07/03) Added information about the WPSSOGMF_ADMIN_FEED_XML_STATS constant the SSO &gt; Google Merchant settings page.
 
