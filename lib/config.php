@@ -317,7 +317,7 @@ if ( ! class_exists( 'WpssoGmfConfig' ) ) {
 			$var_const = array();
 
 			$var_const[ 'WPSSOGMF_PAGENAME' ]               = 'google-merchant';	// WordPress rewrite rules base page name.
-			$var_const[ 'WPSSOGMF_ADMIN_FEED_XML_STATS' ]   = false;		// Show feed XML stats in the GMF admin settings page.
+			$var_const[ 'WPSSOGMF_ADMIN_FEED_XML_STATS' ]   = false;		// Pre-generate and show feed XML stats in the GMF admin settings page.
 			$var_const[ 'WPSSOGMF_CACHE_REFRESH_MAX_TIME' ] = 600;			// 10 mins by default.
 
 			/*

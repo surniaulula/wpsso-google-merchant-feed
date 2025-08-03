@@ -77,7 +77,7 @@ msgid "Google Merchant Feed XML"
 msgstr ""
 
 #: lib/actions.php:90 lib/filters-messages.php:212
-#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:155
+#: lib/submenu/google-merchant.php:33 lib/submenu/google-merchant.php:157
 #: lib/xml.php:37
 msgctxt "metabox title"
 msgid "Google Merchant Inventory XML"
@@ -178,6 +178,12 @@ msgid ""
 "Open Graph type must be \"%3$s\" under the %4$s tab, have a matching "
 "language under the %5$s tab, and allowed to be indexed without a redirect "
 "URL under the %6$s tab."
+msgstr ""
+
+#: lib/filters-messages.php:94
+msgid ""
+"You can define the <code>%1$s</code> constant as <code>%2$s</code> to pre-"
+"generate each %3$s and show brief statistics below each URL."
 msgstr ""
 
 #: lib/filters-messages.php:119
@@ -352,71 +358,71 @@ msgctxt "option comment"
 msgid "(not recommended - see help for warning)"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:106 lib/submenu/google-merchant.php:196
+#: lib/submenu/google-merchant.php:106 lib/submenu/google-merchant.php:198
 msgctxt "option label"
 msgid "XML Cache Expiration"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:109 lib/submenu/google-merchant.php:199
+#: lib/submenu/google-merchant.php:109 lib/submenu/google-merchant.php:201
 msgctxt "option comment"
 msgid "seconds"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:112 lib/submenu/google-merchant.php:202
+#: lib/submenu/google-merchant.php:112 lib/submenu/google-merchant.php:204
 msgctxt "option label"
 msgid "XML Format"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:137
+#: lib/submenu/google-merchant.php:139
 msgctxt "option comment"
 msgid "%s feed items"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:138
+#: lib/submenu/google-merchant.php:140
 msgctxt "option comment"
 msgid "%s image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:139
+#: lib/submenu/google-merchant.php:141
 msgctxt "option comment"
 msgid "%s additional image links"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:140 lib/submenu/google-merchant.php:238
+#: lib/submenu/google-merchant.php:142 lib/submenu/google-merchant.php:242
 msgctxt "option comment"
 msgid "%s KB file size"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:160
+#: lib/submenu/google-merchant.php:162
 msgid ""
 "An e-commerce plugin is required to manage product inventory quantities."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:162
+#: lib/submenu/google-merchant.php:164
 msgid "%s URLs are unavailable pending the activation of an e-commerce plugin."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:175
+#: lib/submenu/google-merchant.php:177
 msgctxt "option label"
 msgid "Google Merchant ID"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:191
+#: lib/submenu/google-merchant.php:193
 msgctxt "option label"
 msgid "Google Store Code"
 msgstr ""
 
-#: lib/submenu/google-merchant.php:210
+#: lib/submenu/google-merchant.php:212
 msgid ""
 "The Google Merchant ID and Store Code are required to create inventory XML."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:212
+#: lib/submenu/google-merchant.php:214
 msgid ""
 "%s URLs are unavailable pending Google Merchant ID and Store Code values."
 msgstr ""
 
-#: lib/submenu/google-merchant.php:237
+#: lib/submenu/google-merchant.php:241
 msgctxt "option comment"
 msgid "%s inventory items"
 msgstr ""

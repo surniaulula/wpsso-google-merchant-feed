@@ -122,8 +122,10 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 						$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
 						$css_id      = SucomUtil::sanitize_css_id( 'gmf_feed_xml_' . $locale );
 						$xml_info    = array();
+						$show_stats  = apply_filters( 'wpsso_gmf_admin_feed_xml_stats',
+							SucomUtil::get_const( 'WPSSOGMF_ADMIN_FEED_XML_STATS', false ) );
 
-						if ( SucomUtil::get_const( 'WPSSOGMF_ADMIN_FEED_XML_STATS', false ) ) {
+						if ( $show_stats ) {
 
 							$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
 							$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
@@ -224,8 +226,10 @@ if ( ! class_exists( 'WpssoGmfSubmenuGoogleMerchant' ) && class_exists( 'WpssoAd
 							$url         = WpssoGmfRewrite::get_url( $locale, $feed_type, $feed_format );
 							$css_id      = SucomUtil::sanitize_css_id( 'gmf_inventory_xml_' . $locale );
 							$xml_info    = array();
+							$show_stats  = apply_filters( 'wpsso_gmf_admin_feed_xml_stats',
+								SucomUtil::get_const( 'WPSSOGMF_ADMIN_FEED_XML_STATS', false ) );
 
-							if ( SucomUtil::get_const( 'WPSSOGMF_ADMIN_FEED_XML_STATS', false ) ) {
+							if ( $show_stats ) {
 
 								$xml         = WpssoGmfXml::get( $locale, $feed_type, $feed_format );
 								$item_count  = substr_count( $xml, 'atom' === $feed_format? '<entry>' : '<item>' );
