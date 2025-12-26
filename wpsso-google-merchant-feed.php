@@ -13,7 +13,7 @@
  * Description: Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
  * Requires Plugins: wpsso
  * Requires PHP: 7.4.33
- * Requires At Least: 5.9
+ * Requires At Least: 6.0
  * Tested Up To: 6.9
  * WC Tested Up To: 10.4.3
  * Version: 9.14.0
