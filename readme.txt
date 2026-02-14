@@ -12,7 +12,7 @@ Requires Plugins: wpsso
 Requires PHP: 7.4.33
 Requires At Least: 6.0
 Tested Up To: 6.9
-WC Tested Up To: 10.5.0
+WC Tested Up To: 10.5.1
 Stable Tag: 9.14.0
 
 Google Merchant product and inventory feed XML for WooCommerce and custom product pages, including multilingual support.
